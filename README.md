@@ -1,7 +1,7 @@
 Documentación ULAnix-Scientia
 =============================
 
-Documetanción sobre los programas instalados por ulanix-scientia
+Documentación sobre los programas instalados por ulanix-scientia
 
 Este paquete contiene documentación sobre los programas:
  * Galatea
@@ -13,8 +13,4 @@ Este paquete contiene documentación sobre los programas:
 
 
  -- David Hernández <david.vzla@gmail.com>  Sat, 10 Nov 2012 12:27:02 -0430
-=======
-ulanix-scientia-docs
-====================
 
-Documentación de los programas instalados por el paquete ulanix-scientia
