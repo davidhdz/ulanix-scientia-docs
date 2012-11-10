@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+Documentación ULAnix-Scientia
+=============================
+
+Documetanción sobre los programas instalados por ulanix-scientia
+
+Este paquete contiene documentación sobre los programas:
+ * Galatea
+ * Maxima
+ * Octave
+ * R
+ * LaTeX
+ * ULAnix
+
+
+ -- David Hernández <david.vzla@gmail.com>  Sat, 10 Nov 2012 12:27:02 -0430
+=======
+ulanix-scientia-docs
+====================
+
+Documentación de los programas instalados por el paquete ulanix-scientia
+>>>>>>> 5c91bb63b5bef0c196d12b984dc33901ace44fc2
