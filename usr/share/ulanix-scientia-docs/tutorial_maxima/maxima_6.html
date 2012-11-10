@@ -1,0 +1,2367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 6. Expresiones</title>
+
+<meta name="description" content="Manual de Maxima: 6. Expresiones">
+<meta name="keywords" content="Manual de Maxima: 6. Expresiones">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Expresiones"></a>
+<a name="SEC20"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_5.html#SEC19" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC21" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_5.html#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 6. Expresiones </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC21">6.1 Introducci&oacute;n a las Expresiones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC22">6.2 Asignaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC23">6.3 Expresiones complejas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC24">6.4 Nombres y verbos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC25">6.5 Identificadores</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC26">6.6 Cadenas de caracteres</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC27">6.7 Desigualdades</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC28">6.8 Sintaxis</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC29">6.9 Definiciones para Expresiones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Introducci_00f3n-a-las-Expresiones"></a>
+<a name="SEC21"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC20" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC22" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.1 Introducci&oacute;n a las Expresiones </h2>
+
+<p>Existe un cierto n&uacute;mero de palabras reservadas que no pueden
+utilizarse como nombres de variables. Su uso podr&iacute;a causar 
+errores cr&iacute;ticos de sintaxis. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">integrate            next           from                 diff            
+in                   at             limit                sum             
+for                  and            elseif               then            
+else                 do             or                   if              
+unless               product        while                thru            
+step                                                                     
+</pre></td></tr></table>
+<p>La mayor&iacute;a de los objetos en Maxima son expresiones. Una secuencia
+de expresiones puede constituir una expresi&oacute;n, separ&aacute;ndolas por
+comas y colocando par&eacute;ntesis alrededor de ellas. Esto es similar a 
+las <i>expresiones con coma</i> en <b>C</b>. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x: 3$
+(%i2) (x: x+1, x: x^2);
+(%o2)                          16
+(%i3) (if (x &gt; 17) then 2 else 4);
+(%o3)                           4
+(%i4) (if (x &gt; 17) then x: 2 else y: 4, y+x);
+(%o4)                          20
+</pre></td></tr></table>
+<p>Incluso los bucles en Maxima son expresiones, aunque el valor que
+ retornan (<code>done</code>) no es muy &uacute;til. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) y: (x: 1, for i from 1 thru 10 do (x: x*i))$
+(%i2) y;
+(%o2)                         done
+</pre></td></tr></table>
+<p>pero quiz&aacute;s se quiera incluir un tercer t&eacute;rmino en la <i>expresi&oacute;n con coma</i> para que devuelva el valor de inter&eacute;s. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i3) y: (x: 1, for i from 1 thru 10 do (x: x*i), x)$
+(%i4) y;
+(%o4)                        3628800
+</pre></td></tr></table>
+<hr size="6">
+<a name="Asignaci_00f3n"></a>
+<a name="SEC22"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC21" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC23" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.2 Asignaci&oacute;n </h2>
+
+<p>Existen dos operadores de asignaci&oacute;n en Maxima, <code>:</code> y <code>::</code>. 
+Por ejemplo, <code>a: 3</code> asigna a la variable <code>a</code> el valor de 3. Por otro lado, <code>::</code> asigna el valor de la expresi&oacute;n de su derecha al valor de la cantidad de su izquierda, el cual debe evaluarse a una variable de tipo &aacute;tomo o una variable subindicada. 
+</p>
+<hr size="6">
+<a name="Expresiones-complejas"></a>
+<a name="SEC23"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC22" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC24" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.3 Expresiones complejas </h2>
+
+<p>Una expresi&oacute;n compleja se especifica en Maxima a&ntilde;adiendo a la parte
+real de la expresi&oacute;n el producto de <code>%i</code> por la parte imaginaria. As&iacute; las ra&iacute;ces de la ecuaci&oacute;n <code>x^2 - 4*x + 13 = 0</code> son <code>2 + 3*%i</code> y <code>2 - 3*%i</code>. N&oacute;tese que la simplificaci&oacute;n de productos de expresiones complejas puede ser efectuado expandiendo el producto. La simplificaci&oacute;n de cocientes, ra&iacute;ces y otras funciones que
+contengan expresiones complejas pueden normalmente conseguirse a trav&eacute;s de las funciones <code>realpart</code>, <code>imagpart</code>, <code>rectform</code>, <code>polarform</code>, <code>abs</code> o <code>carg</code>. 
+</p>
+<hr size="6">
+<a name="Nombres-y-verbos"></a>
+<a name="SEC24"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC23" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC25" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.4 Nombres y verbos </h2>
+
+<p>Maxima distingue entre operadores que son &quot;nombres&quot; y operadores que son &quot;verbos&quot;.
+Un verbo es un operador que puede ser ejecutado.
+Un nombre es un operador que aparece como un s&iacute;mbolo en una expresi&oacute;n pero sin ser ejecutado.
+Por defecto, los nombres de funciones son verbos.
+Un verbo puede transformarse en nombre utilizando el ap&oacute;strofo o aplicando la funci&oacute;n <code>nounify</code>.
+Un nombre puede transformarse en verbo aplicando la funci&oacute;n <code>verbify</code>.
+La variable <code>nouns</code> hace que <code>ev</code> eval&uacute;e los nombres presentes en una expresi&oacute;n.
+</p>
+<p>La forma verbal se distingue mediante la precedencia del car&aacute;cter d&oacute;lar <code>$</code> al correspondiente s&iacute;mbolo de Lisp.
+Por otro lado, la forma nominal se distingue mediante la precedencia del car&aacute;cter porcentaje <code>%</code> al correspondiente s&iacute;mbolo de Lisp. 
+Algunos nombres gozan de propiedades especiales para su representaci&oacute;n, como <code>'integrate</code> o <code>'derivative</code>
+(devuelto por <code>diff</code>), pero la mayor&iacute;a no.
+Por defecto, las formas nominal y verbal de una funci&oacute;n son id&eacute;nticas cuando se muestran en un terminal.
+La variable global <code>noundisp</code> hace que Maxima muestre los nombres precedidos del ap&oacute;strofo <code>'</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>noun</code>, <code>nouns</code>, <code>nounify</code> y <code>verbify</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) foo (x) := x^2;
+                                     2
+(%o1)                     foo(x) := x
+(%i2) foo (42);
+(%o2)                         1764
+(%i3) 'foo (42);
+(%o3)                        foo(42)
+(%i4) 'foo (42), nouns;
+(%o4)                         1764
+(%i5) declare (bar, noun);
+(%o5)                         done
+(%i6) bar (x) := x/17;
+                                     x
+(%o6)                    ''bar(x) := --
+                                     17
+(%i7) bar (52);
+(%o7)                        bar(52)
+(%i8) bar (52), nouns;
+                               52
+(%o8)                          --
+                               17
+(%i9) integrate (1/x, x, 1, 42);
+(%o9)                        log(42)
+(%i10) 'integrate (1/x, x, 1, 42);
+                             42
+                            /
+                            [   1
+(%o10)                      I   - dx
+                            ]   x
+                            /
+                             1
+(%i11) ev (%, nouns);
+(%o11)                       log(42)
+</pre></td></tr></table>
+<hr size="6">
+<a name="Identificadores"></a>
+<a name="SEC25"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC24" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC26" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.5 Identificadores </h2>
+
+<p>En Maxima, los identificadores pueden contener caracteres alfab&eacute;ticos, n&uacute;meros del 0 al 9 y cualquier otro car&aacute;cter precedido de la barra invertida <code>\</code>.
+</p>
+<p>Un identificador puede comenzar con un car&aacute;cter num&eacute;rico si &eacute;ste va precedido de la barra invertida <code>\</code>.
+Los caracteres num&eacute;ricos que ocupen la segunda posici&oacute;n o posterior no necesitan ir precedidos de la barra invertida.
+</p>
+<p>Los caracteres pueden declararse como alfab&eacute;ticos con la funci&oacute;n <code>declare</code>.
+As&iacute; declarados, no necesitan ir precedidos de la barra invertida en un identificador.
+En principio, los caracteres alfab&eacute;ticos son las letras de <code>A</code> a <code>Z</code> y
+<code>a</code> a <code>z</code>, junto con  <code>%</code> y <code>_</code>.
+</p>
+<p>Maxima distingue min&uacute;sculas y may&uacute;sculas. Los identificadores <code>foo</code>, <code>FOO</code> y <code>Foo</code> son distintos.
+V&eacute;ase <a href="maxima_3.html#SEC5">Lisp y Maxima</a> para m&aacute;s informaci&oacute;n.
+</p>
+<p>Un identificador en Maxima es un s&iacute;mbolo Lisp que comienza con el s&iacute;mbolo d&oacute;lar <code>$</code>.
+Cualquier otro s&iacute;mbolo de Lisp va precedido de la interrogaci&oacute;n <code>?</code> cuando aparece en Maxima.
+V&eacute;ase <a href="maxima_3.html#SEC5">Lisp y Maxima</a> para m&aacute;s informaci&oacute;n.
+</p>
+<p>Ejemplos:
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) %an_ordinary_identifier42;
+(%o1)               %an_ordinary_identifier42
+(%i2) embedded\ spaces\ in\ an\ identifier;
+(%o2)           embedded spaces in an identifier
+(%i3) symbolp (%);
+(%o3)                         true
+(%i4) [foo+bar, foo\+bar];
+(%o4)                 [foo + bar, foo+bar]
+(%i5) [1729, \1729];
+(%o5)                     [1729, 1729]
+(%i6) [symbolp (foo\+bar), symbolp (\1729)];
+(%o6)                     [true, true]
+(%i7) [is (foo\+bar = foo+bar), is (\1729 = 1729)];
+(%o7)                    [false, false]
+(%i8) baz\~quux;
+(%o8)                       baz~quux
+(%i9) declare (&quot;~&quot;, alphabetic);
+(%o9)                         done
+(%i10) baz~quux;
+(%o10)                      baz~quux
+(%i11) [is (foo = FOO), is (FOO = Foo), is (Foo = foo)];
+(%o11)                [false, false, false]
+(%i12) :lisp (defvar *my-lisp-variable* '$foo)
+*MY-LISP-VARIABLE*
+(%i12) ?\*my\-lisp\-variable\*;
+(%o12)                         foo
+</pre></td></tr></table>
+
+<hr size="6">
+<a name="Cadenas-de-caracteres"></a>
+<a name="SEC26"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC25" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC27" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.6 Cadenas de caracteres </h2>
+
+<p>Las cadenas de caracteres deben ir acotadas por comillas dobles (<code>&quot;</code>)
+al ser introducidas en Maxima, siendo luego mostradas con o sin ellas, 
+dependiendo del valor de la variable global <code>stringdisp</code>.
+</p>
+<p>Las cadenas pueden contener todo tipo de caracteres, incluyendo tabulaciones,
+caracteres de nueva l&iacute;nea y de retorno.
+La secuencia <code>\&quot;</code> se reconoce literalmente como una comilla doble, al
+tiempo que <code>\\</code> se interpreta como una barra invertida. Cuando la barra
+invertida aparece al final de una l&iacute;nea, tanto la barra como el
+final de l&iacute;nea (representado &eacute;ste bien por el car&aacute;cter de nueva 
+l&iacute;nea o el de retorno) son ignorados, de forma que la cadena
+contin&uacute;a en el siguiente rengl&oacute;n. No se reconocen m&aacute;s combinaciones especiales
+de la barra invertida con otros caracteres aparte de las comentadas; de modo
+que si la barra invertida aparece antes de cualquier otro car&aacute;cter distinto de
+<code>&quot;</code>, <code>\</code>, o de un final de l&iacute;nea, dicha barra ser&aacute;
+ignorada.
+No hay manera de representar los caracteres especiales
+(tabulaci&oacute;n, nueva l&iacute;nea o retorno) de otra
+forma que no sea incluy&eacute;ndolos literalmente en la cadena.
+</p>
+<p>No existe en Maxima el tipo de variable car&aacute;cter, debi&eacute;ndose
+representar un car&aacute;cter simple como una cadena de un solo car&aacute;cter.
+</p>
+<p>En Maxima, las cadenas de caracteres se implementan como s&iacute;mbolos
+de Lisp, no como cadenas de Lisp, lo cual puede cambiar en versiones futuras de Maxima.
+Maxima puede representar cadenas y caracteres de Lisp, aunque algunas operaciones,
+como las pruebas de igualdad, pueden no funcionar correctamente.
+</p>
+<p>El paquete adicional <code>stringproc</code> contiene muchas funciones que
+permiten trabajar con cadenas.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) s_1 : &quot;This is a Maxima string.&quot;;
+(%o1)               This is a Maxima string.
+(%i2) s_2 : &quot;Embedded \&quot;double quotes\&quot; and backslash \\ characters.&quot;;
+(%o2) Embedded &quot;double quotes&quot; and backslash \ characters.
+(%i3) s_3 : &quot;Embedded line termination
+in this string.&quot;;
+(%o3) Embedded line termination
+in this string.
+(%i4) s_4 : &quot;Ignore the \
+line termination \
+characters in \
+this string.&quot;;
+(%o4) Ignore the line termination characters in this string.
+(%i5) stringdisp : false;
+(%o5)                         false
+(%i6) s_1;
+(%o6)               This is a Maxima string.
+(%i7) stringdisp : true;
+(%o7)                         true
+(%i8) s_1;
+(%o8)              &quot;This is a Maxima string.&quot;
+</pre></td></tr></table>
+<hr size="6">
+<a name="Desigualdades"></a>
+<a name="SEC27"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC26" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC28" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.7 Desigualdades </h2>
+
+<p>Maxima dispone de los operadores de desigualdad <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&gt;</code>, <code>#</code> y <code>notequal</code>.
+V&eacute;ase <code>if</code> para una descripci&oacute;n de las expresiones condicionales.
+</p>
+<hr size="6">
+<a name="Sintaxis"></a>
+<a name="SEC28"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC27" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC29" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.8 Sintaxis </h2>
+
+<p>Es posible definir nuevos operadores con una precedencia especificada,
+o eliminar o redefinir la precedencia de operadores ya existentes.  
+Un operador puede ser de tipo prefijo unario o postfijo unario, infijo binario, infijo <code>n</code>-ario, &quot;bi-fijo&quot; (matchfix) o &quot;no-fijo&quot;; 
+&quot;bi-fijo&quot;  se refiere a un par de s&iacute;mbolos que encierran su o sus argumentos, y &quot;no-fijo&quot; es un operador que no necesita argumentos.
+A continuaci&oacute;n ejemplos sobre los diferentes tipos de operadores.
+</p>
+<dl compact="compact">
+<dt> prefijo unario</dt>
+<dd><p>negaci&oacute;n <code>- a</code>
+</p></dd>
+<dt> postfijo unario</dt>
+<dd><p>factorial <code>a!</code>
+</p></dd>
+<dt> infijo binario</dt>
+<dd><p>exponenciaci&oacute;n <code>a^b</code>
+</p></dd>
+<dt> n-ary infix</dt>
+<dd><p>suma <code>a + b</code>
+</p></dd>
+<dt> &quot;bi-fijo&quot;</dt>
+<dd><p>construcci&oacute;n de una lista <code>[a, b]</code>
+</p></dd>
+</dl>
+
+<p>(Maxima no incluye operadores &quot;no-fijos&quot;, pero se puede ver un ejemplo en <code>nofix</code>.)
+</p>
+<p>El mecanismo para definir un nuevo operador es sencillo.
+Tan solo es necesario declarar una funci&oacute;n como operador;
+la funci&oacute;n operador puede estar definida o no.
+</p>
+<p>Un ejemplo de operador definido por el usuario es el siguiente.
+N&oacute;tese que la llamada a funci&oacute;n <code>&quot;dd&quot; (a)</code> equivale a <code>dd a</code>,
+de igual manera que  <code>&quot;&lt;-&quot; (a, b)</code> tambi&eacute;n equivale a <code>a &lt;- b</code>.
+N&oacute;tese tambi&eacute;n que las funciones <code>&quot;dd&quot;</code> y <code>&quot;&lt;-&quot;</code> no est&aacute;n definidas en este ejemplo.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) prefix (&quot;dd&quot;);
+(%o1)                          dd
+(%i2) dd a;
+(%o2)                         dd a
+(%i3) &quot;dd&quot; (a);
+(%o3)                         dd a
+(%i4) infix (&quot;&lt;-&quot;);
+(%o4)                          &lt;-
+(%i5) a &lt;- dd b;
+(%o5)                      a &lt;- dd b
+(%i6) &quot;&lt;-&quot; (a, &quot;dd&quot; (b));
+(%o6)                      a &lt;- dd b
+</pre></td></tr></table>
+<p>Las funciones de Maxima que definen nuevos operadores se resumen en esta tabla, 
+en la que se establecen las fuerzas de enlace a izquierda (lbp, de <i>left binding power</i>) y a derecha (rbp, de <i>right binding power</i>) por defecto.
+(La fuerza de enlace determina la precedencia del operador. Sin embargo, puesto que las fuerzas de enlace a izquierda y derecha pueden ser diferentes, la fuerza de enlace es algo m&aacute;s que la simple precedencia.)
+Algunas de las funciones para definir operadores toman argumentos adicionales;
+v&eacute;anse las descripciones de estas funciones para m&aacute;s detalles.
+</p>
+<dl compact="compact">
+<dt> <code>prefix</code></dt>
+<dd><p>rbp=180
+</p></dd>
+<dt> <code>postfix</code></dt>
+<dd><p>lbp=180
+</p></dd>
+<dt> <code>infix</code></dt>
+<dd><p>lbp=180, rbp=180
+</p></dd>
+<dt> <code>nary</code></dt>
+<dd><p>lbp=180, rbp=180
+</p></dd>
+<dt> <code>matchfix</code></dt>
+<dd><p>(la fuerza de enlace no se aplica aqu&iacute;)
+</p></dd>
+<dt> <code>nofix</code></dt>
+<dd><p>(la fuerza de enlace no se aplica aqu&iacute;)
+</p></dd>
+</dl>
+
+<p>A efectos comparativos, aqu&iacute; se presentan algunos operadores de Maxima junto con sus fuerzas de enlace a izquierda y derecha.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">Operator   lbp     rbp
+
+  :        180     20 
+  ::       180     20 
+  :=       180     20 
+  ::=      180     20 
+  !        160
+  !!       160
+  ^        140     139 
+  .        130     129 
+  *        120
+  /        120     120 
+  +        100     100 
+  -        100     134 
+  =        80      80 
+  #        80      80 
+  &gt;        80      80 
+  &gt;=       80      80 
+  &lt;        80      80 
+  &lt;=       80      80 
+  not              70 
+  and      65
+  or       60
+  ,        10
+  $        -1
+  ;        -1
+</pre></td></tr></table>
+<p>Las funciones <code>remove</code> y <code>kill</code> eliminan propiedades de operadores de un &aacute;tomo.
+La llamada <code>remove (&quot;<var>a</var>&quot;, op)</code> s&oacute;lo elimina las propiedades de operador de <var>a</var>.
+La llamada <code>kill (&quot;<var>a</var>&quot;)</code> elimina todas las propiedades de <var>a</var>, incluidas las propiedades de operador.
+N&oacute;tese que el nombre del operador debe ir entre comillas.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) infix (&quot;@&quot;);
+(%o1)                           @
+(%i2) &quot;@&quot; (a, b) := a^b;
+                                     b
+(%o2)                      a @ b := a
+(%i3) 5 @ 3;
+(%o3)                          125
+(%i4) remove (&quot;@&quot;, op);
+(%o4)                         done
+(%i5) 5 @ 3;
+Incorrect syntax: @ is not an infix operator
+5 @
+ ^
+(%i5) &quot;@&quot; (5, 3);
+(%o5)                          125
+(%i6) infix (&quot;@&quot;);
+(%o6)                           @
+(%i7) 5 @ 3;
+(%o7)                          125
+(%i8) kill (&quot;@&quot;);
+(%o8)                         done
+(%i9) 5 @ 3;
+Incorrect syntax: @ is not an infix operator
+5 @
+ ^
+(%i9) &quot;@&quot; (5, 3);
+(%o9)                        @(5, 3)
+</pre></td></tr></table>
+<hr size="6">
+<a name="Definiciones-para-Expresiones"></a>
+<a name="SEC29"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC28" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC20" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 6.9 Definiciones para Expresiones </h2>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>at</b><i> (<var>expr</var>, [<var>eqn_1</var>, ..., <var>eqn_n</var>])</i>
+<a name="IDX134"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>at</b><i> (<var>expr</var>, <var>eqn</var>)</i>
+<a name="IDX135"></a>
+</dt>
+<dd><p>Eval&uacute;a la expresi&oacute;n <var>expr</var> asignando a las variables los valores especificados para ellas en la lista de ecuaciones <code>[<var>eqn_1</var>, ..., <var>eqn_n</var>]</code> o en la ecuaci&oacute;n simple <var>eqn</var>.
+</p>
+<p>Si una subexpresi&oacute;n depende de cualquiera de las variables para la cual se especifica un valor, pero  no puede ser evaluado, entonces <code>at</code> devuelve una forma nominal.
+</p>
+<p>La funci&oacute;n <code>at</code> realiza m&uacute;ltiples sustituciones en serie, no en paralelo.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>atvalue</code>.
+Para otras funciones que tambi&eacute;n llevan a cabo sustituciones, cons&uacute;ltense <code>subst</code> y <code>ev</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) atvalue (f(x,y), [x = 0, y = 1], a^2);
+                                2
+(%o1)                          a
+(%i2) atvalue ('diff (f(x,y), x), x = 0, 1 + y);
+(%o2)                        @2 + 1
+(%i3) printprops (all, atvalue);
+                                !
+                  d             !
+                 --- (f(@1, @2))!       = @2 + 1
+                 d@1            !
+                                !@1 = 0
+
+                                     2
+                          f(0, 1) = a
+
+(%o3)                         done
+(%i4) diff (4*f(x, y)^2 - u(x, y)^2, x);
+                  d                          d
+(%o4)  8 f(x, y) (-- (f(x, y))) - 2 u(x, y) (-- (u(x, y)))
+                  dx                         dx
+(%i5) at (%, [x = 0, y = 1]);
+                                         !
+              2              d           !
+(%o5)     16 a  - 2 u(0, 1) (-- (u(x, y))!            )
+                             dx          !
+                                         !x = 0, y = 1
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>box</b><i> (<var>expr</var>)</i>
+<a name="IDX136"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>box</b><i> (<var>expr</var>, <var>a</var>)</i>
+<a name="IDX137"></a>
+</dt>
+<dd><p>Devuelve <var>expr</var> encerrada en una caja.
+El valor devuelto es una expresi&oacute;n con <code>box</code> como operador y <var>expr</var> como argumento.
+Se dibujar&aacute; una caja cuando <code>display2d</code> valga <code>true</code>.
+</p>
+<p>La llamada <code>box (<var>expr</var>, <var>a</var>)</code>
+encierra <var>expr</var> en una caja etiquetada con el s&iacute;mbolo <var>a</var>.
+La etiqueta se recorta si es m&aacute;s larga que el ancho de la caja.
+</p>
+<p>La funci&oacute;n <code>box</code> eval&uacute;a su argumento. Sin embargo, la expresi&oacute;n 
+encerrada no se eval&uacute;a, siendo exclu&iacute;da de los c&aacute;lculos.
+</p>
+<p>La variable <code>boxchar</code> guarda el car&aacute;cter a utilizar para dibujar la caja en las funciones <code>box</code>, <code>dpart</code> y <code>lpart</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) box (a^2 + b^2);
+                            &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+                            &quot; 2    2&quot;
+(%o1)                       &quot;b  + a &quot;
+                            &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+(%i2) a : 1234;
+(%o2)                         1234
+(%i3) b : c - d;
+(%o3)                         c - d
+(%i4) box (a^2 + b^2);
+                      &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+                      &quot;       2          &quot;
+(%o4)                 &quot;(c - d)  + 1522756&quot;
+                      &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+(%i5) box (a^2 + b^2, term_1);
+                      term_1&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+                      &quot;       2          &quot;
+(%o5)                 &quot;(c - d)  + 1522756&quot;
+                      &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+(%i6) 1729 - box (1729);
+                                 &quot;&quot;&quot;&quot;&quot;&quot;
+(%o6)                     1729 - &quot;1729&quot;
+                                 &quot;&quot;&quot;&quot;&quot;&quot;
+(%i7) boxchar: &quot;-&quot;;
+(%o7)                           -
+(%i8) box (sin(x) + cos(y));
+                        -----------------
+(%o8)                   -cos(y) + sin(x)-
+                        -----------------
+</pre></td></tr></table>
+</dd></dl>
+
+
+<dl>
+<dt><u>Variable opcional:</u> <b>boxchar</b>
+<a name="IDX138"></a>
+</dt>
+<dd><p>Valor por defecto: <code>&quot;</code>
+</p>
+<p>La variable <code>boxchar</code> guarda el car&aacute;cter a utilizar para dibujar la caja en las funciones <code>box</code>, <code>dpart</code> y <code>lpart</code>.
+</p>
+<p>Todas las cajas en una expresi&oacute;n se dibujan con el valor actual de <code>boxchar</code>, car&aacute;cter que no se almacena con las expresi&oacute;n encerrada.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>carg</b><i> (<var>z</var>)</i>
+<a name="IDX139"></a>
+</dt>
+<dd><p>Devuelve el argumento complejo de <var>z</var>.
+El argumento complejo es un &aacute;ngulo <code>theta</code> en <code>(-%pi, %pi]</code>
+tal que <code>r exp (theta %i) = <var>z</var></code> donde <code>r</code> es la magnitud de <var>z</var>.
+</p>
+<p>La funci&oacute;n <code>carg</code> es computacional, no simplificativa.
+</p>
+<p>La funci&oacute;n <code>carg</code> ignora la declaraci&oacute;n <code>declare (<var>x</var>, complex)</code>,
+y trata a <var>x</var> como una variable real.
+Se trata de un fallo conocido en Maximo. </p>
+<p>V&eacute;anse tambi&eacute;n <code>abs</code> (m&oacute;dulo complejo), <code>polarform</code>, <code>rectform</code>,
+<code>realpart</code> y <code>imagpart</code>.
+</p>
+<p>Ejemplos:
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) carg (1);
+(%o1)                           0
+(%i2) carg (1 + %i);
+                               %pi
+(%o2)                          ---
+                                4
+(%i3) carg (exp (%i));
+(%o3)                           1
+(%i4) carg (exp (%pi * %i));
+(%o4)                          %pi
+(%i5) carg (exp (3/2 * %pi * %i));
+                                %pi
+(%o5)                         - ---
+                                 2
+(%i6) carg (17 * exp (2 * %i));
+(%o6)                           2
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Operator especial:</u> <b>constant</b>
+<a name="IDX140"></a>
+</dt>
+<dd><p>La llamada <code>declare (<var>a</var>, constant)</code> declara <var>a</var> como constante.
+V&eacute;ase <code>declare</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>constantp</b><i> (<var>expr</var>)</i>
+<a name="IDX141"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> es una expresi&oacute;n constante y <code>false</code> en caso contrario.
+</p>
+<p>Una expresi&oacute;n se considera constante si sus argumentos son n&uacute;meros (incluidos los n&uacute;meros racionales que se muestran con <code>/R/</code>), constantes simb&oacute;licas como <code>%pi</code>, <code>%e</code> o <code>%i</code>, variables con valor constante o declarada como constante por <code>declare</code>,
+o funciones cuyos argumentos son constantes.
+</p>
+<p>La funci&oacute;n <code>constantp</code> eval&uacute;a sus argumentos.
+</p>
+<p>Ejemplos:
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) constantp (7 * sin(2));
+(%o1)                                true
+(%i2) constantp (rat (17/29));
+(%o2)                                true
+(%i3) constantp (%pi * sin(%e));
+(%o3)                                true
+(%i4) constantp (exp (x));
+(%o4)                                false
+(%i5) declare (x, constant);
+(%o5)                                done
+(%i6) constantp (exp (x));
+(%o6)                                true
+(%i7) constantp (foo (x) + bar (%e) + baz (2));
+(%o7)                                false
+(%i8) 
+</pre></td></tr></table></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>declare</b><i> (<var>a_1</var>, <var>f_1</var>, <var>a_2</var>, <var>f_2</var>, ...)</i>
+<a name="IDX142"></a>
+</dt>
+<dd><p>Asigna al &aacute;tomo o lista de &aacute;tomos <var>a_i</var> la propiedad o lista de 
+propiedades<var>p_i</var>. Si <var>a_i</var> y/o <var>p_i</var> son listas, cada uno de
+los &aacute;tomos adquiere todas las propiedades.
+</p>
+<p>La funci&oacute;n <code>declare</code> no eval&uacute;a sus argumentos y siempre devuelve la
+expresi&oacute;n <code>done</code>.
+</p>
+<p>La llamada <code>featurep (<var>object</var>, <var>feature</var>)</code> devuelve <code>true</code>
+si <var>object</var> ha sido previamente declarado como poseedor de la propiedad
+<var>feature</var>. No obstante, <code>featurep</code> no reconoce algunas propiedades, 
+lo cual es un fallo conocido de Maxima.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>features</code>.
+</p>
+<p>La funci&oacute;n <code>declare</code> reconoce las siguientes propiedades:
+</p>
+<dl compact="compact">
+<dt></dt>
+<dd><p><code>evfun</code>
+Hace que <var>a_i</var> sea reconocida por <code>ev</code>, de manera que la funci&oacute;n
+nombrada por <var>a_i</var> se aplique cuando <var>a_i</var> aparezca como argumento
+de control de <code>ev</code>.
+V&eacute;ase <code>evfun</code>.
+</p>
+
+</dd>
+<dt> <code>evflag</code></dt>
+<dd><p>Hace que <var>a_i</var> sea reconocida por <code>ev</code>, de manera que a <var>a_i</var> se le
+asigne el valor <code>true</code> durante la ejecuci&oacute;n de <code>ev</code> cuando <var>a_i</var> 
+aparezca como argumento de control de <code>ev</code>.
+</p>
+</dd>
+<dt> <code>bindtest</code></dt>
+<dd><p>Hace que Maxima env&iacute;e un error si <var>a_i</var> es evaluado sin hab&eacute;rsele
+asignado un valor.
+</p>
+</dd>
+<dt> <code>noun</code></dt>
+<dd><p>Hace que Maxima considere a <var>a_i</var> como un nombre. El efecto
+que se obtiene es que se reemplazan todas las expresiones <var>a_i</var>
+por <code>'<var>a_i</var></code> o <code>nounify (<var>a_i</var>)</code>,
+dependiendo del contexto.
+</p>
+</dd>
+<dt> <code>constant</code></dt>
+<dd><p>Hace que Maxima considere a <var>a_i</var> como una constante
+simb&oacute;lica.
+</p>
+</dd>
+<dt> <code>scalar</code></dt>
+<dd><p>Hace que Maxima considere a <var>a_i</var> como una variable escalar.
+</p>
+</dd>
+<dt> <code>nonscalar</code></dt>
+<dd><p>Hace que Maxima considere a <var>a_i</var> como una variable no escalar.
+Se aplica com&uacute;nmente para declarar una variable como un vector simb&oacute;lico
+o una matriz simb&oacute;lica.
+</p>
+</dd>
+<dt> <code>mainvar</code></dt>
+<dd><p>Hace que Maxima considere a <var>a_i</var> como una &quot;variable principal&quot; (<code>mainvar</code>);
+<code>ordergreatp</code> determina la ordenaci&oacute;n de los &aacute;tomos como sigue:
+</p>
+<p>(variables principales) &gt; (otras variables) &gt; (variables escalares) &gt; (constantes) &gt; (n&uacute;meros)
+</p>
+</dd>
+<dt> <code>alphabetic</code></dt>
+<dd><p>Indica a Maxima que reconozca todos los caracteres de la cadena alfanum&eacute;rica
+<var>a_i</var> como caracteres alfab&eacute;ticos.
+</p>
+</dd>
+<dt> <code>feature</code></dt>
+<dd><p>Hace que Maxima considere a <var>a_i</var> como el nombre de una propiedad.
+Otros &aacute;tomos podr&aacute;n ser declarados entonces como poseedores de
+la propiedad <var>a_i</var>.
+</p>
+</dd>
+<dt> <code>rassociative</code>, <code>lassociative</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una funci&oacute;n asociativa por la derecha o
+por la izquierda.
+</p>
+</dd>
+<dt> <code>nary</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una funci&oacute;n n-aria.
+</p>
+<p>La declaraci&oacute;n <code>nary</code> no es equivalente a la funci&oacute;n <code>nary</code>.
+El &uacute;nico efecto de <code>declare(foo, nary)</code> consiste en hacer que
+el simplificador de Maxima reduzca expresiones anidadas; por ejemplo, 
+para transformar <code>foo(x, foo(y, z))</code> a <code>foo(x, y, z)</code>.
+</p>
+</dd>
+<dt> <code>symmetric</code>, <code>antisymmetric</code>, <code>commutative</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una funci&oacute;n sim&eacute;trica o
+antisim&eacute;trica. La propiedad <code>commutative</code> equivale a <code>symmetric</code>.
+</p>
+</dd>
+<dt> <code>evenfun</code>, <code>oddfun</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una funci&oacute;n par o impar.
+</p>
+</dd>
+<dt> <code>outative</code></dt>
+<dd><p>Hace que Maxima simplifique las expresiones <var>a_i</var>
+extrayendo los factores constantes del primer argumento.
+</p>
+<p>Cuando <var>a_i</var> tenga un &uacute;nico argumento, un factor se considerar&aacute; constante
+si es una constante literal o declarada.
+</p>
+<p>Cuando <var>a_i</var> tenga dos o m&aacute;s argumentos, un factor se considerar&aacute; constante
+si el segundo argumento es un s&iacute;mbolo y el factor no contiene al
+segundo argumento.
+</p>
+</dd>
+<dt> <code>multiplicative</code></dt>
+<dd><p>Hace que Maxima simplifique las expresiones <var>a_i</var>
+haciendo uso de la sustituci&oacute;n 
+<code><var>a_i</var>(x * y * z * ...)</code> <code>--&gt;</code> <code><var>a_i</var>(x) * <var>a_i</var>(y) * <var>a_i</var>(z) * ...</code>.
+Tal sustituci&oacute;n se aplica &uacute;nicamente al primer argumento.
+</p>
+</dd>
+<dt> <code>additive</code></dt>
+<dd><p>Hace que Maxima simplifique las expresiones <var>a_i</var>
+haciendo uso de la sustituci&oacute;n 
+<code><var>a_i</var>(x + y + z + ...)</code> <code>--&gt;</code> <code><var>a_i</var>(x) + <var>a_i</var>(y) + <var>a_i</var>(z) + ...</code>.
+Tal sustituci&oacute;n se aplica &uacute;nicamente al primer argumento.
+</p>
+</dd>
+<dt> <code>linear</code></dt>
+<dd><p>Equivale a declarar <var>a_i</var> conjuntamente como <code>outative</code> y <code>additive</code>.
+</p>
+</dd>
+<dt> <code>integer</code>, <code>noninteger</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una variable entera o no entera.
+</p>
+</dd>
+<dt> <code>even</code>, <code>odd</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una variable entera par o impar.
+</p>
+</dd>
+<dt> <code>rational</code>, <code>irrational</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una variable real racional o irracional.
+</p>
+</dd>
+<dt> <code>real</code>, <code>imaginary</code>, <code>complex</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una variable real, imaginaria o compleja.
+</p>
+</dd>
+<dt></dt>
+<dd><p><code>increasing</code>, <code>decreasing</code>
+Hace que Maxima reconozca a <var>a_i</var> como una funci&oacute;n creciente o decreciente.
+</p>
+</dd>
+<dt> <code>posfun</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una funci&oacute;n positiva.
+</p>
+</dd>
+<dt> <code>integervalued</code></dt>
+<dd><p>Hace que Maxima reconozca a <var>a_i</var> como una funci&oacute;n de valor entero.
+</p>
+</dd>
+</dl>
+
+<p>Ejemplos:
+</p>
+<p>Declaraciones en base a <code>evfun</code> y <code>evflag</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) declare (expand, evfun);
+(%o1)                         done
+(%i2) (a + b)^3;
+                                   3
+(%o2)                       (b + a)
+(%i3) (a + b)^3, expand;
+                     3        2      2      3
+(%o3)               b  + 3 a b  + 3 a  b + a
+(%i4) declare (demoivre, evflag);
+(%o4)                         done
+(%i5) exp (a + b*%i);
+                             %i b + a
+(%o5)                      %e
+(%i6) exp (a + b*%i), demoivre;
+                      a
+(%o6)               %e  (%i sin(b) + cos(b))
+</pre></td></tr></table>
+<p>Declaraci&oacute;n en base a  <code>bindtest</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) aa + bb;
+(%o1)                        bb + aa
+(%i2) declare (aa, bindtest);
+(%o2)                         done
+(%i3) aa + bb;
+aa unbound variable
+ -- an error.  Quitting.  To debug this try debugmode(true);
+(%i4) aa : 1234;
+(%o4)                         1234
+(%i5) aa + bb;
+(%o5)                       bb + 1234
+</pre></td></tr></table>
+<p>Declaraci&oacute;n en base a  <code>noun</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) factor (12345678);
+                             2
+(%o1)                     2 3  47 14593
+(%i2) declare (factor, noun);
+(%o2)                         done
+(%i3) factor (12345678);
+(%o3)                   factor(12345678)
+(%i4) ''%, nouns;
+                             2
+(%o4)                     2 3  47 14593
+</pre></td></tr></table>
+<p>Declaraciones en base a <code>constant</code>, <code>scalar</code>, <code>nonscalar</code> y <code>mainvar</code>.
+</p>
+<p>Declaraci&oacute;n en base a <code>alphabetic</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) xx\~yy\`\@ : 1729;
+(%o1)                         1729
+(%i2) declare (&quot;~`@&quot;, alphabetic);
+(%o2)                         done
+(%i3) xx~yy`@ + @yy`xx + `xx@@yy~;
+(%o3)               `xx@@yy~ + @yy`xx + 1729
+(%i4) listofvars (%);
+(%o4)                  [@yy`xx, `xx@@yy~]
+</pre></td></tr></table>
+<p>Declaraci&oacute;n en base a <code>feature</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) declare (FOO, feature);
+(%o1)                         done
+(%i2) declare (x, FOO);
+(%o2)                         done
+(%i3) featurep (x, FOO);
+(%o3)                         true
+</pre></td></tr></table>
+<p>Declaraciones en base a <code>rassociative</code> y <code>lassociative</code>.
+</p>
+<p>Declaraci&oacute;n en base a <code>nary</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) H (H (a, b), H (c, H (d, e)));
+(%o1)               H(H(a, b), H(c, H(d, e)))
+(%i2) declare (H, nary);
+(%o2)                         done
+(%i3) H (H (a, b), H (c, H (d, e)));
+(%o3)                   H(a, b, c, d, e)
+</pre></td></tr></table>
+<p>Declaraciones en base a <code>symmetric</code> y <code>antisymmetric</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) S (b, a);
+(%o1)                        S(b, a)
+(%i2) declare (S, symmetric);
+(%o2)                         done
+(%i3) S (b, a);
+(%o3)                        S(a, b)
+(%i4) S (a, c, e, d, b);
+(%o4)                   S(a, b, c, d, e)
+(%i5) T (b, a);
+(%o5)                        T(b, a)
+(%i6) declare (T, antisymmetric);
+(%o6)                         done
+(%i7) T (b, a);
+(%o7)                       - T(a, b)
+(%i8) T (a, c, e, d, b);
+(%o8)                   T(a, b, c, d, e)
+</pre></td></tr></table>
+<p>Declaraciones en base a <code>oddfun</code> y <code>evenfun</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) o (- u) + o (u);
+(%o1)                     o(u) + o(- u)
+(%i2) declare (o, oddfun);
+(%o2)                         done
+(%i3) o (- u) + o (u);
+(%o3)                           0
+(%i4) e (- u) - e (u);
+(%o4)                     e(- u) - e(u)
+(%i5) declare (e, evenfun);
+(%o5)                         done
+(%i6) e (- u) - e (u);
+(%o6)                           0
+</pre></td></tr></table>
+<p>Declaraci&oacute;n en base a <code>outative</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) F1 (100 * x);
+(%o1)                       F1(100 x)
+(%i2) declare (F1, outative);
+(%o2)                         done
+(%i3) F1 (100 * x);
+(%o3)                       100 F1(x)
+(%i4) declare (zz, constant);
+(%o4)                         done
+(%i5) F1 (zz * y);
+(%o5)                       zz F1(y)
+</pre></td></tr></table>
+<p>Declaraci&oacute;n en base a <code>multiplicative</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) F2 (a * b * c);
+(%o1)                       F2(a b c)
+(%i2) declare (F2, multiplicative);
+(%o2)                         done
+(%i3) F2 (a * b * c);
+(%o3)                   F2(a) F2(b) F2(c)
+</pre></td></tr></table>
+<p>Declaraci&oacute;n en base a <code>additive</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) F3 (a + b + c);
+(%o1)                     F3(c + b + a)
+(%i2) declare (F3, additive);
+(%o2)                         done
+(%i3) F3 (a + b + c);
+(%o3)                 F3(c) + F3(b) + F3(a)
+</pre></td></tr></table>
+<p>Declaraci&oacute;n en base a <code>linear</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) 'sum (F(k) + G(k), k, 1, inf);
+                       inf
+                       ====
+                       \
+(%o1)                   &gt;    (G(k) + F(k))
+                       /
+                       ====
+                       k = 1
+(%i2) declare (nounify (sum), linear);
+(%o2)                         done
+(%i3) 'sum (F(k) + G(k), k, 1, inf);
+                     inf          inf
+                     ====         ====
+                     \            \
+(%o3)                 &gt;    G(k) +  &gt;    F(k)
+                     /            /
+                     ====         ====
+                     k = 1        k = 1
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>disolate</b><i> (<var>expr</var>, <var>x_1</var>, ..., <var>x_n</var>)</i>
+<a name="IDX143"></a>
+</dt>
+<dd><p>Es similar a <code>isolate (<var>expr</var>, <var>x</var>)</code>, excepto que permite al usuario aislar m&aacute;s de una variable simult&aacute;neamente. Puede ser &uacute;til para hacer un cambio de variables en integrales m&uacute;ltiples en las que tales variables dependan de de dos o m&aacute;s variables de integraci&oacute;n.  Esta funci&oacute;n se carga autom&aacute;ticamente desde 
+<tt>`simplification/disol.mac'</tt>.  Se dispone de una demostyraci&oacute;n en <code>demo(&quot;disol&quot;)$</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>dispform</b><i> (<var>expr</var>)</i>
+<a name="IDX144"></a>
+</dt>
+<dd><p>Devuelve la representaci&oacute;n externa de <var>expr</var> con respecto a su operador principal. Es &uacute;til cuando se usa conjuntamente con <code>part</code>, que tambi&eacute;n trata de la representaci&oacute;n externa.  Sip&oacute;ngase que  <var>expr</var> es -A .
+Entonces la representaci&oacute;n interna de  <var>expr</var> es &quot;*&quot;(-1,A), mientras que la representaci&oacute;n externa es &quot;-&quot;(A). La llamada <code>dispform (<var>expr</var>, all)</code> convierte la expresi&oacute;n entera al formato externo.  Por ejemplo, si <code>expr: sin (sqrt (x))</code>, entonces <code>freeof (sqrt, expr)</code> y <code>freeof (sqrt, dispform (expr))</code> dan <code>true</code>, mientras que
+<code>freeof (sqrt, dispform (expr, all))</code> da <code>false</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>distrib</b><i> (<var>expr</var>)</i>
+<a name="IDX145"></a>
+</dt>
+<dd><p>Diistribuye sumas sobre productos.  Difiere de <code>expand</code>
+en que trabaja s&oacute;lo al nivel superior de una expresi&oacute;n, siendo m&aacute;s r&aacute;pida que <code>expand</code>.  Difiere de  <code>multthru</code> en que expande todas las sumas del nivel superior.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) distrib ((a+b) * (c+d));
+(%o1)                 b d + a d + b c + a c
+(%i2) multthru ((a+b) * (c+d));
+(%o2)                 (b + a) d + (b + a) c
+(%i3) distrib (1/((a+b) * (c+d)));
+                                1
+(%o3)                    ---------------
+                         (b + a) (d + c)
+(%i4) expand (1/((a+b) * (c+d)), 1, 0);
+                                1
+(%o4)                 ---------------------
+                      b d + a d + b c + a c
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>dpart</b><i> (<var>expr</var>, <var>n_1</var>, ..., <var>n_k</var>)</i>
+<a name="IDX146"></a>
+</dt>
+<dd><p>Selecciona la misma expresi&oacute;n que <code>part</code>, pero en lugar de devolver esa expresi&oacute;n como su valor, devuelve la expresi&oacute;n completa con la subexpresi&oacute;n seleccionada dentro de una caja. La caja es parte de la expresi&oacute;n.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) dpart (x+y/z^2, 1, 2, 1);
+                             y
+(%o1)                       ---- + x
+                               2
+                            &quot;&quot;&quot;
+                            &quot;z&quot;
+                            &quot;&quot;&quot;
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>exp</b><i> (<var>x</var>)</i>
+<a name="IDX147"></a>
+</dt>
+<dd><p>Representa la funci&oacute;n exponencial.  
+La expresi&oacute;n  <code>exp (<var>x</var>)</code> en la entrada se simplifica en <code>%e^<var>x</var></code>;
+<code>exp</code> no aparece en expresiones simplificadas.
+</p>
+<p>Si la variable <code>demoivre</code> vale <code>true</code> hace que <code>%e^(a + b %i)</code> se simplifique a
+<code>%e^(a (cos(b) + %i sin(b)))</code> si <code>b</code> no contiene a <code>%i</code>. V&eacute;ase <code>demoivre</code>.
+</p>
+<p>Si la variable <code>%emode</code> vale <code>true</code>, 
+hace que  <code>%e^(%pi %i x)</code> se simplifique. V&eacute;ase <code>%emode</code>.
+</p>
+<p>Si la variable <code>%enumer</code> vale <code>true</code> hace que <code>%e</code> se reemplace por
+2.718...  siempre que <code>numer</code> valga <code>true</code>. V&eacute;ase <code>%enumer</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>%emode</b>
+<a name="IDX148"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Si <code>%emode</code> vale <code>true</code>,
+<code>%e^(%pi %i x)</code> se simplifica como sigue.
+</p>
+<p><code>%e^(%pi %i x)</code> se simplifica a <code>cos (%pi x) + %i sin (%pi x)</code> si <code>x</code> es un entero o m&uacute;ltiplo de 1/2, 1/3, 1/4 o 1/6, y luego se sigue simplificando.
+</p>
+<p>Para otros valores num&eacute;ricos de <code>x</code>,
+<code>%e^(%pi %i x)</code> se simplifica a <code>%e^(%pi %i y)</code> donde <code>y</code> es <code>x - 2 k</code>
+para alg&uacute;n entero <code>k</code> tal que <code>abs(y) &lt; 1</code>.  
+</p>
+<p>Si <code>%emode</code> vale <code>false</code>, no se realizan simplificaciones especiales a <code>%e^(%pi %i x)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>%enumer</b>
+<a name="IDX149"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si la variable <code>%enumer</code> vale <code>true</code> hace que <code>%e</code> se reemplace por
+2.718...  siempre que <code>numer</code> valga <code>true</code>. 
+</p>
+<p>Si <code>%enumer</code> vale <code>false</code>, esta sustituci&oacute;n se realiza s&oacute;lo si el exponente en <code>%e^x</code> tiene un valor num&eacute;rico.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>ev</code> y <code>numer</code>.
+</p>
+</dd></dl>
+
+
+
+
+<dl>
+<dt><u>Variable opcional:</u> <b>exptsubst</b>
+<a name="IDX150"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>exptsubst</code> vale <code>true</code> permite la sustituci&oacute;n <code>y</code> por <code>%e^x</code> en <code>%e^(a x)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>freeof</b><i> (<var>x_1</var>, ..., <var>x_n</var>, <var>expr</var>)</i>
+<a name="IDX151"></a>
+</dt>
+<dd><p><code>freeof (<var>x_1</var>, <var>expr</var>)</code>
+Devuelve <code>true</code>
+si ninguna subexpresi&oacute;n de  <var>expr</var> es igual a <var>x_1</var>
+o si  <var>x_1</var> aparece como variable muda en <var>expr</var>,
+devolviendo <code>false</code> en otro caso.
+</p>
+<p>La llamada <code>freeof (<var>x_1</var>, ..., <var>x_n</var>, <var>expr</var>)</code>
+equivale a <code>freeof (<var>x_1</var>, <var>expr</var>) and ... and freeof (<var>x_n</var>, <var>expr</var>)</code>.
+</p>
+<p>Los argumentos <var>x_1</var>, ..., <var>x_n</var> 
+pueden seer nombres de funciones y variables, nombres subindicados,
+operadores (encerrados entre comillas dobles) o expresiones generales.
+La funci&oacute;n <code>freeof</code> eval&uacute;a sus argumentos.
+</p>
+<p>Una variable es una variable muda en una expresi&oacute;n si no tiene valor asignado fuera de la expresi&oacute;n.
+Variable mudas reconocidas por  <code>freeof</code> son el &iacute;ndice de una suma o producto, la variable l&iacute;mite en <code>limit</code>,
+la variable de integraci&oacute;n en la versi&oacute;n de integral definida de <code>integrate</code>,
+la variable original en <code>laplace</code>,
+variables formales en expresiones <code>at</code> y
+los argumentos de las expresiones  <code>lambda</code>.
+Las variables locales en  <code>block</code> no son reconocidas por <code>freeof</code> como variables mudas;
+esto es un fallo de Maxima.
+</p>
+<p>La versi&oacute;n indefinida de  <code>integrate</code> no est&aacute; libre de su variable de integraci&oacute;n.
+</p>
+<ul>
+<li>
+Los argumentos son nombres de funciones, variables, nombres subindicados, operaores y expresiones. La llamada 
+<code>freeof (a, b, expr)</code> equivale a
+<code>freeof (a, expr) and freeof (b, expr)</code>.
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr: z^3 * cos (a[1]) * b^(c+d);
+                                 d + c  3
+(%o1)                   cos(a ) b      z
+                             1
+(%i2) freeof (z, expr);
+(%o2)                         false
+(%i3) freeof (cos, expr);
+(%o3)                         false
+(%i4) freeof (a[1], expr);
+(%o4)                         false
+(%i5) freeof (cos (a[1]), expr);
+(%o5)                         false
+(%i6) freeof (b^(c+d), expr);
+(%o6)                         false
+(%i7) freeof (&quot;^&quot;, expr);
+(%o7)                         false
+(%i8) freeof (w, sin, a[2], sin (a[2]), b*(c+d), expr);
+(%o8)                         true
+</pre></td></tr></table>
+</li><li>
+<code>freeof</code> eval&uacute;a sus argumentos.
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr: (a+b)^5$
+(%i2) c: a$
+(%i3) freeof (c, expr);
+(%o3)                         false
+</pre></td></tr></table>
+</li><li>
+<code>freeof</code> no considera funciones equivalentes.
+La simplificaci&oacute;n puede dar una expresi&oacute;n equivalente pero diferente.
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr: (a+b)^5$
+(%i2) expand (expr);
+          5        4       2  3       3  2      4      5
+(%o2)    b  + 5 a b  + 10 a  b  + 10 a  b  + 5 a  b + a
+(%i3) freeof (a+b, %);
+(%o3)                         true
+(%i4) freeof (a+b, expr);
+(%o4)                         false
+(%i5) exp (x);
+                                 x
+(%o5)                          %e
+(%i6) freeof (exp, exp (x));
+(%o6)                         true
+</pre></td></tr></table>
+</li><li>
+Un sumatorio o integral definida est&aacute; libre de su variable muda.
+Una integral indefinida de  <code>integrate</code> no est&aacute; libre de su variable de integraci&oacute;n
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) freeof (i, 'sum (f(i), i, 0, n));
+(%o1)                         true
+(%i2) freeof (x, 'integrate (x^2, x, 0, 1));
+(%o2)                         true
+(%i3) freeof (x, 'integrate (x^2, x));
+(%o3)                         false
+</pre></td></tr></table></li></ul>
+
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>genfact</b><i> (<var>x</var>, <var>y</var>, <var>z</var>)</i>
+<a name="IDX152"></a>
+</dt>
+<dd><p>Devuelve el factorial generalizado, definido como
+<code>x (x-z) (x - 2 z) ... (x - (y - 1) z)</code>.  As&iacute;, para el entero <var>x</var>,
+<code>genfact (x, x, 1) = x!</code> y <code>genfact (x, x/2, 2) = x!!</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>imagpart</b><i> (<var>expr</var>)</i>
+<a name="IDX153"></a>
+</dt>
+<dd><p>Devuelve la parte imaginaria de la expresi&oacute;n <var>expr</var>.
+</p>
+<p>La funci&oacute;n <code>imagpart</code> es computacional,
+no simplificativa.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>abs</code>, <code>carg</code>, <code>polarform</code>, <code>rectform</code> y <code>realpart</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>infix</b><i> (<var>op</var>)</i>
+<a name="IDX154"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>infix</b><i> (<var>op</var>, <var>lbp</var>, <var>rbp</var>)</i>
+<a name="IDX155"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>infix</b><i> (<var>op</var>, <var>lbp</var>, <var>rbp</var>, <var>lpos</var>, <var>rpos</var>, <var>pos</var>)</i>
+<a name="IDX156"></a>
+</dt>
+<dd><p>Declara <var>op</var> como operador infijo.
+Un operador infijo es una funci&oacute;n de dos argumentos,
+con el nombre de la funci&oacute;n escrito entre sus argumentos.
+Por ejemplo, el operador de sustracci&oacute;n <code>-</code> es un operador infijo.
+</p>
+<p><code>infix (<var>op</var>)</code> declara <var>op</var> como operador infijo
+con fuerzas de ligadura por la izquierda y por la derecha iguales a 180, que es el valor por defecto, 
+y partes izquierda y derecha iguales a <code>any</code>.
+</p>
+<p><code>infix (<var>op</var>, <var>lbp</var>, <var>rbp</var>)</code> declara <var>op</var> como operador infijo
+con fuerzas de ligadura por la izquierda y por la derecha declaradas en los argumentos, siendo las partes izquierda y derecha iguales a <code>any</code>.
+</p>
+<p><code>infix (<var>op</var>, <var>lbp</var>, <var>rbp</var>, <var>lpos</var>, <var>rpos</var>, <var>pos</var>)</code>
+declara <var>op</var> como operador infijo
+con fuerzas de ligadura por la izquierda y por la derecha y partes declaradas en los argumentos.
+</p>
+<p>La precedencia de <var>op</var> con respecto a otros operadores deriva de las fuerzas de ligadura de los operadores en cuesti&oacute;n.
+Si las fuerzas de ligadura a izquierda y derecha de <var>op</var> son ambas mayores que las fuerzas de ligadura a izquierda y derecha de otro operador, entonces <var>op</var> tiene preferencia sobre el otro operador. Si las fuerzas de ligadura no son ambas mayores o menores, se aplican otras relaciones m&aacute;s complejas.
+</p>
+<p>La asociatividad de <var>op</var> depende de las fuerzas de ligadura.
+Una mayor fuerza de ligadura a la izquierda (<var>lbp</var>) implica que <var>op</var> sea evaluado antes que otros operadores a su izquierda en la expresi&oacute;n, mientras que mayor fuerza de ligadura a la derecha (<var>rbp</var>) implica que <var>op</var> sea evaluado antes que otros operadores a su derecha en la expresi&oacute;n.
+As&iacute;, si <var>lbp</var> es mayor, <var>op</var> es asociativo por la derecha, mientras que si <var>rbp</var> es mayor, <var>op</var> es asociativo por la izquierda.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>Syntax</code>.
+</p>
+<p>Ejemplos:
+</p>
+<ul>
+<li>
+Si las fuerzas de ligadura a izquierda y derecha de <var>op</var> son ambas mayores que las fuerzas de ligadura a izquierda y derecha de otro operador, entonces <var>op</var> tiene preferencia sobre el otro operador.
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) &quot;@&quot;(a, b) := sconcat(&quot;(&quot;, a, &quot;,&quot;, b, &quot;)&quot;)$
+(%i2) :lisp (get '$+ 'lbp)
+100
+(%i2) :lisp (get '$+ 'rbp)
+100
+(%i2) infix (&quot;@&quot;, 101, 101)$
+(%i3) 1 + a@b + 2;
+(%o3)                       (a,b) + 3
+(%i4) infix (&quot;@&quot;, 99, 99)$
+(%i5) 1 + a@b + 2;
+(%o5)                       (a+1,b+2)
+</pre></td></tr></table>
+<ul>
+<li>
+Mayor <var>lbp</var> hace a <var>op</var> asociativo por la derecha,
+mientras que mayor  <var>rbp</var> hace a <var>op</var> asociativo por la izquierda.
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) &quot;@&quot;(a, b) := sconcat(&quot;(&quot;, a, &quot;,&quot;, b, &quot;)&quot;)$
+(%i2) infix (&quot;@&quot;, 100, 99)$
+(%i3) foo @ bar @ baz;
+(%o3)                    (foo,(bar,baz))
+(%i4) infix (&quot;@&quot;, 100, 101)$
+(%i5) foo @ bar @ baz;
+(%o5)                    ((foo,bar),baz)
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>inflag</b>
+<a name="IDX157"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>inflag</code> vale <code>true</code>, las funciones para la extracci&oacute;n de partes inspeccionan la forma interna de <code>expr</code>.
+</p>
+<p>N&oacute;tese que el simplificador reordena expresiones.
+As&iacute;,  <code>first (x + y)</code> devuelve <code>x</code> si <code>inflag</code>
+vale <code>true</code> y <code>y</code> si <code>inflag</code> vale <code>false</code>.
+(<code>first (y + x)</code> devuelve el mismo resultado.)
+</p>
+<p>Adem&aacute;s, d&aacute;ndole a  <code>inflag</code> el valor <code>true</code> y llamando a <code>part</code> o  a <code>substpart</code> es lo mismo que llamar a <code>inpart</code> o a <code>substinpart</code>.
+</p>
+<p>Las funciones que se ven afectadas por el valor de <code>inflag</code> son:
+<code>part</code>, <code>substpart</code>, <code>first</code>, <code>rest</code>, <code>last</code>, <code>length</code>,
+la construcci&oacute;n <code>for</code> ... <code>in</code>,
+<code>map</code>, <code>fullmap</code>, <code>maplist</code>, <code>reveal</code> y <code>pickapart</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>inpart</b><i> (<var>expr</var>, <var>n_1</var>, ..., <var>n_k</var>)</i>
+<a name="IDX158"></a>
+</dt>
+<dd><p>Similar a <code>part</code>, pero trabaja con la representaci&oacute;n interna de la expresi&oacute;n, siendo m&aacute;s r&aacute;pida. Se debe tener cuidado con el orden de subexpresiones en sumas y productos, pues el orden de las variables en la forma interna es normalmente diferente al que se muestra por el terminal, y cuando se trata con el signo menos unario, resta y divisi&oacute;n, pues estos operadores desaparecen de la expresi&oacute;n. Las llamadas <code>part (x+y, 0)</code> o <code>inpart (x+y, 0)</code> devuelven <code>+</code>, siendo necesario encerrar el operador entre comillas dobles cuando se haga referencia a&eacute;l. Por ejemplo,
+<code>... if inpart (%o9,0) = &quot;+&quot; then ...</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x + y + w*z;
+(%o1)                      w z + y + x
+(%i2) inpart (%, 3, 2);
+(%o2)                           z
+(%i3) part (%th (2), 1, 2);
+(%o3)                           z
+(%i4) 'limit (f(x)^g(x+1), x, 0, minus);
+                                  g(x + 1)
+(%o4)                 limit   f(x)
+                      x -&gt; 0-
+(%i5) inpart (%, 1, 2);
+(%o5)                       g(x + 1)
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>isolate</b><i> (<var>expr</var>, <var>x</var>)</i>
+<a name="IDX159"></a>
+</dt>
+<dd><p>Devuelve <var>expr</var> con subexpresiones que son sumas y que no contienen variables reemplazadas por etiquetas de expresiones intermedias (tales etiquetas son s&iacute;mbolos at&oacute;micos como <code>%t1</code>, <code>%t2</code>, ...).  Esta funci&oacute;n es de utilidad para evitar la expansi&oacute;n innecesaria de subexpresiones que no contienen la variable de inter&eacute;s. Puesto que las etiquetas intermedias toman el valor de subexpresiones pueden ser todas sustituidas evaluando la expresi&oacute;n en la que aparecen.
+</p>
+<p>Si la variable <code>exptisolate</code>, cuyo valor por defecto es <code>false</code>, vale <code>true</code> har&aacute; que <code>isolate</code> busque exponentes de &aacute;tomos (como <code>%e</code>) que contengan la variable.
+</p>
+<p>Si <code>isolate_wrt_times</code> vale <code>true</code>, entonces <code>isolate</code> tambi&eacute;n aislar&aacute; respecto de los productos. V&eacute;ase <code>isolate_wrt_times</code>.
+</p>
+<p>Para ejemplos, ejec&uacute;tese <code>example (isolate)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>isolate_wrt_times</b>
+<a name="IDX160"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>isolate_wrt_times</code> vale <code>true</code>, entonces <code>isolate</code> tambi&eacute;n aislar&aacute; respecto de los productos. Comp&aacute;rese el comportamiento de <code>isolate</code> al cambiar el valor de esta variable global en el siguiente ejemplo,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) isolate_wrt_times: true$
+(%i2) isolate (expand ((a+b+c)^2), c);
+
+(%t2)                          2 a
+
+
+(%t3)                          2 b
+
+
+                          2            2
+(%t4)                    b  + 2 a b + a
+
+                     2
+(%o4)               c  + %t3 c + %t2 c + %t4
+(%i4) isolate_wrt_times: false$
+(%i5) isolate (expand ((a+b+c)^2), c);
+                     2
+(%o5)               c  + 2 b c + 2 a c + %t4
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>listconstvars</b>
+<a name="IDX161"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>listconstvars</code> vale <code>true</code>, har&aacute; que <code>listofvars</code> incluya <code>%e</code>, <code>%pi</code>, <code>%i</code> y cualquier otra variable que sea declarada constante de las que aparezcan en el argumento de <code>listofvars</code>.
+Estas constantes se omiten por defecto.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>listdummyvars</b>
+<a name="IDX162"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Si <code>listdummyvars</code> vale <code>false</code>, las &quot;variables mudas&quot; de la expresi&oacute;n no ser&aacute;n inclu&iacute;das en la lista devuelta por <code>listofvars</code>. (La definici&oacute;n de &quot;variables mudas&quot; se encuentra en la descripci&oacute;n de <code>freeof</code>.
+&quot;Variables mudas&quot; son objetos matem&aacute;ticos como el &iacute;ndice de un sumatorio o producto, una variable l&iacute;mite o la variable de una integraci&oacute;n definida.)
+Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) listdummyvars: true$
+(%i2) listofvars ('sum(f(i), i, 0, n));
+(%o2)                        [i, n]
+(%i3) listdummyvars: false$
+(%i4) listofvars ('sum(f(i), i, 0, n));
+(%o4)                          [n]
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>listofvars</b><i> (<var>expr</var>)</i>
+<a name="IDX163"></a>
+</dt>
+<dd><p>Devuelve una lista con las variables presentes en <var>expr</var>.
+</p>
+<p>Si la variable <code>listconstvars</code> vale <code>true</code> entonces  <code>listofvars</code> incluir&aacute; <code>%e</code>, <code>%pi</code>,
+<code>%i</code>y cualquier otra variable declarada constante de las que aparezcan en <var>expr</var>.  Estas constantes se omiten por defecto.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) listofvars (f (x[1]+y) / g^(2+a));
+(%o1)                     [g, a, x , y]
+                                  1
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>lfreeof</b><i> (<var>list</var>, <var>expr</var>)</i>
+<a name="IDX164"></a>
+</dt>
+<dd><p>Para cada miembro  <var>m</var> de <var>list</var>, realiza la llamada <code>freeof (<var>m</var>, <var>expr</var>)</code>.
+Devuelve <code>false</code> si alguna de estas llamadas a <code>freeof</code> retorn&oacute; <code>false</code>, y <code>true</code> en caso contrario.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>lopow</b><i> (<var>expr</var>, <var>x</var>)</i>
+<a name="IDX165"></a>
+</dt>
+<dd><p>Devuelve el m&iacute;nimo exponente de <var>x</var> que aparece expl&iacute;citamente en <var>expr</var>.  As&iacute;,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) lopow ((x+y)^2 + (x+y)^a, x+y);
+(%o1)                       min(a, 2)
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>lpart</b><i> (<var>label</var>, <var>expr</var>, <var>n_1</var>, ..., <var>n_k</var>)</i>
+<a name="IDX166"></a>
+</dt>
+<dd><p>Similar a <code>dpart</code> pero utiliza una caja etiquetada. Una caja etiquetada es similar a la que produce <code>dpart</code>, pero con un nombre en la l&iacute;nea superior.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>multthru</b><i> (<var>expr</var>)</i>
+<a name="IDX167"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>multthru</b><i> (<var>expr_1</var>, <var>expr_2</var>)</i>
+<a name="IDX168"></a>
+</dt>
+<dd><p>Multiplica un factor (que deber&iacute;a ser una suma) de <var>expr</var> por los otros factores de <var>expr</var>.  Esto es, <var>expr</var> es <code><var>f_1</var> <var>f_2</var> ... <var>f_n</var></code>, donde al menos un factor, por ejemplo <var>f_i</var>, es una suma de t&eacute;rminos.  Cada t&eacute;rmino en esta suma se multiplica por los otros factores del producto, excepto el propio <var>f_i</var>. La funci&oacute;n  <code>multthru</code> no expande sumas elevadas a exponentes, siendo el m&eacute;todo m&aacute;s r&aacute;pido para distribuir productos (sean o no conmutativos) sobre sumas. Puesto que los cocientes se representan como productos, puede utilizarse<code>multthru</code> para dividir sumas entre productos.
+</p>
+<p>La llamada <code>multthru (<var>expr_1</var>, <var>expr_2</var>)</code> multiplica cada t&eacute;rmino de <var>expr_2</var> (que deber&iacute;a ser una suma o una ecuaci&oacute;n) por <var>expr_1</var>.  Si <var>expr_1</var> no es ella misma una suma, entonces la llamada es equivalente a <code>multthru (<var>expr_1</var>*<var>expr_2</var>)</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x/(x-y)^2 - 1/(x-y) - f(x)/(x-y)^3;
+                      1        x         f(x)
+(%o1)             - ----- + -------- - --------
+                    x - y          2          3
+                            (x - y)    (x - y)
+(%i2) multthru ((x-y)^3, %);
+                           2
+(%o2)             - (x - y)  + x (x - y) - f(x)
+(%i3) ratexpand (%);
+                           2
+(%o3)                   - y  + x y - f(x)
+(%i4) ((a+b)^10*s^2 + 2*a*b*s + (a*b)^2)/(a*b*s^2);
+                        10  2              2  2
+                 (b + a)   s  + 2 a b s + a  b
+(%o4)            ------------------------------
+                                  2
+                             a b s
+(%i5) multthru (%);  /* note that this does not expand (b+a)^10 */
+                                        10
+                       2   a b   (b + a)
+(%o5)                  - + --- + ---------
+                       s    2       a b
+                           s
+(%i6) multthru (a.(b+c.(d+e)+f));
+(%o6)            a . f + a . c . (e + d) + a . b
+(%i7) expand (a.(b+c.(d+e)+f));
+(%o7)         a . f + a . c . e + a . c . d + a . b
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>nounify</b><i> (<var>f</var>)</i>
+<a name="IDX169"></a>
+</dt>
+<dd><p>Devuelve la forma nominal de la funci&oacute;n cuyo nombre es <var>f</var>.  Puede ser &uacute;til cuando se quiera hacer referencia al nombre de una funci&oacute;n sin que &eacute;sta se ejecute.  N&oacute;tese que algunas funciones verbales devolver&aacute;n su forma nominal si no pueden ser evaluadas para ciertos argumentos.  Esta es tambi&eacute;n la expresi&oacute;n que se obtiene cuando la llamada a una funci&oacute;n va precedida por del ap&oacute;strofo.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>nterms</b><i> (<var>expr</var>)</i>
+<a name="IDX170"></a>
+</dt>
+<dd><p>Devuelve el n&uacute;mero de t&eacute;rminos que  <var>expr</var> llegar&iacute;a a tener si fuese completamente expandida y no hubiesen cancelaciones ni combinaciones de t&eacute;rminos semejantes.
+N&oacute;tese que expresiones como <code>sin (<var>expr</var>)</code>, <code>sqrt (<var>expr</var>)</code>, <code>exp (<var>expr</var>)</code>, etc.
+cuentan como un s&oacute;lo t&eacute;rmino, independientemente de cu&aacute;ntos t&eacute;rminos tenga a su vez <var>expr</var> en caso de tratarse de una suma.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>op</b><i> (<var>expr</var>)</i>
+<a name="IDX171"></a>
+</dt>
+<dd><p>Devuelve el operador principal de la expresi&oacute;n <var>expr</var>. La llamada
+<code>op (<var>expr</var>)</code> equivale a <code>part (<var>expr</var>, 0)</code>. 
+</p>
+<p>La funci&oacute;n <code>op</code> devuelve una cadena si el operador principal es un operador prefijo, infijo (binario o <code>n</code>-ario), postfijo, &quot;bi-fijo&quot; o &quot;no-fijo&quot; (&quot;bi-fijo&quot;  se refiere a un par de s&iacute;mbolos que encierran su o sus argumentos, y &quot;no-fijo&quot; es un operador que no necesita argumentos).
+Si <var>expr</var> es la expresi&oacute;n de una funci&oacute;n
+subindicada, <code>op</code> devuelve la funci&oacute;n subindicada;
+en cuyo caso el valor devuelto no es un &aacute;tomo.
+En otro caso, <var>expr</var> es la expresi&oacute;n de una funci&oacute;n array u
+ordinaria, y entonces <code>op</code> devuelve un s&iacute;mbolo.
+</p>
+<p>La funci&oacute;n <code>op</code> observa el valor de la variable global <code>inflag</code>.
+</p>
+<p>La funci&oacute;n <code>op</code> eval&uacute;a sus argumentos.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>args</code>.
+</p>
+<p>Ejemplos:
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) stringdisp: true$
+(%i2) op (a * b * c);
+(%o2)                          &quot;*&quot;
+(%i3) op (a * b + c);
+(%o3)                          &quot;+&quot;
+(%i4) op ('sin (a + b));
+(%o4)                          sin
+(%i5) op (a!);
+(%o5)                          &quot;!&quot;
+(%i6) op (-a);
+(%o6)                          &quot;-&quot;
+(%i7) op ([a, b, c]);
+(%o7)                          &quot;[&quot;
+(%i8) op ('(if a &gt; b then c else d));
+(%o8)                         &quot;if&quot;
+(%i9) op ('foo (a));
+(%o9)                          foo
+(%i10) prefix (foo);
+(%o10)                        &quot;foo&quot;
+(%i11) op (foo a);
+(%o11)                        &quot;foo&quot;
+(%i12) op (F [x, y] (a, b, c));
+(%o12)                        F
+                               x, y
+(%i13) op (G [u, v, w]);
+(%o13)                          G
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>operatorp</b><i> (<var>expr</var>, <var>op</var>)</i>
+<a name="IDX172"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>operatorp</b><i> (<var>expr</var>, [<var>op_1</var>, ..., <var>op_n</var>])</i>
+<a name="IDX173"></a>
+</dt>
+<dd><p>La llamada <code>operatorp (<var>expr</var>, <var>op</var>)</code> devuelve <code>true</code>
+si <var>op</var> es igual al operador de <var>expr</var>.
+</p>
+<p>La llamada <code>operatorp (<var>expr</var>, [<var>op_1</var>, ..., <var>op_n</var>])</code> devuelve <code>true</code>
+si alg&uacute;n elemento  <var>op_1</var>, ..., <var>op_n</var> es igual al operador de <var>expr</var>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>optimize</b><i> (<var>expr</var>)</i>
+<a name="IDX174"></a>
+</dt>
+<dd><p>Devuelve una expresi&oacute;n que produce el mismo valor y efectos secundarios que <var>expr</var>, pero de forma m&aacute;s eficiente al evitar recalcular subexpresiones comunes. La funci&oacute;n <code>optimize</code> tambi&eacute;n tiene el efecto secundario de colapsar su argumento de manera que se compartan todas sus subexpresiones comunes.
+H&aacute;gase <code>example (optimize)</code> para ver ejemplos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>optimprefix</b>
+<a name="IDX175"></a>
+</dt>
+<dd><p>Valor por defecto: <code>%</code>
+</p>
+<p>La variable <code>optimprefix</code> es el prefijo utilizado para los s&iacute;mbolos generados por la instrucci&oacute;n <code>optimize</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>ordergreat</b><i> (<var>v_1</var>, ..., <var>v_n</var>)</i>
+<a name="IDX176"></a>
+</dt>
+<dd><p>Establece una ordenaci&oacute;n para las variables <var>v_1</var>, ..., <var>v_n</var>
+de manera que <var>v_1</var> &gt; <var>v_2</var> &gt; ...  &gt; <var>v_n</var> y
+<var>v_n</var> &gt; cualquier otra variable no mencionada como argumento.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>orderless</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>ordergreatp</b><i> (<var>expr_1</var>, <var>expr_2</var>)</i>
+<a name="IDX177"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr_2</var> precede a <var>expr_1</var> seg&uacute;n el orden establecido con la funci&oacute;n <code>ordergreat</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>orderless</b><i> (<var>v_1</var>, ..., <var>v_n</var>)</i>
+<a name="IDX178"></a>
+</dt>
+<dd><p>Establece una ordenaci&oacute;n para las variables <var>v_1</var>, ..., <var>v_n</var>
+de manera que <var>v_1</var> &lt; <var>v_2</var> &lt; ...  &lt; <var>v_n</var> y
+<var>v_n</var> &lt; cualquier otra variable no mencionada como argumento.
+</p>
+<p>As&iacute;, la ordenaci&oacute;n completa de objetos es: constantes num&eacute;ricas &lt;
+constantes declaradas &lt; escalares declarados &lt; primer argumento de <code>orderless</code> &lt;
+...  &lt; &uacute;ltimo argumento de <code>orderless</code> &lt; variables que empiezan por A &lt; ...
+&lt; variables que empiezan por Z &lt; &uacute;ltimo argumento de  <code>ordergreat</code> &lt;
+ ... &lt; primer argumento de <code>ordergreat</code> &lt; objetos declarados como <code>mainvar</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>ordergreat</code> y <code>mainvar</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>orderlessp</b><i> (<var>expr_1</var>, <var>expr_2</var>)</i>
+<a name="IDX179"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr_1</var> precede a <var>expr_2</var> seg&uacute;n el orden establecido con la funci&oacute;n <code>orderless</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>part</b><i> (<var>expr</var>, <var>n_1</var>, ..., <var>n_k</var>)</i>
+<a name="IDX180"></a>
+</dt>
+<dd><p>Devuelve partes de la forma mostrada de <code>expr</code>. Obtiene la parte de <code>expr</code> que se especifica por los &iacute;ndices <var>n_1</var>, ..., <var>n_k</var>.  Primero se obtiene la parte <var>n_1</var> de <code>expr</code>, despu&eacute;s la parte <var>n_2</var> del resultado anterior, y as&iacute; sucesivamente.  El resultado que se obtiene es la parte <var>n_k</var> de ... la parte <var>n_2</var> de la parte <var>n_1</var> de <code>expr</code>.
+</p>
+<p>La funci&oacute;n <code>part</code> se puede utilizar para obtener un elemento de una lista, una fila de una matriz, etc.
+</p>
+<p>Si el &uacute;ltimo argumento de la funci&oacute;n <code>part</code> es una lista de &iacute;ndices, entonces se toman varias subexpresiones, cada una de las cuales correspondiente a un &iacute;ndice de la lista.  As&iacute;, <code>part (x + y + z, [1, 3])</code> devuelve <code>z+x</code>.
+</p>
+<p>La variable <code>piece</code> guarda la &uacute;ltima expresi&oacute;n seleccionada con la funci&oacute;n <code>part</code>. Se actualiza durante la ejecuci&oacute;n de la funci&oacute;n, por lo que puede ser referenciada en la misma funci&oacute;n.
+</p>
+<p>Si <code>partswitch</code> vale <code>true</code> entonces de devuelve <code>end</code> cuando no exista la parte seleccionada de una expresi&oacute;n, si vale <code>false</code> se mostrar&aacute; un mensaje de error.
+</p>
+
+<p>Ejemplo: <code>part (z+2*y, 2, 1)</code> devuelve 2.
+</p>
+<p>La instrucci&oacute;n <code>example (part)</code> muestra m&aacute;s ejemplos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>partition</b><i> (<var>expr</var>, <var>x</var>)</i>
+<a name="IDX181"></a>
+</dt>
+<dd><p>Devuelve una lista con dos expresiones, que son: (1) los factores de <var>expr</var> si es un producto, los t&eacute;rminos de <var>expr</var> si es una suma, o los elementos de <var>expr</var>, si es una lista, que no contengan a <var>x</var>, (2) los factores, t&eacute;rminos o lista que contengan a <var>x</var>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) partition (2*a*x*f(x), x);
+(%o1)                     [2 a, x f(x)]
+(%i2) partition (a+b, x);
+(%o2)                      [b + a, 0]
+(%i3) partition ([a, b, f(a), c], a); 
+(%o3)                  [[b, c], [a, f(a)]]
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>partswitch</b>
+<a name="IDX182"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>partswitch</code> vale <code>true</code> entonces de devuelve <code>end</code> cuando no exista la parte seleccionada de una expresi&oacute;n, si vale <code>false</code> se mostrar&aacute; un mensaje de error.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>pickapart</b><i> (<var>expr</var>, <var>n</var>)</i>
+<a name="IDX183"></a>
+</dt>
+<dd><p>Asigna etiquetas de expresiones intermedias a subexpresiones de <var>expr</var> al nivel de profundidad <var>n</var>, que es un entero. A las subexpresiones a un nivel de profundidad mayor o menor no se les asignan etiquetas. La funci&oacute;n
+<code>pickapart</code> devuelve una expresi&oacute;n en t&eacute;rminos de expresiones intermedias equivalente a la expresi&oacute;n original <var>expr</var>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>part</code>, <code>dpart</code>, <code>lpart</code>, <code>inpart</code> y <code>reveal</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr: (a+b)/2 + sin (x^2)/3 - log (1 + sqrt(x+1));
+                                          2
+                                     sin(x )   b + a
+(%o1)       - log(sqrt(x + 1) + 1) + ------- + -----
+                                        3        2
+(%i2) pickapart (expr, 0);
+
+                                          2
+                                     sin(x )   b + a
+(%t2)       - log(sqrt(x + 1) + 1) + ------- + -----
+                                        3        2
+
+(%o2)                          %t2
+(%i3) pickapart (expr, 1);
+
+(%t3)                - log(sqrt(x + 1) + 1)
+
+
+                                  2
+                             sin(x )
+(%t4)                        -------
+                                3
+
+
+                              b + a
+(%t5)                         -----
+                                2
+
+(%o5)                    %t5 + %t4 + %t3
+(%i5) pickapart (expr, 2);
+
+(%t6)                 log(sqrt(x + 1) + 1)
+
+
+                                  2
+(%t7)                        sin(x )
+
+
+(%t8)                         b + a
+
+                         %t8   %t7
+(%o8)                    --- + --- - %t6
+                          2     3
+(%i8) pickapart (expr, 3);
+
+(%t9)                    sqrt(x + 1) + 1
+
+
+                                2
+(%t10)                         x
+
+                  b + a              sin(%t10)
+(%o10)            ----- - log(%t9) + ---------
+                    2                    3
+(%i10) pickapart (expr, 4);
+
+(%t11)                     sqrt(x + 1)
+
+                      2
+                 sin(x )   b + a
+(%o11)           ------- + ----- - log(%t11 + 1)
+                    3        2
+(%i11) pickapart (expr, 5);
+
+(%t12)                        x + 1
+
+                   2
+              sin(x )   b + a
+(%o12)        ------- + ----- - log(sqrt(%t12) + 1)
+                 3        2
+(%i12) pickapart (expr, 6);
+                  2
+             sin(x )   b + a
+(%o12)       ------- + ----- - log(sqrt(x + 1) + 1)
+                3        2
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>System variable:</u> <b>piece</b>
+<a name="IDX184"></a>
+</dt>
+<dd><p>Guarda la &uacute;ltima expresi&oacute;n seleccionada por las funciones <code>part</code>.
+</p>
+
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>polarform</b><i> (<var>expr</var>)</i>
+<a name="IDX185"></a>
+</dt>
+<dd><p>Devuelve una expresi&oacute;n de la forma <code>r %e^(%i theta)</code> equivalente a <var>expr</var>,
+con <code>r</code> y <code>theta</code> son reales.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>powers</b><i> (<var>expr</var>, <var>x</var>)</i>
+<a name="IDX186"></a>
+</dt>
+<dd><p>Devuelve las potencias de <var>x</var> dentro de <var>expr</var>.
+</p>
+<p>La instrucci&oacute;n <code>load (powers)</code> carga esta funci&oacute;n.
+</p>
+
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>product</b><i> (<var>expr</var>, <var>i</var>, <var>i_0</var>, <var>i_1</var>)</i>
+<a name="IDX187"></a>
+</dt>
+<dd><p>Representa el producto de los valores de <code>expr</code> seg&uacute;n el &iacute;ndice <var>i</var> var&iacute;a de <var>i_0</var> hasta <var>i_1</var>.
+La forma nominal <code>'product</code> se presenta en forma de letra pi may&uacute;scula.
+</p>
+<p>La funci&oacute;n <code>product</code> eval&uacute;a <var>expr</var> y los l&iacute;mites inferior y superior, <var>i_0</var> y <var>i_1</var>, pero no eval&uacute;a el &iacute;ndice <var>i</var>.
+</p>
+<p>Si la diferencia entre los l&iacute;mites superior e inferior es un n&uacute;mero entero, la expresi&oacute;n <var>expr</var> se eval&uacute;a para cada valor del &iacute;ndice <var>i</var>, siendo el resultado un producto en forma expl&iacute;cita.
+</p>
+<p>En caso contrario, el rango del &iacute;ndice no est&aacute; definido, aplic&aacute;ndose entonces algunas reglas que permitan simplificar el producto.
+Cuando la variable global <code>simpproduct</code> valga <code>true</code>, se aplicar&aacute;n reglas adicionales.
+En ciertos casos, la simplificaci&oacute;n dar&aacute; lugar a un resultado que ya no tenga el formato del producto; en caso contrario se devolver&aacute; una forma nominal <code>'product</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>nouns</code> y <code>evflag</code>.
+</p>
+
+<p>Ejemplos:
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) product (x + i*(i+1)/2, i, 1, 4);
+(%o1)           (x + 1) (x + 3) (x + 6) (x + 10)
+(%i2) product (i^2, i, 1, 7);
+(%o2)                       25401600
+(%i3) product (a[i], i, 1, 7);
+(%o3)                 a  a  a  a  a  a  a
+                       1  2  3  4  5  6  7
+(%i4) product (a(i), i, 1, 7);
+(%o4)          a(1) a(2) a(3) a(4) a(5) a(6) a(7)
+(%i5) product (a(i), i, 1, n);
+                             n
+                           /===\
+                            ! !
+(%o5)                       ! !  a(i)
+                            ! !
+                           i = 1
+(%i6) product (k, k, 1, n);
+                               n
+                             /===\
+                              ! !
+(%o6)                         ! !  k
+                              ! !
+                             k = 1
+(%i7) product (k, k, 1, n), simpproduct;
+(%o7)                          n!
+(%i8) product (integrate (x^k, x, 0, 1), k, 1, n);
+                             n
+                           /===\
+                            ! !    1
+(%o8)                       ! !  -----
+                            ! !  k + 1
+                           k = 1
+(%i9) product (if k &lt;= 5 then a^k else b^k, k, 1, 10);
+                              15  40
+(%o9)                        a   b
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>realpart</b><i> (<var>expr</var>)</i>
+<a name="IDX188"></a>
+</dt>
+<dd><p>Devuelve la parte real de <var>expr</var>. La funciones <code>realpart</code> y <code>imagpart</code> operan tambi&eacute;n con expresiones que contengan funciones trigonom&eacute;tricas e hiperb&oacute;licas, ra&iacute;ces cuadradas, logaritmos y exponentes.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>rectform</b><i> (<var>expr</var>)</i>
+<a name="IDX189"></a>
+</dt>
+<dd><p>Devuelve una expresi&oacute;n de la forma <code>a + b %i</code> equivalente a <var>expr</var>, con <var>a</var> y <var>b</var> reales.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>rembox</b><i> (<var>expr</var>, unlabelled)</i>
+<a name="IDX190"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>rembox</b><i> (<var>expr</var>, <var>label</var>)</i>
+<a name="IDX191"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>rembox</b><i> (<var>expr</var>)</i>
+<a name="IDX192"></a>
+</dt>
+<dd><p>Elimina cajas de <var>expr</var>.
+</p>
+<p>La llamada <code>rembox (<var>expr</var>, unlabelled)</code> elimina todas las cajas no etiquetadas de <var>expr</var>.
+</p>
+<p>La llamada <code>rembox (<var>expr</var>, <var>label</var>)</code> s&oacute;lo elimina las cajas etiquetadas con <var>label</var>.
+</p>
+<p>La llamada <code>rembox (<var>expr</var>)</code> elimina todas las caajs, independientemente de que est&eacute;n etiquetadas o no.
+</p>
+<p>Las cajas son dibujadas por las funciones <code>box</code>, <code>dpart</code> y <code>lpart</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr: (a*d - b*c)/h^2 + sin(%pi*x);
+                                  a d - b c
+(%o1)                sin(%pi x) + ---------
+                                      2
+                                     h
+(%i2) dpart (dpart (expr, 1, 1), 2, 2);
+                        &quot;&quot;&quot;&quot;&quot;&quot;&quot;    a d - b c
+(%o2)               sin(&quot;%pi x&quot;) + ---------
+                        &quot;&quot;&quot;&quot;&quot;&quot;&quot;      &quot;&quot;&quot;&quot;
+                                     &quot; 2&quot;
+                                     &quot;h &quot;
+                                     &quot;&quot;&quot;&quot;
+(%i3) expr2: lpart (BAR, lpart (FOO, %, 1), 2);
+                  FOO&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;   BAR&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+                  &quot;    &quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;   &quot;a d - b c&quot;
+(%o3)             &quot;sin(&quot;%pi x&quot;)&quot; + &quot;---------&quot;
+                  &quot;    &quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;   &quot;  &quot;&quot;&quot;&quot;   &quot;
+                  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;   &quot;  &quot; 2&quot;   &quot;
+                                   &quot;  &quot;h &quot;   &quot;
+                                   &quot;  &quot;&quot;&quot;&quot;   &quot;
+                                   &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+(%i4) rembox (expr2, unlabelled);
+                                  BAR&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+                   FOO&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;   &quot;a d - b c&quot;
+(%o4)              &quot;sin(%pi x)&quot; + &quot;---------&quot;
+                   &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;   &quot;    2    &quot;
+                                  &quot;   h     &quot;
+                                  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+(%i5) rembox (expr2, FOO);
+                                  BAR&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+                       &quot;&quot;&quot;&quot;&quot;&quot;&quot;    &quot;a d - b c&quot;
+(%o5)              sin(&quot;%pi x&quot;) + &quot;---------&quot;
+                       &quot;&quot;&quot;&quot;&quot;&quot;&quot;    &quot;  &quot;&quot;&quot;&quot;   &quot;
+                                  &quot;  &quot; 2&quot;   &quot;
+                                  &quot;  &quot;h &quot;   &quot;
+                                  &quot;  &quot;&quot;&quot;&quot;   &quot;
+                                  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+(%i6) rembox (expr2, BAR);
+                   FOO&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+                   &quot;    &quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;   a d - b c
+(%o6)              &quot;sin(&quot;%pi x&quot;)&quot; + ---------
+                   &quot;    &quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;     &quot;&quot;&quot;&quot;
+                   &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;     &quot; 2&quot;
+                                      &quot;h &quot;
+                                      &quot;&quot;&quot;&quot;
+(%i7) rembox (expr2);
+                                  a d - b c
+(%o7)                sin(%pi x) + ---------
+                                      2
+                                     h
+</pre></td></tr></table>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sum</b><i> (<var>expr</var>, <var>i</var>, <var>i_0</var>, <var>i_1</var>)</i>
+<a name="IDX193"></a>
+</dt>
+<dd><p>Representa la suma de los valores de <code>expr</code> seg&uacute;n el &iacute;ndice <var>i</var> var&iacute;a de <var>i_0</var> hasta <var>i_1</var>.
+La forma nominal <code>'sum</code> se presenta en forma de letra sigma may&uacute;scula.
+</p>
+<p>La funci&oacute;n <code>sum</code> eval&uacute;a su sumando <var>expr</var> y los l&iacute;mites inferior y superior, <var>i_0</var> y <var>i_1</var>, pero no eval&uacute;a el &iacute;ndice <var>i</var>.
+</p>
+<p>Si la diferencia entre los l&iacute;mites superior e inferior es un n&uacute;mero entero, el sumando <var>expr</var> se eval&uacute;a para cada valor del &iacute;ndice <var>i</var>, siendo el resultado una suma en forma expl&iacute;cita.
+</p>
+<p>En caso contrario, el rango del &iacute;ndice no est&aacute; definido, aplic&aacute;ndose entonces algunas reglas que permitan simplificar la suma.
+Cuando la variable global <code>simpsum</code> valga <code>true</code>, se aplicar&aacute;n reglas adicionales.
+En ciertos casos, la simplificaci&oacute;n dar&aacute; lugar a un resultado que ya no tenga el formato del sumatorio; en caso contrario se devolver&aacute; una forma nominal <code>'product</code>.
+</p>
+<p>Cuando <code>cauchysum</code> vale <code>true</code>, el producto de sumatorios se expresa como un producto de Cauchy, en cuyo caso el &iacute;ndice del sumatorio interior es funci&oacute;n del &iacute;ndice del exterior, en lugar de variar independientemente.
+</p>
+<p>La variable global <code>genindex</code> guarda el prefijo alfab&eacute;tico a utilizar cuando sea necesario generar autom&aacute;ticamente el siguiente &iacute;ndice de sumatorio.
+</p>
+<p>La variable global <code>gensumnum</code> guarda el sufijo num&eacute;rico a utilizar cuando sea necesario generar autom&aacute;ticamente el siguiente &iacute;ndice de sumatorio. Si <code>gensumnum</code> vale <code>false</code>, un &iacute;ndice generado autom&aacute;ticamente constar&aacute; s&oacute;lo de <code>genindex</code>, sin sufijo num&eacute;rico.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>sumcontract</code>, <code>intosum</code>,
+<code>bashindices</code>, <code>niceindices</code>,
+<code>nouns</code> y <code>evflag</code>.
+</p>
+<p>Ejemplos:
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sum (i^2, i, 1, 7);
+(%o1)                          140
+(%i2) sum (a[i], i, 1, 7);
+(%o2)           a  + a  + a  + a  + a  + a  + a
+                 7    6    5    4    3    2    1
+(%i3) sum (a(i), i, 1, 7);
+(%o3)    a(7) + a(6) + a(5) + a(4) + a(3) + a(2) + a(1)
+(%i4) sum (a(i), i, 1, n);
+                            n
+                           ====
+                           \
+(%o4)                       &gt;    a(i)
+                           /
+                           ====
+                           i = 1
+(%i5) sum (2^i + i^2, i, 0, n);
+                          n
+                         ====
+                         \       i    2
+(%o5)                     &gt;    (2  + i )
+                         /
+                         ====
+                         i = 0
+(%i6) sum (2^i + i^2, i, 0, n), simpsum;
+                              3      2
+                   n + 1   2 n  + 3 n  + n
+(%o6)             2      + --------------- - 1
+                                  6
+(%i7) sum (1/3^i, i, 1, inf);
+                            inf
+                            ====
+                            \     1
+(%o7)                        &gt;    --
+                            /      i
+                            ====  3
+                            i = 1
+(%i8) sum (1/3^i, i, 1, inf), simpsum;
+                                1
+(%o8)                           -
+                                2
+(%i9) sum (i^2, i, 1, 4) * sum (1/i^2, i, 1, inf);
+                              inf
+                              ====
+                              \     1
+(%o9)                      30  &gt;    --
+                              /      2
+                              ====  i
+                              i = 1
+(%i10) sum (i^2, i, 1, 4) * sum (1/i^2, i, 1, inf), simpsum;
+                                  2
+(%o10)                       5 %pi
+(%i11) sum (integrate (x^k, x, 0, 1), k, 1, n);
+                            n
+                           ====
+                           \       1
+(%o11)                      &gt;    -----
+                           /     k + 1
+                           ====
+                           k = 1
+(%i12) sum (if k &lt;= 5 then a^k else b^k, k, 1, 10));
+Incorrect syntax: Too many )'s
+else b^k, k, 1, 10))
+                  ^
+(%i12) linenum:11;
+(%o11)                         11
+(%i12) sum (integrate (x^k, x, 0, 1), k, 1, n);
+                            n
+                           ====
+                           \       1
+(%o12)                      &gt;    -----
+                           /     k + 1
+                           ====
+                           k = 1
+(%i13) sum (if k &lt;= 5 then a^k else b^k, k, 1, 10);
+          10    9    8    7    6    5    4    3    2
+(%o13)   b   + b  + b  + b  + b  + a  + a  + a  + a  + a
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>lsum</b><i> (<var>expr</var>, <var>x</var>, <var>L</var>)</i>
+<a name="IDX194"></a>
+</dt>
+<dd><p>Representa la suma de <var>expr</var> para cada elemento <var>x</var> en <var>L</var>.
+</p>
+<p>Se retornar&aacute; la forma nominal <code>'lsum</code> si el argumento <var>L</var> no es una lista.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) lsum (x^i, i, [1, 2, 7]);
+                            7    2
+(%o1)                      x  + x  + x
+(%i2) lsum (i^2, i, rootsof (x^3 - 1));
+                     ====
+                     \      2
+(%o2)                 &gt;    i
+                     /
+                     ====
+                                   3
+                     i in rootsof(x  - 1)
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>verbify</b><i> (<var>f</var>)</i>
+<a name="IDX195"></a>
+</dt>
+<dd><p>Devuelve la forma verbal del nombre de funci&oacute;n <var>f</var>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>verb</code>, <code>noun</code> y <code>nounify</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) verbify ('foo);
+(%o1)                          foo
+(%i2) :lisp $%
+$FOO
+(%i2) nounify (foo);
+(%o2)                          foo
+(%i3) :lisp $%
+%FOO
+</pre></td></tr></table>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

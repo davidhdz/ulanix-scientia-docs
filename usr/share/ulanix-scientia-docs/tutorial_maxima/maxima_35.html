@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 35. Miscel&aacute;nea de opciones</title>
+
+<meta name="description" content="Manual de Maxima: 35. Miscel&aacute;nea de opciones">
+<meta name="keywords" content="Manual de Maxima: 35. Miscel&aacute;nea de opciones">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Miscel_00e1nea-de-opciones"></a>
+<a name="SEC133"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_34.html#SEC132" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC134" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_34.html#SEC129" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_36.html#SEC137" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 35. Miscel&aacute;nea de opciones </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC134">35.1 Introducci&oacute;n a la miscel&aacute;nea de opciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC135">35.2 Share</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC136">35.3 Definiciones para la miscel&aacute;nea de opciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Introducci_00f3n-a-la-miscel_00e1nea-de-opciones"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC133" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC135" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC133" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC133" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_36.html#SEC137" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+<a name="SEC134"></a>
+<h2 class="section"> 35.1 Introducci&oacute;n a la miscel&aacute;nea de opciones </h2>
+
+<p>En esta secci&oacute;n se comentan varias opciones que tienen un efecto global sobre le comportamiento de Maxima. Tambi&eacute;n se comentan varias listas, como la de las funciones definidas por el usuario.
+</p>
+<hr size="6">
+<a name="Share"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC134" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC136" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC133" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC133" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_36.html#SEC137" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+<a name="SEC135"></a>
+<h2 class="section"> 35.2 Share </h2>
+
+<p>El directorio &quot;share&quot; de Maxima contiene programas y ficheros de inter&eacute;s para los usuarios de Maxima, pero no forman parte del n&uacute;cleo de Maxima. Estos programas se cargan en memoria con llamadas a las funciones <code>load</code> o <code>setup_autoload</code>.
+</p>
+<p>La llamada <code>:lisp *maxima-sharedir*</code> muestra la localizaci&oacute;n del directorio &quot;share&quot; dentro del sistema de ficheros del usuario.
+</p>
+<p>La llamada <code>printfile (&quot;share.usg&quot;)</code> muestra una lista actualizada de paquetes en &quot;share&quot;. Los usuarios pueden encontrar m&aacute;s informaci&oacute;n accediendo directamente a los contenidos del directorio &quot;share&quot;.
+</p>
+<hr size="6">
+<a name="Definiciones-para-la-miscel_00e1nea-de-opciones"></a>
+<a name="SEC136"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC135" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_36.html#SEC137" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC133" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC133" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_36.html#SEC137" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 35.3 Definiciones para la miscel&aacute;nea de opciones </h2>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>aliases</b>
+<a name="IDX1119"></a>
+</dt>
+<dd><p>Valor por defecto: <code>[]</code>
+</p>
+<p>La variable <code>aliases</code> es la lista de &aacute;tomos que tienen un &quot;alias&quot; definido por el usuario (establecido mediante las funciones  <code>alias</code>, <code>ordergreat</code> o <code>orderless</code> o declarando el &aacute;tomo como un <code>noun</code> (nombre) con <code>declare</code>.
+</p></dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>alphabetic</b>
+<a name="IDX1120"></a>
+</dt>
+<dd><p><code>alphabetic</code> es una declaraci&oacute;n de tipo reconocida por <code>declare</code>.
+La expresi&oacute;n <code>declare(<var>s</var>, alphabetic)</code> indica a Maxima que
+reconozca como alfab&eacute;ticos todos los caracteres de <var>s</var>, que debe ser
+una cadena alfanum&eacute;rica.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) xx\~yy\`\@ : 1729;
+(%o1)                         1729
+(%i2) declare (&quot;~`@&quot;, alphabetic);
+(%o2)                         done
+(%i3) xx~yy`@ + @yy`xx + `xx@@yy~;
+(%o3)               `xx@@yy~ + @yy`xx + 1729
+(%i4) listofvars (%);
+(%o4)                  [@yy`xx, `xx@@yy~]
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>apropos</b><i> (<var>cadena</var>)</i>
+<a name="IDX1121"></a>
+</dt>
+<dd><p>Busca nombres en Maxima en los cuales aparezca <var>cadena</var> en cualquier lugar dentro de ellos. As&iacute;, <code>apropos (exp)</code> devuelve una lista con todas las variables y funciones que tengan  <code>exp</code> formando parte de sus nombres, como  <code>expand</code>, <code>exp</code> y <code>exponentialize</code>. De esta forma, si el usuario tan solo recuerda parte del nombre de algo, puede utilizar este comando para encontrar el resto del nombre. De manera semejante, tambi&eacute;n se puede hacer <code>apropos (tr_)</code> para encontrar una lista de muchas de las variables relacionadas con el traductor, buena parte de las cuales comienzan con <code>tr_</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>args</b><i> (<var>expr</var>)</i>
+<a name="IDX1122"></a>
+</dt>
+<dd><p>Devuelve la lista de argumentos de <code>expr</code>, que puede ser cualquier tipo de expresi&oacute;n a excepci&oacute;n de un &aacute;tomo. Tan solo se muestran los argumentos del operador principal; subexpresiones de <code>expr</code> aparecen como elementos o subexpresiones de elementos de la lista de argumentos.
+</p>
+<p>El orden de los miembros de la lista puede depender de la variable global <code>inflag</code>.
+</p>
+<p>La llamada <code>args (<var>expr</var>)</code> es equivalente a <code>substpart (&quot;[&quot;, <var>expr</var>, 0)</code>.
+V&eacute;ase tambi&eacute;n <code>substpart</code>.
+</p>
+<p>V&eacute;ase asimismo <code>op</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable optativa:</u> <b>genindex</b>
+<a name="IDX1123"></a>
+</dt>
+<dd><p>Valor por defecto: <code>i</code>
+</p>
+<p>La variable <code>genindex</code> es el prefijo alfab&eacute;tico utilizado para generar la siguiente variable de sumaci&oacute;n en caso de necesidad.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable optativa:</u> <b>gensumnum</b>
+<a name="IDX1124"></a>
+</dt>
+<dd><p>Valor por defecto: 0
+</p>
+<p>La variable <code>gensumnum</code> es el sufijo num&eacute;rico utilizado para generar la siguiente variable de sumaci&oacute;n. Si vale  <code>false</code> entonces el &iacute;ndice consistir&aacute; solamente de  <code>genindex</code>, sin sufijo num&eacute;rico.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Constante:</u> <b>inf</b>
+<a name="IDX1125"></a>
+</dt>
+<dd><p>S&iacute;mbolo que identifica al infinito positivo dentro de un contexto de n&uacute;meros reales.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Constante:</u> <b>infinity</b>
+<a name="IDX1126"></a>
+</dt>
+<dd><p>S&iacute;mbolo que identifica al infinito complejo, una magnitud infinita con &aacute;ngulo de fase arbitrario.  V&eacute;anse tambi&eacute;n <code>inf</code> y <code>minf</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>infolists</b>
+<a name="IDX1127"></a>
+</dt>
+<dd><p>Valor por defecto: <code>[]</code>
+</p>
+<p>La variable <code>infolists</code> es una lista con los nombres de todas las listas que guardan informaci&oacute;n sobre Maxima. Estas son:
+</p>
+<dl compact="compact">
+<dt> <code>labels</code></dt>
+<dd><p>Todas las etiquetas <code>%i</code>, <code>%o</code> y <code>%t</code> con valores asignados.
+</p></dd>
+<dt> <code>values</code></dt>
+<dd><p>Todos los &aacute;tomos que son variables de usuario, no opciones de Maxima creadas con  <code>:</code> o <code>::</code>.
+</p></dd>
+<dt> <code>functions</code></dt>
+<dd><p>Todas las funciones de usuario creadas con <code>:=</code> o <code>define</code>.
+</p></dd>
+<dt> <code>arrays</code></dt>
+<dd><p>Arreglos declarados y no declarados, creados por <code>:</code>, <code>::</code> o <code>:=</code>.
+</p></dd>
+<dt> <code>macros</code></dt>
+<dd><p>Cualquier macro definida por el usuario.
+</p></dd>
+<dt> <code>myoptions</code></dt>
+<dd><p>Todas las opciones inicializadas por el usuario, independientemente de que posteriormente hayan sido devueltas a sus valores por defecto.
+</p></dd>
+<dt> <code>rules</code></dt>
+<dd><p>Reglas de patrones y simplificaci&oacute;n definidas por el usuario, creadas con <code>tellsimp</code>, <code>tellsimpafter</code>, <code>defmatch</code> o <code>defrule</code>.
+</p></dd>
+<dt> <code>aliases</code></dt>
+<dd><p>&Aacute;tomos que tienen un &quot;alias&quot; definido por el usuario, creado por las funciones <code>alias</code>, <code>ordergreat</code> o <code>orderless</code> o por haber declarado el &aacute;tomo como <code>noun</code> (nombre) con <code>declare</code>.
+</p></dd>
+<dt> <code>dependencies</code></dt>
+<dd><p>&Aacute;tomos que tienen dependencias funcionales, creados por las funciones <code>depends</code> o <code>gradef</code>.
+</p></dd>
+<dt> <code>gradefs</code></dt>
+<dd><p>Funciones que tienen derivadas definidas por el usuario, creadas por la funci&oacute;n <code>gradef</code>.
+</p></dd>
+<dt> <code>props</code></dt>
+<dd><p>Todos los &aacute;tomos que tengan cualquier propiedad que no sea de las mencionadas hasta ahora, como las establecidas por <code>atvalue</code>, <code>matchdeclare</code>, etc., as&iacute; como propiedadas especificadas en la funci&oacute;n <code>declare</code>.
+</p></dd>
+<dt> <code>let_rule_packages</code></dt>
+<dd><p>Todos los paquetes de reglas <code>let</code> definidos por el usuario, junto con el paquete especial <code>default_let_rule_package</code>; <code>default_let_rule_package</code> es el nombre del paquete de reglas utilizado cuando no se use ning&uacute;n otro especificado por el usuario.
+</p></dd>
+</dl>
+
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>integerp</b><i> (<var>expr</var>)</i>
+<a name="IDX1128"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> es un n&uacute;mero entero y <code>false</code> en cualquier otro caso.
+</p>
+<p>La funci&oacute;n <code>integerp</code> devuelve <code>false</code> si su argumento es un s&iacute;mbolo, incluso cuando &eacute;ste ha sido declarado como entero.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) integerp (0);
+(%o1)                         true
+(%i2) integerp (1);
+(%o2)                         true
+(%i3) integerp (-17);
+(%o3)                         true
+(%i4) integerp (0.0);
+(%o4)                         false
+(%i5) integerp (1.0);
+(%o5)                         false
+(%i6) integerp (%pi);
+(%o6)                         false
+(%i7) integerp (n);
+(%o7)                         false
+(%i8) declare (n, integer);
+(%o8)                         done
+(%i9) integerp (n);
+(%o9)                         false
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Variable optativa:</u> <b>m1pbranch</b>
+<a name="IDX1129"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>La variable <code>m1pbranch</code> es la rama principal de <code>-1</code> elevado a una potencia. Cantidades como <code>(-1)^(1/3)</code> (esto es, un exponente racional impar) y <code>(-1)^(1/4)</code> (esto es, un exponente racional par) son tratados como sigue:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">              dominio real
+                            
+(-1)^(1/3):      -1         
+(-1)^(1/4):   (-1)^(1/4)   
+
+             dominio complejo              
+m1pbranch:false          m1pbranch:true
+(-1)^(1/3)               1/2+%i*sqrt(3)/2
+(-1)^(1/4)              sqrt(2)/2+%i*sqrt(2)/2
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>numberp</b><i> (<var>expr</var>)</i>
+<a name="IDX1130"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> es un en&uacute;mero entero, racional, 
+de coma flotante o &quot;bigfloat&quot;, en caso contrario devuelve <code>false</code>.
+</p>
+<p>La funci&oacute;n <code>numberp</code> devuelve <code>false</code> si su argumento es un s&iacute;mbolo, incluso cuando el argumento es un n&uacute;mero simb&oacute;lico como <code>%pi</code> o <code>%i</code>, o aunque haya sido declarado como &quot;even&quot; (par), &quot;odd&quot; (impar), &quot;integer&quot; (entero), &quot;rational&quot; (racional), &quot;irrational&quot; (irracional), &quot;real&quot; (real), &quot;imaginary&quot; (imaginario) o &quot;complex&quot; (complejo).
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) numberp (42);
+(%o1)                         true
+(%i2) numberp (-13/19);
+(%o2)                         true
+(%i3) numberp (3.14159);
+(%o3)                         true
+(%i4) numberp (-1729b-4);
+(%o4)                         true
+(%i5) map (numberp, [%e, %pi, %i, %phi, inf, minf]);
+(%o5)      [false, false, false, false, false, false]
+(%i6) declare (a, even, b, odd, c, integer, d, rational,
+     e, irrational, f, real, g, imaginary, h, complex);
+(%o6)                         done
+(%i7) map (numberp, [a, b, c, d, e, f, g, h]);
+(%o7) [false, false, false, false, false, false, false, false]
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>properties</b><i> (<var>a</var>)</i>
+<a name="IDX1131"></a>
+</dt>
+<dd><p>Devuelve una lista con los nombres de propiedades asociadas con el &aacute;tomo <var>a</var>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>S&iacute;mbolo especial:</u> <b>props</b>
+<a name="IDX1132"></a>
+</dt>
+<dd><p><code>props</code> son &aacute;tomos que tienen cualquier propiedad diferente de las mencionadas expl&iacute;citamente en <code>infolists</code>, tales como atvalues, matchdeclares, etc., as&iacute; como las propiedades especificadas en la funci&oacute;n  <code>declare</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>propvars</b><i> (<var>prop</var>)</i>
+<a name="IDX1133"></a>
+</dt>
+<dd><p>Devuelve una lista con aquellos &aacute;tomos de la lista <code>props</code> que tienen la propiedad indicada por <var>prop</var>. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>put</b><i> (<var>&aacute;tomo</var>, <var>valor</var>, <var>indicador</var>)</i>
+<a name="IDX1134"></a>
+</dt>
+<dd><p>Asigna el <var>valor</var> a la propiedad  (especificada por <var>indicador</var>) de <var>&aacute;tomo</var>; <var>indicador</var> puede ser el nombre de cualquier propiedad y no solamente de aquellas definidas por el sistema.
+</p>
+<p>La funci&oacute;n <code>put</code> eval&uacute;a sus argumentos y devuelve <var>valor</var>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) put (foo, (a+b)^5, expr);
+                                   5
+(%o1)                       (b + a)
+(%i2) put (foo, &quot;Hello&quot;, str);
+(%o2)                         Hello
+(%i3) properties (foo);
+(%o3)            [[user properties, str, expr]]
+(%i4) get (foo, expr);
+                                   5
+(%o4)                       (b + a)
+(%i5) get (foo, str);
+(%o5)                         Hello
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>qput</b><i> (<var>&aacute;tomo</var>, <var>valor</var>, <var>indicador</var>)</i>
+<a name="IDX1135"></a>
+</dt>
+<dd><p>Asigna <var>valor</var> a la propiedad de <var>&aacute;tomo</var> que especifique <var>indicador</var>. Act&uacute;a del mismo modeo que <code>put</code>, excepto que sus argumentos no son evaluados.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) foo: aa$ 
+(%i2) bar: bb$
+(%i3) baz: cc$
+(%i4) put (foo, bar, baz);
+(%o4)                          bb
+(%i5) properties (aa);
+(%o5)                [[user properties, cc]]
+(%i6) get (aa, cc);
+(%o6)                          bb
+(%i7) qput (foo, bar, baz);
+(%o7)                          bar
+(%i8) properties (foo);
+(%o8)            [value, [user properties, baz]]
+(%i9) get ('foo, 'baz);
+(%o9)                          bar
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>rem</b><i> (<var>&aacute;tomo</var>, <var>indicador</var>)</i>
+<a name="IDX1136"></a>
+</dt>
+<dd><p>Elimina del <var>&aacute;tomo</var> la propiedad indicada por <var>indicador</var>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>remove</b><i> (<var>a_1</var>, <var>p_1</var>, ..., <var>a_n</var>, <var>p_n</var>)</i>
+<a name="IDX1137"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>remove</b><i> ([<var>a_1</var>, ..., <var>a_m</var>], [<var>p_1</var>, ..., <var>p_n</var>], ...)</i>
+<a name="IDX1138"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>remove</b><i> (&quot;<var>a</var>&quot;, operator)</i>
+<a name="IDX1139"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>remove</b><i> (<var>a</var>, transfun)</i>
+<a name="IDX1140"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>remove</b><i> (all, <var>p</var>)</i>
+<a name="IDX1141"></a>
+</dt>
+<dd><p>Elimina propiedades asociadas con &aacute;tomos.
+</p>
+<p>La llamada <code>remove (<var>a_1</var>, <var>p_1</var>, ..., <var>a_n</var>, <var>p_n</var>)</code>
+elimina la propiedad <code>p_k</code> del &aacute;tomo <code>a_k</code>.
+</p>
+<p>La llamada <code>remove ([<var>a_1</var>, ..., <var>a_m</var>], [<var>p_1</var>, ..., <var>p_n</var>], ...)</code>
+elimina las propiedades <code><var>p_1</var>, ..., <var>p_n</var></code> de los &aacute;tomos <var>a_1</var>, ..., <var>a_m</var>. Puede tener m&aacute;s de un par de listas.
+</p>
+<p>La llamada <code>remove (all, <var>p</var>)</code> elimina la propiedad <var>p</var> de todos los &aacute;tomos que la tengan.
+</p>
+<p>Las propiedades eliminadas pueden ser de las que define el sistema, como <code>function</code>, <code>macro</code> o <code>mode_declare</code>, o de las que define el usuario.
+</p>
+<p>La llamada <code>remove (&quot;<var>a</var>&quot;, operator)</code> o su equivalente <code>remove (&quot;<var>a</var>&quot;, op)</code> elimina de  <var>a</var> las propiedades de operador declaradas por <code>prefix</code>, <code>infix</code>, <code>nary</code>, <code>postfix</code>, <code>matchfix</code> o <code>nofix</code>. N&oacute;tese que el nombre del operador debe escribirse como cadena precedida de ap&oacute;strofo.
+</p>
+<p>La llamada <code>remove</code> devuelve siempre <code>done</code> independientemente que haya alg&uacute;n &aacute;tomo con la propiedad especificada.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>remvalue</b><i> (<var>nombre_1</var>, ..., <var>nombre_n</var>)</i>
+<a name="IDX1142"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>remvalue</b><i> (all)</i>
+<a name="IDX1143"></a>
+</dt>
+<dd><p>Elimina del sistema los valores de las variable de usuario <var>nombre_1</var>, ..., <var>nombre_n</var> (incluso las que tienen sub&iacute;ndices).
+</p>
+<p>La llamada <code>remvalue (all)</code> elimina los valores de todas las variables en <code>values</code>, la lista de todas las variables a las que el usuario a dado alg&uacute;n nombre, pero no de aqu&eacute;llas a las que Maxima asigna autom&aacute;ticamente un valor.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>values</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>rncombine</b><i> (<var>expr</var>)</i>
+<a name="IDX1144"></a>
+</dt>
+<dd><p>Transforma <var>expr</var> combinando todos los t&eacute;rminos de <var>expr</var> que tengan denominadores id&eacute;nticos o que difieran unos de otros por factores num&eacute;ricos. Su comportamiento es diferente al de la funci&oacute;n <code>combine</code>, que combina t&eacute;rminos con iguales denominadores.
+</p>
+<p>Haciendo <code>pfeformat: true</code> y utilizando <code>combine</code> se consiguen resultados similares a aqu&eacute;llos que se pueden obtener con  <code>rncombine</code>, pero <code>rncombine</code> realiza el paso adicional de multiplicar denominadores num&eacute;ricos. Esto da como resultado expresiones en las que se pueden reconocer algunas cancelaciones.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>scalarp</b><i> (<var>expr</var>)</i>
+<a name="IDX1145"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> is un n&uacute;mero, constante  o variable declarada como <code>scalar</code> con <code>declare</code>, o compuesta completamente de tales n&uacute;meros, constantes o variables, pero que no contengan matrices ni listas.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>setup_autoload</b><i> (<var>nombre_fichero</var>, <var>funci&oacute;n_1</var>, ..., <var>funci&oacute;n_n</var>)</i>
+<a name="IDX1146"></a>
+</dt>
+<dd><p>Especifica que si alguna de las funciones <var>function_1</var>, ..., <var>function_n</var> es referenciada pero todav&iacute;a no ha sido definida, se cargar&aacute; <var>nombre_fichero</var> mediante una llamada a <code>load</code>. El <var>nombre_fichero</var> normalmente contendr&aacute; las definiciones de las funciones especificadas, aunque esto no es imperativo.
+</p>
+<p>La funci&oacute;n <code>setup_autoload</code> no opera con arreglos de funciones.
+</p>
+<p>La funci&oacute;n <code>setup_autoload</code> no eval&uacute;a sus argumentos.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) legendre_p (1, %pi);
+(%o1)                  legendre_p(1, %pi)
+(%i2) setup_autoload (&quot;specfun.mac&quot;, legendre_p, ultraspherical);
+(%o2)                         done
+(%i3) ultraspherical (2, 1/2, %pi);
+Warning - you are redefining the Macsyma function ultraspherical
+Warning - you are redefining the Macsyma function legendre_p
+                            2
+                 3 (%pi - 1)
+(%o3)            ------------ + 3 (%pi - 1) + 1
+                      2
+(%i4) legendre_p (1, %pi);
+(%o4)                          %pi
+(%i5) legendre_q (1, %pi);
+                              %pi + 1
+                      %pi log(-------)
+                              1 - %pi
+(%o5)                 ---------------- - 1
+                             2
+</pre></td></tr></table>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC133" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_36.html#SEC137" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

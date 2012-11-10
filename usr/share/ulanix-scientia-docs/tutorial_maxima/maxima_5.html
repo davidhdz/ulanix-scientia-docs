@@ -1,0 +1,2201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 5. Operadores</title>
+
+<meta name="description" content="Manual de Maxima: 5. Operadores">
+<meta name="keywords" content="Manual de Maxima: 5. Operadores">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Operadores"></a>
+<a name="SEC12"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_4.html#SEC11" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC13" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 5. Operadores </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC13">5.1 n-arios</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC14">5.2 no-fijos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC15">5.3 postfijos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC16">5.4 prefijos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC17">5.5 Operadores aritm&eacute;ticos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC18">5.6 Operadores relacionales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC19">5.7 Operadores generales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="n_002darios"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC12" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC14" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+<a name="SEC13"></a>
+<h2 class="section"> 5.1 n-arios </h2>
+
+<p>Un operador de tipo <code>nary</code>(<code>n</code>-ario, en Maxima nary) es usado para denotar una funci&oacute;n cuyo n&uacute;mero de argumentos es arbitrario; los argumentos se separa por el s&iacute;mbolo del operador, como en A+B o A+B+C. La funci&oacute;n <code>nary(&quot;x&quot;)</code> es una extensi&oacute;n de la funci&oacute;n <code>syntax</code> para declarar a x como un operador <code>n</code>-ario. Las funciones pueden ser declaradas para ser <code>nary</code>. Si se hace <code>declare(J,nary);</code>, se esta diciendo al simplificador que haga la reducci&oacute;n de <code>j(j(a,b),j(c,d))</code> a <code>j(a, b, c, d)</code>.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>syntax</code>.
+</p>
+<hr size="6">
+<a name="no_002dfijos"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC13" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC15" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+<a name="SEC14"></a>
+<h2 class="section"> 5.2 no-fijos </h2>
+
+<p>Los operadores de tipo <code>nofix</code> (no-fijos, en Maxima nofix) son usados para denotar funciones que no reciben argumentos. La mera presencia de tal operador en un comando causar&aacute; que la correspondiente funci&oacute;n sea evaluada. Por ejemplo, cuando se escribe &quot;exit;&quot; para salir de una interrupci&oacute;n de Maxima, &quot;exit&quot; se est&aacute; comportando de forma similar a un operador no-fijo (<code>nofix</code>). La funci&oacute;n <code>nofix(&quot;x&quot;)</code> es una extensi&oacute;n de la funci&oacute;n syntax la cual declara a x como un operador <code>nofix</code>. 
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>syntax</code>.
+</p>
+
+<hr size="6">
+<a name="postfijos"></a>
+<a name="SEC15"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC14" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC16" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 5.3 postfijos </h2>
+
+<p>Un operador de tipo <code>postfix</code> (postfijo), al contrario de los de tipo <code>prefix</code>, denota funciones de un solo argumento, pero en este caso el argumento precede inmediatamente la ocurrencia del operador en la cadena de entrada, como en <code>3!</code>. La funci&oacute;n <code>postfix(&quot;x&quot;)</code> es una extensi&oacute;n de la funci&oacute;n syntax para declarar a x como un operador <code>postfix</code>. 
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>syntax</code>.   
+</p>
+<hr size="6">
+<a name="prefijos"></a>
+<a name="SEC16"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC15" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC17" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 5.4 prefijos </h2>
+<p>Un operador de tipo <code>prefix</code> (prefijo, en Maxima prefix) indica una funci&oacute;n de un (1) argumento, dicho argumento viene inmediatamente despu&eacute;s de una ocurrencia del operador. La funci&oacute;n <code>prefix(&quot;x&quot;)</code> es una extensi&oacute;n de la funci&oacute;n syntax para declarar a x como un operador de <code>prefix</code>. 
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>syntax</code>.
+</p>
+
+
+
+<hr size="6">
+<a name="Operadores-aritm_00e9ticos"></a>
+<a name="SEC17"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC16" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC18" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 5.5 Operadores aritm&eacute;ticos </h2>
+
+<dl>
+<dt><u>Operador:</u> <b>+</b>
+<a name="IDX56"></a>
+</dt>
+<dt><u>Operador:</u> <b>-</b>
+<a name="IDX57"></a>
+</dt>
+<dt><u>Operador:</u> <b>*</b>
+<a name="IDX58"></a>
+</dt>
+<dt><u>Operador:</u> <b>/</b>
+<a name="IDX59"></a>
+</dt>
+<dt><u>Operador:</u> <b>^</b>
+<a name="IDX60"></a>
+</dt>
+<dd><p>Los s&iacute;mbolos <code>+</code> <code>*</code> <code>/</code> y <code>^</code> representan
+la suma, resta, multiplicaci&oacute;n, divisi&oacute;n y exponenciaci&oacute;n, respectivamente.
+Los nombres de estos operadores son <code>&quot;+&quot;</code> <code>&quot;*&quot;</code> <code>&quot;//&quot;</code> y <code>&quot;^&quot;</code>,
+que pueden aparecer all&aacute; donde se requiera el nombre de una funci&oacute;n u operador.
+</p>
+<p>Los s&iacute;mbolos <code>+</code> y <code>-</code> representan el positivo y negativo unario,
+siendo los nombres de estos operadores <code>&quot;+&quot;</code> y <code>&quot;-&quot;</code>, respectivamente.
+</p>
+<p>En Maxima, la resta <code>a - b</code> se representa como la suma <code>a + (- b)</code>.
+Expresiones tales como <code>a + (- b)</code> se muestran como restas. Maxima
+reconoce <code>&quot;-&quot;</code> tan solo como el operador de negaci&oacute;n unaria, no como
+el nombre del operador de resta binaria.
+</p>
+<p>La divisi&oacute;n <code>a / b</code> se representa en maxima como la multiplicaci&oacute;n
+<code>a * b^(- 1)</code>. Expresiones tales como <code>a * b^(- 1)</code> se muestran 
+como divisiones. Maxima reconoce <code>&quot;//&quot;</code> como el nombre del operador
+de divisi&oacute;n.
+</p>
+<p>La suma y la multiplicaci&oacute;n son operadores conmutativos n-arios. La 
+divisi&oacute;n y la exponenciaci&oacute;n son operadores no conmutativos binarios.
+</p>
+<p>Maxima ordena los operandos de los operadores conmutativos para
+formar lo que se conoce como representaci&oacute;n can&oacute;nica. A efectos de
+almacenamiento interno, la ordenaci&oacute;n viene determinada por <code>orderlessp</code>.
+A efectos de presentaci&oacute;n de las expresiones, la ordenaci&oacute;n de la suma
+la determina <code>ordergreatp</code>, y en el caso de la multiplicaci&oacute;n, la
+ordenaci&oacute;n coincide con la del almacenamiento interno.
+</p>
+<p>Los c&aacute;lculos aritm&eacute;ticos se realizan con n&uacute;meros literales
+(enteros, racionales, decimales ordinarios y decimales grandes).
+Excepto en el caso de la exponenciaci&oacute;n, todas las operaciones
+aritm&eacute;ticas con n&uacute;meros dan lugar a resultados en forma de
+n&uacute;meros. La exponenciaci&oacute;n da como resultado un n&uacute;mero
+si alguno de los operandos es decimal ordinario o grande (<i>bigfloat</i>),
+o si el resultado es un entero o racional; en caso contrario,
+la exponenciaci&oacute;n puede expresarse como una ra&iacute;z
+cuadrada (<code>sqrt</code>), como otra potencia, o simplemente no
+sufre cambios.
+</p>
+<p>Se produce contagio de los decimales en coma flotante en los
+c&aacute;lculos aritm&eacute;ticos: si alg&uacute;n operando es un n&uacute;mero decimal
+grande (<i>bigfloat</i>), el resultado ser&aacute; tambi&eacute;n un n&uacute;mero
+decimal grande; no habiendo decimales grandes, pero s&iacute;
+ordinarios, el resultado sr&aacute; tambi&eacute;n un decimal ordinario; de no
+haber operandos decimales, el resultado ser&aacute; un n&uacute;mero racional o
+entero. 
+</p>
+<p>Los c&aacute;lculos aritm&eacute;ticos son simplificaciones, no evaluaciones, por lo
+que se realizan en expresiones comentadas.
+</p>
+<p>Las operaciones aritm&eacute;ticas se aplican elemento a elemento en el
+caso de las listas cuando la variable global <code>listarith</code> vale <code>true</code>;
+pero en el caso de las matrices, siempre se aplican elemento a elemento.
+Cuando un operando es una lista o matriz y otro operando lo es de otro tipo
+cualquiera, &eacute;ste se combina con cada uno de los elementos de la lista o
+matriz.
+</p>
+<p>Ejemplos:
+</p>
+<p>La suma y la multiplicaci&oacute;n son operadores conmutativos n-arios.
+Maxima ordena los operandos para formar lo que se conoce como 
+representaci&oacute;n can&oacute;nica. Los nombres de estos operadores son
+<code>&quot;+&quot;</code> y <code>&quot;-&quot;</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) c + g + d + a + b + e + f;
+(%o1)               g + f + e + d + c + b + a
+(%i2) [op (%), args (%)];
+(%o2)              [+, [g, f, e, d, c, b, a]]
+(%i3) c * g * d * a * b * e * f;
+(%o3)                     a b c d e f g
+(%i4) [op (%), args (%)];
+(%o4)              [*, [a, b, c, d, e, f, g]]
+(%i5) apply (&quot;+&quot;, [a, 8, x, 2, 9, x, x, a]);
+(%o5)                    3 x + 2 a + 19
+(%i6) apply (&quot;*&quot;, [a, 8, x, 2, 9, x, x, a]);
+                                 2  3
+(%o6)                       144 a  x
+</pre></td></tr></table>
+<p>La divisi&oacute;n y la exponenciaci&oacute;n son operadores no conmutativos binarios.
+Los nombres de estos operadores son <code>&quot;//&quot;</code> y <code>&quot;^&quot;</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [a / b, a ^ b];
+                              a   b
+(%o1)                        [-, a ]
+                              b
+(%i2) [map (op, %), map (args, %)];
+(%o2)              [[//, ^], [[a, b], [a, b]]]
+(%i3) [apply (&quot;//&quot;, [a, b]), apply (&quot;^&quot;, [a, b])];
+                              a   b
+(%o3)                        [-, a ]
+                              b
+</pre></td></tr></table>
+<p>La resta y la divisi&oacute;n se representan internamente en
+t&eacute;rminos de la suma y multiplicaci&oacute;n, respectivamente.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [inpart (a - b, 0), inpart (a - b, 1), inpart (a - b, 2)];
+(%o1)                      [+, a, - b]
+(%i2) [inpart (a / b, 0), inpart (a / b, 1), inpart (a / b, 2)];
+                                   1
+(%o2)                       [*, a, -]
+                                   b
+</pre></td></tr></table>
+<p>Los c&aacute;lculos se realizan con n&uacute;meros literales.
+Se produce el contagio de los n&uacute;meros decimales.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) 17 + b - (1/2)*29 + 11^(2/4);
+                                       5
+(%o1)                   b + sqrt(11) + -
+                                       2
+(%i2) [17 + 29, 17 + 29.0, 17 + 29b0];
+(%o2)                   [46, 46.0, 4.6b1]
+</pre></td></tr></table>
+<p>Los c&aacute;lculos aritm&eacute;ticos son una simplificaci&oacute;n, no una
+evaluaci&oacute;n.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) simp : false;
+(%o1)                         false
+(%i2) '(17 + 29*11/7 - 5^3);
+                              29 11    3
+(%o2)                    17 + ----- - 5
+                                7
+(%i3) simp : true;
+(%o3)                         true
+(%i4) '(17 + 29*11/7 - 5^3);
+                                437
+(%o4)                         - ---
+                                 7
+</pre></td></tr></table>
+<p>Los c&aacute;lculos aritm&eacute;ticos se realizan elemento a elemento 
+en las listas (seg&uacute;n sea el valor de <code>listarith</code>) y
+matrices.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) matrix ([a, x], [h, u]) - matrix ([1, 2], [3, 4]);
+                        [ a - 1  x - 2 ]
+(%o1)                   [              ]
+                        [ h - 3  u - 4 ]
+(%i2) 5 * matrix ([a, x], [h, u]);
+                          [ 5 a  5 x ]
+(%o2)                     [          ]
+                          [ 5 h  5 u ]
+(%i3) listarith : false;
+(%o3)                         false
+(%i4) [a, c, m, t] / [1, 7, 2, 9];
+                          [a, c, m, t]
+(%o4)                     ------------
+                          [1, 7, 2, 9]
+(%i5) [a, c, m, t] ^ x;
+                                      x
+(%o5)                     [a, c, m, t]
+(%i6) listarith : true;
+(%o6)                         true
+(%i7) [a, c, m, t] / [1, 7, 2, 9];
+                              c  m  t
+(%o7)                     [a, -, -, -]
+                              7  2  9
+(%i8) [a, c, m, t] ^ x;
+                          x   x   x   x
+(%o8)                   [a , c , m , t ]
+</pre></td></tr></table>
+</dd></dl>
+
+
+<dl>
+<dt><u>Operador:</u> <b>**</b>
+<a name="IDX61"></a>
+</dt>
+<dd><p>Operador de exponenciaci&oacute;n.
+Maxima identifica <code>**</code> con el operador <code>^</code> en la entrada
+de expresiones, pero se representa como <code>^</code> en las salidas
+no formateadas (<code>display2d=false</code>), o colocando un 
+super&iacute;ndice en la salida formateada (<code>display2d=true</code>).
+</p>
+<p>La funci&oacute;n <code>fortran</code> representa el operador de exponenciaci&oacute;n
+con <code>**</code>, tanto si se ha introducido como <code>**</code> o como <code>^</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) is (a**b = a^b);
+(%o1)                         true
+(%i2) x**y + x^z;
+                              z    y
+(%o2)                        x  + x
+(%i3) string (x**y + x^z);
+(%o3)                        x^z+x^y
+(%i4) fortran (x**y + x^z);
+      x**z+x**y
+(%o4)                         done
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<hr size="6">
+<a name="Operadores-relacionales"></a>
+<a name="SEC18"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC17" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC19" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 5.6 Operadores relacionales </h2>
+
+<dl>
+<dt><u>Operator:</u> <b>&lt;</b>
+<a name="IDX62"></a>
+</dt>
+<dt><u>Operator:</u> <b>&lt;=</b>
+<a name="IDX63"></a>
+</dt>
+<dt><u>Operator:</u> <b>&gt;=</b>
+<a name="IDX64"></a>
+</dt>
+<dt><u>Operator:</u> <b>&gt;</b>
+<a name="IDX65"></a>
+</dt>
+</dl>
+
+<hr size="6">
+<a name="Operadores-generales"></a>
+<a name="SEC19"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC18" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC12" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 5.7 Operadores generales </h2>
+
+
+<dl>
+<dt><u>Operator:</u> <b>^^</b>
+<a name="IDX66"></a>
+</dt>
+<dd><p>Operador de exponenciaci&oacute;n no conmutativa.
+Se trata del operador de exponenciaci&oacute;n correspondiente a la
+multiplicaci&oacute;n no conmutativa <code>.</code>, del mismo modo que el
+operador de exponenciaci&oacute;n ordinario <code>^</code> se corresponde 
+con la multiplicaci&oacute;n conmutativa <code>*</code>.
+</p>
+<p>La exponenciaci&oacute;n no conmutativa se representa como <code>^^</code>
+en las salidas no formateadas (<code>display2d=false</code>), o colocando un 
+super&iacute;ndice entre &aacute;ngulos (<code>&lt; &gt;</code>) en la salida 
+formateada (<code>display2d=true</code>).
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) a . a . b . b . b + a * a * a * b * b;
+                        3  2    &lt;2&gt;    &lt;3&gt;
+(%o1)                  a  b  + a    . b
+(%i2) string (a . a . b . b . b + a * a * a * b * b);
+(%o2)                  a^3*b^2+a^^2 . b^^3
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Operador:</u> <b>!</b>
+<a name="IDX67"></a>
+</dt>
+<dd><p>El operador factorial. Para cualquier n&uacute;mero complejo <code>x</code>
+(incluyendo enteros, racionales  y n&uacute;meros reales) excepto para
+enteros negativos, <code>x!</code> se define como <code>gamma(x+1)</code>. 
+</p>
+<p>Para un entero <code>x</code>, <code>x!</code> simplifica el producto de los enteros desde 1 hasta <code>x</code>.
+<code>0!</code> simplifica a 1.
+Para a un n&uacute;mero de punto flotante <code>x</code>, <code>x!</code> calcula al valor de <code>gamma(x+1)</code>.
+Para <code>x</code> igual a <code>n/2</code> donde <code>n</code> es un entero impar,
+<code>x!</code> simplifica a un factor racional por <code>sqrt(%pi)</code>
+(donde <code>gamma(1/2)</code>) es igual a <code>sqrt(%pi)</code>). 
+Si <code>x</code> es cualquier otra cosa, <code>x!</code> no se simplifica. 
+</p>
+<p>Las variables 
+<code>factlim</code>, <code>minfactorial</code> y  <code>factcomb</code> controlan la simplificaci&oacute;n de expresiones que contienen factoriales. 
+</p>
+<p>Las funciones <code>gamma</code>, <code>bffac</code> y <code>cbffac</code> son variaciones de
+la funci&oacute;n gamma. 
+<code>makegamma</code> substituye a <code>gamma</code> para factoriales y funciones relacionadas. 
+</p>
+<p>Funciones relacionadas: <code>binomial</code> 
+</p>
+<ul>
+<li>
+El factorial de un entero, semi-entero o de punto flotante es simplificado a menos que el operando sea mayor que <code>factlim</code>. 
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) factlim : 10;
+(%o1)                          10
+(%i2) [0!, (7/2)!, 4.77!, 8!, 20!];
+            105 sqrt(%pi)
+(%o2)   [1, -------------, 81.44668037931199, 40320, 20!]
+                 16
+</pre></td></tr></table>
+</li><li>
+El factorial de un n&uacute;mero complejo, constante  conocida (por ejemplo <code>%e</code>) o una expresi&oacute;n general no es simplificado. 
+
+<p>Sin embargo puede ser posible simplificar el factorial despu&eacute;s de evaluar el operando. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [(%i + 1)!, %pi!, %e!, (cos(1) + sin(1))!];
+(%o1)      [(%i + 1)!, %pi!, %e!, (sin(1) + cos(1))!]
+(%i2) ev (%, numer, %enumer);
+(%o2) [(%i + 1)!, 7.188082728976037, 4.260820476357, 
+                                               1.227580202486819]
+</pre></td></tr></table>
+</li><li>
+El factorial de un s&iacute;mbolo no se simplifica. 
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) kill (foo);
+(%o1)                         done
+(%i2) foo!;
+(%o2)                         foo!
+</pre></td></tr></table>
+</li><li>
+Los factoriales son simplificados, no evaluados.
+As&iacute; <code>x!</code> puede ser reemplazado en una expresi&oacute;n 
+precedida por el operador comilla. 
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) '([0!, (7/2)!, 4.77!, 8!, 20!]);
+          105 sqrt(%pi)
+(%o1) [1, -------------, 81.44668037931199, 40320, 
+               16
+                                             2432902008176640000]
+</pre></td></tr></table></li></ul>
+
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>!!</b>
+<a name="IDX68"></a>
+</dt>
+<dd><p>El operador doble factorial.
+</p>
+<p>Para un n&uacute;mero entero, de punto flotante o racional <code>n</code>,
+<code>n!!</code> se evaluar&aacute; como el producto de <code>n (n-2) (n-4) (n-6) ... (n - 2 (k-1))</code>
+donde <code>k</code> es igual a <code>entier(n/2)</code>, que es, el mayor entero
+menor o igual a <code>n/2</code>. 
+Note que esta definici&oacute;n no coincide con otras definciones publicadas para argumentos, los cuales no son enteros. 
+</p>
+
+<p>Para un entero par (o impar) <code>n</code>, <code>n!</code> se evalua el producto de
+todos los enteros pares (o impares) consecutivos desde 2 (o 1) por <code>n</code> inclusive.  
+</p>
+<p>Para un argumento <code>n</code> el cual no es un n&uacute;mero entero, punto flotante o racional, <code>n!!</code> produce una forma de nombre <code>genfact (n, n/2, 2)</code>. 
+</p>
+
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>#</b>
+<a name="IDX69"></a>
+</dt>
+<dd><p>Representa la negaci&oacute;n de la igualdad sint&aacute;ctica <code>=</code>.
+</p>
+<p>N&oacute;tese que debido a las reglas de evaluaci&oacute;n de expresiones
+de tipo predicado (en concreto debido a que <code>not <var>expr</var></code>
+obliga a la evaluaci&oacute;n previa de <var>expr</var>), 
+<code>not <var>a</var> = <var>b</var></code> equivale a <code>is(<var>a</var> # <var>b</var>)</code>, 
+pero no a <code><var>a</var> # <var>b</var></code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) a = b;
+(%o1)                         a = b
+(%i2) is (a = b);
+(%o2)                         false
+(%i3) a # b;
+(%o3)                         a # b
+(%i4) not a = b;
+(%o4)                         true
+(%i5) is (a # b);
+(%o5)                         true
+(%i6) is (not a = b);
+(%o6)                         true
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>.</b>
+<a name="IDX70"></a>
+</dt>
+<dd><p>El operador punto, para multiplicaci&oacute;n de matrices (no-conmutativo). 
+Cuando &quot;.&quot; se usa de esta forma, se dejar&aacute;n espacios a
+ambos lados de &eacute;ste, como en <code>A . B</code>. As&iacute; se evita que se confunda con el punto decimal de los n&uacute;meros. 
+</p>
+<p>V&eacute;anse:
+<code>dot</code>,
+<code>dot0nscsimp</code>,
+<code>dot0simp</code>,
+<code>dot1simp</code>,
+<code>dotassoc</code>,
+<code>dotconstrules</code>,
+<code>dotdistrib</code>,
+<code>dotexptsimp</code>,
+<code>dotident</code>
+y
+<code>dotscrules</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>:</b>
+<a name="IDX71"></a>
+</dt>
+<dd><p>El operador de asignaci&oacute;n. Por ejemplo, <code>A:3</code> se asigna a la variable <var>A</var> el valor de 3.
+</p></dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>::</b>
+<a name="IDX72"></a>
+</dt>
+<dd><p>Operador de asignaci&oacute;n. :: asigna el valor de una expresi&oacute;n
+en su derecha a el valor de la cantidad en su izquierda, la cual
+debe evaluarse a una variable de tipo at&oacute;mica o una variable subindicada.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>::=</b>
+<a name="IDX73"></a>
+</dt>
+<dd><p>El operador de definici&oacute;n de macros <code>::=</code> define una funci&oacute;n (llamada macro por razones hist&oacute;ricas) que no eval&uacute;a sus argumentos, siendo la expresi&oacute;n que retorna (llamada &quot;macroexpansi&oacute;n&quot;) evaluada dentro del contexto desde el cual se ha invocado la macro. En cualquier otro sentido, una funci&oacute;n macro es igual que una funci&oacute;n ordinaria.
+</p>
+<p><code>macroexpand</code> devuelve la expresi&oacute;n que a su vez fue devuelta por una macro (sin evaluar la expresi&oacute;n);
+<code>macroexpand (foo (x))</code> seguida de <code>''%</code> es equivalente a <code>foo (x)</code> si <code>foo</code> es una funci&oacute;n macro.
+</p>
+<p><code>::=</code> coloca el nombre de la nueva funci&oacute;n macro en la lista global <code>macros</code>. Por otro lado, las funciones 
+<code>kill</code>, <code>remove</code> y <code>remfunction</code> borran las definiciones de las funciones macro y eliminan sus nombres de la lista <code>macros</code>.
+</p>
+<p>Las funciones <code>fundef</code> y <code>dispfun</code> devuelven la definici&oacute;n de una funci&oacute;n macro y le asignan una etiqueta, respectivamente.
+</p>
+<p>Las funciones macro normalmente contienen expresiones <code>buildq</code> y <code>splice</code> para construir una expresi&oacute;n, que luego ser&aacute; evaluada.
+</p>
+<p>Ejemplos:
+</p>
+<p>Una funci&oacute;n macro no eval&uacute;a sus argumentos, por lo que el mensaje (1) muestra <code>y - z</code>, no el valor de <code>y - z</code>.
+La macroexpansi&oacute;n (es decir, la expresi&oacute;n no evaluada <code>'(print (&quot;(2) x is equal to&quot;, x))</code>) se eval&uacute;a en el contexto desde el cual se produjo la llamada a la macro, imprimiendo el mensaje (2).
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x: %pi;
+(%o1)                          %pi
+(%i2) y: 1234;
+(%o2)                         1234
+(%i3) z: 1729 * w;
+(%o3)                        1729 w
+(%i4) printq1 (x) ::= block (print (&quot;(1) x is equal to&quot;, x), '(print (&quot;(2) x is equal to&quot;, x)));
+(%o4) printq1(x) ::= block(print(&quot;(1) x is equal to&quot;, x), 
+                                '(print(&quot;(2) x is equal to&quot;, x)))
+(%i5) printq1 (y - z);
+(1) x is equal to y - z 
+(2) x is equal to %pi 
+(%o5)                          %pi
+</pre></td></tr></table>
+<p>Una funci&oacute;n ordinaria eval&uacute;a sus argumentos, por lo que el mensaje (1) muestra el valor de <code>y - z</code>.
+El valor de retorno no se eval&uacute;a, por lo que el mensaje (2) no se imprime hasta la evaluaci&oacute;n expl&iacute;cita <code>''%</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x: %pi;
+(%o1)                          %pi
+(%i2) y: 1234;
+(%o2)                         1234
+(%i3) z: 1729 * w;
+(%o3)                        1729 w
+(%i4) printe1 (x) := block (print (&quot;(1) x is equal to&quot;, x), '(print (&quot;(2) x is equal to&quot;, x)));
+(%o4) printe1(x) := block(print(&quot;(1) x is equal to&quot;, x), 
+                                '(print(&quot;(2) x is equal to&quot;, x)))
+(%i5) printe1 (y - z);
+(1) x is equal to 1234 - 1729 w 
+(%o5)              print((2) x is equal to, x)
+(%i6) ''%;
+(2) x is equal to %pi 
+(%o6)                          %pi
+</pre></td></tr></table>
+<p><code>macroexpand</code> devuelve la macroexpansi&oacute;n;
+<code>macroexpand (foo (x))</code> seguida de <code>''%</code> es equivalente a <code>foo (x)</code> si <code>foo</code> es una funci&oacute;n macro.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x: %pi;
+(%o1)                          %pi
+(%i2) y: 1234;
+(%o2)                         1234
+(%i3) z: 1729 * w;
+(%o3)                        1729 w
+(%i4) g (x) ::= buildq ([x], print (&quot;x is equal to&quot;, x));
+(%o4)    g(x) ::= buildq([x], print(&quot;x is equal to&quot;, x))
+(%i5) macroexpand (g (y - z));
+(%o5)              print(x is equal to, y - z)
+(%i6) ''%;
+x is equal to 1234 - 1729 w 
+(%o6)                     1234 - 1729 w
+(%i7) g (y - z);
+x is equal to 1234 - 1729 w 
+(%o7)                     1234 - 1729 w
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>:=</b>
+<a name="IDX74"></a>
+</dt>
+<dd><p>El operador de definici&oacute;n de funciones. 
+La expresi&oacute;n <code><var>f</var>(<var>x_1</var>, ..., <var>x_n</var>) := <var>expr</var></code>
+define una funci&oacute;n de nombre <var>f</var> con argumentos
+<var>x_1</var>, ..., <var>x_n</var> y cuerpo <var>expr</var>.
+El operador <code>:=</code> no eval&uacute;a el cuerpo de la funci&oacute;n (a menos que
+se indique lo contrario mediante el operador comilla-comilla <code>''</code>).
+La funci&oacute;n as&iacute; definida puede ser una funci&oacute;n ordinaria
+de Maxima (con argumentos encerrados entre par&eacute;ntesis) o una funci&oacute;n
+array (con argumentos encerrados entre corchetes).
+</p>
+<p>Cuando el &uacute;ltimo o &uacute;nico argumento <var>x_n</var> es una lista de un solo
+elemento, la funci&oacute;n definida por <code>:=</code> acepta un n&uacute;mero variable
+de argumentos. Los valores de los argumentos se asignan uno a uno a los
+argumentos formales <var>x_1</var>, ..., <var>x_(n - 1)</var>, y cualesquiera otros
+valores de argumentos, si existen, se asignan a <var>x_n</var> en forma de lista.
+</p>
+<p>Todas las definiciones de funciones aparecen en el mismo espacio de
+nombres; definiendo una funci&oacute;n <code>f</code> dentro de otra funci&oacute;n <code>g</code>
+no limita el alcance de <code>f</code> a <code>g</code>.
+</p>
+<p>Si un argumento formal <var>x_k</var> es un s&iacute;mbolo afectado por el
+operador comilla (expresi&oacute;n nominal), la funci&oacute;n definida por <code>:=</code> no eval&uacute;a el
+correspondiente valor de argumento. 
+En cualquier otro caso, los argumentos que se pasan son evaluados.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>define</code> y <code>::=</code>.
+</p>
+<p>Ejemplos:
+</p>
+<p><code>:=</code> no eval&uacute;a el cuerpo de la funci&oacute;n (a menos que
+se indique lo contrario mediante el operador comilla-comilla <code>''</code>).
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr : cos(y) - sin(x);
+(%o1)                    cos(y) - sin(x)
+(%i2) F1 (x, y) := expr;
+(%o2)                   F1(x, y) := expr
+(%i3) F1 (a, b);
+(%o3)                    cos(y) - sin(x)
+(%i4) F2 (x, y) := ''expr;
+(%o4)              F2(x, y) := cos(y) - sin(x)
+(%i5) F2 (a, b);
+(%o5)                    cos(b) - sin(a)
+</pre></td></tr></table>
+<p>La funci&oacute;n as&iacute; definida puede ser una funci&oacute;n ordinaria
+de Maxima o una funci&oacute;n array.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) G1 (x, y) := x.y - y.x;
+(%o1)               G1(x, y) := x . y - y . x
+(%i2) G2 [x, y] := x.y - y.x;
+(%o2)                G2     := x . y - y . x
+                       x, y
+</pre></td></tr></table>
+<p>Cuando el &uacute;ltimo o &uacute;nico argumento <var>x_n</var> es una lista de un solo
+elemento, la funci&oacute;n definida por <code>:=</code> acepta un n&uacute;mero variable
+de argumentos.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) H ([L]) := apply (&quot;+&quot;, L);
+(%o1)                H([L]) := apply(&quot;+&quot;, L)
+(%i2) H (a, b, c);
+(%o2)                       c + b + a
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>=</b>
+<a name="IDX75"></a>
+</dt>
+<dd><p>Operador de ecuaci&oacute;n.
+</p>
+<p>La expresi&oacute;n <code><var>a</var> = <var>b</var></code> representa una ecuaci&oacute;n
+sin evaluar, la cual puede verificarse o no. Las ecuaciones sin evaluar 
+pueden aparecer como argumentos de <code>solve</code>, <code>algsys</code>
+y de algunas otras funciones.
+</p>
+<p>La funci&oacute;n <code>is</code> eval&uacute;a el operador <code>=</code> a un
+resultado booleano; <code>is(<var>a</var> = <var>b</var>)</code> asigna un valor
+de verdad a <code><var>a</var> = <var>b</var></code>, siendo <code>true</code> si
+<var>a</var> y <var>b</var> son id&eacute;nticos, lo cual acontece si
+ambos <var>a</var> y <var>b</var> son &aacute;tomos id&eacute;nticos, o si no
+siendo &aacute;tomos, sus operadores y argumentos respectivos
+son id&eacute;nticos; en caso contrario, <code>is(<var>a</var> = <var>b</var>)</code>
+devuelve el valor  <code>false</code>. Nunca se devuelve el valor <code>unknown</code>.
+Cuando <code>is(<var>a</var> = <var>b</var>)</code> toma el valor <code>true</code>, 
+se dice que <var>a</var> y <var>b</var> son sint&aacute;cticamente iguales,
+no expresiones equivalentes, para las cuales 
+<code>is(equal(<var>a</var>, <var>b</var>))</code> devuelve <code>true</code>.
+Las expresiones pueden ser equivalentes, pero no 
+sint&aacute;cticamente iguales.
+</p>
+<p>La negaci&oacute;n de <code>=</code> se representa por <code>#</code>.
+Como en el caso de <code>=</code>, la expresi&oacute;n 
+<code><var>a</var> # <var>b</var></code> no est&aacute; evaluada; sin embargo,
+<code>is(<var>a</var> # <var>b</var>)</code> eval&uacute;a <code><var>a</var> # <var>b</var></code>
+a <code>true</code> o <code>false</code>.
+</p>
+<p>Adem&aacute;s de <code>is</code>, hay otros operadores que eval&uacute;an 
+<code>=</code> y <code>#</code> a <code>true</code> o <code>false</code>;
+a saber, <code>if</code>, <code>and</code>, <code>or</code> y <code>not</code>.
+</p>
+<p>N&oacute;tese que debido a las reglas de evaluaci&oacute;n de expresiones
+de tipo predicado (en concreto debido a que <code>not <var>expr</var></code>
+obliga a la evaluaci&oacute;n previa de <var>expr</var>), 
+<code>not <var>a</var> = <var>b</var></code> equivale a <code>is(<var>a</var> # <var>b</var>)</code>, 
+pero no a <code><var>a</var> # <var>b</var></code>.
+</p>
+<p>Las funciones <code>rhs</code> y <code>lhs</code> devuelven los miembros
+derecho e izquierdo, respectivamente, de una ecuaci&oacute;n o inecuaci&oacute;n.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>equal</code> y <code>notequal</code>.
+</p>
+<p>Ejemplos:
+</p>
+<p>La expresi&oacute;n <code><var>a</var> = <var>b</var></code> representa una ecuaci&oacute;n
+sin evaluar, la cual puede verificarse o no.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) eq_1 : a * x - 5 * y = 17;
+(%o1)                    a x - 5 y = 17
+(%i2) eq_2 : b * x + 3 * y = 29;
+(%o2)                    3 y + b x = 29
+(%i3) solve ([eq_1, eq_2], [x, y]);
+                        196         29 a - 17 b
+(%o3)          [[x = ---------, y = -----------]]
+                     5 b + 3 a       5 b + 3 a
+(%i4) subst (%, [eq_1, eq_2]);
+         196 a     5 (29 a - 17 b)
+(%o4) [--------- - --------------- = 17, 
+       5 b + 3 a      5 b + 3 a
+                                  196 b     3 (29 a - 17 b)
+                                --------- + --------------- = 29]
+                                5 b + 3 a      5 b + 3 a
+(%i5) ratsimp (%);
+(%o5)                  [17 = 17, 29 = 29]
+</pre></td></tr></table>
+<p><code>is(<var>a</var> = <var>b</var>)</code> eval&uacute;a <code><var>a</var> = <var>b</var></code> 
+a <code>true</code> si <var>a</var> y <var>b</var>
+son sint&aacute;cticamente iguales (es decir, id&eacute;nticas).
+Las expresiones pueden ser equivalentes, pero no 
+sint&aacute;cticamente iguales.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) a : (x + 1) * (x - 1);
+(%o1)                    (x - 1) (x + 1)
+(%i2) b : x^2 - 1;
+                              2
+(%o2)                        x  - 1
+(%i3) [is (a = b), is (a # b)];
+(%o3)                     [false, true]
+(%i4) [is (equal (a, b)), is (notequal (a, b))];
+(%o4)                     [true, false]
+</pre></td></tr></table>
+<p>Algunos operadores eval&uacute;an <code>=</code> y <code>#</code> a <code>true</code> o <code>false</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) if expand ((x + y)^2) = x^2 + 2 * x * y + y^2 then FOO else BAR;
+(%o1)                          FOO
+(%i2) eq_3 : 2 * x = 3 * x;
+(%o2)                       2 x = 3 x
+(%i3) eq_4 : exp (2) = %e^2;
+                              2     2
+(%o3)                       %e  = %e
+(%i4) [eq_3 and eq_4, eq_3 or eq_4, not eq_3];
+(%o4)                  [false, true, true]
+</pre></td></tr></table>
+<p>Debido a que <code>not <var>expr</var></code>
+obliga a la evaluaci&oacute;n previa de <var>expr</var>, 
+<code>not <var>a</var> = <var>b</var></code> equivale a <code>is(<var>a</var> # <var>b</var>)</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [2 * x # 3 * x, not (2 * x = 3 * x)];
+(%o1)                   [2 x # 3 x, true]
+(%i2) is (2 * x # 3 * x);
+(%o2)                         true
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Operador:</u> <b>and</b>
+<a name="IDX76"></a>
+</dt>
+<dd><p>Operador de conjunci&oacute;n l&oacute;gica.
+El operador <code>and</code> es un operador infijo <code>n</code>-ario;
+sus operandos son expresiones booleanas y su resultado es un valor l&oacute;gico.
+</p>
+<p>El operador <code>and</code> impone la evaluaci&oacute;n (igual que <code>is</code>) de uno o m&aacute;s operandos,
+y puede forzar la evaluaci&oacute;n de todos los operandos.
+</p>
+<p>Los operandos se eval&uacute;an en el orden en el que aparecen; 
+s&oacute;lo eval&uacute;a tantos operandos como sean necesarios para determinar el resultado.
+Si alg&uacute;n operando vale <code>false</code>,
+el resultado es <code>false</code> y ya no se eval&uacute;an m&aacute;s operandos.
+</p>
+<p>La variable global <code>prederror</code> controla el comportamiento de <code>and</code>
+cuando la evaluaci&oacute;n de un operando no da como resultado <code>true</code> o <code>false</code>;
+<code>and</code> imprime un mensaje de error cuando <code>prederror</code> vale <code>true</code>.
+Cuando los operandos devuelven un valor diferente a <code>true</code> o <code>false</code>
+al ser evaluados, el resultado es una expresi&oacute;n booleana.
+</p>
+<p>El operador <code>and</code> no es conmutativo:
+<code>a and b</code> puede no ser igual a <code>b and a</code> debido al tratamiento de operandos indeterminados.
+</p>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Operador:</u> <b>or</b>
+<a name="IDX77"></a>
+</dt>
+<dd><p>Operador de disyunci&oacute;n l&oacute;gica. El operador <code>or</code> es un operador infijo <code>n</code>-ario;
+sus operandos son expresiones booleanas y su resultado es un valor l&oacute;gico.
+</p>
+<p>El operador <code>or</code> impone la evaluaci&oacute;n (igual que <code>is</code>) de uno o m&aacute;s operandos,
+y puede forzar la evaluaci&oacute;n de todos los operandos.
+</p>
+<p>Los operandos se eval&uacute;an en el orden en el que aparecen; <code>or</code> s&oacute;lo eval&uacute;a tantos operandos como sean necesarios para determinar el resultado. Si un operando vale <code>true</code>, el resultado es <code>true</code> y ya no se eval&uacute;an m&aacute;s operandos.
+</p>
+<p>La variable global <code>prederror</code> controla el comportamiento 
+de <code>or</code> cuando la evaluaci&oacute;n de un operando no da como 
+resultado <code>true</code> o <code>false</code>; <code>or</code> imprime un 
+mensaje de error cuando <code>prederror</code> vale <code>true</code>.
+Cuando los operandos devuelven un valor diferente a <code>true</code> o <code>false</code>
+al ser evaluados, el resultado es una expresi&oacute;n booleana.
+</p>
+<p>El operador <code>or</code> no es conmutativo: <code>a or b</code> puede no ser igual a <code>b or a</code> debido al tratamiento de operandos indeterminados.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>not</b>
+<a name="IDX78"></a>
+</dt>
+<dd><p>Operador de negaci&oacute;n l&oacute;gica. El operador <code>not</code> es un operador prefijo;
+su operando es una expresi&oacute;n booleana y su resultado es un valor l&oacute;gico.
+</p>
+<p>El operador <code>not</code> impone la evaluaci&oacute;n (igual que <code>is</code>) de su operando.
+</p>
+<p>La variable global <code>prederror</code> controla el comportamiento de
+<code>not</code> cuando la evaluaci&oacute;n de su operando no da como 
+resultado <code>true</code> o <code>false</code>; <code>not</code> imprime un mensaje 
+de error cuando <code>prederror</code> vale <code>true</code>.
+Cuando los operandos devuelven un valor diferente a <code>true</code> o <code>false</code>
+al ser evaluados, el resultado es una expresi&oacute;n booleana.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>abs</b><i> (<var>expr</var>)</i>
+<a name="IDX79"></a>
+</dt>
+<dd><p>Devuelve el valor absoluto de <var>expr</var>. Si la expresi&oacute;n es compleja, retorna
+el m&oacute;dulo de <var>expr</var>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Clave:</u> <b>additive</b>
+<a name="IDX80"></a>
+</dt>
+<dd><p>Si <code>declare(f,additive)</code> ha sido ejecutado, entonces: 
+</p>
+<p>(1) Si <code>f</code> es univariado, cada vez que el simplificador encuentre
+<code>f</code> aplicada a una suma, <code>f</code> ser&aacute; distribuida bajo esta suma. Por ejemplo, <code>f(x+y)</code> se simplificar&aacute; a <code>f(x)+f(y)</code>. 
+</p>
+<p>(2) Si <code>f</code> es una funci&oacute;n de 2 o m&aacute;s argumentos, aditivamente es definida como aditiva en el primer argumento de <code>f</code>, como en el caso de <code>sum</code> o <code>integrate</code>. Por ejemplo, <code>f(h(x)+g(x),x)</code> se simplificar&aacute; a <code>f(h(x),x)+f(g(x),x)</code>. Esta simplificaci&oacute;n no ocurre cuando <code>f</code> se aplica a expresiones de la forma <code>sum(x[i],i,lower-limit,upper-limit)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Clave:</u> <b>allbut</b>
+<a name="IDX81"></a>
+</dt>
+<dd><p>Opera con los comandos <code>part</code> (como <code>part</code>, <code>inpart</code>, <code>substpart</code>,
+<code>substinpart</code>, <code>dpart</code> y <code>lpart</code>). Por ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr : e + d + c + b + a;
+(%o1)                   e + d + c + b + a
+(%i2) part (expr, [2, 5]);
+(%o2)                         d + a
+</pre></td></tr></table>
+<p>mientras que: 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr : e + d + c + b + a;
+(%o1)                   e + d + c + b + a
+(%i2) part (expr, allbut (2, 5));
+(%o2)                       e + c + b
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>kill</code> tambi&eacute;n reconoce a <code>allbut</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [aa : 11, bb : 22, cc : 33, dd : 44, ee : 55];
+(%o1)                 [11, 22, 33, 44, 55]
+(%i2) kill (allbut (cc, dd));
+(%o0)                         done
+(%i1) [aa, bb, cc, dd];
+(%o1)                   [aa, bb, 33, 44]
+</pre></td></tr></table>
+<p>La sentencia <code>kill(allbut(<var>a_1</var>, <var>a_2</var>, ...))</code>
+tiene el mismo efecto que <code>kill(all)</code>, excepto que no
+elimina los s&iacute;mbolos <var>a_1</var>, <var>a_2</var>, ... .
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>antisymmetric</b>
+<a name="IDX82"></a>
+</dt>
+<dd><p>Si <code>declare(h,antisymmetric)</code> es ejecutado, esto dice al 
+simplificador que <code>h</code> es antisim&eacute;trico. E.g. <code>h(x,z,y)</code> ser&aacute; simplificado a <code>-h(x,y,z)</code>. Que es, el producto de (-1)^n por el resultado dado por <code>symmetric</code> o <code>commutative</code>, donde n es el n&uacute;mero de intercambios necesarios de dos argumentos para convertirle a esta forma.  
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>cabs</b><i> (<var>expr</var>)</i>
+<a name="IDX83"></a>
+</dt>
+<dd><p>Devuelve el valor absoluto complejo (m&oacute;dulo complejo) de <var>expr</var>.
+</p>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>ceiling</b><i> (<var>x</var>)</i>
+<a name="IDX84"></a>
+</dt>
+<dd><p>Si <var>x</var> es un n&uacute;mero real, devuelve el menor entero mayor o igual que <var>x</var>.  
+</p>
+<p>Si <var>x</var> es una expresi&oacute;n constante (por ejemplo, <code>10 * %pi</code>), 
+<code>ceiling</code> eval&uacute;a <var>x</var> haciendo uso de n&uacute;meros grandes en coma flotante (big floats), aplicando a continuaci&oacute;n
+ <code>ceiling</code> al n&uacute;mero decimal obtenido. Puesto que <code>ceiling</code> hace evaluaciones en coma flotante, es posible, pero improbable, que esta funci&oacute;n devuelva un valor err&oacute;neo para entradas constantes. Para evitar estos errores, la evaluaci&oacute;n en punto flotante se lleva a cabo utilizando tres valores para <code>fpprec</code>.
+</p>
+<p>Para argumentos no constantes, <code>ceiling</code> intenta devolver un valor simplificado. Aqu&iacute; se presentan algunos ejemplos sobre las simplificaciones que <code>ceiling</code> es capaz de hacer:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) ceiling (ceiling (x));
+(%o1)                      ceiling(x)
+(%i2) ceiling (floor (x));
+(%o2)                       floor(x)
+(%i3) declare (n, integer)$
+(%i4) [ceiling (n), ceiling (abs (n)), ceiling (max (n, 6))];
+(%o4)                [n, abs(n), max(n, 6)]
+(%i5) assume (x &gt; 0, x &lt; 1)$
+(%i6) ceiling (x);
+(%o6)                           1
+(%i7) tex (ceiling (a));
+$$\left \lceil a \right \rceil$$
+(%o7)                                false
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>ceiling</code> no se extiende autom&aacute;ticamente a los elementos de listas y matrices.
+Por &uacute;ltimo, para todos los argumentos que tengan una forma compleja, <code>ceiling</code> devuelve una forma nominal.
+</p>
+<p>Si el rango de una funci&oacute;n es subconjunto de los n&uacute;meros enteros, entonces puede ser declarada como <code>integervalued</code>. Tanto <code>ceiling</code> como <code>floor</code> son funciones que hacen uso de esta informaci&oacute;n; por ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) declare (f, integervalued)$
+(%i2) floor (f(x));
+(%o2)                         f(x)
+(%i3) ceiling (f(x) - 1);
+(%o3)                       f(x) - 1
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>charfun</b><i> (<var>p</var>)</i>
+<a name="IDX85"></a>
+</dt>
+<dd><p>Devuelve 0 cuando el predicado <var>p</var> toma el valor <code>false</code>, y devuelve
+1 cuando vale <code>true</code>.  Si el predicado toma un valor diferente de <code>true</code> y <code>false</code> (desconocido), 
+entonces devuelve una forma nominal.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) charfun(x&lt;1);
+(%o1) charfun(x&lt;1)
+(%i2) subst(x=-1,%);
+(%o2) 1
+(%i3) e : charfun('&quot;and&quot;(-1 &lt; x, x &lt; 1))$
+(%i4) [subst(x=-1,e), subst(x=0,e), subst(x=1,e)];
+(%o4) [0,1,0]
+</pre></td></tr></table>
+</dd></dl>
+
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>commutative</b>
+<a name="IDX86"></a>
+</dt>
+<dd><p>Si <code>declare(h,commutative)</code> es ejecutado, le dice al simplificador
+que <code>h</code> es una funci&oacute;n conmutaiva. Por ejemplo, <code>h(x,z,y)</code> se simplificar&aacute; a <code>h(x,y,z)</code>. Esto es lo mismo que <code>symmetric</code>. 
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>compare</b><i> (<var>x</var>, <var>y</var>)</i>
+<a name="IDX87"></a>
+</dt>
+<dd><p>Devuelve un operador de comparaci&oacute;n <var>op</var>
+(<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>=</code> o <code>#</code>) de manera que
+<code>is (<var>x</var> <var>op</var> <var>y</var>)</code> tome el valor <code>true</code>;
+cuando tanto <var>x</var> como <var>y</var> dependan de <code>%i</code> y
+<code><var>x</var> # <var>y</var></code>, devuelve <code>notcomparable</code>;
+cuando no exista tal operador o Maxima sea incapaz de determinarlo, devolver&aacute; <code>unknown</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) compare(1,2);
+(%o1) &lt;
+(%i2) compare(1,x);
+(%o2) unknown
+(%i3) compare(%i,%i);
+(%o3) =
+(%i4) compare(%i,%i+1);
+(%o4) notcomparable
+(%i5) compare(1/x,0);
+(%o5) #
+(%i6) compare(x,abs(x));
+(%o6) &lt;=
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>compare</code> no intenta determinar si los dominios reales de sus argumentos son conjuntos no vac&iacute;os; as&iacute;,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) compare(acos(x^2+1), acos(x^2+1) + 1);
+(%o1) &lt;
+</pre></td></tr></table>
+<p>Aqu&iacute;, el dominio real de <code>acos (x^2 + 1)</code> es el conjunto vac&iacute;o.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>entier</b><i> (<var>x</var>)</i>
+<a name="IDX88"></a>
+</dt>
+<dd><p>Devuelve el mayor entero menor o igual a <var>x</var>, siendo <var>x</var> num&eacute;rico. La funci&oacute;n  <code>fix</code> (como en
+<code>fixnum</code>) es un sin&oacute;nimo, de modo que <code>fix(<var>x</var>)</code> hace justamente lo mismo.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>equal</b><i> (<var>a</var>, <var>b</var>)</i>
+<a name="IDX89"></a>
+</dt>
+<dd><p>Representa la equivalencia, esto es, la igualdad de los valores.
+</p>
+<p>Por s&iacute; misma, <code>equal</code> no eval&uacute;a ni simplifica.
+La funci&oacute;n <code>is</code> intenta evaluar <code>equal</code> a un resultado
+booleano. La instrucci&oacute;n <code>is(equal(<var>a</var>, <var>b</var>))</code>
+devuelve <code>true</code> (o <code>false</code>) si y s&oacute;lo si
+<var>a</var> y <var>b</var> son iguales (o no iguales) para todos los posibles
+valores de sus variables, tal como lo determina <code>ratsimp(<var>a</var> - <var>b</var>)</code>;
+si <code>ratsimp</code> devuelve 0, las dos expresiones se consideran
+equivalentes. Dos expresiones pueden ser equivalentes  sin
+ser sint&aacute;cticamente iguales (es decir, id&eacute;nticas).
+</p>
+<p>Si <code>is</code> no consigue reducir <code>equal</code> a <code>true</code> o <code>false</code>,
+el resultado est&aacute; controlado por la variable global <code>prederror</code>.
+Si <code>prederror</code> vale <code>true</code>, <code>is</code> emite un mensaje
+de error; en caso contrario, <code>is</code> devuelve <code>unknown</code>.
+</p>
+<p>Adem&aacute;s de <code>is</code>, otros operadores eval&uacute;an <code>equal</code> y <code>notequal</code>
+a  <code>true</code> o <code>false</code>; a saber, <code>if</code>, <code>and</code>, <code>or</code> y <code>not</code>.
+</p>
+<p>La negaci&oacute;n de <code>equal</code> es <code>notequal</code>.
+</p>
+<p>Ejemplos:
+</p>
+<p>Por s&iacute; misma, <code>equal</code> no eval&uacute;a ni simplifica.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) equal (x^2 - 1, (x + 1) * (x - 1));
+                        2
+(%o1)            equal(x  - 1, (x - 1) (x + 1))
+(%i2) equal (x, x + 1);
+(%o2)                    equal(x, x + 1)
+(%i3) equal (x, y);
+(%o3)                      equal(x, y)
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>is</code> intenta evaluar <code>equal</code> a un resultado
+booleano. La instrucci&oacute;n <code>is(equal(<var>a</var>, <var>b</var>))</code>
+devuelve <code>true</code> si <code>ratsimp(<var>a</var> - <var>b</var>)</code>
+devuelve 0. Dos expresiones pueden ser equivalentes  sin
+ser sint&aacute;cticamente iguales (es decir, id&eacute;nticas).
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) ratsimp (x^2 - 1 - (x + 1) * (x - 1));
+(%o1)                           0
+(%i2) is (equal (x^2 - 1, (x + 1) * (x - 1)));
+(%o2)                         true
+(%i3) is (x^2 - 1 = (x + 1) * (x - 1));
+(%o3)                         false
+(%i4) ratsimp (x - (x + 1));
+(%o4)                          - 1
+(%i5) is (equal (x, x + 1));
+(%o5)                         false
+(%i6) is (x = x + 1);
+(%o6)                         false
+(%i7) ratsimp (x - y);
+(%o7)                         x - y
+(%i8) is (equal (x, y));
+(%o8)                        unknown
+(%i9) is (x = y);
+(%o9)                         false
+</pre></td></tr></table>
+<p>Si <code>is</code> no consigue reducir <code>equal</code> a <code>true</code> o <code>false</code>,
+el resultado est&aacute; controlado por la variable global <code>prederror</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [aa : x^2 + 2*x + 1, bb : x^2 - 2*x - 1];
+                    2             2
+(%o1)             [x  + 2 x + 1, x  - 2 x - 1]
+(%i2) ratsimp (aa - bb);
+(%o2)                        4 x + 2
+(%i3) prederror : true;
+(%o3)                         true
+(%i4) is (equal (aa, bb));
+Maxima was unable to evaluate the predicate:
+       2             2
+equal(x  + 2 x + 1, x  - 2 x - 1)
+ -- an error.  Quitting.  To debug this try debugmode(true);
+(%i5) prederror : false;
+(%o5)                         false
+(%i6) is (equal (aa, bb));
+(%o6)                        unknown
+</pre></td></tr></table>
+<p>Otros operadores eval&uacute;an <code>equal</code> y <code>notequal</code>
+a  <code>true</code> o <code>false</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i4) if equal (y, y - 1) then FOO else BAR;
+(%o4)                          BAR
+(%i2) eq_1 : equal (x, x + 1);
+(%o2)                    equal(x, x + 1)
+(%i3) eq_2 : equal (y^2 + 2*y + 1, (y + 1)^2);
+                         2                   2
+(%o3)             equal(y  + 2 y + 1, (y + 1) )
+(%i4) [eq_1 and eq_2, eq_1 or eq_2, not eq_1];
+(%o4)                  [false, true, true]
+</pre></td></tr></table>
+<p>Debido a que <code>not <var>expr</var></code>
+obliga a la evaluaci&oacute;n previa de <var>expr</var>, 
+<code>not equal(<var>a</var>, <var>b</var>)</code> equivale a <code>is(notequal(<var>a</var>, <var>b</var>))</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [notequal (2*z, 2*z - 1), not equal (2*z, 2*z - 1)];
+(%o1)            [notequal(2 z, 2 z - 1), true]
+(%i2) is (notequal (2*z, 2*z - 1));
+(%o2)                         true
+</pre></td></tr></table></dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>floor</b><i> (<var>x</var>)</i>
+<a name="IDX90"></a>
+</dt>
+<dd><p>Si <var>x</var> es un n&uacute;mero real, devuelve el mayor entero menor o igual que <var>x</var>.
+</p>
+<p>Si <var>x</var> es una expresi&oacute;n constante (por ejemplo, <code>10 * %pi</code>), 
+<code>floor</code> eval&uacute;a <var>x</var> haciendo uso de n&uacute;meros grandes en coma flotante (big floats), aplicando a continuaci&oacute;n
+ <code>floor</code> al n&uacute;mero decimal obtenido. Puesto que <code>floor</code> hace evaluaciones en coma flotante, es posible, pero improbable, que esta funci&oacute;n devuelva un valor err&oacute;neo para entradas constantes. Para evitar estos errores, la evaluaci&oacute;n en punto flotante se lleva a cabo utilizando tres valores para <code>fpprec</code>.
+</p>
+<p>Para argumentos no constantes, <code>floor</code> intenta devolver un valor simplificado. Aqu&iacute; se presentan algunos ejemplos sobre las simplificaciones que <code>floor</code> es capaz de hacer:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) floor (ceiling (x));
+(%o1)                      ceiling(x)
+(%i2) floor (floor (x));
+(%o2)                       floor(x)
+(%i3) declare (n, integer)$
+(%i4) [floor (n), floor (abs (n)), floor (min (n, 6))];
+(%o4)                [n, abs(n), min(n, 6)]
+(%i5) assume (x &gt; 0, x &lt; 1)$
+(%i6) floor (x);
+(%o6)                           0
+(%i7) tex (floor (a));
+$$\left \lfloor a \right \rfloor$$
+(%o7)                         false
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>floor</code> no se extiende autom&aacute;ticamente a los elementos de listas y matrices.
+Por &uacute;ltimo, para todos los argumentos que tengan una forma compleja, <code>floor</code> devuelve una forma nominal.
+</p>
+<p>Si el rango de una funci&oacute;n es subconjunto de los n&uacute;meros enteros, entonces puede ser declarada como <code>integervalued</code>. Tanto <code>ceiling</code> como <code>floor</code> son funciones que hacen uso de esta informaci&oacute;n; por ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) declare (f, integervalued)$
+(%i2) floor (f(x));
+(%o2)                         f(x)
+(%i3) ceiling (f(x) - 1);
+(%o3)                       f(x) - 1
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>notequal</b><i> (<var>a</var>, <var>b</var>)</i>
+<a name="IDX91"></a>
+</dt>
+<dd><p>Representa la negaci&oacute;n de <code>equal (<var>a</var>, <var>b</var>)</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) equal (a, b);
+(%o1)                      equal(a, b)
+(%i2) maybe (equal (a, b));
+(%o2)                        unknown
+(%i3) notequal (a, b);
+(%o3)                    notequal(a, b)
+(%i4) not equal (a, b);
+(%o4)                    notequal(a, b)
+(%i5) maybe (notequal (a, b));
+(%o5)                        unknown
+(%i6) assume (a &gt; b);
+(%o6)                        [a &gt; b]
+(%i7) equal (a, b);
+(%o7)                      equal(a, b)
+(%i8) maybe (equal (a, b));
+(%o8)                         false
+(%i9) notequal (a, b);
+(%o9)                    notequal(a, b)
+(%i10) maybe (notequal (a, b));
+(%o10)                        true
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>eval</b>
+<a name="IDX92"></a>
+</dt>
+<dd><p>El operador <code>eval</code> realiza una evaluaci&oacute;n extra de una expresi&oacute;n <var>expr</var>.
+V&eacute;ase <code>ev</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>evenp</b><i> (<var>expr</var>)</i>
+<a name="IDX93"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> es un entero par y <code>false</code> en cualquier otro caso.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>fix</b><i> (<var>x</var>)</i>
+<a name="IDX94"></a>
+</dt>
+<dd><p>Es un sin&oacute;nimo de  <code>entier (<var>x</var>)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>fullmap</b><i> (<var>f</var>, <var>expr_1</var>, ...)</i>
+<a name="IDX95"></a>
+</dt>
+<dd><p>Similar a <code>map</code>, pero conservar&aacute; el mapeado
+descendente de todas las subexpresiones hasta que los operadores
+principales ya no sean los mismos.
+</p>
+<p>La funci&oacute;n <code>fullmap</code> es utilizada por el simplificador de Maxima
+en algunas transformaciones matriciales, por lo que Maxima generar&aacute; en algunas ocasiones mensajes de error relacionados con <code>fullmap</code> aunque el usuario no haya invocado expl&iacute;citamente esta funci&oacute;n.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) a + b * c;
+(%o1)                        b c + a
+(%i2) fullmap (g, %);
+(%o2)                   g(b) g(c) + g(a)
+(%i3) map (g, %th(2));
+(%o3)                     g(b c) + g(a)
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>fullmapl</b><i> (<var>f</var>, <var>list_1</var>, ...)</i>
+<a name="IDX96"></a>
+</dt>
+<dd><p>Similar a <code>fullmap</code>, pero <code>fullmapl</code> s&oacute;lo hace mapeo
+sobre listas y matrices.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) fullmapl (&quot;+&quot;, [3, [4, 5]], [[a, 1], [0, -1.5]]);
+(%o1)                [[a + 3, 4], [4, 3.5]]
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>is</b><i> (<var>expr</var>)</i>
+<a name="IDX97"></a>
+</dt>
+<dd><p>Intenta determinar si el predicado <var>expr</var>  se puede deducir de los hechos almacenados en la base de datos gestionada por <code>assume</code>.
+</p>
+<p>Si el predicado se reduce a <code>true</code> o <code>false</code>,
+<code>is</code> devuelve <code>true</code> o <code>false</code>, respectivamente.
+En otro caso, el valor devuelto est&aacute; controlado por la variable global <code>prederror</code>.
+Si <code>prederror</code> vale <code>true</code>, <code>is</code> emite un mensaje de error;
+en caso contrario, <code>is</code> devuelve <code>unknown</code>.
+</p>
+<p>La instrucci&oacute;n <code>ev(<var>expr</var>, pred)</code>
+(que puede escribirse como <code><var>expr</var>, pred</code> en el
+modo interactivo) equivale a <code>is(<var>expr</var>)</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>assume</code>, <code>facts</code> y <code>maybe</code>.
+</p>
+<p>Ejemplos:
+</p>
+<p><code>is</code> eval&uacute;a los predicados,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) %pi &gt; %e;
+(%o1)                       %pi &gt; %e
+(%i2) is (%pi &gt; %e);
+(%o2)                         true
+</pre></td></tr></table>
+<p><code>is</code> intenta evaluar predicados a partir 
+del conocimiento almacenado en la base de datos de <code>assume</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) assume (a &gt; b);
+(%o1)                        [a &gt; b]
+(%i2) assume (b &gt; c);
+(%o2)                        [b &gt; c]
+(%i3) is (a &lt; b);
+(%o3)                         false
+(%i4) is (a &gt; c);
+(%o4)                         true
+(%i5) is (equal (a, c));
+(%o5)                         false
+</pre></td></tr></table>
+<p>Si <code>is</code> no puede evaluar el valor l&oacute;gico del predicado 
+a partir de la base de datos gestionada por <code>assume</code>,
+la variable global  <code>prederror</code> controla el comportamiento de <code>is</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) assume (a &gt; b);
+(%o1)                        [a &gt; b]
+(%i2) prederror: true$
+(%i3) is (a &gt; 0);
+Maxima was unable to evaluate the predicate:
+a &gt; 0
+ -- an error.  Quitting.  To debug this try debugmode(true);
+(%i4) prederror: false$
+(%i5) is (a &gt; 0);
+(%o5)                        unknown
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>maybe</b><i> (<var>expr</var>)</i>
+<a name="IDX98"></a>
+</dt>
+<dd><p>Intenta determinar si el predicado <var>expr</var>  se puede deducir de los hechos almacenados en la base de datos gestionada por <code>assume</code>.
+</p>
+<p>Si el predicado se reduce a <code>true</code> o <code>false</code>,
+<code>maybe</code> devuelve <code>true</code> o <code>false</code>, respectivamente.
+En otro caso, <code>maybe</code> devuelve <code>unknown</code>.
+</p>
+<p>La funci&oacute;n <code>maybe</code> es funcionalmente equivalente a <code>is</code> con <code>prederror: false</code>,
+pero el resultado se calcula sin asignar valor alguno a <code>prederror</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>assume</code>, <code>facts</code> y <code>is</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) maybe (x &gt; 0);
+(%o1)                        unknown
+(%i2) assume (x &gt; 1);
+(%o2)                        [x &gt; 1]
+(%i3) maybe (x &gt; 0);
+(%o3)                         true
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>isqrt</b><i> (<var>x</var>)</i>
+<a name="IDX99"></a>
+</dt>
+<dd><p>Devuelve la &quot;ra&iacute;z cuadrada entera&quot;
+del valor absoluto de <var>x</var>,
+el cual debe ser un entero.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>lmax</b><i> (<var>L</var>)</i>
+<a name="IDX100"></a>
+</dt>
+<dd><p>Si <var>L</var> es una lista o conjunto, devuelve <code>apply ('max, args (<var>L</var>))</code>.  Si <var>L</var> no es una lista o conjunto, env&iacute;a un mensaje de error.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>lmin</b><i> (<var>L</var>)</i>
+<a name="IDX101"></a>
+</dt>
+<dd><p>Si <var>L</var> es una lista o conjunto, devuelve <code>apply ('min, args (<var>L</var>))</code>.  Si <var>L</var> no es una lista o conjunto, env&iacute;a un mensaje de error.
+</p></dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>max</b><i> (<var>x_1</var>, ..., <var>x_n</var>)</i>
+<a name="IDX102"></a>
+</dt>
+<dd><p>Devuelve un valor simplificado de la mayor de las expresiones desde <var>x_1</var> hasta <var>x_n</var>.
+Si <code>get (trylevel, maxmin)</code> es 2 o m&aacute;s, <code>max</code> aplica la simplificaci&oacute;n 
+<code>max (e, -e) --&gt; |e|</code>.  Si <code>get (trylevel, maxmin)</code> es 3 o m&aacute;s, <var>max</var> intenta
+eliminar las expresiones que est&eacute;n entre otros dos de los argumentos dados; por ejemplo,
+<code>max (x, 2*x, 3*x) --&gt; max (x, 3*x)</code>. Para asignar el valor 2 a <code>trylevel</code> se puede hacer
+<code>put (trylevel, 2, maxmin)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>min</b><i> (<var>x_1</var>, ..., <var>x_n</var>)</i>
+<a name="IDX103"></a>
+</dt>
+<dd><p>Devuelve un valor simplificado de la menor de las expresiones desde <var>x_1</var> hasta <var>x_n</var>.
+Si <code>get (trylevel, maxmin)</code> es 2 o m&aacute;s, <code>min</code> aplica la simplificaci&oacute;n 
+<code>min (e, -e) --&gt; |e|</code>.  Si <code>get (trylevel, maxmin)</code> es 3 o m&aacute;s, <var>min</var> intenta
+eliminar las expresiones que est&eacute;n entre otros dos de los argumentos dados; por ejemplo,
+<code>min (x, 2*x, 3*x) --&gt; min (x, 3*x)</code>. Para asignar el valor 2 a <code>trylevel</code> se puede hacer
+<code>put (trylevel, 2, maxmin)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>polymod</b><i> (<var>p</var>)</i>
+<a name="IDX104"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>polymod</b><i> (<var>p</var>, <var>m</var>)</i>
+<a name="IDX105"></a>
+</dt>
+<dd><p>Convierte el polinomio <var>p</var> a una representaci&oacute;n modular respecto del m&oacute;dulo actual, que es el valor almacenado en la variable <code>modulus</code>.  
+</p>
+<p>La llamada <code>polymod (<var>p</var>, <var>m</var>)</code> especifica un m&oacute;dulo <var>m</var> para ser utilizado en lugar de valor almacenado en <code>modulus</code>.
+</p>
+<p>V&eacute;ase <code>modulus</code>.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>mod</b><i> (<var>x</var>, <var>y</var>)</i>
+<a name="IDX106"></a>
+</dt>
+<dd><p>Si <var>x</var> e <var>y</var> son n&uacute;meros reales e <var>y</var> es distinto de cero,
+devuelve <code><var>x</var> - <var>y</var> * floor(<var>x</var> / <var>y</var>)</code>.
+Para todos los reales <var>x</var>, se tiene <code>mod (<var>x</var>, 0) = <var>x</var></code>. Para informaci&oacute;n sobre la definici&oacute;n de  <code>mod (<var>x</var>, 0) = <var>x</var></code>, v&eacute;ase la secci&oacute;n 3.4 de &quot;Concrete Mathematics&quot;, 
+by Graham, Knuth, and Patashnik. La funci&oacute;n <code>mod (<var>x</var>, 1)</code> es de diente de sierra con periodo unidad y con <code>mod (1, 1) = 0</code> y <code>mod (0, 1) = 0</code>.
+</p>
+<p>Para encontrar el argumento principal (un n&uacute;mero del intervalo <code>(-%pi, %pi]</code>) de un n&uacute;mero complejo, h&aacute;gase uso de la funci&oacute;n <code><var>x</var> |-&gt; %pi - mod (%pi - <var>x</var>, 2*%pi)</code>, donde <var>x</var> es un argumento.
+</p>
+<p>Si <var>x</var> e <var>y</var> son expresiones constantes (por ejemplo, <code>10 * %pi</code>), <code>mod</code> utiliza el mismo esquema de evaluaci&oacute;n basado en n&uacute;meros grandes en coma flotante (big floats) que <code>floor</code> y <code>ceiling</code>. Tambi&eacute;n es posible, pero improbable, que <code>mod</code> pueda retornar un valor err&oacute;neo en tales casos.
+</p>
+<p>Para argumentos no num&eacute;ricos <var>x</var> o <var>y</var>, <code>mod</code> aplica algunas reglas de simplificaci&oacute;n:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) mod (x, 0);
+(%o1)                           x
+(%i2) mod (a*x, a*y);
+(%o2)                      a mod(x, y)
+(%i3) mod (0, x);
+(%o3)                           0
+</pre></td></tr></table></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>oddp</b><i> (<var>expr</var>)</i>
+<a name="IDX107"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> es un entero impar y <code>false</code> en caso contrario.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>pred</b>
+<a name="IDX108"></a>
+</dt>
+<dd><p>El operador <code>pred</code> realiza una evaluaci&oacute;n extra de un predicado (expresi&oacute;n cuya evaluaci&oacute;n debe dar <code>true</code>
+o <code>false</code>). V&eacute;ase <code>ev</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>make_random_state</b><i> (<var>n</var>)</i>
+<a name="IDX109"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>make_random_state</b><i> (<var>s</var>)</i>
+<a name="IDX110"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>make_random_state</b><i> (true)</i>
+<a name="IDX111"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>make_random_state</b><i> (false)</i>
+<a name="IDX112"></a>
+</dt>
+<dd><p>Un objeto de estado aleatorio representa el estado del generador de n&uacute;meros aleatorios. El estado consiste en 627 cadenas binarias de 32 bits.
+</p>
+<p>La llamada <code>make_random_state (<var>n</var>)</code> devuelve un nuevo objeto de estado aleatorio creado a partir de una semilla entera igual a <var>n</var> m&oacute;dulo 2^32. El argumento <var>n</var> puede ser negativo.
+</p>
+<p>La llamada <code>make_random_state (<var>s</var>)</code> devuelve una copia del estado aleatorio <var>s</var>.
+</p>
+<p>La llamada <code>make_random_state (true)</code> devuelve un nuevo objeto de estado aleatorio, cuya semilla se genera a partir de la hora actual del reloj del sistema como semilla.
+</p>
+<p>La llamada <code>make_random_state (false)</code> devuelve una copia del estado actual del generador de n&uacute;meros aleatorios.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>set_random_state</b><i> (<var>s</var>)</i>
+<a name="IDX113"></a>
+</dt>
+<dd><p>Establece <var>s</var> como estado del generador de n&uacute;meros aleatorios.
+</p>
+<p>La funci&oacute;n <code>set_random_state</code> devuelve <code>done</code> en todo caso.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>random</b><i> (<var>x</var>)</i>
+<a name="IDX114"></a>
+</dt>
+<dd><p>Devuelve un n&uacute;mero seudoaleatorio. Si <var>x</var> es un entero, <code>random (<var>x</var>)</code> devuelve un
+entero entre 0 y <code><var>x</var> - 1</code>, ambos inclusive. Si <var>x</var> es un decimal en punto flotante,
+<code>random (<var>x</var>)</code> devuelve un decimal no negativo en punto flotante menor que <var>x</var>.
+La funci&oacute;n <code>random</code> emite un mensaje de error si <var>x</var> no es ni entero ni de punto flotante,
+o si <var>x</var> no es positivo.
+</p>
+<p>Las funciones <code>make_random_state</code> y <code>set_random_state</code>
+permiten controlar el estado del generador de n&uacute;meros aleatorios.
+</p>
+<p>El generador de n&uacute;meros aleatorios de Maxima implementa el algoritmo de Mersenne twister MT 19937.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) s1: make_random_state (654321)$
+(%i2) set_random_state (s1);
+(%o2)                         done
+(%i3) random (1000);
+(%o3)                          768
+(%i4) random (9573684);
+(%o4)                        7657880
+(%i5) random (2^75);
+(%o5)                11804491615036831636390
+(%i6) s2: make_random_state (false)$
+(%i7) random (1.0);
+(%o7)                   .2310127244107132
+(%i8) random (10.0);
+(%o8)                   4.394553645870825
+(%i9) random (100.0);
+(%o9)                   32.28666704056853
+(%i10) set_random_state (s2);
+(%o10)                        done
+(%i11) random (1.0);
+(%o11)                  .2310127244107132
+(%i12) random (10.0);
+(%o12)                  4.394553645870825
+(%i13) random (100.0);
+(%o13)                  32.28666704056853
+</pre></td></tr></table>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>rationalize</b><i> (<var>expr</var>)</i>
+<a name="IDX115"></a>
+</dt>
+<dd><p>Convierte todos los n&uacute;meros en coma flotante de doble precisi&oacute;n y grandes (big float) presentes en una expresi&oacute;n <var>expr</var> de Maxima a sus formas racionales exactas equivalentes. Si el usuario no est&aacute; familiarizado con la representaci&oacute;n binaria de n&uacute;meros en coma flotante, le puede extra&ntilde;ar que <code>rationalize (0.1)</code> no sea igual que 1/10.  Este comportamiento no es &uacute;nico de Maxima, ya que el n&uacute;mero 1/10 en su forma binaria es peri&oacute;dico y no exacto.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) rationalize (0.5);
+                                1
+(%o1)                           -
+                                2
+(%i2) rationalize (0.1);
+                               1
+(%o2)                          --
+                               10
+(%i3) fpprec : 5$
+(%i4) rationalize (0.1b0);
+                             209715
+(%o4)                        -------
+                             2097152
+(%i5) fpprec : 20$
+(%i6) rationalize (0.1b0);
+                     236118324143482260685
+(%o6)                ----------------------
+                     2361183241434822606848
+(%i7) rationalize (sin (0.1*x + 5.6));
+                              x    28
+(%o7)                     sin(-- + --)
+                              10   5
+</pre></td></tr></table>
+<p>Ejemplo de uso:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) unitfrac(r) := block([uf : [], q],
+    if not(ratnump(r)) then error(&quot;The input to 'unitfrac' must be a rational number&quot;),
+    while r # 0 do (
+        uf : cons(q : 1/ceiling(1/r), uf),
+        r : r - q),
+    reverse(uf)); 
+(%o1) unitfrac(r) := block([uf : [], q], 
+if not ratnump(r) then error(&quot;The input to 'unitfrac' must be a rational number&quot;
+                                     1
+), while r # 0 do (uf : cons(q : ----------, uf), r : r - q), 
+                                         1
+                                 ceiling(-)
+                                         r
+reverse(uf))
+                            1  1  1
+(%o2)                      [-, -, --]
+                            2  3  15
+(%i3) unitfrac (9/10);
+                               9
+(%o3)                          --
+                               10
+(%i4) apply (&quot;+&quot;, %);
+                                  1
+(%o4)                       [- 1, --]
+                                  10
+(%i5) unitfrac (-9/10);
+                                9
+(%o5)                         - --
+                                10
+(%i6) apply (&quot;+&quot;, %);
+                        1  1  1  1    1
+(%o6)                  [-, -, -, --, ----]
+                        2  3  8  69  6808
+(%i7) unitfrac (36/37);
+                               36
+(%o7)                          --
+                               37
+(%i8) apply (&quot;+&quot;, %);
+</pre></td></tr></table>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sign</b><i> (<var>expr</var>)</i>
+<a name="IDX116"></a>
+</dt>
+<dd><p>Intenta determinar el signo de <var>expr</var> en base a los hechos almacenados en la base de datos. Devuelve una de las siguientes respuestas: <code>pos</code> (positivo), <code>neg</code> (negativo), <code>zero</code> (cero), <code>pz</code>
+(positivo o cero), <code>nz</code> (negativo o cero), <code>pn</code> (positivo o negativo),
+o <code>pnz</code> (positivo, negativo o cero, lo que significa que el signo es desconocido).
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>signum</b><i> (<var>x</var>)</i>
+<a name="IDX117"></a>
+</dt>
+<dd><p>Para <var>x</var> num&eacute;rico, devuelve 0 si <var>x</var> es 0, en caso contrario devuelve -1 o +1, seg&uacute;n que <var>x</var> sea menor o mayor que 0, respectivamente.
+</p>
+<p>Si <var>x</var> no es num&eacute;rico, entonces se devuelve una forma simplificada equivalente.
+Por ejemplo, <code>signum(-x)</code> devuelve <code>-signum(x)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sort</b><i> (<var>L</var>, <var>P</var>)</i>
+<a name="IDX118"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>sort</b><i> (<var>L</var>)</i>
+<a name="IDX119"></a>
+</dt>
+<dd><p>Ordena la lista <var>L</var> de acuerdo con el predicado <code>P</code> de dos argumentos,
+de tal manera que <code><var>P</var> (<var>L</var>[k], <var>L</var>[k + 1])</code> es <code>true</code> (verdadero)
+para cualesquiera dos elementos sucesivos.
+El predicado se puede especificar como nombre de una funci&oacute;n o de un operador
+infijo binario, o como una expresi&oacute;n <code>lambda</code>.
+Si se especifica con el nombre de un operador, este nombre debe
+encerrarse con &quot;comillas dobles&quot;.
+</p>
+<p>La lista ordenada se devuelve como un objeto nuevo, de manera que
+el argumento <var>L</var> no se ve alterado.
+A fin de construir el valor de retorno, <code>sort</code> hace una copia previa
+de los elementos de <var>L</var>.
+</p>
+<p>Si el predicado <var>P</var> no ordena totalmente los elementos de <var>L</var>,
+entonces <code>sort</code> puede seguir ejecut&aacute;ndose hasta el final sin emitir
+errores, pero el resultado no es predecible.
+La funci&oacute;n muestra un mensaje de error en caso de que el predicado
+devuelva algo diferente de <code>true</code> o <code>false</code>.
+</p>
+<p>La llamada <code>sort (<var>L</var>)</code> equivale a <code>sort (<var>L</var>, orderlessp)</code>;
+esto es, el orden por defecto es el ascendente, tal como queda definido por 
+<code>orderlessp</code>. Todos los &aacute;tomos y expresiones de Maxima son comparables
+para <code>orderlessp</code>, aunque existen ejemplos aislados de expresiones para las
+cuales <code>orderlessp</code> deja de ser transitivo; se trata de un fallo de Maxima.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sort ([11, -17, 29b0, 7.55, 3, -5/2, b + a, 9 * c, 19 - 3 * x]);
+               5
+(%o1) [- 17, - -, 3, 7.55, 11, 2.9b1, b + a, 9 c, 19 - 3 x]
+               2
+(%i2) sort ([11, -17, 29b0, 7.55, 3, -5/2, b + a, 9 * c, 19 - 3 * x], ordergreatp);
+                                                   5
+(%o2) [19 - 3 x, 9 c, b + a, 2.9b1, 11, 7.55, 3, - -, - 17]
+                                                   2
+(%i3) sort ([%pi, 3, 4, %e, %gamma]);
+(%o3)                [3, 4, %e, %gamma, %pi]
+(%i4) sort ([%pi, 3, 4, %e, %gamma], &quot;&lt;&quot;);
+(%o4)                [%gamma, %e, 3, %pi, 4]
+(%i5) my_list : [[aa, hh, uu], [ee, cc], [zz, xx, mm, cc], [%pi, %e]];
+(%o5) [[aa, hh, uu], [ee, cc], [zz, xx, mm, cc], [%pi, %e]]
+(%i6) sort (my_list);
+(%o6) [[%pi, %e], [aa, hh, uu], [ee, cc], [zz, xx, mm, cc]]
+(%i7) sort (my_list, lambda ([a, b], orderlessp (reverse (a), reverse (b))));
+(%o7) [[%pi, %e], [ee, cc], [zz, xx, mm, cc], [aa, hh, uu]]
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sqrt</b><i> (<var>x</var>)</i>
+<a name="IDX120"></a>
+</dt>
+<dd><p>Ra&iacute;z cuadrada de <var>x</var>. Se representa internamente por <code><var>x</var>^(1/2)</code>.  V&eacute;ase tambi&eacute;n <code>rootscontract</code>.
+</p>
+<p>Si la variable <code>radexpand</code> vale <code>true</code> har&aacute; que las ra&iacute;ces <code>n</code>-&eacute;simas de los factores de un producto que sean potencias de <code>n</code> sean extra&iacute;das del radical; por ejemplo, <code>sqrt(16*x^2)</code> se convertir&aacute; en <code>4*x</code> s&oacute;lo si <code>radexpand</code> vale <code>true</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>sqrtdispflag</b>
+<a name="IDX121"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Si <code>sqrtdispflag</code> vale <code>false</code>, har&aacute; que <code>sqrt</code> se muestre con el exponente 1/2.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sublis</b><i> (<var>list</var>, <var>expr</var>)</i>
+<a name="IDX122"></a>
+</dt>
+<dd><p>Realiza sustituciones  m&uacute;ltiples en paralelo en una expresi&oacute;n.
+</p>
+<p>La variable <code>sublis_apply_lambda</code> controla la simplificaci&oacute;n despu&eacute;s de <code>sublis</code>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sublis ([a=b, b=a], sin(a) + cos(b));
+(%o1)                    sin(b) + cos(a)
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sublist</b><i> (<var>list</var>, <var>p</var>)</i>
+<a name="IDX123"></a>
+</dt>
+<dd><p>Devuelve la lista de elementos de <var>list</var> para los cuales el predicado <code>p</code> retorna <code>true</code>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) L: [1, 2, 3, 4, 5, 6];
+(%o1)                  [1, 2, 3, 4, 5, 6]
+(%i2) sublist (L, evenp);
+(%o2)                       [2, 4, 6]
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>sublis_apply_lambda</b>
+<a name="IDX124"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Controla si los <code>lambda</code> sustituidos son aplicados en la simplificaci&oacute;n despu&eacute;s de invocar a <code>sublis</code>, o si se tiene que hacer un <code>ev</code> para hacerlo. Si <code>sublis_apply_lambda</code> vale <code>true</code>, significa que se ejecute la aplicaci&oacute;n.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>subst</b><i> (<var>a</var>, <var>b</var>, <var>c</var>)</i>
+<a name="IDX125"></a>
+</dt>
+<dd><p>Sustituye <var>a</var> por <var>b</var> en <var>c</var>. El argumento  <var>b</var> debe ser un &aacute;tomo o una subexpresi&oacute;n completa de <var>c</var>.  Por ejemplo, <code>x+y+z</code> es una subexpresi&oacute;n completa de  <code>2*(x+y+z)/w</code> mientras que <code>x+y</code> no lo es. Cuando <var>b</var> no cumple esta caracter&iacute;stica, se puede utilizar en algunos casos <code>substpart</code> o <code>ratsubst</code>
+(ver m&aacute;s abajo).  Alternativamente, si <var>b</var> no es de la forma <code>e/f</code> entonces se puede usar <code>subst (a*f, e, c)</code>, pero si <var>b</var> es de la forma <code>e^(1/f)</code> se debe usar <code>subst (a^f, e, c)</code>.  La instrucci&oacute;n <code>subst</code> tambi&eacute;n reconoce <code>x^y</code> en <code>x^-y</code>, de manera que  <code>subst (a, sqrt(x), 1/sqrt(x))</code> da <code>1/a</code>. Los argumentos <var>a</var> y <var>b</var> tambi&eacute;n pueden ser operadores de una expresi&oacute;n acotados por comillas dobles <code>&quot;</code> o nombres de funciones.  Si se quiere sustituir la variable independiente en expresiones con derivadas se debe utilizar la funci&oacute;n <code>at</code> (ver m&aacute;s abajo).
+</p>
+<p>La funci&oacute;n <code>subst</code> es sin&oacute;nimo de <code>substitute</code>.
+</p>
+<p>La llamada <code>subst (<var>eq_1</var>, <var>expr</var>)</code> o <code>subst ([<var>eq_1</var>, ..., <var>eq_k</var>], <var>expr</var>)</code>
+est&aacute;n permitidas.  Las <var>eq_i</var> son ecuaciones que indican las sustituciones a realizar.
+Para cada ecuaci&oacute;n, el miembro derecho ser&aacute; sustituida por la expresi&oacute;n del miembro izquierdo en <var>expr</var>.
+</p>
+<p>Si la variable <code>exptsubst</code> vale <code>true</code> se permiten ciertas sustituciones de exponentes; por ejemplo, sustituir <code>y</code> por <code>%e^x</code> en <code>%e^(a*x)</code>.
+</p>
+<p>Si <code>opsubst</code> vale <code>false</code>,
+<code>subst</code> no intentar&aacute; sustituir un operador de una expresi&oacute;n. Por ejemplo, 
+<code>(opsubst: false, subst (x^2, r, r+r[0]))</code> trabajar&aacute; sin problemas.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) subst (a, x+y, x + (x+y)^2 + y);
+                                    2
+(%o1)                      y + x + a
+(%i2) subst (-%i, %i, a + b*%i);
+(%o2)                       a - %i b
+</pre></td></tr></table>
+
+<p>Para m&aacute;s ejemplos, ejec&uacute;tese <code>example (subst)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>substinpart</b><i> (<var>x</var>, <var>expr</var>, <var>n_1</var>, ..., <var>n_k</var>)</i>
+<a name="IDX126"></a>
+</dt>
+<dd><p>Es similar a <code>substpart</code>, pero <code>substinpart</code> trabaja con la representaci&oacute;n interna de <var>expr</var>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x . 'diff (f(x), x, 2);
+                              2
+                             d
+(%o1)                   x . (--- (f(x)))
+                               2
+                             dx
+(%i2) substinpart (d^2, %, 2);
+                                  2
+(%o2)                        x . d
+(%i3) substinpart (f1, f[1](x + 1), 0);
+(%o3)                       f1(x + 1)
+</pre></td></tr></table>
+<p>Si el &uacute;ltimo argumento de la funci&oacute;n <code>part</code> es una lista de &iacute;ndices, entonces se toman varias subexpresiones, cada una de las cuales en correspondencia con un &iacute;ndice de la lista. As&iacute;, 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) part (x+y+z, [1, 3]);
+(%o1)                         z + x
+</pre></td></tr></table>
+<p><code>piece</code> guarda el valor de la &uacute;ltima expresi&oacute;n seleccionada cada vez que se utiliza la funci&oacute;n <code>part</code>. Esta asignaci&oacute;n se se hace durante la ejecuci&oacute;n de la funci&oacute;n, con lo que puede ser referenciada en la propia funci&oacute;n tal como se muestra m&aacute;s abajo. Si <code>partswitch</code> vale <code>true</code> entonces se devuelve <code>end</code> cuando la parte seleccionada de una expresi&oacute;n no existe, en caso contrario se muestra un mensaje de error.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expr: 27*y^3 + 54*x*y^2 + 36*x^2*y + y + 8*x^3 + x + 1;
+              3         2       2            3
+(%o1)     27 y  + 54 x y  + 36 x  y + y + 8 x  + x + 1
+(%i2) part (expr, 2, [1, 3]);
+                                  2
+(%o2)                         54 y
+(%i3) sqrt (piece/54);
+(%o3)                        abs(y)
+(%i4) substpart (factor (piece), expr, [1, 2, 3, 5]);
+                               3
+(%o4)               (3 y + 2 x)  + y + x + 1
+(%i5) expr: 1/x + y/x - 1/z;
+                             1   y   1
+(%o5)                      - - + - + -
+                             z   x   x
+(%i6) substpart (xthru (piece), expr, [2, 3]);
+                            y + 1   1
+(%o6)                       ----- - -
+                              x     z
+</pre></td></tr></table>
+<p>Adem&aacute;s, darle a la opci&oacute;n <code>inflag</code> el valor <code>true</code> y llamar a <code>part</code> o a <code>substpart</code> es 
+lo mismo que llamar a <code>inpart</code> o a <code>substinpart</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>substpart</b><i> (<var>x</var>, <var>expr</var>, <var>n_1</var>, ..., <var>n_k</var>)</i>
+<a name="IDX127"></a>
+</dt>
+<dd><p>Sustituye <var>x</var> por la subexpresi&oacute;n determinada por el resto de argumentos, seg&uacute;n el esquema de <code>part</code>.  Devuelve el nuevo valor de <var>expr</var>. El argumento  <var>x</var> puede ser un operador a ser sustituido por un operador de <var>expr</var>. En algunos casos <var>x</var> necesita estar acotado por comillas dobles <code>&quot;</code>, como en <code>substpart (&quot;+&quot;, a*b, 0)</code> para que retorne <code>b + a</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) 1/(x^2 + 2);
+                               1
+(%o1)                        ------
+                              2
+                             x  + 2
+(%i2) substpart (3/2, %, 2, 1, 2);
+                               1
+(%o2)                       --------
+                             3/2
+                            x    + 2
+(%i3) a*x + f (b, y);
+(%o3)                     a x + f(b, y)
+(%i4) substpart (&quot;+&quot;, %, 1, 0);
+(%o4)                    x + f(b, y) + a
+</pre></td></tr></table>
+<p>Adem&aacute;s, darle a la opci&oacute;n <code>inflag</code> el valor <code>true</code> y llamar a <code>part</code> o a <code>substpart</code> es 
+lo mismo que llamar a <code>inpart</code> o a <code>substinpart</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>subvarp</b><i> (<var>expr</var>)</i>
+<a name="IDX128"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> es una variable subindicada, como <code>a[i]</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>symbolp</b><i> (<var>expr</var>)</i>
+<a name="IDX129"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si <var>expr</var> es un s&iacute;mbolo y <code>false</code> en caso contrario.
+La llamada <code>symbolp(x)</code> equivale al predicado <code>atom(x) and not numberp(x)</code>.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>Identifiers</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>unorder</b><i> ()</i>
+<a name="IDX130"></a>
+</dt>
+<dd><p>Desactiva las asociaciones creadas por la &uacute;ltima utilizaci&oacute;n de los comandos de ordenaci&oacute;n <code>ordergreat</code> y <code>orderless</code>, los cuales no pueden ser utilizados m&aacute;s de una vez sin invocar a <code>unorder</code>. 
+V&eacute;ase tambi&eacute;n <code>ordergreat</code> y <code>orderless</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) unorder();
+(%o1)                          []
+(%i2) b*x + a^2;
+                                   2
+(%o2)                       b x + a
+(%i3) ordergreat (a);
+(%o3)                         done
+(%i4) b*x + a^2;
+ %th(1) - %th(3);
+                             2
+(%o4)                       a  + b x
+(%i5) unorder();
+                              2    2
+(%o5)                        a  - a
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>vectorpotential</b><i> (<var>givencurl</var>)</i>
+<a name="IDX131"></a>
+</dt>
+<dd><p>Devuelve el vector potencial de un vector rotacional en el sistema
+de coordenadas actual. 
+<code>potentialzeroloc</code> tiene un rol similar al de <code>potential</code>, 
+pero el orden del miembro izquierdo de las ecuaciones debe ser una
+permutaci&oacute;n c&iacute;clica de las coordenadas. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>xthru</b><i> (<var>expr</var>)</i>
+<a name="IDX132"></a>
+</dt>
+<dd><p>Combina todos los t&eacute;rminos de <var>expr</var> (la cual debe ser una suma) sobre un com&uacute;n denominador sin expandir productos ni sumas elevadas a exponentes al modo que lo hace <code>ratsimp</code>. La funci&oacute;n <code>xthru</code> cancela factores comunes en el numerador y denominador de expresiones racionales, pero s&oacute;lo si los factores son expl&iacute;citos.
+</p>
+<p>En ocasiones puede ser &uacute;til el uso de <code>xthru</code> antes de la llamada a <code>ratsimp</code> a fin de cancelar factores expl&iacute;citos del m&aacute;ximo com&uacute;n divisor del numerador y denominador y as&iacute; simplificar la expresi&oacute;n a la que se va a aplicar <code>ratsimp</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) ((x+2)^20 - 2*y)/(x+y)^20 + (x+y)^(-19) - x/(x+y)^20;
+ xthru (%);
+                                20
+                 1       (x + 2)   - 2 y       x
+(%o1)        --------- + --------------- - ---------
+                    19             20             20
+             (y + x)        (y + x)        (y + x)
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>zeroequiv</b><i> (<var>expr</var>, <var>v</var>)</i>
+<a name="IDX133"></a>
+</dt>
+<dd><p>Analiza si la expresi&oacute;n <var>expr</var> de variable <var>v</var> equivale a cero, devolviendo <code>true</code>, <code>false</code> o
+<code>dontknow</code>.
+</p>
+<p>La funci&oacute;n <code>zeroequiv</code> tiene estas restricciones:
+</p><ol>
+<li>
+No utilizar funciones que Maxima no sepa derivar y evaluar.
+</li><li>
+Si la expresi&oacute;n tiene polos en la recta real, pueden aparecer errores en el resultado, aunque es poco probable.
+</li><li>
+Si la expresi&oacute;n contiene funciones que no son soluciones de ecuaciones diferenciales ordinarias de primer orden (como las funciones de Bessel) pueden presentarse resultados incorrectos.
+</li><li>
+El algoritmo utiliza evaluaciones en puntos aleatoriamente seleccionados. Esto conlleva un riesgo,aunque el algoritmo intenta minimizar el error.
+</li></ol>
+
+<p>Por ejemplo, <code>zeroequiv (sin(2*x) - 2*sin(x)*cos(x), x)</code> devuelve
+<code>true</code> y <code>zeroequiv (%e^x + x, x)</code> devuelve <code>false</code>.
+Por otro lado <code>zeroequiv (log(a*b) - log(a) - log(b), a)</code> devuelve <code>dontknow</code> debido a la presencia del par&aacute;metro <code>b</code>.
+</p>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC12" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

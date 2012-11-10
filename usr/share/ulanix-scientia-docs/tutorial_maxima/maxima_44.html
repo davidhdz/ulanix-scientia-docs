@@ -1,0 +1,1706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 44. descriptive</title>
+
+<meta name="description" content="Manual de Maxima: 44. descriptive">
+<meta name="keywords" content="Manual de Maxima: 44. descriptive">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="descriptive"></a>
+<a name="SEC168"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_43.html#SEC167" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC169" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_43.html#SEC166" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 44. descriptive </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC169">44.1 Introducci&oacute;n a descriptive</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC170">44.2 Definiciones para el tratamiento de datos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC171">44.3 Definiciones de valores descriptivos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC172">44.4 Definiciones de valores descriptivos multivariantes</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC173">44.5 Definiciones para gr&aacute;ficos estad&iacute;sticos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Introducci_00f3n-a-descriptive"></a>
+<a name="SEC169"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC168" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC170" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 44.1 Introducci&oacute;n a descriptive </h2>
+
+
+<p>El paquete <code>descriptive</code> contiene funciones para realizar cl'culos y gr&aacute;ficos estad&iacute;sticos descriptivos. Junto con el c&oacute;digo fuente se distribuyen tres conjuntos de datos: <code>pidigits.data</code>, <code>wind.data</code> y <code>biomed.data</code>, los cuales tambi&eacute;n se pueden descargar desde el sitio web <code>www.biomates.net</code>.
+</p>
+<p>Cualquier manual de estad&iacute;stica se puede utilizar como referencia al paquete <code>descriptive</code>.
+</p>
+<p>Para comentarios, fallos y sugerencias, por favor contactar con <var>'mario AT edu DOT xunta DOT es'</var>.
+</p>
+<p>Aqu&iacute; un sencillo ejemplo sobre c&oacute;mo operan las funciones de <code>descriptive</code>, dependiendo de la naturaleza de sus argumentos, listas o matrices,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) /* muestra univariate */   mean ([a, b, c]);
+                            c + b + a
+(%o2)                       ---------
+                                3
+(%i3) matrix ([a, b], [c, d], [e, f]);
+                            [ a  b ]
+                            [      ]
+(%o3)                       [ c  d ]
+                            [      ]
+                            [ e  f ]
+(%i4) /* muestra multivariante */ mean (%);
+                      e + c + a  f + d + b
+(%o4)                [---------, ---------]
+                          3          3
+</pre></td></tr></table>
+<p>N&oacute;tese que en las muestras multivariantes la media se calcula para cada columna.
+</p>
+<p>En caso de varias muestras de diferente tama&ntilde;o, la funci&oacute;n <code>map</code> de Maxima puede utilizarse para obtener los resultados deseados para cada muestra,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) map (mean, [[a, b, c], [d, e]]);
+                        c + b + a  e + d
+(%o2)                  [---------, -----]
+                            3        2
+</pre></td></tr></table>
+<p>En este caso, dos muestras de tama&ntilde;os 3 y 2 han sido almacenadas en una lista.
+</p>
+<p>Muestras univariantes deben guardarse en listas como en
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) s1 : [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+(%o1)           [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+</pre></td></tr></table>
+<p>y muestras multivariantes en matrices como las del siguiente ejemplo
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) s2 : matrix ([13.17, 9.29], [14.71, 16.88], [18.50, 16.88],
+             [10.58, 6.63], [13.33, 13.25], [13.21,  8.12]);
+                        [ 13.17  9.29  ]
+                        [              ]
+                        [ 14.71  16.88 ]
+                        [              ]
+                        [ 18.5   16.88 ]
+(%o1)                   [              ]
+                        [ 10.58  6.63  ]
+                        [              ]
+                        [ 13.33  13.25 ]
+                        [              ]
+                        [ 13.21  8.12  ]
+</pre></td></tr></table>
+<p>En este caso, el n&uacute;mero de columnas es igual al de la dimensi&oacute;n de la variable aleatoria y el n&uacute;mero de filas coincide con el tama&ntilde;o muestral.
+</p>
+<p>Los datos pueden suministrarse manualmente, pero las muestras grandes se suelen almacenar en ficheros de texto. Por ejemplo, el fichero <code>pidigits.data</code> contiene los 100 primeros d&iacute;gitos del n&uacute;mero <code>%pi</code>:
+</p><table><tr><td>&nbsp;</td><td><pre class="example">      3
+      1
+      4
+      1
+      5
+      9
+      2
+      6
+      5
+      3 ...
+</pre></td></tr></table>
+<p>A fin de leer estos d&iacute;gitos desde Maxima,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (numericalio)$
+(%i2) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i3) length (s1);
+(%o3)                          100
+</pre></td></tr></table>
+<p>Por otro lado, el archivo <code>wind.data</code> contiene los promedios diarios de la velocidad del viento en cinco estaciones meteorol&oacute;gicas en Irlanda (esta muestra es parte de un conjunto de datos correspondientes a 12 estaciones meteorol&oacute;gicas. El fichero original se puede descargar libremente del 'StatLib Data Repository' y se analiza en  Haslett, J., Raftery, A. E. (1989) <var>Space-time Modelling with Long-memory Dependence: Assessing Ireland's Wind Power Resource, with Discussion</var>. Applied Statistics 38, 1-50). As&iacute; se leen los datos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (numericalio)$
+(%i2) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i3) length (s2);
+(%o3)                          100
+(%i4) s2 [%]; /* ultimo registro */
+(%o4)            [3.58, 6.0, 4.58, 7.62, 11.25]
+</pre></td></tr></table>
+<p>Algunas muestras contienen datos no num&eacute;ricos. Como ejemplo, el archivo <code>biomed.data</code> (el cual es parte de otro mayor descargado tambi&eacute;n del 'StatLib Data Repository') contiene cuatro mediciones sangu&iacute;neas tomadas a dos grupos de pacientes, <code>A</code> y <code>B</code>, de diferentes edades,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (numericalio)$
+(%i2) s3 : read_matrix (file_search (&quot;biomed.data&quot;))$
+(%i3) length (s3);
+(%o3)                          100
+(%i4) s3 [1]; /* primer registro */
+(%o4)            [A, 30, 167.0, 89.0, 25.6, 364]
+</pre></td></tr></table>
+<p>El primer individuo pertenece al grupo <code>A</code>, tiene 30 a&ntilde;os de edad y sus medidas sangu&iacute;neas fueron 167.0, 89.0, 25.6 y 364.
+</p>
+<p>Debe tenerse cuidado cuando se trabaje con datos categ&oacute;ricos. En el siguiente ejemplo, se asigna al s&iacute;mbolo <code>a</code> cierto valor en alg&uacute;n momento previo y luego se toma una muestra con el valor categ&oacute;rico <code>a</code>,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) a : 1$
+(%i2) matrix ([a, 3], [b, 5]);
+                            [ 1  3 ]
+(%o2)                       [      ]
+                            [ b  5 ]
+</pre></td></tr></table>
+
+<hr size="6">
+<a name="Definiciones-para-el-tratamiento-de-datos"></a>
+<a name="SEC170"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC169" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC171" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 44.2 Definiciones para el tratamiento de datos </h2>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>continuous_freq</b><i> (<var>list</var>)</i>
+<a name="IDX1378"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>continuous_freq</b><i> (<var>list</var>, <var>m</var>)</i>
+<a name="IDX1379"></a>
+</dt>
+<dd><p>El argumento de <code>continuous_freq</code> debe ser una lista de n&uacute;meros, los cuales ser&aacute;n luego agrupados en intervalos y hecho el recuento de cu&aacute;ntos hay en cada grupo. Opcionalmente, la funci&oacute;n <code>continuous_freq</code> admite un segundo argumento para indicar el n&uacute;mero de clases a considerar, siendo 10 su valor por defecto.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (numericalio)$
+(%i2) load (descriptive)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) continuous_freq (s1, 5);
+(%o4) [[0, 1.8, 3.6, 5.4, 7.2, 9.0], [16, 24, 18, 17, 25]]
+</pre></td></tr></table>
+<p>La primera lista contiene los extremos de los intervalos y la segunda los resultados de los recuentos: hay 16 d&iacute;gitos dentro del intervalo  <code>[0, 1.8]</code>, esto es ceros y unos, 24 d&iacute;gitos en <code>(1.8, 3.6]</code>, es decir doses y treses, y as&iacute; sucesivamente.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>discrete_freq</b><i> (<var>list</var>)</i>
+<a name="IDX1380"></a>
+</dt>
+<dd><p>Calcula las frecuencias absolutas en muestras discretas, tanto num&eacute;ricas como categ&oacute;ricas. Su &uacute;nico argumento debe ser una lista.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) discrete_freq (s1);
+(%o4) [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 
+                             [8, 8, 12, 12, 10, 8, 9, 8, 12, 13]]
+</pre></td></tr></table>
+<p>La primera lista son los valores de la muestra y la segunda sus frecuencias absolutas. Las instrucciones <code>? col</code> y 
+<code>? transpose</code> pueden ayudar a comprender la &uacute;ltima entrada.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>subsample</b><i> (<var>data_matrix</var>, <var>logical_expression</var>)</i>
+<a name="IDX1381"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>subsample</b><i> (<var>data_matrix</var>, <var>logical_expression</var>, <var>col_num</var>, <var>col_num</var>, ...)</i>
+<a name="IDX1382"></a>
+</dt>
+<dd><p>Esta es una variante de la funci&oacute;n <code>submatrix</code> de Maxima. El primer argumento es una matriz de datos, el segundo es una expresi&oacute;n l&oacute;gica no evaluada y el resto de argumentos opcionales son los n&uacute;meros de las columnas a tomar en consideraci&oacute;n,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) subsample (s2, '(%c[1] &gt; 18));
+              [ 19.38  15.37  15.12  23.09  25.25 ]
+              [                                   ]
+              [ 18.29  18.66  19.08  26.08  27.63 ]
+(%o4)         [                                   ]
+              [ 20.25  21.46  19.95  27.71  23.38 ]
+              [                                   ]
+              [ 18.79  18.96  14.46  26.38  21.84 ]
+</pre></td></tr></table>
+<p>Estos son los registros multivariantes en los que la velocidad del viento en la primera estaci&oacute;n meteorol&oacute;gica fue menor que 18. V&eacute;ase c&oacute;mo en la expresi&oacute;n l&oacute;gica no evaluada a la <var>i</var>-&eacute;sima componente se la referencia como <code>%c[i]</code>. El s&iacute;mbolo <code>%c[i]</code> es utilizado dentro de la funci&oacute;n <code>subsample</code>, por lo que si se utiliza tambi&eacute;n como variable categ&oacute;rica, Maxima puede dar resultados imprevistos. En el siguiente ejemplo, se solicitan &uacute;nicamente la primera, segunda y quinta componentes de aquellos registros con velocidades del viento mayores o iguales que 16 nudos en la estaci&oacute;n n&uacute;mero 1 y menores que 25 nudos en la estaci&oacute;n n&uacute;mero 4,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) subsample (s2, '(%c[1] &gt;= 16 and %c[4] &lt; 25), 1, 2, 5);
+                     [ 19.38  15.37  25.25 ]
+                     [                     ]
+                     [ 17.33  14.67  19.58 ]
+(%o4)                [                     ]
+                     [ 16.92  13.21  21.21 ]
+                     [                     ]
+                     [ 17.25  18.46  23.87 ]
+</pre></td></tr></table>
+<p>He aqu&iacute; un ejemplo con las variables categ&oacute;ricas de <code>biomed.data</code>. Se piden los registros correspondientes a aquellos pacientes del grupo <code>B</code> mayores de 38 an&ntilde;os,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s3 : read_matrix (file_search (&quot;biomed.data&quot;))$
+(%i4) subsample (s3, '(%c[1] = B and %c[2] &gt; 38));
+                [ B  39  28.0  102.3  17.1  146 ]
+                [                               ]
+                [ B  39  21.0  92.4   10.3  197 ]
+                [                               ]
+                [ B  39  23.0  111.5  10.0  133 ]
+                [                               ]
+                [ B  39  26.0  92.6   12.3  196 ]
+(%o4)           [                               ]
+                [ B  39  25.0  98.7   10.0  174 ]
+                [                               ]
+                [ B  39  21.0  93.2   5.9   181 ]
+                [                               ]
+                [ B  39  18.0  95.0   11.3  66  ]
+                [                               ]
+                [ B  39  39.0  88.5   7.6   168 ]
+</pre></td></tr></table>
+<p>Es probable que el an&aacute;lisis estad&iacute;stico requiera &uacute;nicamente de las medidas sangu&iacute;neas,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s3 : read_matrix (file_search (&quot;biomed.data&quot;))$
+(%i4) subsample (s3, '(%c[1] = B and %c[2] &gt; 38), 3, 4, 5, 6);
+                   [ 28.0  102.3  17.1  146 ]
+                   [                        ]
+                   [ 21.0  92.4   10.3  197 ]
+                   [                        ]
+                   [ 23.0  111.5  10.0  133 ]
+                   [                        ]
+                   [ 26.0  92.6   12.3  196 ]
+(%o4)              [                        ]
+                   [ 25.0  98.7   10.0  174 ]
+                   [                        ]
+                   [ 21.0  93.2   5.9   181 ]
+                   [                        ]
+                   [ 18.0  95.0   11.3  66  ]
+                   [                        ]
+                   [ 39.0  88.5   7.6   168 ]
+</pre></td></tr></table>
+<p>Esta es la media multivariante de <code>s3</code>,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s3 : read_matrix (file_search (&quot;biomed.data&quot;))$
+(%i4) mean (s3);
+       65 B + 35 A  317          6 NA + 8145.0
+(%o4) [-----------, ---, 87.178, -------------, 18.123, 
+           100      10                100
+                                                    3 NA + 19587
+                                                    ------------]
+                                                        100
+</pre></td></tr></table>
+<p>Aqu&iacute; la primera componente carece de significado, ya que tanto <code>A</code> como <code>B</code> son categ&oacute;ricas, la segunda componente es la edad media de los individuos en forma racional, al tiempo que los valores cuarto y quinto muestran cierto comportamiento extra&ntilde;o; lo cual se debe a que el s&iacute;mbolo <code>NA</code> se utiliza para indicar datos <i>no disponibles</i>, por lo que ambas medias no tienen sentido. Una posible soluci&oacute;n puede ser extraer de la matriz aquellas filas con s&iacute;mbolos <code>NA</code>, lo que acarrear&iacute;a cierta p&eacute;rdida de informaci&oacute;n,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s3 : read_matrix (file_search (&quot;biomed.data&quot;))$
+(%i4) mean (subsample (s3, '(%c[4] # NA and %c[6] # NA), 3, 4, 5, 6));
+(%o4) [79.4923076923077, 86.2032967032967, 16.93186813186813, 
+                                                            2514
+                                                            ----]
+                                                             13
+</pre></td></tr></table></dd></dl>
+
+
+<hr size="6">
+<a name="Definiciones-de-valores-descriptivos"></a>
+<a name="SEC171"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC170" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC172" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 44.3 Definiciones de valores descriptivos </h2>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>mean</b><i> (<var>list</var>)</i>
+<a name="IDX1383"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>mean</b><i> (<var>matrix</var>)</i>
+<a name="IDX1384"></a>
+</dt>
+<dd><p>Es la media muestral, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                       n
+                     ====
+             _   1   \
+             x = -    &gt;    x
+                 n   /      i
+                     ====
+                     i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) mean (s1);
+                               471
+(%o4)                          ---
+                               100
+(%i5) %, numer;
+(%o5)                         4.71
+(%i6) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i7) mean (s2);
+(%o7)     [9.9485, 10.1607, 10.8685, 15.7166, 14.8441]
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>var</b><i> (<var>list</var>)</i>
+<a name="IDX1385"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>var</b><i> (<var>matrix</var>)</i>
+<a name="IDX1386"></a>
+</dt>
+<dd><p>Es la varianza muestral, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                     n
+                   ====
+           2   1   \          _ 2
+          s  = -    &gt;    (x - x)
+               n   /       i
+                   ====
+                   i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) var (s1), numer;
+(%o4)                   8.425899999999999
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>var1</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>var1</b><i> (<var>list</var>)</i>
+<a name="IDX1387"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>var1</b><i> (<var>matrix</var>)</i>
+<a name="IDX1388"></a>
+</dt>
+<dd><p>Es la cuasivarianza muestral, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                     n
+                   ====
+               1   \          _ 2
+              ---   &gt;    (x - x)
+              n-1  /       i
+                   ====
+                   i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) var1 (s1), numer;
+(%o4)                    8.5110101010101
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) var1 (s2);
+(%o6) [17.39586540404041, 15.13912778787879, 15.63204924242424, 
+                            32.50152569696971, 24.66977392929294]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>var</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>std</b><i> (<var>list</var>)</i>
+<a name="IDX1389"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>std</b><i> (<var>matrix</var>)</i>
+<a name="IDX1390"></a>
+</dt>
+<dd><p>Es la desviaci&oacute;n t&iacute;pica muestral, ra&iacute;z cuadrada de <code>var</code>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) std (s1), numer;
+(%o4)                   2.902740084816414
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) std (s2);
+(%o6) [4.149928523480858, 3.871399812729241, 3.933920277534866, 
+                            5.672434260526957, 4.941970881136392]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>var</code> y <code>std1</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>std1</b><i> (<var>list</var>)</i>
+<a name="IDX1391"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>std1</b><i> (<var>matrix</var>)</i>
+<a name="IDX1392"></a>
+</dt>
+<dd><p>Es la cuasidesviaci&oacute;n t&iacute;pica muestral, ra&iacute;z cuadrada de <code>var1</code>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) std1 (s1), numer;
+(%o4)                   2.917363553109228
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) std1 (s2);
+(%o6) [4.17083509672109, 3.89090320978032, 3.953738641137555, 
+                            5.701010936401517, 4.966867617451963]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>var1</code> y <code>std</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>noncentral_moment</b><i> (<var>list</var>, <var>k</var>)</i>
+<a name="IDX1393"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>noncentral_moment</b><i> (<var>matrix</var>, <var>k</var>)</i>
+<a name="IDX1394"></a>
+</dt>
+<dd><p>Es el momento no central de orden <em>k</em>, definido como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                       n
+                     ====
+                 1   \      k
+                 -    &gt;    x
+                 n   /      i
+                     ====
+                     i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) noncentral_moment (s1, 1), numer; /* la media */
+(%o4)                         4.71
+(%i6) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i7) noncentral_moment (s2, 5);
+(%o7) [319793.8724761506, 320532.1923892463, 391249.5621381556, 
+                            2502278.205988911, 1691881.797742255]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>central_moment</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>central_moment</b><i> (<var>list</var>, <var>k</var>)</i>
+<a name="IDX1395"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>central_moment</b><i> (<var>matrix</var>, <var>k</var>)</i>
+<a name="IDX1396"></a>
+</dt>
+<dd><p>Es el momento central de orden <em>k</em>, definido como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                    n
+                  ====
+              1   \          _ k
+              -    &gt;    (x - x)
+              n   /       i
+                  ====
+                  i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) central_moment (s1, 2), numer; /* la varianza */
+(%o4)                   8.425899999999999
+(%i6) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i7) central_moment (s2, 3);
+(%o7) [11.29584771375004, 16.97988248298583, 5.626661952750102, 
+                             37.5986572057918, 25.85981904394192]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>central_moment</code> y <code>mean</code>.
+</p></dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>cv</b><i> (<var>list</var>)</i>
+<a name="IDX1397"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>cv</b><i> (<var>matrix</var>)</i>
+<a name="IDX1398"></a>
+</dt>
+<dd><p>Es el coeficiente de variaci&oacute;n, o cociente entre la desviaci&oacute;n t&iacute;pica muestral (<code>std</code>) y la media (<code>mean</code>),
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) cv (s1), numer;
+(%o4)                   .6193977819764815
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) cv (s2);
+(%o6) [.4192426091090204, .3829365309260502, 0.363779605385983, 
+                            .3627381836021478, .3346021393989506]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>std</code> y <code>mean</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>mini</b><i> (<var>list</var>)</i>
+<a name="IDX1399"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>mini</b><i> (<var>matrix</var>)</i>
+<a name="IDX1400"></a>
+</dt>
+<dd><p>Es el valor m&iacute;nimo de la muestra <var>list</var>,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) mini (s1);
+(%o4)                           0
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) mini (s2);
+(%o6)             [0.58, 0.5, 2.67, 5.25, 5.17]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>maxi</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>maxi</b><i> (<var>list</var>)</i>
+<a name="IDX1401"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>maxi</b><i> (<var>matrix</var>)</i>
+<a name="IDX1402"></a>
+</dt>
+<dd><p>Es el valor m&aacute;ximo de la muestra <var>list</var>,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) maxi (s1);
+(%o4)                           9
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) maxi (s2);
+(%o6)          [20.25, 21.46, 20.04, 29.63, 27.63]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>mini</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>range</b><i> (<var>list</var>)</i>
+<a name="IDX1403"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>range</b><i> (<var>matrix</var>)</i>
+<a name="IDX1404"></a>
+</dt>
+<dd><p>Es la diferencia entre los valores extremos.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) range (s1);
+(%o4)                           9
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) range (s2);
+(%o6)          [19.67, 20.96, 17.37, 24.38, 22.46]
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>quantile</b><i> (<var>list</var>, <var>p</var>)</i>
+<a name="IDX1405"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>quantile</b><i> (<var>matrix</var>, <var>p</var>)</i>
+<a name="IDX1406"></a>
+</dt>
+<dd><p>Es el <var>p</var>-cuantil, siendo <var>p</var> un n&uacute;mero del intervalo <em>[0, 1]</em>, de la muestra <var>list</var>.
+Aunque existen varias definiciones para el cuantil muestral (Hyndman, R. J., Fan, Y. (1996) <var>Sample quantiles in statistical packages</var>. American Statistician, 50, 361-365), la programada en el paquete  <code>descriptive</code> es la basada en la interpolaci&oacute;n lineal.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) /* 1er and 3er cuartiles */ [quantile (s1, 1/4), quantile (s1, 3/4)], numer;
+(%o4)                      [2.0, 7.25]
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) quantile (s2, 1/4);
+(%o6)    [7.2575, 7.477500000000001, 7.82, 11.28, 11.48]
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>median</b><i> (<var>list</var>)</i>
+<a name="IDX1407"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>median</b><i> (<var>matrix</var>)</i>
+<a name="IDX1408"></a>
+</dt>
+<dd><p>Una vez ordenada una muestra, si el tama&ntilde;o muestral es impar la mediana es el valor central, en caso contrario ser&aacute; la media de los dos valores centrales.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) median (s1);
+                                9
+(%o4)                           -
+                                2
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) median (s2);
+(%o6)         [10.06, 9.855, 10.73, 15.48, 14.105]
+</pre></td></tr></table>
+<p>La mediana es el cuantil 1/2.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>quantile</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>qrange</b><i> (<var>list</var>)</i>
+<a name="IDX1409"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>qrange</b><i> (<var>matrix</var>)</i>
+<a name="IDX1410"></a>
+</dt>
+<dd><p>El rango intercuart&iacute;lico es la diferencia entre el tercer y primer cuartil,
+<code>quantile(<var>list</var>,3/4) - quantile(<var>list</var>,1/4)</code>,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) qrange (s1);
+                               21
+(%o4)                          --
+                               4
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) qrange (s2);
+(%o6) [5.385, 5.572499999999998, 6.0225, 8.729999999999999, 
+                                               6.650000000000002]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>quantile</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>mean_deviation</b><i> (<var>list</var>)</i>
+<a name="IDX1411"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>mean_deviation</b><i> (<var>matrix</var>)</i>
+<a name="IDX1412"></a>
+</dt>
+<dd><p>Es la desviaci&oacute;n media, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                     n
+                   ====
+               1   \          _
+               -    &gt;    |x - x|
+               n   /       i
+                   ====
+                   i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) mean_deviation (s1);
+                               51
+(%o4)                          --
+                               20
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) mean_deviation (s2);
+(%o6) [3.287959999999999, 3.075342, 3.23907, 4.715664000000001, 
+                                               4.028546000000002]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>mean</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>median_deviation</b><i> (<var>list</var>)</i>
+<a name="IDX1413"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>median_deviation</b><i> (<var>matrix</var>)</i>
+<a name="IDX1414"></a>
+</dt>
+<dd><p>Es la desviaci&oacute;n mediana, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                 n
+               ====
+           1   \
+           -    &gt;    |x - med|
+           n   /       i
+               ====
+               i = 1
+</pre></td></tr></table><p>siendo <code>med</code> la mediana de <var>list</var>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) median_deviation (s1);
+                                5
+(%o4)                           -
+                                2
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) median_deviation (s2);
+(%o6)           [2.75, 2.755, 3.08, 4.315, 3.31]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>mean</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>harmonic_mean</b><i> (<var>list</var>)</i>
+<a name="IDX1415"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>harmonic_mean</b><i> (<var>matrix</var>)</i>
+<a name="IDX1416"></a>
+</dt>
+<dd><p>Es la media arm&oacute;nica, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                  n
+               --------
+                n
+               ====
+               \     1
+                &gt;    --
+               /     x
+               ====   i
+               i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) y : [5, 7, 2, 5, 9, 5, 6, 4, 9, 2, 4, 2, 5]$
+(%i4) harmonic_mean (y), numer;
+(%o4)                   3.901858027632205
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) harmonic_mean (s2);
+(%o6) [6.948015590052786, 7.391967752360356, 9.055658197151745, 
+                            13.44199028193692, 13.01439145898509]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>mean</code> y <code>geometric_mean</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>geometric_mean</b><i> (<var>list</var>)</i>
+<a name="IDX1417"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>geometric_mean</b><i> (<var>matrix</var>)</i>
+<a name="IDX1418"></a>
+</dt>
+<dd><p>Es la media geom&eacute;trica, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                 /  n      \ 1/n
+                 | /===\   |
+                 |  ! !    |
+                 |  ! !  x |
+                 |  ! !   i|
+                 | i = 1   |
+                 \         /
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) y : [5, 7, 2, 5, 9, 5, 6, 4, 9, 2, 4, 2, 5]$
+(%i4) geometric_mean (y), numer;
+(%o4)                   4.454845412337012
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) geometric_mean (s2);
+(%o6) [8.82476274347979, 9.22652604739361, 10.0442675714889, 
+                            14.61274126349021, 13.96184163444275]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>mean</code> y <code>harmonic_mean</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>kurtosis</b><i> (<var>list</var>)</i>
+<a name="IDX1419"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kurtosis</b><i> (<var>matrix</var>)</i>
+<a name="IDX1420"></a>
+</dt>
+<dd><p>Es el coeficiente de curtosis, definido como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                    n
+                  ====
+            1     \          _ 4
+           ----    &gt;    (x - x)  - 3
+              4   /       i
+           n s    ====
+                  i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) kurtosis (s1), numer;
+(%o4)                  - 1.273247946514421
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) kurtosis (s2);
+(%o6) [- .2715445622195385, 0.119998784429451, 
+   - .4275233490482866, - .6405361979019522, - .4952382132352935]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>mean</code>, <code>var</code> y <code>skewness</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>skewness</b><i> (<var>list</var>)</i>
+<a name="IDX1421"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>skewness</b><i> (<var>matrix</var>)</i>
+<a name="IDX1422"></a>
+</dt>
+<dd><p>Es el coeficiente de asimetr&iacute;a, definido como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                    n
+                  ====
+            1     \          _ 3
+           ----    &gt;    (x - x)
+              3   /       i
+           n s    ====
+                  i = 1
+</pre></td></tr></table>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) skewness (s1), numer;
+(%o4)                  .009196180476450306
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) skewness (s2);
+(%o6) [.1580509020000979, .2926379232061854, .09242174416107717, 
+                            .2059984348148687, .2142520248890832]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>mean</code>, <code>var</code> y <code>kurtosis</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>pearson_skewness</b><i> (<var>list</var>)</i>
+<a name="IDX1423"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>pearson_skewness</b><i> (<var>matrix</var>)</i>
+<a name="IDX1424"></a>
+</dt>
+<dd><p>Es el coeficiente de asimetr&iacute;a de Pearson, definido como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">                _
+             3 (x - med)
+             -----------
+                  s
+</pre></td></tr></table><p>siendo <var>med</var> la mediana de <var>list</var>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) pearson_skewness (s1), numer;
+(%o4)                   .2159484029093895
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) pearson_skewness (s2);
+(%o6) [- .08019976629211892, .2357036272952649, 
+         .1050904062491204, .1245042340592368, .4464181795804519]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>mean</code>, <code>var</code> y <code>median</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>quartile_skewness</b><i> (<var>list</var>)</i>
+<a name="IDX1425"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>quartile_skewness</b><i> (<var>matrix</var>)</i>
+<a name="IDX1426"></a>
+</dt>
+<dd><p>Es el coeficiente de asimetr&iacute;a cuart&iacute;lico, definido como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">               c    - 2 c    + c
+                3/4      1/2    1/4
+               --------------------
+                   c    - c
+                    3/4    1/4
+</pre></td></tr></table><p>siendo <em>c_p</em> el <var>p</var>-cuantil de la muestra <var>list</var>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) quartile_skewness (s1), numer;
+(%o4)                  .04761904761904762
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) quartile_skewness (s2);
+(%o6) [- 0.0408542246982353, .1467025572005382, 
+       0.0336239103362392, .03780068728522298, 0.210526315789474]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>quantile</code>.
+</p></dd></dl>
+
+
+<hr size="6">
+<a name="Definiciones-de-valores-descriptivos-multivariantes"></a>
+<a name="SEC172"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC171" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC173" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 44.4 Definiciones de valores descriptivos multivariantes </h2>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>cov</b><i> (<var>matrix</var>)</i>
+<a name="IDX1427"></a>
+</dt>
+<dd><p>Es la matriz de covarianzas de una muestra multivariante, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">              n
+             ====
+          1  \           _        _
+      S = -   &gt;    (X  - X) (X  - X)'
+          n  /       j        j
+             ====
+             j = 1
+</pre></td></tr></table><p>siendo <em>X_j</em> la <em>j</em>-&eacute;sima fila de la matriz muestral.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) fpprintprec : 7$  /* cambia precision */
+(%i5) cov (s2);
+      [ 17.22191  13.61811  14.37217  19.39624  15.42162 ]
+      [                                                  ]
+      [ 13.61811  14.98774  13.30448  15.15834  14.9711  ]
+      [                                                  ]
+(%o5) [ 14.37217  13.30448  15.47573  17.32544  16.18171 ]
+      [                                                  ]
+      [ 19.39624  15.15834  17.32544  32.17651  20.44685 ]
+      [                                                  ]
+      [ 15.42162  14.9711   16.18171  20.44685  24.42308 ]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>cov1</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>cov1</b><i> (<var>matrix</var>)</i>
+<a name="IDX1428"></a>
+</dt>
+<dd><p>Es la matriz de cuasivarianzas de una muestra multivariante, definida como
+</p><table><tr><td>&nbsp;</td><td><pre class="example">              n
+             ====
+         1   \           _        _
+   S  = ---   &gt;    (X  - X) (X  - X)'
+    1   n-1  /       j        j
+             ====
+             j = 1
+</pre></td></tr></table><p>siendo <em>X_j</em> la <em>j</em>-&eacute;sima fila de la matriz muestral.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) fpprintprec : 7$ /* cambia precision */
+(%i5) cov1 (s2);
+      [ 17.39587  13.75567  14.51734  19.59216  15.5774  ]
+      [                                                  ]
+      [ 13.75567  15.13913  13.43887  15.31145  15.12232 ]
+      [                                                  ]
+(%o5) [ 14.51734  13.43887  15.63205  17.50044  16.34516 ]
+      [                                                  ]
+      [ 19.59216  15.31145  17.50044  32.50153  20.65338 ]
+      [                                                  ]
+      [ 15.5774   15.12232  16.34516  20.65338  24.66977 ]
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>cov</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>global_variances</b><i> (<var>matrix</var>)</i>
+<a name="IDX1429"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>global_variances</b><i> (<var>matrix</var>, <var>logical_value</var>)</i>
+<a name="IDX1430"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>global_variances</code> devuelve una lista de medidas globales de variabilidad:
+</p>
+<ul>
+<li>
+<var>varianza total</var>: <code>trace(S_1)</code>,
+</li><li>
+<var>varianza media</var>: <code>trace(S_1)/p</code>,
+</li><li>
+<var>varianza generalizada</var>: <code>determinant(S_1)</code>,
+</li><li>
+<var>desviaci&oacute;n t&iacute;pica generalizada</var>: <code>sqrt(determinant(S_1))</code>,
+</li><li>
+<var>varianza efectiva</var> <code>determinant(S_1)^(1/p)</code>, (definida en: Pe&ntilde;a, D. (2002) <var>An&aacute;lisis de datos multivariantes</var>; McGraw-Hill, Madrid.)
+</li><li>
+<var>desviaci&oacute;n t&iacute;pica efectiva</var>: <code>determinant(S_1)^(1/(2*p))</code>.
+</li></ul>
+<p>donde <var>p</var> es la dimensi&oacute;n de la variable aleatoria multivariante y <em>S_1</em> la matriz de covarianzas devuelta por la funci&oacute;n <code>cov1</code>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) global_variances (s2);
+(%o4) [105.338342060606, 21.06766841212119, 12874.34690469686, 
+         113.4651792608502, 6.636590811800794, 2.576158149609762]
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>global_variances</code> tiene un argumento l&oacute;gico opcional: <code>global_variances(x,true)</code> indica a Maxima que <code>x</code> es la matriz de datos, calculando entonces lo mismo que <code>global_variances(x)</code>. Por otro lado, <code>global_variances(x,false)</code> significa que  <code>x</code> no es la matriz de datos, sino la de covarianzas, evitando as&iacute; recalcularla,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) s : cov1 (s2)$
+(%i5) global_variances (s, false);
+(%o5) [105.338342060606, 21.06766841212119, 12874.34690469686, 
+         113.4651792608502, 6.636590811800794, 2.576158149609762]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>cov</code> y <code>cov1</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>cor</b><i> (<var>matrix</var>)</i>
+<a name="IDX1431"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>cor</b><i> (<var>matrix</var>, <var>logical_value</var>)</i>
+<a name="IDX1432"></a>
+</dt>
+<dd><p>Es la matriz de correlaciones de la muestra multivariante.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) fpprintprec: 7$
+(%i4) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i5) cor (s2);
+      [   1.0     .8476339  .8803515  .8239624  .7519506 ]
+      [                                                  ]
+      [ .8476339    1.0     .8735834  .6902622  0.782502 ]
+      [                                                  ]
+(%o5) [ .8803515  .8735834    1.0     .7764065  .8323358 ]
+      [                                                  ]
+      [ .8239624  .6902622  .7764065    1.0     .7293848 ]
+      [                                                  ]
+      [ .7519506  0.782502  .8323358  .7293848    1.0    ]
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>cor</code> tiene un argumento l&oacute;gico opcional: <code>cor(x,true)</code> indica a Maxima que <code>x</code> es la matriz de datos, calculando entonces lo mismo que <code>cor(x)</code>. Por otro lado, <code>cor(x,false)</code> significa que  <code>x</code> no es la matriz de datos, sino la de covarianzas, evitando as&iacute; recalcularla,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) fpprintprec: 7$
+(%i4) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i5) s : cov1 (s2)$
+(%i6) cor (s, false); /* mas rapido */
+      [   1.0     .8476339  .8803515  .8239624  .7519506 ]
+      [                                                  ]
+      [ .8476339    1.0     .8735834  .6902622  0.782502 ]
+      [                                                  ]
+(%o6) [ .8803515  .8735834    1.0     .7764065  .8323358 ]
+      [                                                  ]
+      [ .8239624  .6902622  .7764065    1.0     .7293848 ]
+      [                                                  ]
+      [ .7519506  0.782502  .8323358  .7293848    1.0    ]
+</pre></td></tr></table>
+<p>V&eacute;anse tambi&eacute;n <code>cov</code> y <code>cov1</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>list_correlations</b><i> (<var>matrix</var>)</i>
+<a name="IDX1433"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>list_correlations</b><i> (<var>matrix</var>, <var>logical_value</var>)</i>
+<a name="IDX1434"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>list_correlations</code> devuelve una lista con medidas de correlaci&oacute;n:
+</p>
+<ul>
+<li>
+<var>matriz de precisi&oacute;n</var>: es la inversa de la matriz de covarianzas <em>S_1</em>,
+<table><tr><td>&nbsp;</td><td><pre class="example">       -1     ij
+      S   = (s  )             
+       1         i,j = 1,2,...,p
+</pre></td></tr></table>
+</li><li>
+<var>vector de correlaci&oacute;n m&uacute;ltiple</var>:  <em>(R_1^2, R_2^2, ..., R_p^2)</em>, donde 
+<table><tr><td>&nbsp;</td><td><pre class="example">       2          1
+      R  = 1 - -------
+       i        ii
+               s   s
+                    ii
+</pre></td></tr></table><p>es un indicador de la bondad de ajuste del modelo de regresi&oacute;n lineal multivariante de <em>X_i</em> cuando el resto de variables se utilizan como regresores.
+</p>
+</li><li>
+<var>matriz de correlaciones parciales</var>: en la que el elemento <em>(i, j)</em> es
+<table><tr><td>&nbsp;</td><td><pre class="example">                         ij
+                        s
+      r        = - ------------
+       ij.rest     / ii  jj\ 1/2
+                   |s   s  |
+                   \       /
+</pre></td></tr></table>
+</li></ul>
+
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) z : list_correlations (s2)$
+(%i5) fpprintprec : 5$ /* cambia precision */
+(%i6) z[1];  /* matriz de precision */
+      [  .38486   - .13856   - .15626   - .10239    .031179  ]
+      [                                                      ]
+      [ - .13856   .34107    - .15233    .038447   - .052842 ]
+      [                                                      ]
+(%o6) [ - .15626  - .15233    .47296    - .024816  - .10054  ]
+      [                                                      ]
+      [ - .10239   .038447   - .024816   .10937    - .034033 ]
+      [                                                      ]
+      [ .031179   - .052842  - .10054   - .034033   .14834   ]
+(%i7) z[2];  /* vector de correlacion multiple */
+(%o7)       [.85063, .80634, .86474, .71867, .72675]
+(%i8) z[3];  /* matriz de correlaciones parciales */
+       [  - 1.0     .38244   .36627   .49908   - .13049 ]
+       [                                                ]
+       [  .38244    - 1.0    .37927  - .19907   .23492  ]
+       [                                                ]
+(%o8)  [  .36627    .37927   - 1.0    .10911    .37956  ]
+       [                                                ]
+       [  .49908   - .19907  .10911   - 1.0     .26719  ]
+       [                                                ]
+       [ - .13049   .23492   .37956   .26719    - 1.0   ]
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>list_correlations</code> tiene un argumento l&oacute;gico opcional: <code>list_correlations(x,true)</code> indica a Maxima que <code>x</code> es la matriz de datos, calculando entonces lo mismo que <code>list_correlations(x)</code>. Por otro lado, <code>list_correlations(x,false)</code> significa que  <code>x</code> no es la matriz de datos, sino la de covarianzas, evitando as&iacute; recalcularla.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>cov</code> y <code>cov1</code>.
+</p></dd></dl>
+
+
+<hr size="6">
+<a name="Definiciones-para-gr_00e1ficos-estad_00edsticos"></a>
+<a name="SEC173"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC172" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC168" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 44.5 Definiciones para gr&aacute;ficos estad&iacute;sticos </h2>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>dataplot</b><i> (<var>list</var>)</i>
+<a name="IDX1435"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>dataplot</b><i> (<var>list</var>, <var>option_1</var>, <var>option_2</var>, ...)</i>
+<a name="IDX1436"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>dataplot</b><i> (<var>matrix</var>)</i>
+<a name="IDX1437"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>dataplot</b><i> (<var>matrix</var>, <var>option_1</var>, <var>option_2</var>, ...)</i>
+<a name="IDX1438"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>dataplot</code> permite la visualizaci&oacute;n directa de datos muestrales, tanto univariantes (<var>list</var>) como multivariantes (<var>matrix</var>). Asignando valores a las siguientes opciones (<var>options</var>) se pueden controlar ciertos aspectos del gr&aacute;fico:
+</p>
+<ul>
+<li>
+<code>'outputdev</code>, <code>&quot;x&quot;</code> por defecto, indica el dispositivo de salida; valores aceptados son <code>&quot;x&quot;</code>, <code>&quot;eps&quot;</code> y <code>&quot;png&quot;</code>, para la pantalla, y los formatos de ficheros postscript y png, respectivamente.
+
+</li><li>
+<code>'maintitle</code>, <code>&quot;&quot;</code> por defecto, es el t&iacute;tulo principal entre comillas dobles.
+
+</li><li>
+<code>'axisnames</code>, <code>[&quot;x&quot;,&quot;y&quot;,&quot;z&quot;]</code> por defecto, es una lista con nombres para los ejes <code>x</code>, <code>y</code> y <code>z</code>.
+
+</li><li>
+<code>'joined</code>, <code>false</code> por defecto, un valor l&oacute;gico que indica si los puntos en 2D deben unirse por segmentos o no.
+
+</li><li>
+<code>'picturescales</code>, <code>[1.0, 1.0]</code> por defecto, factores de escala para el tama&ntilde;o del gr&aacute;fico.
+
+</li><li>
+<code>'threedim</code>, <code>true</code> por defecto, indica a Maxima si debe dibujar una matriz de tres columnas como un diagrama tridimensional o como un diagrama de dispersi&oacute;n multivariante. V&eacute;anse ejemplos m&aacute;s abajo.
+
+</li><li>
+<code>'axisrot</code>, <code>[60, 30]</code> por defecto, cambia el punto de vista cuando <code>'threedim</code> toma el valor <code>true</code> y los datos se suministran en una matriz de tres columnas. El primer n&uacute;mero es el &aacute;ngulo de rotaci&oacute;n del eje <var>x</var>, siendo el segundo el &aacute;ngulo de rotaci&oacute;n del eje <var>z</var>, ambos medidos en grados sexagesimales.
+
+</li><li>
+<code>'nclasses</code>, <code>10</code> por defecto, es el n&uacute;mero de clases a considerar en los histogramas de la diagonal de los diagramas de dispersi&oacute;n multivariantes.
+
+</li><li>
+<code>'pointstyle</code>, <code>1</code> por defecto, es un entero que indica c&oacute;mo dibujar los puntos muestrales.
+
+</li></ul>
+
+<p>Por ejemplo, con el siguiente c&oacute;digo se realiza un gr&aacute;fico con los veinte primeros d&iacute;gitos del n&uacute;mero <code>%pi</code> y el resultado se guarda en un fichero en formato eps.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) dataplot (makelist (s1[k], k, 1, 20), 'pointstyle = 3)$
+</pre></td></tr></table>
+<p>N&oacute;tese que las muestras univariantes se representan como series temporales. En el siguiente ejemplo se utilizan m&aacute;s datos y con diferentes opciones,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) dataplot (makelist (s1[k], k, 1, 50), 'maintitle = &quot;First pi digits&quot;,
+ 'axisnames = [&quot;digit order&quot;, &quot;digit value&quot;], 'pointstyle = 2,
+ 'joined = true)$
+</pre></td></tr></table>
+<p>La funci&oacute;n <code>dataplot</code> puede utilizarse para representar puntos del plano. El siguiente ejemplo es un diagrama de dispersi&oacute;n de los pares formados con las velocidades del viento correspondientes a las estaciones meteorol&oacute;gicas uno y cinco,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) dataplot (submatrix (s2, 2, 3, 4), 'pointstyle = 2,
+ 'maintitle = &quot;Pairs of wind speeds measured in knots&quot;,
+ 'axisnames = [&quot;Wind speed in A&quot;, &quot;Wind speed in E&quot;])$
+</pre></td></tr></table>
+<p>Si los puntos est&aacute;n almacenados en una matriz de dos columnas, <code>dataplot</code> los puede dibujar directamente, pero si est&aacute;n guardados como una lista de pares deben transformarse previamente a una matriz, tal como se hace en el siguiente ejemplo.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) x : [[-1, 2], [5, 7], [5, -3], [-6, -9], [-4, 6]]$
+(%i3) dataplot (apply ('matrix, x), 'maintitle = &quot;Points&quot;,
+ 'joined = true, 'axisnames = [&quot;&quot;, &quot;&quot;], 'picturescales = [0.5, 1.0])$
+</pre></td></tr></table>
+<p>Puntos del espacio tridimensional pueden verse como proyecciones sobre un plano. Es este ejemplo se piden gr&aacute;ficos de las velocidades del viento correspondientes a tres estaciones meteorol&oacute;gicas, primero una representaci&oacute;n tridimensional y luego como diagrama de dispersi&oacute;n multivariante.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) /* grafico 3D */ dataplot (submatrix (s2, 4, 5), 'pointstyle = 2,
+ 'maintitle = &quot;Pairs of wind speeds measured in knots&quot;,
+ 'axisnames = [&quot;Station A&quot;, &quot;Station B&quot;, &quot;Station C&quot;])$
+(%i5) /* Dispersion multivariante */ dataplot (submatrix (s2, 4, 5),
+ 'nclasses = 6, 'threedim = false)$
+</pre></td></tr></table>
+<p>N&oacute;tese que en este &uacute;ltimo ejemplo, el n&uacute;mero de clases de los histogramas de la diagonal se ajusta a 6, y que a la opci&oacute;n <code>'threedim</code> se le da el valor <code>false</code>.
+</p>
+<p>Para m&aacute;s de tres dimensiones s&oacute;lo son posibles los diagramas de dispersi&oacute;n multivariantes, como en
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) dataplot (s2)$
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>histogram</b><i> (<var>list</var>)</i>
+<a name="IDX1439"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>histogram</b><i> (<var>list</var>, <var>option_1</var>, <var>option_2</var>, ...)</i>
+<a name="IDX1440"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>histogram</b><i> (<var>one_column_matrix</var>)</i>
+<a name="IDX1441"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>histogram</b><i> (<var>one_column_matrix</var>, <var>option_1</var>, <var>option_2</var>, ...)</i>
+<a name="IDX1442"></a>
+</dt>
+<dd><p>Dibuja un histograma. Los datos muestrales deben suministrarse como una lista de n&uacute;meros o como una matriz columna. Asignando valores a las siguientes opciones (<var>options</var>) se pueden controlar ciertos aspectos del gr&aacute;fico:
+</p>
+<ul>
+<li>
+<code>'outputdev</code>, <code>&quot;x&quot;</code> por defecto, indica el dispositivo de salida; valores aceptados son <code>&quot;x&quot;</code>, <code>&quot;eps&quot;</code> y <code>&quot;png&quot;</code>, para la pantalla, y los formatos de ficheros postscript y png, respectivamente.
+
+</li><li>
+<code>'maintitle</code>, <code>&quot;&quot;</code> por defecto, es el t&iacute;tulo principal entre comillas dobles.
+
+</li><li>
+<code>'axisnames</code>, <code>[&quot;x&quot;, &quot;Fr.&quot;]</code> por defecto, es una lista con nombres para los ejes <code>x</code> e <code>y</code>.
+
+</li><li>
+<code>'picturescales</code>, <code>[1.0, 1.0]</code> por defecto, factores de escala para el tama&ntilde;o del gr&aacute;fico.
+
+</li><li>
+<code>'nclasses</code>, <code>10</code> por defecto, es el n&uacute;mero de intervalos de clase.
+
+</li><li>
+<code>'relbarwidth</code>, <code>0.9</code> por defecto, es un n&uacute;mero decimal entre 0 y 1 para controlar el ancho de las barras.
+
+</li><li>
+<code>'barcolor</code>, <code>1</code> por defecto, es un entero que indica el color de las barras.
+
+</li><li>
+<code>'colorintensity</code>, <code>1</code> por defecto, es un n&uacute;mero decimal entre 0 y 1 para establecer la intensidad del color.
+
+</li></ul>
+
+<p>En los siguientes dos ejemplos se solicitan sendos histogramas para los 100 primeros d&iacute;gitos del n&uacute;mero <em>pi</em> y para las velocidades del viento en la estaci&oacute;n meteorol&oacute;gica n&uacute;mero 3.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s1 : read_list (file_search (&quot;pidigits.data&quot;))$
+(%i4) histogram (s1, 'maintitle = &quot;pi digits&quot;, 'axisnames = [&quot;&quot;, &quot;Absolute frequency&quot;],
+ 'relbarwidth = 0.2, 'barcolor = 3, 'colorintensity = 0.6)$
+(%i5) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i6) histogram (col (s2, 3), 'colorintensity = 0.3)$
+</pre></td></tr></table>
+<p>N&oacute;tese que en el primer caso, <code>s1</code> es una lista y que en el segundo <code>col(s2,3)</code> es una matriz.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>barsplot</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>barsplot</b><i> (<var>list</var>)</i>
+<a name="IDX1443"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>barsplot</b><i> (<var>list</var>, <var>option_1</var>, <var>option_2</var>, ...)</i>
+<a name="IDX1444"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>barsplot</b><i> (<var>one_column_matrix</var>)</i>
+<a name="IDX1445"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>barsplot</b><i> (<var>one_column_matrix</var>, <var>option_1</var>, <var>option_2</var>, ...)</i>
+<a name="IDX1446"></a>
+</dt>
+<dd><p>Similar a <code>histogram</code> pero para muestras discretas, num&eacute;ricas o categ&oacute;ricas. Estas son las variables,
+</p>
+<ul>
+<li>
+<code>'outputdev</code>, <code>&quot;x&quot;</code> por defecto, indica el dispositivo de salida; valores aceptados son <code>&quot;x&quot;</code>, <code>&quot;eps&quot;</code> y <code>&quot;png&quot;</code>, para la pantalla, y los formatos de ficheros postscript y png, respectivamente.
+
+</li><li>
+<code>'maintitle</code>, <code>&quot;&quot;</code> por defecto, es el t&iacute;tulo principal entre comillas dobles.
+
+</li><li>
+<code>'axisnames</code>, <code>[&quot;x&quot;, &quot;Fr.&quot;]</code> por defecto, es una lista con nombres para los ejes <code>x</code> e <code>y</code>.
+
+</li><li>
+<code>'picturescales</code>, <code>[1.0, 1.0]</code> por defecto, factores de escala para el tama&ntilde;o del gr&aacute;fico.
+
+</li><li>
+<code>'relbarwidth</code>, <code>0.9</code> por defecto, es un n&uacute;mero decimal entre 0 y 1 para controlar el ancho de las barras.
+
+</li><li>
+<code>'barcolor</code>, <code>1</code> por defecto, es un entero que indica el color de las barras.
+
+</li><li>
+<code>'colorintensity</code>, <code>1</code> por defecto, es un n&uacute;mero decimal entre 0 y 1 para establecer la intensidad del color.
+
+</li></ul>
+
+<p>En este ejemplo se representa el gr&aacute;fico de barras correspondiente a los grupos <code>A</code> y <code>B</code> de los pacientes de la muestra <code>s3</code>,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s3 : read_matrix (file_search (&quot;biomed.data&quot;))$
+(%i4) barsplot (col (s3, 1), 'maintitle = &quot;Groups of patients&quot;,
+ 'axisnames = [&quot;Group&quot;, &quot;# of individuals&quot;], 'colorintensity = 0.2)$
+</pre></td></tr></table>
+<p>La primera columna de la muestra <code>s3</code> almacena los valores categ&oacute;ricos <code>A</code> y <code>B</code>, llamados tambi&eacute;n factores. Por otro lado, los n&uacute;meros enteros positivos en la segunda columna son las edades en a&ntilde;os, que es una variable discreta, por lo que podemos representar las frecuencias absolutas de estos valores,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s3 : read_matrix (file_search (&quot;biomed.data&quot;))$
+(%i4) barsplot (col (s3, 2), 'maintitle = &quot;Ages&quot;,
+ 'axisnames = [&quot;Years&quot;, &quot;# of individuals&quot;], 'colorintensity = 0.2,
+ 'relbarwidth = 0.6)$
+</pre></td></tr></table>
+<p>V&eacute;ase tambi&eacute;n <code>histogram</code>.
+</p></dd></dl>
+
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>boxplot</b><i> (<var>data</var>)</i>
+<a name="IDX1447"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>boxplot</b><i> (<var>data</var>, <var>option_1</var>, <var>option_2</var>, ...)</i>
+<a name="IDX1448"></a>
+</dt>
+<dd><p>Dibuja diagramas de cajas. El argumento <var>data</var> puede ser una lista, lo cual no es de gram inter&eacute;s puesto que estos gr&aacute;ficos se utilizan fundamentalmente para comparar varias muestras, o una matriz, de manera que es posible comparar dos o m&aacute;s componentes de una variable estad&iacute;stica multivariante. Tambi&eacute;n se permite que <var>data</var> sea una lista de muestras con tama&ntilde;os muestrales diferentes; de hecho esta es la &uacute;nica funci&oacute;n del paquete
+<code>descriptive</code> que admite este tipo de estructura. V&eacute;ase ejemplo m&aacute;s abajo. Estas son las opciones v&aacute;lidas:
+</p>
+<ul>
+<li>
+<code>'outputdev</code>, <code>&quot;x&quot;</code> por defecto, indica el dispositivo de salida; valores aceptados son <code>&quot;x&quot;</code>, <code>&quot;eps&quot;</code> y <code>&quot;png&quot;</code>, para la pantalla, y los formatos de ficheros postscript y png, respectivamente.
+
+</li><li>
+<code>'maintitle</code>, <code>&quot;&quot;</code> por defecto, es el t&iacute;tulo principal entre comillas dobles.
+
+</li><li>
+<code>'axisnames</code>, <code>[&quot;sample&quot;, &quot;y&quot;]</code> por defecto, es una lista con nombres para los ejes <code>x</code> e <code>y</code>.
+
+</li><li>
+<code>'picturescales</code>, <code>[1.0, 1.0]</code> por defecto, factores de escala para el tama&ntilde;o del gr&aacute;fico.
+
+</li></ul>
+
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) load (descriptive)$
+(%i2) load (numericalio)$
+(%i3) s2 : read_matrix (file_search (&quot;wind.data&quot;))$
+(%i4) boxplot (s2, 'maintitle = &quot;Windspeed in knots&quot;,
+ 'axisnames = [&quot;Seasons&quot;, &quot;&quot;])$
+(%i5) A :
+ [[6, 4, 6, 2, 4, 8, 6, 4, 6, 4, 3, 2],
+  [8, 10, 7, 9, 12, 8, 10],
+  [16, 13, 17, 12, 11, 18, 13, 18, 14, 12]]$
+(%i6) boxplot (A)$
+</pre></td></tr></table>
+</dd></dl>
+
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC168" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_45.html#SEC174" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

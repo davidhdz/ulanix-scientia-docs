@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 7. Simplificaci&oacute;n</title>
+
+<meta name="description" content="Manual de Maxima: 7. Simplificaci&oacute;n">
+<meta name="keywords" content="Manual de Maxima: 7. Simplificaci&oacute;n">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Simplificaci_00f3n"></a>
+<a name="SEC30"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_6.html#SEC29" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC31" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_6.html#SEC20" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_8.html#SEC32" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 7. Simplificaci&oacute;n </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC31">7.1 Definiciones para Simplificaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Definiciones-para-Simplificaci_00f3n"></a>
+<a name="SEC31"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC30" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_8.html#SEC32" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC30" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC30" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_8.html#SEC32" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 7.1 Definiciones para Simplificaci&oacute;n </h2>
+
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>askexp</b>
+<a name="IDX196"></a>
+</dt>
+<dd><p>Cuando se invoca a <code>asksign</code>, la expresi&oacute;n que se va a analizar es precisamente <code>askexp</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>askinteger</b><i> (<var>expr</var>, integer)</i>
+<a name="IDX197"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>askinteger</b><i> (<var>expr</var>)</i>
+<a name="IDX198"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>askinteger</b><i> (<var>expr</var>, even)</i>
+<a name="IDX199"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>askinteger</b><i> (<var>expr</var>, odd)</i>
+<a name="IDX200"></a>
+</dt>
+<dd><p>La llamada <code>askinteger (<var>expr</var>, integer)</code> intenta determinar a partir de la base de datos de <code>assume</code> si <var>expr</var> es un entero. La funci&oacute;n <code>askinteger</code> pide m&aacute;s informaci&oacute;n al usuario si no encuentra la respuesta,
+tratando de almacenar la nueva informaci&oacute;n en la base de datos si es posible. La llamada 
+<code>askinteger (<var>expr</var>)</code> equivale a <code>askinteger (<var>expr</var>, integer)</code>.
+</p>
+<p>La llamadas <code>askinteger (<var>expr</var>, even)</code> ay <code>askinteger (<var>expr</var>, odd)</code> intentan determinar si <var>expr</var> es un entero par o impar, respectivamente.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>asksign</b><i> (<var>expr</var>)</i>
+<a name="IDX201"></a>
+</dt>
+<dd><p>Primero intenta determinar si la expresi&oacute;n especificada es positiva, negativa o cero.  Si no lo consigue, plantear&aacute; al usuario preguntas que le ayuden a conpletar la deducci&oacute;n. Las respuestas del usuario son almacenadas en la base de datos durante el tiempo que dure este c&aacute;lculo. El valor que al final devuelva <code>asksign</code> ser&aacute; <code>pos</code>, <code>neg</code> o <code>zero</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>demoivre</b><i> (<var>expr</var>)</i>
+<a name="IDX202"></a>
+</dt>
+<dt><u>Variable opcional:</u> <b>demoivre</b>
+<a name="IDX203"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>demoivre (expr)</code> convierte una expresi&oacute;n sin modificar la variable global <code>demoivre</code>.
+</p>
+<p>Cuando <code>demoivre</code> vale <code>true</code>, los exponenciales complejos se convierten en expresiones equivalentes pero en t&eacute;rminos de las funciones trigonom&eacute;tricas:
+<code>exp (a + b*%i)</code> se reduce a <code>%e^a * (cos(b) + %i*sin(b))</code>
+si <code>b</code> no contiene a <code>%i</code>. Las expresiones <code>a</code> y <code>b</code> no se expanden.
+</p>
+<p>El valor por defecto de <code>demoivre</code> es <code>false</code>.
+</p>
+<p>La funci&oacute;n <code>exponentialize</code> convierte funciones trigonom&eacute;tricas e hiperb&oacute;licas a la forma exponencial, por lo que  <code>demoivre</code> y <code>exponentialize</code> no pueden valer <code>true</code> al mismo tiempo.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>domain</b>
+<a name="IDX204"></a>
+</dt>
+<dd><p>Valor por defecto: <code>real</code>
+</p>
+<p>Si <code>domain</code> vale <code>complex</code>, <code>sqrt (x^2)</code> permanecer&aacute; como
+<code>sqrt (x^2)</code> en lugar de devolver <code>abs(x)</code>.
+</p>
+
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>expand</b><i> (<var>expr</var>)</i>
+<a name="IDX205"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>expand</b><i> (<var>expr</var>, <var>p</var>, <var>n</var>)</i>
+<a name="IDX206"></a>
+</dt>
+<dd><p>Expande la expresi&oacute;n <var>expr</var>. Los productos de sumas y de sumas con exponentes se multiplican, los numeradores de las expresiones racionales que son sumas se separan en sus respectivos t&eacute;rminos, y las multiplicaciones (tanto las que son conmutativas como las que no) se distribuyen sobre las sumas en todos los niveles de <var>expr</var>.
+</p>
+<p>En el caso de los polinomios es m&aacute;s aconsejable utilizar <code>ratexpand</code>, que utiliza un algoritmo m&aacute;s eficiente.
+</p>
+<p>Las variables <code>maxnegex</code> y <code>maxposex</code> controlan los m&aacute;ximos exponentes negativos y positivos que se van a expandir.
+</p>
+<p>La llamada <code>expand (<var>expr</var>, <var>p</var>, <var>n</var>)</code> expande <var>expr</var> asignando a <code>maxposex</code> el valor <var>p</var> y a <code>maxnegex</code> el <var>n</var>. Esto es &uacute;til para expandir s&oacute;lo parte de la expresi&oacute;n.
+</p>
+<p>La variable <code>expon</code> guarda el mayor exponente negativo que ser&aacute; expandido autom&aacute;ticamente, independientemente de <code>expand</code>. Por ejemplo, si <code>expon</code> vale 4 entonces <code>(x+1)^(-5)</code> no se expandir&aacute; autom&aacute;ticamente.
+</p>
+<p>La variable <code>expop</code> guarda el mayor exponente positivo que ser&aacute; expandido autom&aacute;ticamente.  As&iacute;, <code>(x+1)^3</code> se expandir&aacute; autom&aacute;ticamente s&oacute;lo si <code>expop</code> es mayor o igual que 3. Si se quiere expandir <code>(x+1)^n</code>, siendo <code>n</code> mayor que <code>expop</code>, entonces <code>expand ((x+1)^n)</code> se desarrollar&aacute; s&oacute;lo si <code>maxposex</code> no es menor que <code>n</code>.
+</p>
+<p>La variable <code>expand</code> utilizada con <code>ev</code> provocar&aacute; una expansi&oacute;n.
+</p>
+<p>El fichero <tt>`simplification/facexp.mac'</tt>
+contiene algunas funciones relacionadas con <code>expand</code> (en concreto, <code>facsum</code>, <code>factorfacsum</code>
+y <code>collectterms</code>, que se cargan autom&aacute;ticamente) y variables (<code>nextlayerfactor</code>
+y <code>facsum_combine</code>) que permiten al usuario estructurar las expresiones controlando la expansi&oacute;n.
+En  <tt>`simplification/facexp.usg'</tt> se pueden encontrar breves descripciones de estas funciones.
+Se acceder&aacute; a una demostraci&oacute;n con la instrucci&oacute;n <code>demo(&quot;facexp&quot;)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>expandwrt</b><i> (<var>expr</var>, <var>x_1</var>, ..., <var>x_n</var>)</i>
+<a name="IDX207"></a>
+</dt>
+<dd><p>Expande la expresi&oacute;n <code>expr</code> con respecto a las variables <var>x_1</var>, ..., <var>x_n</var>.
+Todos los productos que contengan a las variables aparecen expl&iacute;citamente. El resultado que se obtenga no tendr'a productos de sumas de expresiones que contengan a las variables. Los argumentos  <var>x_1</var>, ..., <var>x_n</var>
+pueden ser variables, operadores o expresiones.
+</p>
+<p>Por defecto, no se expanden los denominadores, pero esto puede cambiarse mediante el uso de la variable <code>expandwrt_denom</code>.
+</p>
+<p>Esta funci&oacute;n se carga autom&aacute;ticamente de <tt>`simplification/stopex.mac'</tt>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>expandwrt_denom</b>
+<a name="IDX208"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>La variable <code>expandwrt_denom</code> controla el tratamiento de las expresiones racinales por parte de <code>expandwrt</code>. Si vale <code>true</code>, se expandir&aacute;n tanto el numerador como el denominador de la expresi&oacute;n respecto de los argumentos de <code>expandwrt</code>, pero si <code>expandwrt_denom</code> vale <code>false</code>, s&oacute;lo se expandir&aacute; el numerador.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>expandwrt_factored</b><i> (<var>expr</var>, <var>x_1</var>, ..., <var>x_n</var>)</i>
+<a name="IDX209"></a>
+</dt>
+<dd><p>Es similar a <code>expandwrt</code>, pero trata a las expresiones que son productos de una forma algo diferente. La funci&oacute;n
+<code>expandwrt_factored</code> expande s&oacute;lo aquellos factores de <code>expr</code> que contienen a las variables <var>x_1</var>, ..., <var>x_n</var>.
+</p>
+<p>Esta funci&oacute;n se carga autom&aacute;ticamente de <tt>`simplification/stopex.mac'</tt>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>expon</b>
+<a name="IDX210"></a>
+</dt>
+<dd><p>Valor por defecto: 0
+</p>
+<p>La variable <code>expon</code> guarda el mayor exponente negativo que ser&aacute; expandido autom&aacute;ticamente, independientemente de <code>expand</code>. Por ejemplo, si <code>expon</code> vale 4 entonces <code>(x+1)^(-5)</code> no se expandir&aacute; autom&aacute;ticamente.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>exponentialize</b><i> (<var>expr</var>)</i>
+<a name="IDX211"></a>
+</dt>
+<dt><u>Variable opcional:</u> <b>exponentialize</b>
+<a name="IDX212"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>exponentialize (expr)</code> convierte las funciones trigonom&eacute;tricas e hiperb&oacute;licas de <var>expr</var> a exponenciales, sin alterar la variable global <code>exponentialize</code>.
+</p>
+<p>Cuando la variable <code>exponentialize</code> vale <code>true</code>, todas las funciones trigonom&eacute;tricas e hiperb&oacute;licas se convierten a forma exponencial. El valor por defecto es <code>false</code>.
+</p>
+<p>La funci&oacute;n <code>demoivre</code> convierte funciones trigonom&eacute;tricas e hiperb&oacute;licas a la forma exponencial, por lo que  <code>demoivre</code> y <code>exponentialize</code> no pueden valer <code>true</code> al mismo tiempo.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>expop</b>
+<a name="IDX213"></a>
+</dt>
+<dd><p>Valor por defecto: 0
+</p>
+<p>La variable <code>expop</code> guarda el mayor exponente positivo que ser&aacute; expandido autom&aacute;ticamente.  As&iacute;, <code>(x+1)^3</code> se expandir&aacute; autom&aacute;ticamente s&oacute;lo si <code>expop</code> es mayor o igual que 3. Si se quiere expandir <code>(x+1)^n</code>, siendo <code>n</code> mayor que <code>expop</code>, entonces <code>expand ((x+1)^n)</code> se desarrollar&aacute; s&oacute;lo si <code>maxposex</code> no es menor que <code>n</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>factlim</b>
+<a name="IDX214"></a>
+</dt>
+<dd><p>Valor por defecto: -1
+</p>
+<p>La variable <code>factlim</code> especifica el mayor factorial que ser&aacute; expandido autom&aacute;ticamente.  Si su valor es -1, entonces se expandir&aacute;n todos los enteros.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>intosum</b><i> (<var>expr</var>)</i>
+<a name="IDX215"></a>
+</dt>
+<dd><p>Mueve los factores multiplicativos que est&aacute;n fuera de un sumatorio hacia dentro de &eacute;ste. Si el &iacute;ndice aparece en la expresi&oacute;n exterior, entonce <code>intosum</code> busca un &iacute;ndice razonable, lo mismo que hace con <code>sumcontract</code>. Se trata de la operaci&oacute;n contraria a extraer factores comunes de los sumatorios.
+</p>
+<p>En algunos caos puede ser necesario hacer <code>scanmap (multthru, <var>expr</var>)</code> antes que <code>intosum</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>lassociative</b>
+<a name="IDX216"></a>
+</dt>
+<dd><p>La instrucci&oacute;n <code>declare (g, lassociative)</code> le indica al simplificador de Maxima que <code>g</code> es asociativo por la izquierda.  Por ejemplo, <code>g (g (a, b), g (c, d))</code>se reduce a <code>g (g (g (a, b), c), d)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>linear</b>
+<a name="IDX217"></a>
+</dt>
+<dd><p>Es una de las propiedades de operadores de Maxima. Si la funci&oacute;n univariante <code>f</code> se declara lineal, la expansi&oacute;n de  <code>f(x + y)</code> produce <code>f(x) + f(y)</code>, <code>f(a*x)</code> produce <code>a*f(x)</code> si <code>a</code> es una constante.  Si la funci&oacute;n tiene dos o m&aacute;s argumentos, la linealidad se interpreta como la de <code>sum</code> o <code>integrate</code>, esto es, <code>f (a*x + b, x)</code> produce <code>a*f(x,x) + b*f(1,x)</code> si <code>a</code> y <code>b</code> no contienen a <code>x</code>.
+</p>
+<p><code>linear</code> equivale a <code>additive</code> y <code>outative</code>.
+V&eacute;ase tambi&eacute;n <code>opproperties</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>mainvar</b>
+<a name="IDX218"></a>
+</dt>
+<dd><p>Se pueden declarar variables de tipo <code>mainvar</code>.  El orden de los &aacute;tomos 
+es: n&uacute;meros &lt; constantes (como <code>%e</code> o <code>%pi</code>) &lt;
+escalares &lt; otras variables &lt; &quot;mainvars&quot;.  Por ejemplo, comp&aacute;rese <code>expand ((X+Y)^4)</code>
+con <code>(declare (x, mainvar), expand ((x+y)^4))</code>.  (Nota: Se debe tener cuidado si se quiere hacer uso de esta declaraci&oacute;n. Por ejemplo, si se resta una expresi&oacute;n en la que <code>x</code> ha sido declarada como <code>mainvar</code> de otra en la que <code>x</code> no es <code>mainvar</code>, puede ser necesario volver a simplificar, <code>ev (expr, simp)</code>, a fin de obtener cancelaciones.  Adem&aacute;s, si se guarda una expresi&oacute;n en la que <code>x</code> es <code>mainvar</code>, quiz&aacute;s sea necesario guardar tambi&eacute;n <code>x</code>.)
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxapplydepth</b>
+<a name="IDX219"></a>
+</dt>
+<dd><p>Valor por defecto: 10000
+</p>
+<p>La variable <code>maxapplydepth</code> es la m&aacute;xima profundidad a la que van a introducirse <code>apply1</code> y  <code>apply2</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxapplyheight</b>
+<a name="IDX220"></a>
+</dt>
+<dd><p>Valor por defecto: 10000
+</p>
+<p>La variable <code>maxapplyheight</code> es la m2'axima altura a la que escalar&aacute; <code>applyb1</code> antes de detenerse.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxnegex</b>
+<a name="IDX221"></a>
+</dt>
+<dd><p>Valor por defecto: 1000
+</p>
+<p>La variable <code>maxnegex</code> es el mayor exponente negativo que expandir&aacute; la funci&oacute;n <code>expand</code>. V&eacute;ase tambi&eacute;n <code>maxposex</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxposex</b>
+<a name="IDX222"></a>
+</dt>
+<dd><p>Valor por defecto: 1000
+</p>
+<p>La variable <code>maxposex</code> es el mayor exponenteque expandir&aacute; la funci&oacute;n <code>expand</code>. V&eacute;ase tambi&eacute;n <code>maxnegex</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>multiplicative</b>
+<a name="IDX223"></a>
+</dt>
+<dd><p>La instrucci&oacute;n <code>declare (f, multiplicative)</code> indica al simplificador de Maxima que <code>f</code> is multiplicativa.
+</p>
+<ol>
+<li>
+Si <code>f</code> es univariante, cada vez que el simplificador encuentre a <code>f</code> aplicad a un producto, <code>f</code> se distribuir&aacute; sobre ese producto.  Por ejemplo, <code>f(x*y)</code> se reducir&iacute;a a <code>f(x)*f(y)</code>.
+</li><li>
+Si <code>f</code> es una funci&oacute;n de 2 o m&aacute;s argumentos, la multiplicabilidad se define como multiplicabilidad para el primer argumento de <code>f</code>, de modo que <code>f (g(x) * h(x), x)</code> se reducir&iacute;a a <code>f (g(x) ,x) * f (h(x), x)</code>.
+</li></ol>
+
+<p>Esta transformaci&oacute;n no se realiza cuando <code>f</code> se aplica a expresiones de la forma <code>product (x[i], i, m, n)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>negdistrib</b>
+<a name="IDX224"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Si <code>negdistrib</code> vale <code>true</code>, -1 se distribuye sobre una expresi&oacute;n.  Por ejemplo, <code>-(x + y)</code> se transforma en <code>- y - x</code>.  D&aacute;ndole el valor <code>false</code> se mostrar&aacute; <code>- (x + y)</code> tal cual. Esto puede ser &uacute;til, pero tambi&eacute;n peligroso; al igual que el indicador <code>simp</code>, no conviene asignarle el valor <code>false</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>negsumdispflag</b>
+<a name="IDX225"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Si <code>negsumdispflag</code> vale <code>true</code>, <code>x - y</code> se muestra como <code>x - y</code>
+en lugar de <code>- y + x</code>.  D&aacute;ndole el valor <code>false</code> se realiza un an&aacute;lisis adicional para que no se representen de forma muy diferente dos expresiones similares.  Una aplicaci&oacute;n puede ser para que <code>a + %i*b</code> y <code>a - %i*b</code> se representen ambas de la misma manera.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>S&iacute;mbolo especial:</u> <b>noeval</b>
+<a name="IDX226"></a>
+</dt>
+<dd><p>El s&iacute;mbolo <code>noeval</code> evita la fase de evaluaci&oacute;n de <code>ev</code>. Es &uacute;til conjuntamente con otras variables globales y para poder volver a simplificar expresiones sin tener que evaluarlas otra vez.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>noun</b>
+<a name="IDX227"></a>
+</dt>
+<dd><p>El s&iacute;mbolo <code>noun</code> es una de las opciones de la instrucci&oacute;n <code>declare</code>. Hace que una funci&oacute;n se declare como &quot;nombre&quot;, lo que significa que no se evaluar&aacute; autom&aacute;ticamente.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>noundisp</b>
+<a name="IDX228"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>noundisp</code> vale <code>true</code>, los nombres se muestran precedidos de un ap&oacute;strofo. Siempre debe valer <code>true</code> cuando se quiera representar la definici&oacute;n de funciones.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>S&iacute;mbolo especial:</u> <b>nouns</b>
+<a name="IDX229"></a>
+</dt>
+<dd><p>El s&iacute;mbolo <code>nouns</code> es una <code>evflag</code>, lo que significa que cuando se utilice como una opci&oacute;n de la instrucci&oacute;n <code>ev</code>, todas las formas nominales que aparezcan en una expresi&oacute;n las convierte en verbales, esto es, las eval&uacute;a.  V&eacute;anse tambi&eacute;n <code>noun</code>, <code>nounify</code>, <code>verb</code> y <code>verbify</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>S&iacute;mbolo especial:</u> <b>numer</b>
+<a name="IDX230"></a>
+</dt>
+<dd><p>El s&iacute;mbolo <code>numer</code> hace algunas funciones matem&aacute;ticas
+con argumentos num&eacute;ricos se eval&uacute;en como decimales de punto flotante.
+Tambi&eacute;n hace que las variables de una expresi&oacute;n a las cuales se les ha
+asignado un n&uacute;mero sean sustituidas por sus valores.
+Adem&aacute;s, activa la variable <code>float</code>.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>numerval</b><i> (<var>x_1</var>, <var>expr_1</var>, ..., <var>var_n</var>, <var>expr_n</var>)</i>
+<a name="IDX231"></a>
+</dt>
+<dd><p>Declara las variables <code>x_1</code>, ..., <var>x_n</var> asign&aacute;ndoles los valores num&eacute;ricos <code>expr_1</code>, ..., <code>expr_n</code>.
+El valor num&eacute;rico se eval&uacute;a y sustituye a la variable en cualquier expresi&oacute;n en la que &eacute;sta aparezca si <code>numer</code> toma el valor <code>true</code>. V&eacute;ase tambi&eacute;n <code>ev</code>.
+</p>
+<p>Las expresiones <code>expr_1</code>, ..., <code>expr_n</code> pueden ser expresiones no necesariamente num&eacute;ricas.
+</p></dd></dl>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>opproperties</b>
+<a name="IDX232"></a>
+</dt>
+<dd><p>La variable <code>opproperties</code> es la lista con las propiedades especiales de los operadores reconocidas por el simplificador de Maxima:
+<code>linear</code>, <code>additive</code>, <code>multiplicative</code>, <code>outative</code>, <code>evenfun</code>,
+<code>oddfun</code>, <code>commutative</code>, <code>symmetric</code>, <code>antisymmetric</code>, <code>nary</code>, 
+<code>lassociative</code>, <code>rassociative</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>opsubst</b>
+<a name="IDX233"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Si <code>opsubst</code> vale <code>false</code>, <code>subst</code> no sustituye el operdor de una expresi&oacute;n, de manera que <code>(opsubst: false, subst (x^2, r, r+r[0]))</code> trabajar&aacute; correctamente.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>outative</b>
+<a name="IDX234"></a>
+</dt>
+<dd><p>La instrucci&oacute;n <code>declare (f, outative)</code> le indica al simplificador de Maxima que los factores constantes del argumento de la funci&oacute;n <code>f</code> pueden ser extra&iacute;dos.
+</p>
+<ol>
+<li>
+Si <code>f</code> es univariante, cada vez que el simplificador se encuentra con <code>f</code> aplicada a un producto, &eacute;ste ser&aacute; particionado en factores que son constantes y factores que no lo son, siendo entonces los constantes extra&iacute;dos de la funci&oacute;n.  Por ejemplo, <code>f(a*x)</code> se reducir&aacute; a <code>a*f(x)</code> siendo <code>a</code> una constante. Las constantes no at&oacute;micas no ser&aacute;n extra&iacute;das.
+</li><li>
+Si <code>f</code> es una funci&oacute;n de 2 o m&aacute;s argumentos, esta propiedad se define como en  <code>sum</code> o <code>integrate</code>, esto es, <code>f (a*g(x), x)</code> se reducir&aacute; a <code>a * f(g(x), x)</code> si <code>a</code> no contiene a <code>x</code>.
+</li></ol>
+
+<p>Las funciones <code>sum</code>, <code>integrate</code> y <code>limit</code> han sido todas declaradas con la propiedad <code>outative</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>posfun</b>
+<a name="IDX235"></a>
+</dt>
+<dd><p>La instrucci&oacute;n <code>declare (f, posfun)</code> declara a <code>f</code> como funci&oacute;n positiva, de forma que 
+<code>is (f(x) &gt; 0)</code> devolver&aacute; <code>true</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>radcan</b><i> (<var>expr</var>)</i>
+<a name="IDX236"></a>
+</dt>
+<dd><p>Simplifica la expresi&oacute;n <var>expr</var>, que puede contener logaritmos, exponenciales y
+radicales, convirti&eacute;ndola a una forma can&oacute;nica, lo que significa que todas las expresiones funcionalmente equivalentes
+se reducen a una forma &uacute;nica.  Ciertas expresiones, sin embargo, son reducidas por <code>radcan</code> a una forma regular, lo que significa que dos expresiones equivalentes no tienen necesariamente el mismo aspecto, pero su diferencia puede ser reducida por <code>radcan</code> a cero.
+</p>
+<p>Con algunas expresiones <code>radcan</code> puede consunir mucho tiempo. Este es el coste por explorar ciertas relaciones entre las componentes de la expresi&oacute;n para simplificaciones basadas en factorizaciones y expansiones parciales de fracciones de exponentes.  
+</p>
+<p>Si <code>%e_to_numlog</code> vale <code>true</code>, 
+<code>%e^(r*log(expr))</code> se reduce a <code>expr^r</code> si <code>r</code>  es un n&uacute;mero racional.
+</p>
+<p>Si <code>radexpand</code> vale <code>false</code>, ciertas transformaciones se inhiben;
+<code>radcan (sqrt (1-x))</code> se mantiene como <code>sqrt (1-x)</code>
+y no se reduce a <code>%i sqrt (x-1)</code>, o 
+<code>radcan (sqrt (x^2 - 2*x + 11))</code> se mantiene como  <code>sqrt (x^2 - 2*x + 1)</code>
+sin reducirse a<code>x - 1</code>.
+</p>
+<p>La instrucci&oacute;n <code>example (radcan)</code> muestra algunos ejemplos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>radexpand</b>
+<a name="IDX237"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>La variable <code>radexpand</code> controla algunas simplificaciones de radicales.
+</p>
+<p>Si <code>radexpand</code> vale <code>all</code>, las ra&iacute;ces <var>n</var>-&eacute;simas de los factores de un producto que sean potencias de <var>n</var> se extraen del s&iacute;mbolo radical. Por ejemplo, si <code>radexpand</code> vale <code>all</code>, <code>sqrt (16*x^2)</code> se reduce a <code>4*x</code>.
+</p>
+<p>M&aacute;s concretamente, consid&eacute;rese <code>sqrt (x^2)</code>.
+</p><ul>
+<li>
+Si <code>radexpand</code> vale <code>all</code> o se ha ejecutado <code>assume (x &gt; 0)</code>, 
+<code>sqrt(x^2)</code> se reduce a <code>x</code>.
+</li><li>
+Si <code>radexpand</code> vale <code>true</code> y <code>domain</code> es <code>real</code> (su valor por defecto), 
+<code>sqrt(x^2)</code> se reduce a <code>abs(x)</code>.
+</li><li>
+Si <code>radexpand</code> vale <code>false</code> o <code>radexpand</code> vale <code>true</code> y <code>domain</code> es <code>complex</code>, 
+<code>sqrt(x^2)</code> no se simplifica.
+</li></ul>
+
+<p>N&oacute;tese que  <code>domain</code> s&oacute;lo se tiene en cuenta si <code>radexpand</code> vale <code>true</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Variable opcional:</u> <b>radsubstflag</b>
+<a name="IDX238"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>radsubstflag</code> vale <code>true</code> se permite a <code>ratsubst</code> hacer la sustituci&oacute;n <code>u</code> por <code>sqrt (x)</code> in <code>x</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>rassociative</b>
+<a name="IDX239"></a>
+</dt>
+<dd><p>La instrucci&oacute;n <code>declare (g, rassociative)</code> le indica al simplificador de Maxima que <code>g</code> es asociativa por la derecha.  Por ejemplo, <code>g(g(a, b), g(c, d))</code> se reduce a <code>g(a, g(b, g(c, d)))</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>scsimp</b><i> (<var>expr</var>, <var>rule_1</var>, ..., <var>rule_n</var>)</i>
+<a name="IDX240"></a>
+</dt>
+<dd><p>Es el &quot;Sequential Comparative Simplification&quot; (m&eacute;todo debido a Stoute).
+La funci&oacute;n <code>scsimp</code> intenta simplificar <var>expr</var> de acuerdo con las reglas <var>rule_1</var>, ..., <var>rule_n</var>.
+Si se obtiene una expresi&oacute;n m&aacute;s peque&ntilde;a, el proceso se repite. En caso contrario, despu&eacute;s de que se hayan intentado todas las simplificaciones, devuelve la respuesta original.
+</p>
+<p>La instrucci&oacute;n <code>example (scsimp)</code> muestra algunos ejemplos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>simpsum</b>
+<a name="IDX241"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>simpsum</code> vale <code>true</code>, se simplifica el resultado de un sumatorio <code>sum</code>. Esta simplificaci&oacute;n podr&aacute; producir en ocasiones una expresi&oacute;n compacta.  Si <code>simpsum</code> vale <code>false</code> o si se utiliza la forma apostrofada <code>'sum</code>, el valor es una forma nominal que representa la notaci&oacute;n sigma habitual en matem&aacute;ticas.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sumcontract</b><i> (<var>expr</var>)</i>
+<a name="IDX242"></a>
+</dt>
+<dd><p>Combina todos los sumatorios de una suma cuyos l&iacute;mites inferiores y superiores difieren por constantes. El resultado es una expresi&oacute;n que contiene un sumatorio para conjunto de tales sumatorios. La funci&oacute;n <code>sumcontract</code> combina todos los sumatorios compatibles y utiliza uno de los &iacute;ndices de uno de los sumatorios si puede, si no formar&aacute; un &iacute;ndice que sea razonable.
+</p>
+<p>Puede ser necesario hacer <code>intosum (<var>expr</var>)</code> antes que <code>sumcontract</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Variable opcional:</u> <b>sumexpand</b>
+<a name="IDX243"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>sumexpand</code> vale <code>true</code>, productos de sumatorios y de sumatorios con exponentes se reducen a sumatorios anidados.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>cauchysum</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sumexpand: true$
+(%i2) sum (f (i), i, 0, m) * sum (g (j), j, 0, n);
+                     m      n
+                    ====   ====
+                    \      \
+(%o2)                &gt;      &gt;     f(i1) g(i2)
+                    /      /
+                    ====   ====
+                    i1 = 0 i2 = 0
+(%i3) sum (f (i), i, 0, m)^2;
+                     m      m
+                    ====   ====
+                    \      \
+(%o3)                &gt;      &gt;     f(i3) f(i4)
+                    /      /
+                    ====   ====
+                    i3 = 0 i4 = 0
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Variable opcional:</u> <b>sumsplitfact</b>
+<a name="IDX244"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>Si <code>sumsplitfact</code> vale <code>false</code>,
+<code>minfactorial</code> se aplica despu&eacute;s de  <code>factcomb</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>symmetric</b>
+<a name="IDX245"></a>
+</dt>
+<dd><p>La instrucci&oacute;n <code>declare (h, symmetric)</code> le indica al simplificador de  Maxima que <code>h</code> es una funci&oacute;n sim&eacute;trica.  Por ejemplo, <code>h (x, z, y)</code>  se reduce a <code>h (x, y, z)</code>.
+</p>
+<p>El nombre <code>commutative</code> es sin&oacute;nimo de <code>symmetric</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>unknown</b><i> (<var>expr</var>)</i>
+<a name="IDX246"></a>
+</dt>
+<dd><p>Devuelve <code>true</code> si y s&oacute;lo si <var>expr</var> contiene un operador o funci&oacute;n no reconocido por el simplificador de Maxima.
+</p>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC30" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_8.html#SEC32" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

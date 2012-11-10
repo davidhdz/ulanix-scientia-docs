@@ -1,0 +1,1217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 4. L&iacute;nea de Comandos</title>
+
+<meta name="description" content="Manual de Maxima: 4. L&iacute;nea de Comandos">
+<meta name="keywords" content="Manual de Maxima: 4. L&iacute;nea de Comandos">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="L_00ednea-de-Comandos"></a>
+<a name="SEC9"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_3.html#SEC8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC10" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_3.html#SEC4" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_5.html#SEC12" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 4. L&iacute;nea de Comandos </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC10">4.1 Introducci&oacute;n a la L&iacute;nea de Comandos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC11">4.2 Definiciones para la L&iacute;nea de Comandos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Introducci_00f3n-a-la-L_00ednea-de-Comandos"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC11" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC9" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_5.html#SEC12" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+<a name="SEC10"></a>
+<h2 class="section"> 4.1 Introducci&oacute;n a la L&iacute;nea de Comandos </h2>
+
+
+<dl>
+<dt><u>Operador:</u> <b>'</b>
+<a name="IDX14"></a>
+</dt>
+<dd><p>El operador comilla simple <code>'</code> evita la evaluaci&oacute;n. 
+</p>
+<p>Aplicado a un s&iacute;mbolo, 
+la comilla simple evita la evaluaci&oacute;n del s&iacute;mbolo. 
+</p>
+<p>Aplicado a la llamada de una funci&oacute;n,
+la comilla simple evita la evaluaci&oacute;n de la funci&oacute;n llamada,
+aunque los argumentos de la funci&oacute;n son evaluados (siempre y cuando 
+la evaluaci&oacute;n no se evite de otra manera). 
+El resultado es una forma de nombre de la funci&oacute;n llamada.  
+</p>
+<p>Aplicado a una expresi&oacute;n con par&eacute;ntesis, 
+la comilla simple evita la evaluaci&oacute;n de todos los s&iacute;mbolos y llamadas a funciones que hayan en la expresi&oacute;n. 
+E.g., <code>'(f(x))</code> significa que no se evalua la expresi&oacute;n <code>f(x)</code>. 
+<code>'f(x)</code> (con la comilla simple aplicada a <code>f</code> en cambio de a <code>f(x)</code>)
+significa el retorno de la forma de nombre de <code>f</code> aplicada a <code>[x]</code>. 
+</p>
+<p>La comilla simple no evita la simplificaci&oacute;n. 
+</p>
+<p>Cuando el interruptor global <code>noundisp</code> es <code>true</code>, 
+los nombres se muestran con una comilla simple. 
+Este interruptor siempre tiene como valor <code>true</code> cuando 
+se muestran definiciones de funciones. 
+</p>
+<p>Ver tambi&eacute;n los operadores comilla-comilla <code>''</code> y <code>nouns</code>. 
+</p>
+<p>Ejemplos:
+</p>
+<p>Aplicado a un s&iacute;mbolo, 
+la comilla simple evita la evaluaci&oacute;n del s&iacute;mbolo. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) aa: 1024;
+(%o1)                         1024
+(%i2) aa^2;
+(%o2)                        1048576
+(%i3) 'aa^2;
+                                 2
+(%o3)                          aa
+(%i4) ''%;
+(%o4)                        1048576
+</pre></td></tr></table>
+<p>Aplicado a la llamada de una funci&oacute;n,
+la comilla simple evita la evaluaci&oacute;n de la funci&oacute;n llamada,
+aunque los argumentos de la funci&oacute;n son evaluados (siempre y cuando 
+la evaluaci&oacute;n no se evite de otra manera). 
+El resultado es una forma de nombre de la funci&oacute;n llamada.  
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x0: 5;
+(%o1)                           5
+(%i2) x1: 7;
+(%o2)                           7
+(%i3) integrate (x^2, x, x0, x1);
+                               218
+(%o3)                          ---
+                                3
+(%i4) 'integrate (x^2, x, x0, x1);
+                             7
+                            /
+                            [   2
+(%o4)                       I  x  dx
+                            ]
+                            /
+                             5
+(%i5) %, nouns;
+                               218
+(%o5)                          ---
+                                3
+</pre></td></tr></table>
+<p>Aplicado a una expresi&oacute;n con par&eacute;ntesis, 
+la comilla simple evita la evaluaci&oacute;n de todos los s&iacute;mbolos y llamadas a funciones que hayan en la expresi&oacute;n. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) aa: 1024;
+(%o1)                         1024
+(%i2) bb: 19;
+(%o2)                          19
+(%i3) sqrt(aa) + bb;
+(%o3)                          51
+(%i4) '(sqrt(aa) + bb);
+(%o4)                     bb + sqrt(aa)
+(%i5) ''%;
+(%o5)                          51
+</pre></td></tr></table>
+<p>La comilla simple no evita la simplificaci&oacute;n. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sin (17 * %pi) + cos (17 * %pi);
+(%o1)                          - 1
+(%i2) '(sin (17 * %pi) + cos (17 * %pi));
+(%o2)                          - 1
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Operador:</u> <b>&quot;</b>
+<a name="IDX15"></a>
+</dt>
+<dd><p>El operador comilla-comilla <code>''</code> (dos comillas simples) modifica la evaluaci&oacute;n
+en las expresiones de entrada.
+</p>
+<p>Aplicado a cualquier expresi&oacute;n general <var>expr</var>, las dos comillas simples hacen que
+el valor de <var>expr</var> sea sustituido por <var>expr</var> en la expresi&oacute;n de entrada.
+</p>
+<p>Aplicado al operador de una expresi&oacute;n, el operador comilla-comilla hace que el operador
+pase de ser un nombre a ser un verbo, a menos que ya sea un verbo.
+</p>
+<p>El operador comilla-comilla es aplicado por el analizador sint&aacute;ctico de entrada;
+no se almacena como una parte de la expresi&oacute;n de entrada analizada.
+Este operador se aplica siempre tan pronto como es detectado y no puede ser comentado con
+una comilla simple. De esta manera, el operador comilla-comilla provoca la evaluaci&oacute;n de
+una expresi&oacute;n cuando &eacute;sta no estaba previsto que fuese evaluada, como en la
+definici&oacute;n de funciones, expresiones lambda y expresiones comentadas con una comilla simple
+<code>'</code>.
+</p>
+<p>El operador comilla-comilla es reconocido tanto por <code>batch</code> como por <code>load</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n el operador comilla simple <code>'</code> y <code>nouns</code>.
+</p>
+<p>Ejemplos:
+</p>
+<p>Aplicado a cualquier expresi&oacute;n general <var>expr</var>, las dos comillas simples hacen que
+el valor de <var>expr</var> sea sustituido por <var>expr</var> en la expresi&oacute;n de entrada.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) expand ((a + b)^3);
+                     3        2      2      3
+(%o1)               b  + 3 a b  + 3 a  b + a
+(%i2) [_, ''_];
+                         3    3        2      2      3
+(%o2)     [expand((b + a) ), b  + 3 a b  + 3 a  b + a ]
+(%i3) [%i1, ''%i1];
+                         3    3        2      2      3
+(%o3)     [expand((b + a) ), b  + 3 a b  + 3 a  b + a ]
+(%i4) [aa : cc, bb : dd, cc : 17, dd : 29];
+(%o4)                   [cc, dd, 17, 29]
+(%i5) foo_1 (x) := aa - bb * x;
+(%o5)                 foo_1(x) := aa - bb x
+(%i6) foo_1 (10);
+(%o6)                      cc - 10 dd
+(%i7) ''%;
+(%o7)                         - 273
+(%i8) ''(foo_1 (10));
+(%o8)                         - 273
+(%i9) foo_2 (x) := ''aa - ''bb * x;
+(%o9)                 foo_2(x) := cc - dd x
+(%i10) foo_2 (10);
+(%o10)                        - 273
+(%i11) [x0 : x1, x1 : x2, x2 : x3];
+(%o11)                    [x1, x2, x3]
+(%i12) x0;
+(%o12)                         x1
+(%i13) ''x0;
+(%o13)                         x2
+(%i14) '' ''x0;
+(%o14)                         x3
+</pre></td></tr></table>
+<p>Aplicado al operador de una expresi&oacute;n, el operador comilla-comilla hace que el operador
+pase de ser un nombre a ser un verbo, a menos que ya sea un verbo.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sin (1);
+(%o1)                        sin(1)
+(%i2) ''sin (1);
+(%o2)                    0.8414709848079
+(%i3) declare (foo, noun);
+(%o3)                         done
+(%i4) foo (x) := x - 1729;
+(%o4)                 ''foo(x) := x - 1729
+(%i5) foo (100);
+(%o5)                       foo(100)
+(%i6) ''foo (100);
+(%o6)                        - 1629
+</pre></td></tr></table>
+<p>El operador comilla-comilla es aplicado por el analizador sint&aacute;ctico de entrada;
+no se almacena como una parte de la expresi&oacute;n de entrada analizada.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) [aa : bb, cc : dd, bb : 1234, dd : 5678];
+(%o1)                 [bb, dd, 1234, 5678]
+(%i2) aa + cc;
+(%o2)                        dd + bb
+(%i3) display (_, op (_), args (_));
+                           _ = cc + aa
+
+                         op(cc + aa) = +
+
+                    args(cc + aa) = [cc, aa]
+
+(%o3)                         done
+(%i4) ''(aa + cc);
+(%o4)                         6912
+(%i5) display (_, op (_), args (_));
+                           _ = dd + bb
+
+                         op(dd + bb) = +
+
+                    args(dd + bb) = [dd, bb]
+
+(%o5)                         done
+</pre></td></tr></table>
+<p>El operador comilla-comilla provoca la evaluaci&oacute;n de
+una expresi&oacute;n cuando &eacute;sta no estaba previsto que fuese evaluada, como en la
+definici&oacute;n de funciones, expresiones lambda y expresiones comentadas con una comilla simple
+<code>'</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) foo_1a (x) := ''(integrate (log (x), x));
+(%o1)               foo_1a(x) := x log(x) - x
+(%i2) foo_1b (x) := integrate (log (x), x);
+(%o2)           foo_1b(x) := integrate(log(x), x)
+(%i3) dispfun (foo_1a, foo_1b);
+(%t3)               foo_1a(x) := x log(x) - x
+
+(%t4)           foo_1b(x) := integrate(log(x), x)
+
+(%o4)                      [%t3, %t4]
+(%i4) integrate (log (x), x);
+(%o4)                     x log(x) - x
+(%i5) foo_2a (x) := ''%;
+(%o5)               foo_2a(x) := x log(x) - x
+(%i6) foo_2b (x) := %;
+(%o6)                    foo_2b(x) := %
+(%i7) dispfun (foo_2a, foo_2b);
+(%t7)               foo_2a(x) := x log(x) - x
+
+(%t8)                    foo_2b(x) := %
+
+(%o8)                      [%t7, %t8]
+(%i8) F : lambda ([u], diff (sin (u), u));
+(%o8)             lambda([u], diff(sin(u), u))
+(%i9) G : lambda ([u], ''(diff (sin (u), u)));
+(%o9)                  lambda([u], cos(u))
+(%i10) '(sum (a[k], k, 1, 3) + sum (b[k], k, 1, 3));
+(%o10)         sum(b , k, 1, 3) + sum(a , k, 1, 3)
+                    k                  k
+(%i11) '(''(sum (a[k], k, 1, 3)) + ''(sum (b[k], k, 1, 3)));
+(%o11)             b  + a  + b  + a  + b  + a
+                    3    3    2    2    1    1
+</pre></td></tr></table>
+</dd></dl>
+
+<hr size="6">
+<a name="Definiciones-para-la-L_00ednea-de-Comandos"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC10" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_5.html#SEC12" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC9" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_5.html#SEC12" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+
+<a name="SEC11"></a>
+<h2 class="section"> 4.2 Definiciones para la L&iacute;nea de Comandos </h2>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>alias</b><i> (<var>new_name_1</var>, <var>old_name_1</var>, ..., <var>new_name_n</var>, <var>old_name_n</var>)</i>
+<a name="IDX16"></a>
+</dt>
+<dd><p>provee un nombre
+alternativo para una (bien sea definida por el usuario o por el sistema) funci&oacute;n, variable, arreglo, etc. 
+Cualquier n&uacute;mero par de argumentos puede ser usado. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>debugmode</b>
+<a name="IDX17"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Cuando en Maxima ocurre un error, Maxima inicializar&aacute; el depurador si <code>debugmode</code> tiene el valor <code>true</code>. 
+El usuario puede ingresar comandos para examinar la pila de llamadas, los puntos de interrupci&oacute;n; en pocas palabras ir a trav&eacute;s del c&oacute;digo de Maxima. Vea <code>debugging</code> para una lista de los comandos del depurador.  
+</p>
+<p>Habilitando <code>debugmode</code> no se capturar&aacute;n los errores tipo Lisp. 
+</p>
+
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>ev</b><i> (<var>expr</var>, <var>arg_1</var>, ..., <var>arg_n</var>)</i>
+<a name="IDX18"></a>
+</dt>
+<dd><p>Evalua la expresi&oacute;n <var>expr</var> en el entorno especificado
+por los argumentos <var>arg_1</var>, ..., <var>arg_n</var>.
+Los argumentos son interruptores (Variables Booleanas), variables de
+asignaci&oacute;n, ecuaciones y funciones. 
+<code>ev</code> retorna el resultado (otra expresi&oacute;n) de la evaluaci&oacute;n. 
+</p>
+<p>La evaluaci&oacute;n se realiza por etapas, como sigue: 
+</p>
+<ol>
+<li>
+Primero se configura el entorno de acuerdo a los argumentos los
+cuales pueden ser algunos o todos de la siguiente lista:  
+
+<ul>
+<li>
+<code>simp</code> causa que <var>expr</var> sea simplificada sin importar el valor de la variable interruptor <code>simp</code> la cual inhibe la simplificaci&oacute;n cuando su valor es <code>false</code>. 
+</li><li>
+<code>noeval</code> suprime la fase de evaluaci&oacute;n de <code>ev</code> (Vea el paso (4) m&aacute;s adelante). 
+Esto es muy &uacute;til en conjunci&oacute;n con otras variables interruptor y causan en <var>expr</var> que sea resimplificada sin ser reevaluada. 
+</li><li>
+<code>nouns</code> causa la evaluaci&oacute;n de las formas nominales
+(t&iacute;picamente funciones sin evaluar tales como
+<code>'integrate</code> or <code>'diff</code>) en <code>expr</code>. 
+</li><li>
+<code>expand</code> causa expansi&oacute;n. 
+</li><li>
+<code>expand (<var>m</var>, <var>n</var>)</code> causa expansi&oacute;n, asignando los valores de <code>maxposex</code> y
+<code>maxnegex</code> a <var>m</var> y <var>n</var>, respectivamente.
+</li><li>
+<code>detout</code> hace que cualesquiera matrices inversas calculadas en <var>expr</var> conserven su determinante fuera de la inversa, en vez de que divida a cada elemento.  
+</li><li>
+<code>diff</code> realiza todas las diferenciaciones indicadas en <var>expr</var>. 
+</li><li>
+<code>derivlist (<var>x</var>, <var>y</var>, <var>z</var>, ...)</code> realiza s&oacute;lo las diferenciaciones con respecto a las variables indicadas. 
+</li><li>
+<code>float</code> provoca la conversi&oacute;n de los n&uacute;meros racionales no-enteros a n&uacute;meros decimales de coma flotante. 
+</li><li>
+<code>numer</code> causa que algunas funciones matem&aacute;ticas (incluyendo potenciaci&oacute;n) con argumentos num&eacute;ricos sean evaluados como punto flotante. Esto causa que las variables en <var>expr</var> las cuales hayan sido declaradas como variables num&eacute;ricas sean reemplazadas por sus respectivos valores. Esto tambi&eacute;n configura la variable interruptor <code>float</code> a <code>true</code>. 
+</li><li>
+<code>pred</code> provoca la evaluaci&oacute;n de los predicados (expresiones las cuales se evaluan a <code>true</code> o <code>false</code>). 
+</li><li>
+<code>eval</code> provoca una post-evaluaci&oacute;n extra de <var>expr</var> (v&eacute;ase el paso (5) m&aacute;s adelante), pudiendo aparecer
+<code>eval</code> varias veces; por cada aparici&oacute;n de <code>eval</code>, la expresi&oacute;n es reevaluada.
+</li><li>
+<code>A</code>, donde <code>A</code> es un &aacute;tomo declarado como una variable de tipo interruptor, (Vea <code>evflag</code>)
+causa que <code>A</code> tenga como valor <code>true</code> durante 
+la evaluaci&oacute;n de <var>expr</var>.  
+</li><li>
+<code>V: expresion</code> (o alternativamente <code>V=expresion</code>) causa que 
+<code>V</code> tenga el valor de <code>expresion</code> durante la evaluaci&oacute;n
+de <var>expr</var>. Notese que si <code>V</code> es una opci&oacute;n Maxima, entonces
+<code>expresion</code> se usa como su valor durante la evaluaci&oacute;n de
+<var>expr</var>. Si m&aacute;s de un argumento de <code>ev</code> es de este 
+tipo entonces el v&iacute;nculo se hace en paralelo. Si <code>V</code> es una
+expresi&oacute;n no at&oacute;mica entonces se hace una sustituci&oacute;n m&aacute;s que 
+un v&iacute;nculo.
+</li><li>
+<code>F</code> donde <code>F</code>, un nombre de funci&oacute;n, ha sido declarado para 
+ser una funci&oacute;n de evaluaci&oacute;n (Vea <code>evfun</code>) causa que
+<code>F</code> sea aplicada a <var>expr</var>. 
+</li><li>
+Cualquier otro nombre de funci&oacute;n (e.g., <code>sum</code>) causa la evaluaci&oacute;n de las ocurrencias de esos nombres en <code>expr</code> como si ellos fueran
+verbos. 
+</li><li>
+En adici&oacute;n de que una funci&oacute;n ocurra en <var>expr</var> (digamos <code>F(x)</code>) puede ser definida localmente para el prop&oacute;sito de esta evaluaci&oacute;n 
+de <var>expr</var> pasando <code>F(x) := expresion</code> como un argumento a
+<code>ev</code>. 
+</li><li>
+Si un &aacute;tomo no mencionado anteriormente o una variable o expresi&oacute;n 
+con sub&iacute;ndices fueran pasadas como un argumento, esta es evaluada y
+si el resultado es una ecuaci&oacute;n o una asignaci&oacute;n entonces el 
+v&iacute;nculo o sustituci&oacute;n se llevar&aacute; a cabo. Si el resultado es una
+lista entonces los miembros de la lista tratados como si ellos fueran
+argumentos adicionales pasados a <code>ev</code>. Esto permite que una
+lista de argumentos sea pasada (e.g., <code>[X=1, Y=A**2]</code>) o una lista
+de nombres de ecuaciones (e.g., <code>[%t1, %t2]</code> donde <code>%t1</code> y
+<code>%t2</code> son ecuaciones) tal como lo que es retornado por 
+<code>solve</code>. 
+</li></ul>
+
+<p>Los argumentos de <code>ev</code> pueden ser pasados en cualquier orden con excepci&oacute;n de la sustituci&oacute;n de ecuaciones las cuales son manipuladas en 
+secuencia, de izquierda a derecha y las funciones de evaluaci&oacute;n las 
+cuales son compuestas, e.g., <code>ev (<var>expr</var>, ratsimp, realpart)</code>
+es manipulada como <code>realpart (ratsimp (<var>expr</var>))</code>. 
+</p>
+<p>Los interruptores <code>simp</code>, <code>numer</code>, <code>float</code> y <code>pred</code> 
+pueden tambi&eacute;n ser configurados localmente en una sentencia block, o
+globalmente en Maxima para que su efecto permanezca hasta que
+sean reconfiguradas.   
+</p>
+<p>Si <var>expr</var> es una Expresi&oacute;n Racional Can&oacute;nica (CRE, por sus siglas en ingl&eacute;s), entonces la expresi&oacute;n retornada por <code>ev</code> es tambi&eacute;n 
+de tipo CRE, siempre que los interruptores <code>numer</code> y <code>float</code> no sean <code>true</code>. 
+</p>
+</li><li>
+Durante el paso (1), se fabrica una lista de las variables que no contienen sub&iacute;ndices que aparecen en el lado izquierdo de las ecuaciones en los
+argumentos o en el valor de algunos argumentos si el valor es una ecuaci&oacute;n. Las variables (variables que contienen sub&iacute;ndices las cuales no tienen asociado un arreglo de funciones como tambi&eacute;n las variables que no contienen sub&iacute;ndices) en la expresi&oacute;n <var>expr</var> son reemplazadas por sus valores globales, excepto por aquellos que aparezcan en esa lista. 
+Usualmente, <var>expr</var> es s&oacute;lo una etiqueta o un <code>%</code> 
+(como en <code>%i2</code> en el ejemplo de m&aacute;s abajo) as&iacute; que 
+este paso simplemente recupera la expresi&oacute;n a la que hace referencia 
+la etiqueta y as&iacute; <code>ev</code> puede trabajarla. 
+
+</li><li>
+Si algunas sustituciones son indicadas por los argumentos, ellas
+ser&aacute;n llevadas a cabo ahora. 
+
+</li><li>
+La expresi&oacute;n resultante es tambi&eacute;n reevaluada (a menos que uno de 
+los argumentos fuese <code>noeval</code>) y simplificada de acuerdo a los 
+argumentos. Notese que cualquier llamada a una funci&oacute;n en <var>expr</var> 
+ser&aacute; llevada a cabo despu&eacute;s de que las variables sean evaluadas 
+en ella y que <code>ev(F(x))</code> pueda comportarse como <code>F(ev(x))</code>. 
+
+</li><li>
+Por cada aparici&oacute;n de <code>eval</code> en los argumentos, se repetir&aacute;n los pasos (3) y (4).
+</li></ol>
+
+<p>Ejemplos
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sin(x) + cos(y) + (w+1)^2 + 'diff (sin(w), w);
+                                     d                    2
+(%o1)              cos(y) + sin(x) + -- (sin(w)) + (w + 1)
+                                     dw
+(%i2) ev (%, sin, expand, diff, x=2, y=1);
+                          2
+(%o2)           cos(w) + w  + 2 w + cos(1) + 1.909297426825682
+</pre></td></tr></table>
+<p>Una sintaxis alternativa de alto nivel ha sido proveida para <code>ev</code>, 
+por medio de la cual uno puede escribir solamente sus argumentos, sin 
+el comando <code>ev()</code>. Esto es, una forma sencilla de escritura:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><var>expr</var>, <var>arg_1</var>, ..., <var>arg_n</var>
+</pre></td></tr></table>
+<p>Esto no es permitido como parte de otra 
+expresi&oacute;n , e.g., en funciones, sentencias block, etc. 
+</p>
+<p>N&oacute;tese el proceso de v&iacute;nculo en paralelo en el siguiente ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i3) programmode: false;
+(%o3)                                false
+(%i4) x+y, x: a+y, y: 2;
+(%o4)                              y + a + 2
+(%i5) 2*x - 3*y = 3$
+(%i6) -3*x + 2*y = -4$
+(%i7) solve ([%o5, %o6]);
+Soluci&oacute;n
+
+                                          1
+(%t7)                               y = - -
+                                          5
+
+                                         6
+(%t8)                                x = -
+                                         5
+(%o8)                            [[%t7, %t8]]
+(%i8) %o6, %o8;
+(%o8)                              - 4 = - 4
+(%i9) x + 1/x &gt; gamma (1/2);
+                                   1
+(%o9)                          x + - &gt; sqrt(%pi)
+                                   x
+(%i10) %, numer, x=1/2;
+(%o10)                      2.5 &gt; 1.772453850905516
+(%i11) %, pred;
+(%o11)                               true
+</pre></td></tr></table>
+</dd></dl>
+
+
+
+<dl>
+<dt><u>Propiedad:</u> <b>evflag</b>
+<a name="IDX19"></a>
+</dt>
+<dd><p>Cuando un s&iacute;mbolo <var>x</var> goza de la propiedad <code>evflag</code>,
+las expresiones <code>ev(<var>expr</var>, <var>x</var>)</code> y <code><var>expr</var>, <var>x</var></code>
+(en modo interactivo) equivalen a <code>ev(<var>expr</var>, <var>x</var> = true)</code>.
+Esto es, a <var>x</var> se le asigna <code>true</code> al tiempo que se eval&uacute;a <var>expr</var>.
+</p>
+<p>La expresi&oacute;n <code>declare(<var>x</var>, evflag)</code> dota a la variable <var>x</var>
+de la propiedad <code>evflag</code>.
+</p>
+<p>Los interruptores que tienen la propiedad <code>evflag</code> son: 
+</p>
+<p><code>algebraic</code>,
+<code>cauchysum</code>,
+<code>demoivre</code>,
+<code>dotscrules</code>,
+<code>%emode</code>,
+<code>%enumer</code>,
+<code>exponentialize</code>,
+<code>exptisolate</code>,
+<code>factorflag</code>,
+<code>float</code>,
+<code>halfangles</code>,
+<code>infeval</code>,
+<code>isolate_wrt_times</code>,
+<code>keepfloat</code>,
+<code>letrat</code>,
+<code>listarith</code>,
+<code>logabs</code>,
+<code>logarc</code>,
+<code>logexpand</code>,
+<code>lognegint</code>,
+<code>lognumer</code>,
+<code>m1pbranch</code>,
+<code>numer_pbranch</code>,
+<code>programmode</code>,
+<code>radexpand</code>,
+<code>ratalgdenom</code>,
+<code>ratfac</code>,
+<code>ratmx</code>,
+<code>ratsimpexpons</code>,
+<code>simp</code>,
+<code>simpsum</code>,
+<code>sumexpand</code>, y
+<code>trigexpand</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) sin (1/2);
+                                 1
+(%o1)                        sin(-)
+                                 2
+(%i2) sin (1/2), float;
+(%o2)                   0.479425538604203
+(%i3) sin (1/2), float=true;
+(%o3)                   0.479425538604203
+(%i4) simp : false;
+(%o4)                         false
+(%i5) 1 + 1;
+(%o5)                         1 + 1
+(%i6) 1 + 1, simp;
+(%o6)                           2
+(%i7) simp : true;
+(%o7)                         true
+(%i8) sum (1/k^2, k, 1, inf);
+                            inf
+                            ====
+                            \     1
+(%o8)                        &gt;    --
+                            /      2
+                            ====  k
+                            k = 1
+(%i9) sum (1/k^2, k, 1, inf), simpsum;
+                                 2
+                              %pi
+(%o9)                         ----
+                               6
+(%i10) declare (aa, evflag);
+(%o10)                        done
+(%i11) if aa = true then YES else NO;
+(%o11)                         NO
+(%i12) if aa = true then YES else NO, aa;
+(%o12)                         YES
+</pre></td></tr></table> 
+</dd></dl>
+
+<dl>
+<dt><u>Propiedad:</u> <b>evfun</b>
+<a name="IDX20"></a>
+</dt>
+<dd><p>Cuando la funci&oacute;n <var>F</var> goza de la propiedad <code>evfun</code>,
+las expresiones <code>ev(<var>expr</var>, <var>F</var>)</code> y <code><var>expr</var>, <var>F</var></code>
+(en modo interactivo) equivalen a <code><var>F</var>(ev(<var>expr</var>))</code>.
+</p>
+<p>Si se especifican dos o m&aacute;s funciones, <var>F</var>, <var>G</var>, etc., como poseedoras 
+de la propiedad <code>evfun</code>, &eacute;stas se aplican en el mismo orden en el que han sido 
+especificadas como tales.
+</p>
+<p>La expresi&oacute;n <code>declare(<var>F</var>, evfun)</code> dota a la funci&oacute;n  <var>F</var>
+de la propiedad <code>evfun</code>.
+</p>
+<p>Las funciones que tienen la propiedad <code>evfun</code> por defecto son: 
+</p>
+<p><code>bfloat</code>,
+<code>factor</code>,
+<code>fullratsimp</code>,
+<code>logcontract</code>,
+<code>polarform</code>,
+<code>radcan</code>,
+<code>ratexpand</code>,
+<code>ratsimp</code>,
+<code>rectform</code>,
+<code>rootscontract</code>,
+<code>trigexpand</code>, y
+<code>trigreduce</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) x^3 - 1;
+                              3
+(%o1)                        x  - 1
+(%i2) x^3 - 1, factor;
+                                2
+(%o2)                 (x - 1) (x  + x + 1)
+(%i3) factor (x^3 - 1);
+                                2
+(%o3)                 (x - 1) (x  + x + 1)
+(%i4) cos(4 * x) / sin(x)^4;
+                            cos(4 x)
+(%o4)                       --------
+                               4
+                            sin (x)
+(%i5) cos(4 * x) / sin(x)^4, trigexpand;
+                 4           2       2         4
+              sin (x) - 6 cos (x) sin (x) + cos (x)
+(%o5)         -------------------------------------
+                                4
+                             sin (x)
+(%i6) cos(4 * x) / sin(x)^4, trigexpand, ratexpand;
+                           2         4
+                      6 cos (x)   cos (x)
+(%o6)               - --------- + ------- + 1
+                          2          4
+                       sin (x)    sin (x)
+(%i7) ratexpand (trigexpand (cos(4 * x) / sin(x)^4));
+                           2         4
+                      6 cos (x)   cos (x)
+(%o7)               - --------- + ------- + 1
+                          2          4
+                       sin (x)    sin (x)
+(%i8) declare ([F, G], evfun);
+(%o8)                         done
+(%i9) (aa : bb, bb : cc, cc : dd);
+(%o9)                          dd
+(%i10) aa;
+(%o10)                         bb
+(%i11) aa, F;
+(%o11)                        F(cc)
+(%i12) F (aa);
+(%o12)                        F(bb)
+(%i13) F (ev (aa));
+(%o13)                        F(cc)
+(%i14) aa, F, G;
+(%o14)                      G(F(cc))
+(%i15) G (F (ev (aa)));
+(%o15)                      G(F(cc))
+</pre></td></tr></table> 
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>infeval</b>
+<a name="IDX21"></a>
+</dt>
+<dd><p>Habilita el modo de &quot;evaluaci&oacute;n infinita&quot;. <code>ev</code> repetidamente 
+evalua una expresi&oacute;n hasta que se interrumpa la acci&oacute;n. Para prevenir
+que una variable, digamos <code>X</code>, sea evaluada sin parar en este modo, 
+simplemente incluya <code>X='X</code> como argumento de <code>ev</code>. 
+Esta claro que expresiones como: <code>ev (X, X=X+1, infeval)</code> generar&aacute;n un bucle infinito.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> (<var>a_1</var>, ..., <var>a_n</var>)</i>
+<a name="IDX22"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> (labels)</i>
+<a name="IDX23"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> (inlabels, outlabels, linelabels)</i>
+<a name="IDX24"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> (<var>n</var>)</i>
+<a name="IDX25"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> ([<var>m</var>, <var>n</var>])</i>
+<a name="IDX26"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> (values, functions, arrays, ...)</i>
+<a name="IDX27"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> (all)</i>
+<a name="IDX28"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>kill</b><i> (allbut (<var>a_1</var>, ..., <var>a_n</var>))</i>
+<a name="IDX29"></a>
+</dt>
+<dd><p>Elimina todas las asignaciones (valor, funci&oacute;n, arreglo o regla) hechas a los
+argumentos <var>a_1</var>, ..., <var>a_n</var>.
+Un argumento <var>a_k</var> puede ser un s&iacute;mbolo o el elemento
+de un array. Si <var>a_k</var> es elemento de un array, <code>kill</code> elimina la
+asignaci&oacute;n hecha a este elemento sin afectar al resto del array.
+</p>
+<p>Se reconocen varios argumentos especiales. 
+Se pueden combinar diferentes clases de argumentos, 
+como por ejemplo, <code>kill (inlabels, functions, allbut (foo, bar))</code>.
+</p>
+<p>La instrucci&oacute;n <code>kill (labels)</code> borra todas las asignaciones asociadas
+a las etiquetas de entrada, de salida e intermedias creadas hasta el
+momento. La instrucci&oacute;n <code>kill (inlabels)</code> elimina &uacute;nicamente
+las asignaciones de las etiquetas de entrada que comienzan con el
+valor actual de <code>inchar</code>. Del mismo modo, <code>kill (outlabels)</code>
+elimina &uacute;nicamente las asignaciones de las etiquetas de salida
+que comienzan con el valor actual de <code>outchar</code>. Finalmente,
+<code>kill (linelabels)</code> elimina &uacute;nicamente las asignaciones
+de las etiquetas de las expresiones intermedias
+que comienzan con el valor actual de <code>linechar</code>.
+</p>
+<p>La instrucci&oacute;n <code>kill (<var>n</var>)</code>, siendo <var>n</var> un entero,
+elimina las asignaciones de las &uacute;ltimas <var>n</var> etiquetas, tanto
+de entrada como de salida.
+</p>
+<p>La instrucci&oacute;n <code>kill ([<var>m</var>, <var>n</var>])</code> elimina las asignaciones
+hechas a las etiquetas de entrada y salida desde la <var>m</var> hasta la<var>n</var>.
+</p>
+<p>La instrucci&oacute;n <code>kill (<var>infolist</var>)</code>, siendo <var>infolist</var> 
+cualquier elemento de <code>infolists</code> (como <code>values</code>, <code>functions</code> 
+o <code>arrays</code>), elimina todas las asignaciones hechas a los elementos de
+<var>infolist</var>. V&eacute;ase tambi&eacute;n <code>infolists</code>.
+</p>
+<p>La instrucci&oacute;n <code>kill (all)</code> elimina todas las asignaciones de
+todas las variables, pero no reinicia las variables globales a sus
+valores por defecto. V&eacute;ase tambi&eacute;n <code>reset</code>.
+</p>
+<p>La instrucci&oacute;n <code>kill (allbut (<var>a_1</var>, ..., <var>a_n</var>))</code>
+elimina las asignaciones hechas a todas las variables,
+excepto a <var>a_1</var>, ..., <var>a_n</var>; la instrucci&oacute;n
+<code>kill (allbut (<var>infolist</var>))</code> elimina todas las asignaciones,
+excepto las de los elementos de <var>infolist</var>, pudiendo ser <var>infolist</var>
+igual a <code>values</code>, <code>functions</code>, <code>arrays</code>, etc.
+</p>
+<p>La memoria reservada para una asignaci&oacute;n no se libera hasta que
+no se vac&iacute;en todos los s&iacute;mbolos
+asociados con esta asignaci&oacute;n; por ejemplo, para liberar la memoria
+del valor de un s&iacute;mbolo es necesario eliminar tanto
+la asignaci&oacute;n de la etiqueta de salida que muestra el resultado,
+como la del propio s&iacute;mbolo.
+</p>
+<p>La funci&oacute;n <code>kill</code> no evalua sus argumentos. 
+El operador comilla-comilla, <code>''</code>, obliga a que se realice la evaluaci&oacute;n.
+</p>
+<p>La llamada <code>kill (<var>symbol</var>)</code> elimina todas las propiedades de <var>symbol</var>.
+Por el contrario, <code>remvalue</code>, <code>remfunction</code>, <code>remarray</code> y <code>remrule</code>
+eliminan propiedades espec&iacute;ficas. 
+</p>
+<p><code>kill</code> siempre devuelve <code>done</code>, incluso cuando alguno de sus 
+argumentos carec&iacute;a de asignaci&oacute;n previa. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>labels</b><i> (<var>symbol</var>)</i>
+<a name="IDX30"></a>
+</dt>
+<dt><u>Variable del sistema:</u> <b>labels</b>
+<a name="IDX31"></a>
+</dt>
+<dd><p>Retorna la lista de etiquetas de entrada, salida o de expresiones intermedias las cuales empiezan con <var>symbol</var>. 
+T&iacute;picamente <var>symbol</var> es el valor de las variables <code>inchar</code>, <code>outchar</code> o <code>linechar</code>. 
+El caract&eacute;r de etiqueta puede ser pasado con o sin signo de porcentaje, 
+as&iacute;, por ejemplo, <code>i</code> y <code>%i</code> producen el mismo resultado.  
+</p>
+<p>Si ninguna etiqueta empieza con <var>symbol</var>, <code>labels</code> retorna a una
+lista vac&iacute;a. 
+</p>
+<p>La funci&oacute;n <code>labels</code> no evalua su argumento.
+El operador comilla-comilla, <code>''</code>, obliga a que se realice la evaluaci&oacute;n.
+Por ejemplo, 
+<code>labels (''inchar)</code> devuelve las etiquetas de entrada que empiezan con el caract&eacute;r de etiqueta de entrada actual. 
+</p>
+<p>La variable <code>labels</code> es una lista de las etiquetas de entrada, salida y expresiones intermedias, incluyendo todas las etiquetas anteriores en el caso de que <code>inchar</code>, <code>outchar</code> o <code>linechar</code> hayan sido redefinidas. 
+</p>
+<p>Por defecto, Maxima muestra el resultado de cada expresi&oacute;n introducida por el usuario, asignando al resultado una etiqueta de salida. 
+La salida (es decir el resultado) puede ser suprimida terminando la expresi&oacute;n de entrada con un <code>$</code> (signo de d&oacute;lar) en vez de un <code>;</code> (punto y coma). 
+En este caso, se crea la etiqueta de salida y se le asigna el resultado, aunque &eacute;ste no se muestre; a&uacute;n as&iacute;, la etiqueta puede ser referenciada de la misma forma que se hace con aqu&eacute;llas cuyos resultados s&iacute; son mostrados.
+</p>
+<p>V&eacute;anse tambi&eacute;n: <code>%</code>, <code>%%</code> y <code>%th</code>. 
+</p>
+<p>Las etiquetas de expresiones intermedias pueden ser generadas por algunas funciones. El interruptor <code>programmode</code> controla si <code>solve</code> y algunas otras funciones generan etiquetas de expresiones intermedias en vez de retornar una lista de expresiones. 
+Algunas otras funciones, tales como <code>ldisplay</code>, siempre generan etiquetas de expresiones intermedias. 
+</p> 
+
+<p>V&eacute;ase tambi&eacute;n: <code>inchar</code>, <code>outchar</code>, <code>linechar</code> y <code>infolists</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>linenum</b>
+<a name="IDX32"></a>
+</dt>
+<dd><p>El n&uacute;mero de la l&iacute;nea del par de expresiones de entrada y salida actuales. 
+</p></dd></dl>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>myoptions</b>
+<a name="IDX33"></a>
+</dt>
+<dd><p>Valor por defecto: <code>[]</code>
+</p>
+<p><code>myoptions</code> es la lista de todas las opciones que nunca fueron reconfiguradas por el usuario, aunque &eacute;stas hayan sido reconfiguradas a su valor por defecto. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>nolabels</b>
+<a name="IDX34"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Cuando <code>nolabels</code> vale <code>true</code>,
+las etiquetas de entrada y salida 
+(<code>%i</code> y <code>%o</code>, respectivamente)
+son mostradas, pero a &eacute;stas no se les 
+asignan los resultados; adem&aacute;s, las etiquetas no se
+incorporan a la lista <code>labels</code>.
+Puesto que a las etiquetas no se les asignan resultados, 
+el colector de basura puede recuperar la memoria ocupada
+por &eacute;stos.
+</p>
+<p>En el caso contrario, a las etiquetas de entrada y salida se les asignan los resultados correspondientes y son a&ntilde;adidas a la lista <code>labels</code>.
+</p>
+<p>Las etiquetas de expresiones intermedias (<code>%t</code>) no se ven afectadas por la variable <code>nolabels</code>;
+independientemente de que <code>nolabels</code> valga <code>true</code> o <code>false</code>, a las etiquetas de expresiones intermedias se les asignan siempre valores, adem&aacute;s de ser a&ntilde;adidas a la lista <code>labels</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>batch</code>, <code>batchload</code> y <code>labels</code>. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>optionset</b>
+<a name="IDX35"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Cuando <code>optionset</code> tiene como valor <code>true</code>, Maxima imprime un
+mensaje cada vez que una opci&oacute;n de Maxima es reconfigurada. Esto es 
+muy &uacute;til si el usuario duda con frecuencia de la correctitud de alguna
+opci&oacute;n y quiere estar seguro de la variable a la que &eacute;l asign&oacute; un
+valor fue verdaramente una variable opci&oacute;n (o interruptor). 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> ()</i>
+<a name="IDX36"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> (<var>n</var>)</i>
+<a name="IDX37"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> ([<var>m</var>, <var>n</var>])</i>
+<a name="IDX38"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> ([<var>m</var>])</i>
+<a name="IDX39"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> (input)</i>
+<a name="IDX40"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> (slow)</i>
+<a name="IDX41"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> (time)</i>
+<a name="IDX42"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>playback</b><i> (grind)</i>
+<a name="IDX43"></a>
+</dt>
+<dd><p>Muestra las entradas, salidas y expresiones intermedias 
+sin recalcularlas. 
+<code>playback</code> s&oacute;lo muestra las expresiones asociadas con etiquetas; 
+cualquier otra salida (tal como texto impreso por <code>print</code> o <code>describe</code>, o mensajes de error) no es mostrada. 
+V&eacute;ase tambi&eacute;n: <code>labels</code>. 
+</p>
+<p><code>playback</code> no evalua sus argumentos. 
+El operador comilla-comilla, <code>''</code>, obliga a que se realice la evaluaci&oacute;n.
+<code>playback</code> siempre devuelve <code>done</code>. 
+</p>
+<p><code>playback ()</code> (sin argumentos) muestra todas las entradas, salidas y expresiones intermedias generadas hasta el momento. 
+Una expresi&oacute;n de salida es mostrada incluso si &eacute;sta fue suprimida por el caracter de terminaci&oacute;n <code>$</code>, cuando fue originalmente calculada. 
+</p>
+<p><code>playback (<var>n</var>)</code>  muestra las <var>n</var> expresiones m&aacute;s recientes. Cada entrada, salida y expresi&oacute;n intermedia cuenta como una. 
+</p>
+<p><code>playback ([<var>m</var>, <var>n</var>])</code> muestra entradas, salidas y expresiones intermedias con los n&uacute;meros desde <var>m</var> hasta <var>n</var>, ambos inclusive. 
+</p>
+<p><code>playback ([<var>m</var>])</code> es equivalente a <code>playback ([<var>m</var>, <var>m</var>])</code>;
+esto usualmente imprime un par de expresiones de entrada y salida. 
+</p>
+<p><code>playback (input)</code> muestra todas las expresiones de entrada generadas hasta el momento. 
+</p>
+<p><code>playback (slow)</code> hace pausas entre expresiones y
+espera a que el usuario pulse la tecla <code>enter</code> para continuar. 
+Esto es un comportamiento similar a <code>demo</code>. 
+</p>
+<p><code>playback (slow)</code> es muy &uacute;til en conjunci&oacute;n con <code>save</code> o
+<code>stringout</code> cuando se crea un archivo secundario de almacenamiento con el objetivo de elegir cuidadosamente las expresiones realmente &uacute;tiles. 
+</p>
+
+<p><code>playback (time)</code> muestra el tiempo de computo por cada expresi&oacute;n. 
+</p>
+
+<p><code>playback (grind)</code> muestra las expresiones de entrada 
+en el mismo formato como la funci&oacute;n <code>grind</code>. 
+Las expresiones de salida no se ven afectadas por la opci&oacute;n 
+<code>grind</code>. 
+Vea <code>grind</code>. 
+Los argumentos pueden ser combinados, por ejemplo, 
+<code>playback ([5, 10], grind, time, slow)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>printprops</b><i> (<var>a</var>, <var>i</var>)</i>
+<a name="IDX44"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>printprops</b><i> ([<var>a_1</var>, ..., <var>a_n</var>], <var>i</var>)</i>
+<a name="IDX45"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>printprops</b><i> (all, <var>i</var>)</i>
+<a name="IDX46"></a>
+</dt>
+<dd><p>Muestra la propiedad con el indicador <var>i</var> asociado 
+con el &aacute;tomo <var>a</var>. <var>a</var> puede ser tambi&eacute;n una lista de
+&aacute;tomos o el &aacute;tomo <code>all</code> en cuyo caso todos los &aacute;tomos a los cuales se les haya dado esa propiedad ser&aacute;n usados. 
+Por ejemplo, <code>printprops ([f, g], atvalue)</code>. <code>printprops</code> es 
+para propiedades que no pueden ser mostradas de otra manera, i.e. para
+<code>atvalue</code>, <code>atomgrad</code>, <code>gradef</code>, y <code>matchdeclare</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>prompt</b>
+<a name="IDX47"></a>
+</dt>
+<dd><p>Valor por defecto: <code>_</code>
+</p>
+<p><code>prompt</code> es el s&iacute;mbolo del prompt de la funci&oacute;n <code>demo</code>, 
+del modo <code>playback (slow)</code> y del bucle de interrupci&oacute;n de Maxima (el que se invoca con <code>break</code>). 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>quit</b><i> ()</i>
+<a name="IDX48"></a>
+</dt>
+<dd><p>Termina una sesi&oacute;n de Maxima. 
+N&oacute;tese que la funci&oacute;n debe ser invocada como <code>quit();</code> o <code>quit()$</code>, no como <code>quit</code>. 
+</p>
+<p>Para parar un c&aacute;lculo muy demorado 
+pulse <code>Control-C</code>. 
+La acci&oacute;n por defecto es retornar a prompt de Maxima. 
+Si <code>*debugger-hook*</code> tiene como valor <code>nil</code>,
+pulsar <code>Control-C</code> abrir&aacute; el depurador de Lisp. 
+Vea tambi&eacute;n: <code>debugging</code>. 
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>remfunction</b><i> (<var>f_1</var>, ..., <var>f_n</var>)</i>
+<a name="IDX49"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>remfunction</b><i> (all)</i>
+<a name="IDX50"></a>
+</dt>
+<dd><p>Desliga las definiciones de funci&oacute;n de sus s&iacute;mbolos <var>f_1</var>, ..., <var>f_n</var>.
+Los argumentos pueden ser nombres de funciones ordinarias (creadas con <code>:=</code> o <code>define</code>) o de funciones macro (creadas con <code>::=</code>).
+</p>
+<p>La instrucci&oacute;n <code>remfunction (all)</code> desliga todas las definiciones de funciones.
+</p>
+<p>La funci&oacute;n <code>remfunction</code> no eval&uacute;a sus argumentos.
+</p>
+<p>La funci&oacute;n <code>remfunction</code> devuelve una lista con los s&iacute;mbolos para los que la definici&oacute;n de funci&oacute;n fue desligada. Devuelve <code>false</code> en el lugar de cualquier s&iacute;mbolo para el que no hay funci&oacute;n definida.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>reset</b><i> ()</i>
+<a name="IDX51"></a>
+</dt>
+<dd><p>Reconfigura muchas variables y opciones globales y algunas otras variables a sus valores por defecto. 
+</p>
+<p><code>reset</code> procesa las variables que se encuentran en la lista Lisp 
+<code>*variable-initial-values*</code>. 
+La macro Lisp <code>defmvar</code> pone las variables en &eacute;sta lista (entre otras acciones). 
+Muchas, pero no todas, las variables y opciones globales son definidas por <code>defmvar</code>, y algunas variables definidas por <code>defmvar</code> no son ni variables ni opciones globales. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>showtime</b>
+<a name="IDX52"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Cuando <code>showtime</code> tiene como valor <code>true</code>, el tiempo de c&aacute;lculo y el tiempo de retardo se imprimen junto con la salida de cada expresi&oacute;n. 
+</p>
+<p>El tiempo de c&aacute;lculo se almacena siempre, de manera que <code>time</code> y <code>playback</code> puedan mostrar el tiempo de c&aacute;lculo incluso cuando <code>showtime</code> vale <code>false</code>.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>timer</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>sstatus</b><i> (<var>feature</var>, <var>package</var>)</i>
+<a name="IDX53"></a>
+</dt>
+<dd><p>Configura el estado de <var>feature</var> en <var>package</var>. 
+Despu&eacute;s de que <code>sstatus (<var>feature</var>, <var>package</var>)</code> es 
+ejecutado <code>status (<var>feature</var>, <var>package</var>)</code> retorna
+<code>true</code>. 
+Esto puede ser muy &uacute;til para escritores de paquetes, con el 
+objetivo de conservar las pistas de que caracter&iacute;siticas han 
+cargado estos. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Function:</u> <b>to_lisp</b><i> ()</i>
+<a name="IDX54"></a>
+</dt>
+<dd><p>Entra en el int&eacute;rprete Lisp bajo Maxima. <code>(to-maxima)</code> retorna de nuevo a Maxima. 
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>values</b>
+<a name="IDX55"></a>
+</dt>
+<dd><p>Valor inicial: <code>[]</code>
+</p>
+<p><code>values</code> es una lista de todas las variables que el usuario ha creado (no constituye las opciones Maxima ni los interruptores). 
+La lista comprende los s&iacute;mbolos <code>:</code> , <code>::</code>, o <code>:=</code>.
+</p>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_5.html#SEC12" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

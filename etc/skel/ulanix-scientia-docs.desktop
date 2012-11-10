@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=ULAnix Scientia Documentation
+Name[es]=Documentación ULAnix Scientia
+Comment=A collection of documents about programs installed by de package ulanix-scientia
+Comment[es]=Colección de documentos sobre los programas instalados por el paquete ulanix-scientia
+URL=file:///usr/share/ulanix-scientia-docs/
+Icon=folder
+X-Ubuntu-Gettext-Domain=ulanix-scientia-documentation
+Name[es_VE]=Documentación ULAnix Scientia

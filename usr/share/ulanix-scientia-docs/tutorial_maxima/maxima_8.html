@@ -1,0 +1,1121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 8. Gr&aacute;ficos</title>
+
+<meta name="description" content="Manual de Maxima: 8. Gr&aacute;ficos">
+<meta name="keywords" content="Manual de Maxima: 8. Gr&aacute;ficos">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Gr_00e1ficos"></a>
+<a name="SEC32"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_7.html#SEC31" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC33" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_7.html#SEC30" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_9.html#SEC34" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 8. Gr&aacute;ficos </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC33">8.1 Definiciones para Gr&aacute;ficos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">    
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Definiciones-para-Gr_00e1ficos"></a>
+<a name="SEC33"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC32" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_9.html#SEC34" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC32" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC32" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_9.html#SEC34" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 8.1 Definiciones para Gr&aacute;ficos </h2>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>in_netmath</b>
+<a name="IDX247"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>in_netmath</code> vale <code>true</code>,
+<code>plot3d</code> imprime salida de OpenMath en la consola si <code>plot_format</code> vale <code>openmath</code>,
+en caso contrario, <code>in_netmath</code> (incluso si vale <code>true</code>) deja de tener efecto alguno.
+</p>
+<p>La variable <code>in_netmath</code> no afecta a <code>plot2d</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>plot2d</b><i> (<var>expr</var>, <var>x_range</var>, ..., <var>options</var>, ...)</i>
+<a name="IDX248"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>plot2d</b><i> ([<var>expr_1</var>, ..., <var>expr_n</var>], ..., <var>options</var>, ...)</i>
+<a name="IDX249"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>plot2d</b><i> ([<var>expr_1</var>, ..., <var>expr_n</var>], <var>x_range</var>,..., <var>options</var>, ...)</i>
+<a name="IDX250"></a>
+</dt>
+<dd><p>Donde <var>expr</var>, <var>expr_1</var>, ..., <var>expr_n</var> pueden ser
+expresiones, funciones u operadores de Maxima o Lisp, o una
+lista de cualquiera de las siguientes formas: 
+<code>[discrete, [<var>x1</var>, ..., <var>xn</var>],
+[<var>y1</var>, ..., <var>yn</var>]]</code>, <code>[discrete, [[<var>x1</var>, <var>y1</var>],
+..., [<var>xn</var>, ..., <var>yn</var>]]</code> o <code>[parametric, <var>x_expr</var>,
+<var>y_expr</var>, <var>t_range</var>]</code>.
+</p>
+<p>Muestra un gr&aacute;fico de una o m&aacute;s expresiones como funci&oacute;n de una variable.
+</p>
+<p>La funci&oacute;n <code>plot2d</code> representa gr&aacute;ficamente la expresi&oacute;n <var>expr</var>
+o expresiones <code>[<var>name_1</var>, ..., <var>name_n</var>]</code>. Las expresiones que
+no sean de tipo param&eacute;trico o discreto deben depender todas ellas
+de una &uacute;nica variable <var>var</var>, siendo obligatorio utilizar <var>x_range</var>
+para nombrar la variable y darle sus valores m&iacute;nimo y m&aacute;ximo
+usando la siguiente sintaxis: <code>[<var>variable</var>, <var>min</var>, <var>max</var>]</code>.
+El gr&aacute;fico mostrar&aacute; el eje horizontal acotado por los valores <var>min</var>
+y <var>max</var>.
+</p>
+<p>La expresi&oacute;n a ser representada puede ser dada en la forma discreta
+o param&eacute;trica, esto es, como una lista que comienza con las palabras
+<code>discrete</code> o <code>parametric</code>. La clave 
+<var>discrete</var> debe seguirse de dos listas de valores, ambas de igual
+longitud, conteniendo las coordenadas horizontales y verticales del
+conjunto de puntos; alternativamente, las coordenadas de cada punto
+pueden darse como listas de dos valores, todas ellas formando a su
+vez una lista. La clave <var>parametric</var> debe seguirse de dos expresiones,
+<var>x_expr</var> y <var>y_expr</var>, junto con un rango de la forma 
+<code>[<var>var</var>, <var>min</var>, <var>max</var>]</code>; ambas expresiones deben
+depender &uacute;nicamente de la variable cuyo nombre aparece en el rango.
+El gr&aacute;fico mostrar&aacute; los pares <code>[<var>x_expr</var>, <var>y_expr</var>]</code>
+seg&uacute;n <var>var</var> var&iacute;a de <var>min</var> a <var>max</var>.
+</p>
+<p>El rango del eje vertical no es necesario especificarlo. Es una m&aacute;s
+de las opciones de la funci&oacute;n, siendo su sintaxis 
+<code>[y, <var>min</var>, <var>max</var>]</code>, mostrando
+entonces la gr&aacute;fica el rango completo, incluso si la funci&oacute;n no 
+alcanza estos valores. En caso de no especificarse el rango vertical
+en <code>set_plot_option</code>, se establecer&aacute; de forma autom&aacute;tica
+como aquel rango en el que la funci&oacute;n toma sus valores.
+</p>
+<p>Cualesquiera otras opciones deben ser listas, comenzando con el
+nombre de la opci&oacute;n.
+</p>
+<p>La opci&oacute;n <var>xlabel</var> puede utilizarse
+para darle una etiqueta al eje horizontal; si no se usa esta opci&oacute;n,
+el eje horizontal ser&aacute; etiquetado con el nombre de la variable 
+especificada en <var>x_range</var>.
+</p>
+<p>Del mismo modo se puede asignar una
+etiqueta al eje vertical con la opci&oacute;n <var>ylabel</var>. Si s&oacute;lo
+hay una expresi&oacute;n a ser representada y no se ha hecho uso de la
+opci&oacute;n <var>ylabel</var>, el eje vertical ser&aacute; etiquetado con la
+expresi&oacute;n a ser representada, a menos que sea muy larga, o con
+el texto &quot;discrete data&quot;, en caso de gr&aacute;ficos de puntos. Si la
+expresi&oacute;n es de tipo param&eacute;trico, las dos expresiones que dan
+las coordenadas horizontal y vertical ser&aacute;n utilizadas para
+etiquetar ambos ejes.
+</p>
+<p>Las opciones <code>[logx]</code> y <code>[logy]</code> no necesitan par&aacute;metros,
+permitiendo que los ejes horizontal y vertical se dibujen en la
+escala logar&iacute;tmica.
+</p>
+<p>Si hay varias expresiones para ser dibujadas, se mostrar&aacute; una leyenda
+que identifique a cada una de ellas. Las etiquetas a utilizar pueden
+especificarse con la opci&oacute;n <var>legend</var>. Si no se utiliza esta opci&oacute;n,
+Maxima crear&aacute; etiquetas a partir de las expresiones.
+</p>
+<p>Por defecto, las funciones se dibujar&aacute;n como un conjunto de segmentos
+lineales uniendo los puntos que bien se dan en formato <var>discrete</var>,
+o que se calculan autom&aacute;ticamente a partir de la expresi&oacute;n dada,
+de acuerdo con el tama&ntilde;o muestral indicado por la opci&oacute;n <var>nticks</var>.
+Asimismo, la opci&oacute;n <var>style</var> puede utilizarse para mostrar los
+puntos aislados, o &eacute;stos junto con los segmentos que los unen.
+</p>
+<p>Hay varias opciones globales almacenadas en la lista <var>plot_options</var>,
+las cuales se pueden modificar con la funci&oacute;n <code>set_plot_option</code>;
+cualquiera de estas opciones puede ignorarse con las opciones que se
+utilicen desde el comando <var>plot2d</var>.
+</p>
+<p>Las funciones a ser representadas pueden especificarse con el nombre de
+una funci&oacute;n u operador de Maxima o de Lisp, con una expresi&oacute;n lambda
+de MAxima, o con una expresi&oacute;n v&aacute;lida de maxima. En caso de especificarse
+con un nombre o expresi&oacute;n lambda, la funci&oacute;n debe ser tal que dependa de
+un solo argumento.
+</p>
+
+<p><b>Ejemplos:</b>
+</p>
+<p>Gr&aacute;ficos de funciones ordinarias.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) plot2d (sin(x), [x, -5, 5])$
+
+(%i2) plot2d (sec(x), [x, -2, 2], [y, -20, 20], [nticks, 200])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting2.gif" alt="../figures/plotting2"></div><div class="image"><img src="./../figures/plotting3.gif" alt="../figures/plotting3"></div>
+</p>
+<p>Especificaci&oacute;n de funciones por su nombre.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i3) F(x) := x^2 $
+
+(%i4) :lisp (defun |$g| (x) (m* x x x))
+
+$g
+(%i5) H(x) := if x &lt; 0 then x^4 - 1 else 1 - x^5 $
+
+(%i6) plot2d (F, [u, -1, 1])$
+
+(%i7) plot2d ([F, G, H], [u, -1, 1], [y, -1.5, 1.5])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting4.gif" alt="../figures/plotting4"></div><div class="image"><img src="./../figures/plotting5.gif" alt="../figures/plotting5"></div>
+</p>
+<p>Se puede representar una circunferencia como una funci&oacute;n
+param&eacute;trica de par&aacute;metro <var>t</var>. No es necesario especificar
+el rango del eje horizontal, pues el propio rango de <var>t</var>
+determina el dominio. No obstante, ya que las longitudes de los
+ejes horizontal y vertical est&aacute;n en una proporci&oacute;n de 4 a 3,
+se utilizar&aacute; la opci&oacute;n <var>xrange</var> para conseguir la misma escala
+en ambos ejes:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i8) plot2d ([parametric, cos(t), sin(t), [t,-%pi,%pi], [nticks,80]],
+           [x, -4/3, 4/3])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting6.gif" alt="../figures/plotting6"></div>
+</p>
+<p>Si se repite el mismo gr&aacute;fico con solo 8 puntos y se 
+extiende el rango del par&aacute;metro para que d&eacute; dos vueltas,
+se tiene el dibujo de una estrella:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i9) plot2d ([parametric, cos(t), sin(t), [t, -%pi*2, %pi*2],
+        [nticks, 8]], [x, -2, 2], [y, -1.5, 1.5])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting7.gif" alt="../figures/plotting7"></div>
+</p>
+<p>Combinaci&oacute;n del gr&aacute;fico de un polinomio c&uacute;bico y de una
+circunferencia param&eacute;trica:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i10) plot2d ([x^3+2, [parametric, cos(t), sin(t), [t, -5, 5],
+        [nticks, 80]]], [x, -3, 3])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting8.gif" alt="../figures/plotting8"></div>
+</p>
+<p>Ejemplo de gr&aacute;fico logar&iacute;tmico:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i11) plot2d (exp(3*s), [s, -2, 2], [logy])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting9.gif" alt="../figures/plotting9"></div>
+</p>
+<p>Ejemplos de gr&aacute;ficos de puntos, empezando por la definici&oacute;n de
+las coordenadas de cinco puntos en los dos formatos admisibles:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i12) xx:[10, 20, 30, 40, 50]$
+(%i13) yy:[.6, .9, 1.1, 1.3, 1.4]$
+(%i14) xy:[[10,.6], [20,.9], [30,1.1], [40,1.3], [50,1.4]]$
+</pre></td></tr></table>
+<p>Representaci&oacute;n de los puntos unidos por segmentos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i15) plot2d([discrete,xx,yy])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting10.gif" alt="../figures/plotting10"></div>
+</p>
+<p>Representaci&oacute;n de los puntos aislados, ilustrando tambi&eacute;n
+la segunda forma de especificar las coordenadas:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i16) plot2d([discrete, xy], [style, points])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting11.gif" alt="../figures/plotting11"></div>
+</p>
+<p>El gr&aacute;fico de los puntos se puede mostrar conjuntamente con el
+de la funci&oacute;n ter'ica que los predice:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i17) plot2d([[discrete,xy], 2*%pi*sqrt(l/980)], [l,0,50],
+        [style, [points,3,5], [lines,1,3]], [legend,&quot;experiment&quot;,&quot;theory&quot;],
+        [xlabel,&quot;pendulum's length (cm)&quot;], [ylabel,&quot;period (s)&quot;])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting12.gif" alt="../figures/plotting12"></div>
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>plot_options</code>, que describe las opciones
+gr&aacute;ficas, junto con m&aacute;s ejemplos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>xgraph_curves</b><i> (<var>list</var>)</i>
+<a name="IDX251"></a>
+</dt>
+<dd><p>Dibuja el conjunto de puntos de la lista del argumento <var>list</var> con el
+programa xgraph. Si el programa xgraph no est&aacute; instalado, este comando
+producir&aacute; un error.
+</p>
+<p>El conjunto de puntos puede ser de la forma
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[x0, y0, x1, y1, x2, y2, ...]
+</pre></td></tr></table><p>o
+</p><table><tr><td>&nbsp;</td><td><pre class="example">[[x0, y0], [x1, y1], ...]
+</pre></td></tr></table>
+<p>Un conjunto de puntos tambi&eacute;n puede contener s&iacute;mbolos con etiquetas u otra informaci&oacute;n.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">xgraph_curves ([pt_set1, pt_set2, pt_set3]);
+</pre></td></tr></table>
+<p>dibuja los tres conjuntos de puntos como tres curvas.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">pt_set: append ([&quot;NoLines: True&quot;, &quot;LargePixels: true&quot;],
+                          [x0, y0, x1, y1, ...]);
+</pre></td></tr></table>
+
+<p>construye el conjunto de puntos, declara que no haya segmentos rectil&iacute;neos entre ellos y que se utilicen p&iacute;xeles grandes. V&eacute;ase el manual de xgraph para m&aacute;s opciones.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">pt_set: append ([concat (&quot;\&quot;&quot;, &quot;x^2+y&quot;)], [x0, y0, x1, y1, ...]);
+</pre></td></tr></table>
+
+<p>construye una etiqueta con el contenido &quot;x^2+y&quot; para este conjunto particular de puntos. Las comillas dobles <code>&quot;</code> al comienzo son las que le indican a xgraph que se trata de una etiqueta.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">pt_set: append ([concat (&quot;TitleText: Datos muestrales&quot;)], [x0, ...])$
+</pre></td></tr></table>
+
+<p>establece el t&iacute;tulo principal del gr&aacute;fico como &quot;Datos muestrales&quot; en lugar de &quot;Maxima Plot&quot;.
+</p>
+<p>Para hacer un gr&aacute;fico de barras con columnas de 0.2 unidades de ancho y para dibujar dos diagramas diferentes de este tipo:
+</p><table><tr><td>&nbsp;</td><td><pre class="example">(%i1) xgraph_curves ([append ([&quot;BarGraph: true&quot;, &quot;NoLines: true&quot;,
+      &quot;BarWidth: .2&quot;], create_list ([i - .2, i^2], i, 1, 3)),
+      append ([&quot;BarGraph: true&quot;, &quot;NoLines: true&quot;, &quot;BarWidth: .2&quot;],
+      create_list ([i + .2, .7*i^2], i, 1, 3))]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting13.gif" alt="../figures/plotting13"></div>
+</p>
+
+
+<p>Se utiliza un fichero temporal <tt>`xgraph-out'</tt>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>plot_options</b>
+<a name="IDX252"></a>
+</dt>
+<dd><p>Los elementos de esta lista establecen las opciones por defecto para los gr&aacute;ficos.
+Si una opci&oacute;n est&aacute; presente en una llamada a <code>plot2d</code> o a <code>plot3d</code>,
+este valor adquiere prevalencia sobre las opciones por defecto.
+En otro caso se utilizar&aacute; el valor que tenga en <code>plot_options</code>.
+Las opciones por defecto se asignan mediante la funci&oacute;n <code>set_plot_option</code>.
+</p>
+<p>Cada elemento de <code>plot_options</code> es una lista de dos o m&aacute;s elementos, el primero de los cuales es el nombre de la opci&oacute;n, siendo los siguientes los valores de aqu&eacute;lla. En algunos casos el valor asignado es a su vez una lista, que puede contener varios elementos.
+</p>
+<p>Las opciones gr&aacute;ficas que reconocen <code>plot2d</code> y <code>plot3d</code> son:
+</p>
+<ul>
+<li>
+Opci&oacute;n: <code>plot_format</code> 
+
+<p>Determina qu&eacute; programa gr&aacute;fico se va a utilizar con <code>plot2d</code> y <code>plot3d</code>.
+</p>
+<ul>
+<li>
+Valor: <code>gnuplot</code> (es el valor por defecto en Windows)
+Gnuplot es el programa por defecto y el m&aacute;s avanzado. Requiere de una instalaci&oacute;n externa de gnuplot.
+
+</li><li>
+Value: <code>gnuplot_pipes</code> (es el valor por defecto en sistemas distintos de Windows)
+Es similar al formato <code>gnuplot</code>, excepto que la comunicaci&oacute;n con
+Gnuplot se hace por medio de una tuber&iacute;a. Se deber&iacute;a
+utilizar para ver gr&aacute;ficos en pantalla; para guardar gr&aacute;ficos en
+srchivos, mejor utilizar el formato <code>gnuplot</code>.
+
+</li><li>
+Valor: <code>mgnuplot</code>
+Mgnuplot es una interfaz para Gnuplot basada en Tk. Se incluye en la distribuci&oacute;n de Maxima. Mgnuplot ofrece una interface gr&aacute;fica de usuario rudimentaria para gnuplot, pero tiene algunas mejoras respecto de la interface propia de gnuplot. Mgnuplot requiere de una instalaci&oacute;n externa de gnuplot y de Tcl/Tk.
+
+</li><li>
+Valor: <code>openmath</code>
+Openmath es un programa gr&aacute;fico escrito en Tcl/Tk. Este formato lo
+suministra el paquete Xmaxima, que se distribuye junto con Maxima; se
+deber&aacute; instalar Xmaxima si se quiere usar este formato. No s&oacute;lo 
+se puede utilizar Openmath desde Xmaxima, sino tambi&eacute;n desde
+cualquier otro interfaz gr&aacute;fico para Maxima.
+
+</li></ul>
+
+</li><li>
+Opci&oacute;n: <code>run_viewer</code>
+
+<p>Controla si el visor apropiado para la salida gr&aacute;fica debe ejecutarse o no.
+</p>
+<ul>
+<li>
+Valor por defecto: <code>true</code>
+
+<p>Ejecuta el visor.
+</p>
+</li><li>
+Valor: <code>false</code>
+
+<p>No ejecuta el visor.
+</p></li></ul>
+
+</li><li>
+Opci&oacute;n: <code>y</code>
+
+<p>Rango vertical del gr&aacute;fico.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[y, - 3, 3]
+</pre></td></tr></table><p>Establece el rango vertical como [-3, 3].
+</p>
+
+</li><li>
+Opci&oacute;n: <code>plot_realpart</code>
+Si <code>plot_realpart</code> vale <code>true</code>,
+se representar&aacute; la parte real de un valor complejo <var>x</var>,
+lo cual equivale a representar <code>realpart(<var>x</var>)</code> en lugar de <var>x</var>.
+Si vale <code>false</code>, s&oacute;lo se representar&aacute;n aquellos valores con
+parte imaginaria nula, ignorando as&iacute; cualesquiera valores 
+complejos.
+
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">plot2d (log(x), [x, -5, 5], [plot_realpart, false]);
+plot2d (log(x), [x, -5, 5], [plot_realpart, true]);
+</pre></td></tr></table><p>El valor por defecto es <code>false</code>.
+</p>
+</li><li>
+Opci&oacute;n: <code>nticks</code>
+
+<p>En <code>plot2d</code>, es el n&uacute;mero inicial de puntos utilizados
+por el procedimiento adaptativo para la representaci&oacute;n de
+funciones. Tambi&eacute;n es el n&uacute;mero de puntos a ser calculados
+en los gr&aacute;ficos param&eacute;tricos.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[nticks, 20]
+</pre></td></tr></table><p>El valor por defecto para <code>nticks</code> es 10.
+</p>
+</li><li>
+Opci&oacute;n: <code>adapt_depth</code>
+
+<p>N&uacute;mero m&aacute;ximo de particiones utilizado por el algoritmo adaptativo de representaci&oacute;n gr&aacute;fica.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[adapt_depth, 5]
+</pre></td></tr></table><p>El valor por defecto para <code>adapt_depth</code> es 10.
+</p>
+</li><li>
+Opci&oacute;n: <code>xlabel</code>
+
+<p>Etiqueta del eje horizontal en gr&aacute;ficos 2d.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[xlabel, &quot;Time in seconds&quot;]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>ylabel</code>
+
+<p>Etiqueta del eje vertical en gr&aacute;ficos 2d.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[ylabel, &quot;Temperature&quot;]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>logx</code>
+
+<p>Hace que el eje horizontal en los gr&aacute;ficos 2d se dibuje
+en la escala logar&iacute;tmica. No necesita de
+par&aacute;metros adicionales.
+</p>
+</li><li>
+Opci&oacute;n: <code>logy</code>
+
+<p>Hace que el eje vertical en los gr&aacute;ficos 2d se dibuje
+en la escala logar&iacute;tmica. No necesita de
+par&aacute;metros adicionales.
+</p>
+</li><li>
+Opci&oacute;n: <code>legend</code>
+
+<p>Etiquetas para las expresiones de los gr&aacute;ficos 2d. Si hay m&aacute;s
+expresiones que etiquetas, &eacute;stas se repetir&aacute;n. Por defecto se
+pasar&aacute;n los nombres de las expresiones o funciones, o las palabras
+<code>discrete1</code>, <code>discrete2</code>, ..., para gr&aacute;ficos de puntos.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[legend, &quot;Set 1&quot;, &quot;Set 2&quot;, &quot;Set 3&quot;]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>style</code>
+
+<p>Estilos a utilizar para las funciones o conjuntos de datos en
+gr&aacute;ficos 2d. A la palabra <code>style</code> debe seguirle uno o m&aacute;s
+estilos. Si hay m&aacute;s funciones o conjuntos de datos que estilos,
+&eacute;stos se repetir&aacute;n. Los estilos que se admiten son: <var>lines</var>
+para segmentos lineales, <var>points</var> para puntos aislados,
+<var>linespoints</var> para segmentos y puntos, <var>dots</var> para
+peque&ntilde;os puntos aislados. Gnuplot tambi&eacute;n acepta el estilo
+<var>impulses</var>.
+</p>
+<p>Cada estilo puede ir encerrado en una lista con par&aacute;metros 
+adicionales: <var>lines</var> acepta uno o dos n&uacute;meros: el ancho del
+segmento y un entero que identifica el color; <var>points</var> acepta
+uno o dos par&aacute;metros, el primero es el radio de los puntos y el
+segundo un entero que en Gnuplot selecciona diferentes formas y
+colores para los puntos y que en Openmath cambia el color de &eacute;stos;
+<var>linesdots</var> acepta hasta cuatro par&aacute;metros, los dos primeros
+son lo mismo que en <var>lines</var> y los dos &uacute;ltimos son lo mismo que 
+en <var>points</var>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[style,[lines,2,3],[points,1,4]]
+</pre></td></tr></table>
+<p>En Gnuplot, con este c&oacute;digo se representar&iacute;a la
+primera (tercera, quinta, etc.) expresi&oacute;n con segmentos azules
+de ancho 2, y la segunda (cuarta, sexta, etc.) expresi&oacute;n con cuadrados 
+verdes de tama24no 1. En Openmath, la primera expresi&oacute;n se
+representar&iacute;a con segmentos magenta de ancho 2, y 
+la segunda con puntos naranja de radio 1. N&oacute;tese que 
+<code>openmath_color(3)</code> y <code>openmath_color(4)</code> devuelven
+<code>magenta</code> y <code>orange</code>, respectivamente.
+</p>
+<p>El estilo por defecto es <var>lines</var> de ancho 1 y diferentes colores.
+</p>
+
+</li><li>
+Opci&oacute;n: <code>grid</code>
+Establece el n&uacute;mero de puntos de la ret&iacute;cula a utilizar en las direcciones x e y en los gr&aacute;ficos de tres dimensiones.
+
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[grid, 50, 50]
+</pre></td></tr></table>
+<p>establece la ret&iacute;cula en 50 por 50 puntos. El valor por defecto es 30 por 30.
+</p>
+</li><li>
+Opci&oacute;n: <code>transform_xy</code>
+
+<p>Permite que se realicen transformaciones en los gr&aacute;ficos de tres dimensiones.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[transform_xy, false]
+
+</pre></td></tr></table><p>El valor por defecto de <code>transform_xy</code> es <code>false</code>. Cuando vale <code>false</code>, da el resultado de
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">make_transform([x,y,z], f1(x,y,z), f2(x,y,z), f3(x,y,z))$
+</pre></td></tr></table><p>La transformaci&oacute;n <code>polar_xy</code> est&aacute; definida en Maxima. Devuelve la misma transformaci&oacute;n que
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">make_transform ([r, th, z], r*cos(th), r*sin(th), z)$
+</pre></td></tr></table></li></ul>
+
+
+<p><b>Opciones de Gnuplot:</b>
+</p>
+
+<p>Hay varias opciones gr&aacute;ficas que son espec&iacute;ficas de gnuplot.
+Algunas de ellas son comandos propios de gnuplot que se especifican como cadenas alfanum&eacute;ricas.
+Cons&uacute;ltese la documentaci&oacute;n de Gnuplot para m&aacute;s detalles.
+</p>
+
+<ul>
+<li>
+Opci&oacute;n: <code>gnuplot_term</code>
+
+<p>Establece el terminal de salida para Gnuplot.
+</p>
+<ul>
+<li>
+Valor por defecto: <code>default</code>
+
+<p>Gnuplot muestra el gr&aacute;fico en una ventana gr&aacute;fica.
+</p>
+</li><li>
+Valor: <code>dumb</code>
+
+<p>Gnuplot muestra el gr&aacute;fico en la consola de Maxima
+en estilo ASCII art&iacute;stico.
+</p>
+</li><li>
+Valor: <code>ps</code>
+
+<p>Gnuplot genera c&oacute;digo en lenguaje PostScript.
+Si a la opci&oacute;n <code>gnuplot_out_file</code> se le da el
+valor <var>filename</var>, Gnuplot escribe el c&oacute;digo PostScript
+en <var>filename</var>. En caso contrario, se guarda en el archivo <code>maxplot.ps</code>.
+</p>
+</li><li>
+Valor: Cualquier otro terminal admitido por Gnuplot.
+
+<p>Gnuplot puede generar gr&aacute;ficos en otros muchos formatos, tales como
+png, jpeg, svg etc. Para crear gr&aacute;ficos en cualquera de estos formatos,
+a la opci&oacute;n <code>gnuplot_term</code> se le puede asignar cualquiera de los
+terminales admitidos por Gnuplot, bien por su nombre (s&iacute;mbolo)
+bien con la especificaci&oacute;n completa del terminal (cadena). Por ejemplo,
+<code>[gnuplot_term,png]</code> guarda el gr&aacute;fico en formato PNG (Portable
+Network Graphics), mientras que <code>[gnuplot_term,&quot;png size 1000,1000&quot;]</code>
+lo hace con dimensiones 1000x1000 p&iacute;xeles.
+Si a la opci&oacute;n <code>gnuplot_out_file</code> se le da el
+valor <var>filename</var>, Gnuplot escribe el c&oacute;digo PostScript
+en <var>filename</var>. En caso contrario, se guarda en el archivo 
+<code>maxplot.<var>term</var></code>, siendo <var>term</var> el nombre del terminal.
+</p>
+</li></ul>
+
+</li><li>
+Opci&oacute;n: <code>gnuplot_out_file</code>
+
+<p>Guarda el gr&aacute;fico generado por Gnuplot en un archivo.
+</p>
+<ul>
+<li>
+Valor por defecto: <code>false</code>
+
+<p>No se especifica nombre de fichero.
+</p>
+</li><li>
+Valor: <var>filename</var>
+
+<p>Con <code>[gnuplot_out_file, &quot;myplot.ps&quot;]</code>
+se env&iacute;a c&oacute;digo PostScript al archivo <code>myplot.ps</code>
+cuando se utiliza conjuntamente con el terminal PostScript de Gnuplot.
+</p></li></ul>
+
+
+</li><li>
+Opci&oacute;n: <code>gnuplot_pm3d</code> 
+
+<p>Controla la utilizaci&oacute;n del modo PM3D, que tiene capacidades avanzadas
+para gr&aacute;ficos tridimensionales. PM3D s&oacute;lo est&aacute; disponible en versiones 
+de Gnuplot posteriores a la 3.7. El valor por defecto de <code>gnuplot_pm3d</code> es <code>false</code>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[gnuplot_pm3d, true]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>gnuplot_preamble</code> 
+
+<p>Introduce instrucciones de gnuplot antes de que se haga el dibujo. Puede utilizarse cualquier comando v&aacute;lido de gnuplot. Si interesa introducir varios comandos se separar&aacute;n con punto y coma. El ejemplo que se muestra produce un gr&aacute;fico en escala logar&iacute;tmica. El valor por defecto de <code>gnuplot_preamble</code> es la cadena vac&iacute;a <code>&quot;&quot;</code>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[gnuplot_preamble, &quot;set log y&quot;]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>gnuplot_curve_titles</code>
+
+<p>Controla los t&iacute;tulos dados a la clave del gr&aacute;fico. El valor por defecto es  <code>[default]</code>, el cual establece autom&aacute;ticamente los t&iacute;tulos para cada curva representada. Si no es <code>[default]</code>, <code>gnuplot_curve_titles</code> debe contener una lista de cadenas, cada una de las cuales es <code>&quot;title '<var>title_string</var>'&quot;</code>. (Para desactivar la clave del gr&aacute;fico, a&ntilde;&aacute;dase <code>&quot;set nokey&quot;</code> a <code>gnuplot_preamble</code>.)
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[gnuplot_curve_titles, [&quot;title 'My first function'&quot;, &quot;title 'My second function'&quot;]]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>gnuplot_curve_styles</code>
+
+<p>Es una lista de cadenas que controlan el aspecto de las curvas, como el color, el ancho, la discontinuidad, etc., y que deben enviarse al comando <code>plot</code> de gnuplot. El valor por defecto es
+<code>[&quot;with lines 3&quot;, &quot;with lines 1&quot;, &quot;with lines 2&quot;, &quot;with lines 5&quot;, &quot;with lines 4&quot;, &quot;with lines 6&quot;, &quot;with lines 7&quot;]</code>, que realiza un ciclo sobre un conjunto de colores diferentes. Cons&uacute;ltese la documentaci&oacute;n de gnuplot sobre <code>plot</code> para m&aacute;s informaci&oacute;n.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[gnuplot_curve_styles, [&quot;with lines 7&quot;, &quot;with lines 2&quot;]]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>gnuplot_default_term_command</code>
+
+<p>Comando de gnuplot para establecer el tipo de terminal por defecto.
+El valor por defecto es <code>set term windows &quot;Verdana&quot; 15</code> 
+en sistemas Windows, y <code>set term x11 font &quot;Helvetica,16&quot;</code>
+en sistemas X11.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[gnuplot_default_term_command, &quot;set term x11&quot;]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>gnuplot_dumb_term_command</code>
+
+<p>Comando de gnuplot para establecer el tipo de terminal para
+el terminal oculto. El valor por defecto es <code>&quot;set term dumb 79 22&quot;</code>,
+que da una salida de texto de 79 por 22 caracteres.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[gnuplot_dumb_term_command, &quot;set term dumb 132 50&quot;]
+</pre></td></tr></table>
+</li><li>
+Opci&oacute;n: <code>gnuplot_ps_term_command</code>
+
+<p>Comando de gnuplot para establecer el tipo de terminal para
+el terminal PostScript. El valor por defecto es
+<code>&quot;set size 1.5, 1.5;set term postscript eps enhanced color solid 24&quot;</code>,
+que establece un tama&ntilde;o de 1.5 veces el valor por defecto de gnuplot,
+junto con un tama&ntilde;o de fuente de 24, entre otras cosas. Cons&uacute;ltese
+la documentaci&oacute;n de gnuplot para m&aacute;s informaci&oacute;n sobre <code>set term postscript</code>.
+</p>
+<p>Ejemplo:
+</p>
+<p>Todas las figuras de los ejemplos de la funci&oacute;n <var>plot2d</var> de este
+manual se obtuvieron a partir de archivos Postscript generados
+asign&aacute;ndole a <code>gnuplot_ps_term_command</code> el valor
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">[gnuplot_ps_term_command,
+&quot;set size 1.3, 1.3; set term postscript eps color solid lw 2.5 30&quot;]
+</pre></td></tr></table>
+</li></ul>
+
+
+<p><b>Ejemplos:</b>
+</p>
+<ul>
+<li>
+Almacena un gr&aacute;fico de <code>sin(x)</code> en el fichero <code>sin.eps</code>.
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) plot2d (sin(x), [x, 0, 2*%pi], [gnuplot_term, ps],
+                        [gnuplot_out_file, &quot;sin.eps&quot;])$
+</pre></td></tr></table>
+<ul>
+<li>
+Utiliza la opci&oacute;n y para saltarse las singularidades, as&iacute; como la opci&oacute;n <code>gnuplot_preamble</code> para colocar la clave en la parte inferior del dibujo.
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i2) plot2d ([gamma(x), 1/gamma(x)], [x, -4.5, 5], [y, -10, 10],
+                     [gnuplot_preamble, &quot;set key bottom&quot;])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting14.gif" alt="../figures/plotting14"></div>
+</p>
+<ul>
+<li>
+Utiliza un <code>gnuplot_preamble</code> bastante complicado a fin de producir etiquetas en el eje x.
+(N&oacute;tese que la cadena de <code>gnuplot_preamble</code> debe introducirse sin saltos de l&iacute;nea.)
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i3) my_preamble: &quot;set xzeroaxis; set xtics ('-2pi' -6.283, \
+'-3pi/2' -4.712, '-pi' -3.1415, '-pi/2' -1.5708, '0' 0, \
+'pi/2' 1.5708, 'pi' 3.1415,'3pi/2' 4.712, '2pi' 6.283)&quot;$
+
+(%i4) plot2d([cos(x), sin(x), tan(x), cot(x)],
+       [x, -2*%pi, 2.1*%pi], [y, -2, 2],
+       [gnuplot_preamble, my_preamble]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting15.gif" alt="../figures/plotting15"></div>
+</p>
+<ul>
+<li>
+Utiliza un <code>gnuplot_preamble</code> bastante complicado a fin de producir etiquetas en el eje x, produciendo una salida PostScript que aprovecha el formateo avanzado de texto disponible en gnuplot.
+(N&oacute;tese que la cadena de <code>gnuplot_preamble</code> debe introducirse sin saltos de l&iacute;nea.)
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i5) my_preamble: &quot;set xzeroaxis; set xtics ('-2{/Symbol p}' \
+-6.283, '-3{/Symbol p}/2' -4.712, '-{/Symbol p}' -3.1415, \
+'-{/Symbol p}/2' -1.5708, '0' 0,'{/Symbol p}/2' 1.5708, \
+'{/Symbol p}' 3.1415,'3{/Symbol p}/2' 4.712, '2{/Symbol p}' \
+6.283)&quot;$
+
+(%i6) plot2d ([cos(x), sin(x), tan(x)], [x, -2*%pi, 2*%pi],
+    [y, -2, 2], [gnuplot_preamble, my_preamble],
+    [gnuplot_term, ps], [gnuplot_out_file, &quot;trig.eps&quot;]);
+</pre></td></tr></table>
+<ul>
+<li>
+Un gr&aacute;fico tridimensional utilizando el terminal pm3d de gnuplot.
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i7) plot3d (atan (-x^2 + y^3/4), [x, -4, 4], [y, -4, 4],
+        [grid, 50, 50], [gnuplot_pm3d, true])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting16.gif" alt="../figures/plotting16"></div>
+</p>
+<ul>
+<li>
+Un gr&aacute;fico tridimensional sin malla y con contornos proyectados sobre el plano inferior.
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i8) my_preamble: &quot;set pm3d at s;unset surface;set contour;\
+set cntrparam levels 20;unset key&quot;$
+(%i9) plot3d(atan(-x^2 + y^3/4), [x, -4, 4], [y, -4, 4],
+    [grid, 50, 50], [gnuplot_pm3d, true],
+    [gnuplot_preamble, my_preamble])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting17.gif" alt="../figures/plotting17"></div>
+</p>
+<ul>
+<li>
+Un gr&aacute;fico en el que el eje z s&oacute;lo se representa por el color.
+(N&oacute;tese que la cadena de <code>gnuplot_preamble</code> debe introducirse sin saltos de l&iacute;nea.)
+</li></ul>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i10) plot3d (cos (-x^2 + y^3/4), [x, -4, 4], [y, -4, 4],
+    [gnuplot_preamble, &quot;set view map; unset surface&quot;],
+    [gnuplot_pm3d, true], [grid, 150, 150])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting18.gif" alt="../figures/plotting18"></div>
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Function:</u> <b>plot3d</b><i> ([<var>expr_1</var>, <var>expr_2</var>, <var>expr_3</var>], <var>x_range</var>, <var>y_range</var>, ..., <var>options</var>, ...)</i>
+<a name="IDX253"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>plot3d</b><i> (<var>expr</var>, <var>x_range</var>, <var>y_range</var>, ..., <var>options</var>, ...)</i>
+<a name="IDX254"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>plot3d</b><i> (<var>name</var>, <var>x_range</var>, <var>y_range</var>, ..., <var>options</var>, ...)</i>
+<a name="IDX255"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>plot3d</b><i> ([<var>expr_1</var>, <var>expr_2</var>, <var>expr_3</var>], <var>x_rge</var>, <var>y_rge</var>)</i>
+<a name="IDX256"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>plot3d</b><i> ([<var>name_1</var>, <var>name_2</var>, <var>name_3</var>], <var>x_range</var>, <var>y_range</var>, ..., <var>options</var>, ...)</i>
+<a name="IDX257"></a>
+</dt>
+<dd><p>Representa gr&aacute;ficamente una o tres expresiones como funciones de dos variables.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) plot3d (2^(-u^2 + v^2), [u, -3, 3], [v, -2, 2]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting19.gif" alt="../figures/plotting19"></div>
+</p>
+<p>dibuja <code>z = 2^(-u^2+v^2)</code> con <code>u</code> y <code>v</code> variando en [-3,3] y
+[-2,2] respectivamente, y con <var>u</var> sobre el eje x, y con <code>v</code> sobre el
+eje y.
+</p>
+<p>El mismo gr&aacute;fico se puede dibujar usando openmath (si Xmaxima fu&eacute;
+instalado):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i2)  plot3d (2^(-u^2 + v^2), [u, -3, 3], [v, -2, 2],
+               [plot_format, openmath]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting25.gif" alt="../figures/plotting25"></div>
+</p>
+
+<p>en este caso el rat&oacute;n se puede usar para rotar el gr&aacute;fico y ver la
+superficie desde diferentes lados.
+</p>
+<p>Un ejemplo del tercer patr&oacute;n de argumentos es
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i3) plot3d ([cos(x)*(3 + y*cos(x/2)), sin(x)*(3 + y*cos(x/2)),
+   y*sin(x/2)], [x, -%pi, %pi], [y, -1, 1], ['grid, 50, 15]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting20.gif" alt="../figures/plotting20"></div>
+</p>
+<p>que dibuja una banda de Moebius, parametrizada por las tres expresiones dadas como primer argumento a <code>plot3d</code>. Un argumento opcional <code>['grid, 50, 15]</code> da el n&uacute;mero de intervalos en las direcciones x e y, respectivamente.
+</p>
+<p>Cuando la funci&oacute;n a representar ha sido definida en Maxima mediante  <code>:=</code> o <code>define</code>, o en Lisp por DEFUN o DEFMFUN, entonces se podr&aacute; especificar por su nombre. Las funciones definidas a nivel de LISP por DEFMSPEC, las funciones de simplificaci&oacute;n, junto con muchas otras funciones, no pueden especificarse directamente por su nombre.
+</p>
+<p>Este ejemplo muestra un gr&aacute;fico de la parte real de <code>z^1/3</code>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i4) plot3d (r^.33*cos(th/3), [r, 0, 1], [th, 0, 6*%pi],
+      ['grid, 12, 80], ['transform_xy, polar_to_xy]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting21.gif" alt="../figures/plotting21"></div>
+</p>
+<p>Otros ejemplos son la botella de Klein:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i5) expr_1: 5*cos(x)*(cos(x/2)*cos(y) + sin(x/2)*sin(2*y)
+      + 3.0) - 10.0$
+(%i6) expr_2: -5*sin(x)*(cos(x/2)*cos(y) + sin(x/2)*sin(2*y)
+      + 3.0)$
+(%i7) expr_3: 5*(-sin(x/2)*cos(y) + cos(x/2)*sin(2*y))$
+
+(%i8) plot3d ([expr_1, expr_2, expr_3], [x, -%pi, %pi],
+      [y, -%pi, %pi], ['grid, 40, 40]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting22.gif" alt="../figures/plotting22"></div>
+</p>
+<p>y un toro:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i9) expr_1: cos(y)*(10.0+6*cos(x))$
+(%i10) expr_2: sin(y)*(10.0+6*cos(x))$
+(%i11) expr_3: -6*sin(x)$
+(%i12) plot3d ([expr_1, expr_2, expr_3], [x, 0, 2*%pi],
+       [y, 0, 2*%pi], ['grid, 40, 40]);
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting23.gif" alt="../figures/plotting23"></div>
+</p>
+<p>En ocasiones puede ser necesario definir una funci&oacute;n para representarla. Todos los argumentos de <code>plot3d</code> se eval&uacute;an, de manera que puede ser dif&iacute;cil escribir una expresi&oacute;n que haga lo que el usuario realmente quiere; en tales casos facilita las cosas definir previamente la funci&oacute;n.   
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i13) M: matrix([1, 2, 3, 4], [1, 2, 3, 2], [1, 2, 3, 4],
+       [1, 2, 3, 3])$
+(%i14) f(x, y) := float (M [?round(x), ?round(y)])$
+(%i15) plot3d (f, [x, 1, 4], [y, 1, 4], ['grid, 4, 4])$
+</pre></td></tr></table>
+<p><div class="image"><img src="./../figures/plotting24.gif" alt="../figures/plotting24"></div>
+</p>
+<p>V&eacute;ase  <code>plot_options</code> para m&aacute;s ejemplos.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>make_transform</b><i> (<var>vars</var>, <var>fx</var>, <var>fy</var>, <var>fz</var>)</i>
+<a name="IDX258"></a>
+</dt>
+<dd><p>Devuelve una funci&oacute;n apropiada para la funci&oacute;n de transformaci&oacute;n de <code>plot3d</code>. Debe usarse con la opci&oacute;n gr&aacute;fica <code>transform_xy</code>.
+</p><table><tr><td>&nbsp;</td><td><pre class="example">make_transform ([r, th, z], r*cos(th), r*sin(th), z)$
+</pre></td></tr></table><p>es una transformaci&oacute;n para pasar a coordenadas polares.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>set_plot_option</b><i> (<var>option</var>)</i>
+<a name="IDX259"></a>
+</dt>
+<dd><p>Asigna un valor a una de las variables globales que controlan los gr&aacute;ficos. El argumento
+<var>option</var> se especifica como una lista de dos o m&aacute;s elementos, en la que el primero es el nombre de una de las opciones de la lista <code>plot_options</code>.
+</p>
+<p>La funci&oacute;n <code>set_plot_option</code> eval&uacute;a sus argumentos y devuelve <code>plot_options</code> tal como queda despu&eacute;s de la actualizaci&oacute;n.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>plot_options</code>, <code>plot2d</code> y <code>plot3d</code>.
+</p>
+<p>Ejemplos:
+</p>
+<p>Se modifican los valores de <code>grid</code> y <code>x</code>.
+Si a un nombre de opci&oacute;n de <code>plot_options</code> tiene ya un valor asignado, hacerlo preceder de un ap&oacute;strofo para evitar su evaluaci&oacute;n.
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) set_plot_option ([grid, 30, 40]);
+(%o1) [[x, - 1.755559702014E+305, 1.755559702014E+305], 
+[y, - 1.755559702014E+305, 1.755559702014E+305], [t, - 3, 3], 
+[grid, 30, 40], [transform_xy, false], [run_viewer, true], 
+[plot_format, gnuplot], [gnuplot_term, default], 
+[gnuplot_out_file, false], [nticks, 10], [adapt_depth, 10], 
+[gnuplot_pm3d, false], [gnuplot_preamble, ], 
+[gnuplot_curve_titles, [default]], 
+[gnuplot_curve_styles, [with lines 3, with lines 1, 
+with lines 2, with lines 5, with lines 4, with lines 6, 
+with lines 7]], [gnuplot_default_term_command, ], 
+[gnuplot_dumb_term_command, set term dumb 79 22], 
+[gnuplot_ps_term_command, set size 1.5, 1.5;set term postscript #
+eps enhanced color solid 24]]
+(%i2) x: 42;
+(%o2)                          42
+(%i3) set_plot_option (['x, -100, 100]);
+(%o3) [[x, - 100.0, 100.0], [y, - 1.755559702014E+305, 
+1.755559702014E+305], [t, - 3, 3], [grid, 30, 40], 
+[transform_xy, false], [run_viewer, true], 
+[plot_format, gnuplot], [gnuplot_term, default], 
+[gnuplot_out_file, false], [nticks, 10], [adapt_depth, 10], 
+[gnuplot_pm3d, false], [gnuplot_preamble, ], 
+[gnuplot_curve_titles, [default]], 
+[gnuplot_curve_styles, [with lines 3, with lines 1, 
+with lines 2, with lines 5, with lines 4, with lines 6, 
+with lines 7]], [gnuplot_default_term_command, ], 
+[gnuplot_dumb_term_command, set term dumb 79 22], 
+[gnuplot_ps_term_command, set size 1.5, 1.5;set term postscript #
+eps enhanced color solid 24]]
+</pre></td></tr></table>
+</dd></dl>
+
+<p><b>Funciones para trabajar con el formato gnuplot_pipes:</b>
+</p>
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>gnuplot_start</b><i> ()</i>
+<a name="IDX260"></a>
+</dt>
+<dd><p>Inicializa una tuber&iacute;a hacia Gnuplot, con el fin
+de ser utilizada para utilizar el formato <code>gnuplot_pipes</code>.
+No es necesario inicializarla manualmente antes de hacer gr&aacute;ficos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>gnuplot_close</b><i> ()</i>
+<a name="IDX261"></a>
+</dt>
+<dd><p>Cierra la tuber&iacute;a hacia Gnuplot que haya sido 
+utilizada para hacer gr&aacute;ficos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>gnuplot_restart</b><i> ()</i>
+<a name="IDX262"></a>
+</dt>
+<dd><p>Cierra la tuber&iacute;a hacia Gnuplot que haya sido 
+utilizada para hacer gr&aacute;ficos e inicializa una nueva.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>gnuplot_replot</b><i> ()</i>
+<a name="IDX263"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>gnuplot_replot</b><i> (<var>s</var>)</i>
+<a name="IDX264"></a>
+</dt>
+<dd><p>Actualiza la ventana de Gnuplot. Si <code>gnuplot_replot</code> es invocada
+con un comando de Gnuplot en la cadena <var>s</var>, entonces <var>s</var> es 
+enviada a Gnuplot antes de redibujar la ventana.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>gnuplot_reset</b><i> ()</i>
+<a name="IDX265"></a>
+</dt>
+<dd><p>Resetea Gnuplot cuando se utiliza el formato <code>gnuplot_pipes</code>.
+Para actualizar la ventana de Gnuplot inv&oacute;quese a <code>gnuplot_replot</code>
+despu&eacute;s de <code>gnuplot_reset</code>.
+</p>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC32" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_9.html#SEC34" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

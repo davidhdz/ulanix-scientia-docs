@@ -1,0 +1,853 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: </title>
+
+<meta name="description" content="Manual de Maxima: ">
+<meta name="keywords" content="Manual de Maxima: ">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Top"></a>
+<a name="SEC_Top"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="settitle">Manual de Maxima
+</h1>
+
+<p><i>Maxima es un sistema de c&aacute;lculo simb&oacute;lico escrito en Lisp.</i>
+</p>
+<p>Maxima desciende del sistema Macsyma, desarrollado en el MIT (Massachusetts Institute of Technology) entre los a&ntilde;os 1968 y 1982 como parte del proyecto MAC. El MIT pas&oacute; una copia del c&oacute;digo fuente al DOE (Department of Energy) en 1982, en una versi&oacute;n conocida como DOE-Macsyma. Una de estas copias fue mantenida por el Profesor William F. Schelter de la Universidad de Texas desde el a&ntilde;o 1982 hasta su fallecimiento en 2001. En 1998 Schelter hab&iacute;a obtenido del Departamento de Energ&iacute;a permiso para distribuir el c&oacute;digo fuente de DOE-Macsyma bajo licencia GNU-GPL, iniciando en el a&ntilde;o 2000 el proyecto Maxima en SourceForge con el fin de mantener y seguir desarrollando DOE-Macsyma, ahora con el nombre de Maxima.
+</p>
+<p><i>Notas de la traducci&oacute;n espa&ntilde;ola.</i>
+</p>
+<p>La versi&oacute;n espa&ntilde;ola del manual de Maxima la mantienen Mario
+Rodr&iacute;guez y Jaime Villate; para comentarios, sugerencias y
+colaboraciones, cont&aacute;ctese mediante cualquiera de las siguientes
+direcciones de correo electr&oacute;nico:
+</p>
+<ul>
+<li> mario ARROBA edu PUNTO xunta PUNTO es
+
+</li><li> villate ARROBA fe PUNTO up PUNTO pt
+</li></ul>
+
+
+<table class="menu" border="0" cellspacing="0">
+
+<p>Infraestructura de Maxima
+</p>
+<tr><td align="left" valign="top"><a href="maxima_1.html#SEC1">1. Introducci&oacute;n a Maxima</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">            Muestra de sesiones con Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_2.html#SEC2">2. Detecci&oacute;n e informe de fallos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">    Gesti&oacute;n de fallos en Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_3.html#SEC4">3. Ayuda</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                              Solicitando ayuda desde una sesi&oacute;n de Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_4.html#SEC9">4. L&iacute;nea de Comandos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">    Sintaxis de los comandos de Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_5.html#SEC12">5. Operadores</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Operadores utilizados en expresiones de Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC20">6. Expresiones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                        Expresiones de Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_7.html#SEC30">7. Simplificaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                   Simplificando expresiones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_8.html#SEC32">8. Gr&aacute;ficos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Gr&aacute;ficos en dos y tres dimensiones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_9.html#SEC34">9. Entrada y Salida</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                   Entrada y salida de archivos
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_10.html#SEC38">10. Aritm&eacute;tica de punto flotante</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">     Rutinas num&eacute;ricas de bajo nivel.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_11.html#SEC40">11. Contextos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                          Imposici&oacute;n de restricciones a variables.
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Soporte para campos m&aacute;s espec&iacute;ficos de las matem&aacute;ticas
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_12.html#SEC42">12. Polinomios</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Operaciones con polinomios.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_13.html#SEC45">13. Constantes</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Constantes num&eacute;ricas.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_14.html#SEC47">14. Logaritmos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Transformaci&oacute;n y c&aacute;lculo de expresiones logar&iacute;tmicas.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_15.html#SEC49">15. Trigonometr&iacute;a</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">        Transformaci&oacute;n y c&aacute;lculo de expresiones trigonom&eacute;tricas.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_16.html#SEC52">16. Funciones Especiales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">               Funciones especiales.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_17.html#SEC55">17. Funciones el&iacute;pticas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  Funciones e integrales el&iacute;pticas.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_18.html#SEC59">18. L&iacute;mites</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">              C&aacute;lculo de l&iacute;mites.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_19.html#SEC61">19. Diferenciaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                   C&aacute;lculo diferencial.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_20.html#SEC63">20. Integraci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                      C&aacute;lculo integral.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_21.html#SEC69">21. Ecuaciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Definici&oacute;n y resoluci&oacute;n de ecuaciones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_22.html#SEC71">22. Ecuaciones Diferenciales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">           Definici&oacute;n y resoluci&oacute;n de ecuaciones diferenciales.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_23.html#SEC74">23. M&eacute;todos num&eacute;ricos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">              Integraci&oacute;n num&eacute;rica, transformadas de Fourier, etc.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_24.html#SEC79">24. Arrays</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                             Creaci&oacute;n y manipulaci&oacute;n de arrays.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_25.html#SEC81">25. Matrices y &Aacute;lgebra Lineal</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">        Operaciones matriciales.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_26.html#SEC87">26. Afines</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                             
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_27.html#SEC89">27. itensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                            Manipulaci&oacute;n indexada de tensores
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_28.html#SEC104">28. ctensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                            Manipulaci&oacute;n por componentes de tensores
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_29.html#SEC117">29. atensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                            Manipulaci&oacute;n algebraica de tensores
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_30.html#SEC120">30. Series</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                             Series de potencias y de Taylor.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_31.html#SEC123">31. Teor&iacute;a de N&uacute;meros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  Teor&iacute;a de n&uacute;meros.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_32.html#SEC125">32. Simetr&iacute;as</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">     
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_33.html#SEC127">33. Grupos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                             &Aacute;lgebra abstracta.
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Funcionalidades avanzadas y programaci&oacute;n
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_34.html#SEC129">34. Entorno de Ejecuci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">      Personalizaci&oacute;n de Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_35.html#SEC133">35. Miscel&aacute;nea de opciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">    Opciones que afectan globalmente el comportamiento de Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_36.html#SEC137">36. Reglas y patrones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">           Patrones de definidos por el usuario y
+                                reglas de simplificaci&oacute;n.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_37.html#SEC140">37. Listas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                      Manipulaci&oacute;n de listas.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_38.html#SEC143">38. Conjuntos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                   Operaciones con conjuntos.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_39.html#SEC150">39. Definici&oacute;n de Funciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">   Programando funciones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_40.html#SEC157">40. Programaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">              Programaci&oacute;n en Maxima.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_41.html#SEC160">41. Depurado</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                    Depuraci&oacute;n de fallos en programas Maxima.
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Paquetes adicionales
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_42.html#SEC164">42. augmented_lagrangian</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">        Paquete augmented_lagrangian.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_43.html#SEC166">43. bode</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                        Gr&aacute;ficos de Bode.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_44.html#SEC168">44. descriptive</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                 Estad&iacute;stica descriptiva.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_45.html#SEC174">45. diag</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                        Matrices de Jordan.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_46.html#SEC176">46. distrib</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                     Distribuciones de probabilidad.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_47.html#SEC180">47. draw</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                        Un interfaz Maxima-Gnuplot.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_48.html#SEC183">48. dynamics</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                    Gr&aacute;ficas de sistemas din&aacute;micos y fractales.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_49.html#SEC186">49. eval_string</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                 Expresiones de Maxima en formato de cadena.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_50.html#SEC188">50. f90</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Traductor de Maxima fortran.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_51.html#SEC190">51. ggf</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                         Expresi&oacute;n general de sucesiones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_52.html#SEC192">52. impdiff</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                     Derivadas impl&iacute;citas.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_53.html#SEC194">53. interpol</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                    Interpolaci&oacute;n.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_54.html#SEC197">54. lbfgs</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                       Paquete L-BFGS para minimizaci&oacute;n sin restricciones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_55.html#SEC200">55. lindstedt</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                   Paquete Lindstedt.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_56.html#SEC202">56. linearalgebra</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">               Funciones de &aacute;lgebra lineal.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_57.html#SEC205">57. lsquares</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                    M&iacute;nimos cuadrados.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_58.html#SEC207">58. makeOrders</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                  Utilidad sobre polinomios.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_59.html#SEC209">59. mnewton</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                     M&eacute;todo de Newton.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_60.html#SEC211">60. numericalio</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                 Lectura y escritura de ficheros.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_61.html#SEC214">61. opsubst</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                     Utilidad para sustituciones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_62.html#SEC216">62. orthopoly</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                   Polinomios ortogonales.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_63.html#SEC225">63. plotdf</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                      Gr&aacute;ficos de campos vectoriales.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_64.html#SEC228">64. romberg</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                     Integraci&oacute;n num&eacute;rica por el m&eacute;todo de Romberg.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_65.html#SEC230">65. simplex</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                     Programaci&oacute;n lineal.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_66.html#SEC233">66. simplification</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">              Reglas y funciones de simplificaci&oacute;n.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_67.html#SEC243">67. solve_rec</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                   Recurrencias lineales.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_68.html#SEC246">68. stats</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                       Inferencia estad&iacute;stica.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_69.html#SEC251">69. stirling</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                    F&oacute;rmula de Stirling.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_70.html#SEC253">70. stringproc</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                  Procesamiento de cadenas.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_71.html#SEC258">71. unit</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                        Unidades f&iacute;sicas y dimensiones.
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_72.html#SEC261">72. zeilberger</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                  Funciones para series hipergeom&eacute;tricas.
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+
+&Iacute;ndice
+        
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_73.html#SEC267">73. &Iacute;ndice de Funciones y Variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  &Iacute;ndice.
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+ --- Listado detallado de los nodos ---
+
+Introducci&oacute;n
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_1.html#SEC1">1. Introducci&oacute;n a Maxima</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Fallos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_2.html#SEC3">2.1 Definiciones para la detecci&oacute;n e informe de fallos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Ayuda
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_3.html#SEC5">3.1 Lisp y Maxima</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_3.html#SEC6">3.2 Recolector de Basura</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_3.html#SEC7">3.3 Documentaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_3.html#SEC8">3.4 Definiciones para la Ayuda</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+L&iacute;nea de Comandos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_4.html#SEC10">4.1 Introducci&oacute;n a la L&iacute;nea de Comandos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_4.html#SEC11">4.2 Definiciones para la L&iacute;nea de Comandos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Operadores
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_5.html#SEC13">5.1 n-arios</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_5.html#SEC14">5.2 no-fijos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_5.html#SEC15">5.3 postfijos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_5.html#SEC16">5.4 prefijos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_5.html#SEC17">5.5 Operadores aritm&eacute;ticos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_5.html#SEC18">5.6 Operadores relacionales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_5.html#SEC19">5.7 Operadores generales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Expresiones
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_6.html#SEC21">6.1 Introducci&oacute;n a las Expresiones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC22">6.2 Asignaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC23">6.3 Expresiones complejas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC24">6.4 Nombres y verbos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC25">6.5 Identificadores</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC27">6.7 Desigualdades</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC28">6.8 Sintaxis</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_6.html#SEC29">6.9 Definiciones para Expresiones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Simplificaci&oacute;n
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_7.html#SEC31">7.1 Definiciones para Simplificaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Gr&aacute;ficos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_8.html#SEC33">8.1 Definiciones para Gr&aacute;ficos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Entrada y Salida
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_9.html#SEC35">9.1 Comentarios</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_9.html#SEC36">9.2 Archivos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_9.html#SEC37">9.3 Definiciones para Entrada y Salida</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"> 
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Aritm&eacute;tica de punto flotante
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_10.html#SEC39">10.1 Definiones para aritm&eacute;tica de punto flotante</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Contextos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_11.html#SEC41">11.1 Definiciones para Contextos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Polinomios
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_12.html#SEC43">12.1 Introducci&oacute;n a los Polinomios</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_12.html#SEC44">12.2 Definiciones para Polinomios</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Constantes
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_13.html#SEC46">13.1 Definiciones para Constantes</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Logaritmos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_14.html#SEC48">14.1 Definiciones para Logaritmos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Trigonometr&iacute;a
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_15.html#SEC50">15.1 Introducci&oacute;n a la Trigonometr&iacute;a</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_15.html#SEC51">15.2 Definiciones para Trigonometr&iacute;a</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Funciones Especiales
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_16.html#SEC53">16.1 Introducci&oacute;n a las Funciones Especiales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_16.html#SEC54">16.2 Definiciones para las Funciones Especiales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Funciones el&iacute;pticas
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_17.html#SEC56">17.1 Introducci&oacute;n a las funciones e integrales el&iacute;pticas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_17.html#SEC57">17.2 Definiciones para funciones el&iacute;pticas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_17.html#SEC58">17.3 Definiciones para integrales el&iacute;pticas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+L&iacute;mites
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_18.html#SEC60">18.1 Definiciones para L&iacute;mites</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Diferenciaci&oacute;n
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_19.html#SEC62">19.1 Definiciones para Diferenciaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Integraci&oacute;n
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_20.html#SEC64">20.1 Introducci&oacute;n a la Integraci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_20.html#SEC65">20.2 Definiciones para Integraci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Ecuaciones
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_21.html#SEC70">21.1 Definiciones para Ecuaciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Ecuaciones Diferenciales
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_22.html#SEC72">22.1 Introducci&oacute;n a las Ecuaciones Diferenciales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_22.html#SEC73">22.2 Definiciones para Ecuaciones Diferenciales.</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+M&eacute;todos num&eacute;ricos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_23.html#SEC75">23.1 Introducci&oacute;n a los m&eacute;todos num&eacute;ricos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_23.html#SEC76">23.2 Series de Fourier</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_23.html#SEC77">23.3 Definiciones para los m&eacute;todos num&eacute;ricos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_23.html#SEC78">23.4 Definiciones para las series de Fourier</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Arrays
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_24.html#SEC80">24.1 Definiciones para Arrays</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Matrices y &Aacute;lgebra Lineal
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_25.html#SEC82">25.1 Introducci&oacute;n a las Matrices y al &Aacute;lgebra Lineal</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_25.html#SEC83">25.1.1 Operador punto</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_25.html#SEC84">25.1.2 Vectores</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_25.html#SEC85">25.1.3 Paquete eigen</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_25.html#SEC86">25.2 Definiciones para las Matrices y el &Aacute;lgebra Lineal</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Afines
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_26.html#SEC88">26.1 Definiciones para Afines</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+itensor
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_27.html#SEC90">27.1 Introducci&oacute;n a itensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_27.html#SEC93">27.2 Definiciones para itensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+ctensor
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_28.html#SEC105">28.1 Introducci&oacute;n a ctensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_28.html#SEC106">28.2 Definiciones para ctensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+atensor
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_29.html#SEC118">29.1 Introducci&oacute;n a atensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_29.html#SEC119">29.2 Definiciones para atensor</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Series
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_30.html#SEC121">30.1 Introducci&oacute;n a las Series</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_30.html#SEC122">30.2 Definiciones para las Series</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Teor&iacute;a de N&uacute;meros
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_31.html#SEC124">31.1 Definiciones para Teor&iacute;a de N&uacute;meros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Simetr&iacute;as
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_32.html#SEC126">32.1 Definiciones para Simetr&iacute;as</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Grupos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_33.html#SEC128">33.1 Definiciones para Grupos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Entorno de Ejecuci&oacute;n
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_34.html#SEC130">34.1 Introducci&oacute;n al Entorno de Ejecuci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_34.html#SEC131">34.2 Interrupciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_34.html#SEC132">34.3 Definiciones para el Entorno de Ejecuci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Miscel&aacute;nea de opciones
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_35.html#SEC134">35.1 Introducci&oacute;n a la miscel&aacute;nea de opciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_35.html#SEC135">35.2 Share</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_35.html#SEC136">35.3 Definiciones para la miscel&aacute;nea de opciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Reglas y patrones
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_36.html#SEC138">36.1 Introducci&oacute;n a reglas y patrones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_36.html#SEC139">36.2 Definiciones sobre reglas y patrones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Listas
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_37.html#SEC141">37.1 Introducci&oacute;n a las listas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_37.html#SEC142">37.2 Definiciones para listas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Conjuntos
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_38.html#SEC144">38.1 Introducci&oacute;n a los conjuntos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_38.html#SEC149">38.2 Definiciones para los conjuntos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Definici&oacute;n de Funciones
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_39.html#SEC151">39.1 Introducci&oacute;n a la definici&oacute;n de funciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_39.html#SEC152">39.2 Funciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_39.html#SEC155">39.3 Macros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_39.html#SEC156">39.4 Definiciones para la definici&oacute;n de funciones</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Programaci&oacute;n
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_40.html#SEC158">40.1 Introducci&oacute;n a la Programaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_40.html#SEC159">40.2 Definiciones para la Programaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+Depurado
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_41.html#SEC161">41.1 Depuraci&oacute;n del c&oacute;digo fuente</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_41.html#SEC162">41.2 Claves de depuraci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_41.html#SEC163">41.3 Definiciones para Depurado</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+augmented_lagrangian
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_42.html#SEC165">42.1 Definiciones para augmented_lagrangian</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+bode
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_43.html#SEC167">43.1 Definiciones para bode</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+descriptive
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_44.html#SEC169">44.1 Introducci&oacute;n a descriptive</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_44.html#SEC170">44.2 Definiciones para el tratamiento de datos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_44.html#SEC171">44.3 Definiciones de valores descriptivos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_44.html#SEC172">44.4 Definiciones de valores descriptivos multivariantes</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_44.html#SEC173">44.5 Definiciones para gr&aacute;ficos estad&iacute;sticos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+diag
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_45.html#SEC175">45.1 Definiciones para diag</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+distrib
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_46.html#SEC177">46.1 Introducci&oacute;n a distrib</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_46.html#SEC178">46.2 Definiciones para distribuciones continuas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_46.html#SEC179">46.3 Definiciones para distribuciones discretas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+draw
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_47.html#SEC181">47.1 Introducci&oacute;n a draw</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_47.html#SEC182">47.2 Definiciones para draw</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+dynamics
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_48.html#SEC184">48.1 Introducci&oacute;n a dynamics</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_48.html#SEC185">48.2 Definiciones para dynamics</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+eval_string
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_49.html#SEC187">49.1 Definiciones para eval_string</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+f90
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_50.html#SEC189">50.1 Definiciones para f90</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+ggf
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_51.html#SEC191">51.1 Definiciones para ggf</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+impdiff
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_52.html#SEC193">52.1 Definiciones para impdiff</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+interpol
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_53.html#SEC195">53.1 Introducci&oacute;n a interpol</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_53.html#SEC196">53.2 Definiciones para interpol</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+lbfgs
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_54.html#SEC198">54.1 Introducci&oacute;n a lbfgs</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_54.html#SEC199">54.2 Definiciones para lbfgs</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+lindstedt
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_55.html#SEC201">55.1 Definiciones para lindstedt</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+linearalgebra
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_56.html#SEC203">56.1 Introducci&oacute;n a linearalgebra</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_56.html#SEC204">56.2 Definiciones para linearalgebra</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+lsquares
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_57.html#SEC206">57.1 Definiciones para lsquares</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+makeOrders
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_58.html#SEC208">58.1 Definiciones para makeOrders</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+mnewton
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_59.html#SEC210">59.1 Definiciones para mnewton</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+numericalio
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_60.html#SEC212">60.1 Introducci&oacute;n a numericalio</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_60.html#SEC213">60.2 Definiciones para numericalio</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+opsubst
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_61.html#SEC215">61.1 Definiciones para opsubst</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+orthopoly
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_62.html#SEC217">62.1 Introducci&oacute;n a polinomios ortogonales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_62.html#SEC224">62.2 Definiciones para polinomios ortogonales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+plotdf
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_63.html#SEC227">63.2 Definiciones para plotdf</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+romberg
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_64.html#SEC229">64.1 Definiciones para romberg</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+simplex
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_65.html#SEC231">65.1 Introducci&oacute;n a simplex</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_65.html#SEC232">65.2 Definiciones para simplex</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+simplification
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_66.html#SEC234">66.1 Introducci&oacute;n a simplification</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_66.html#SEC235">66.2 Definiciones para simplification</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+solve_rec
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_67.html#SEC244">67.1 Introducci&oacute;n a solve_rec</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_67.html#SEC245">67.2 Definiciones para solve_rec</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+stats
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_68.html#SEC247">68.1 Introducci&oacute;n a stats</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_68.html#SEC248">68.2 Definiciones para inference_result</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_68.html#SEC249">68.3 Definiciones para stats</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_68.html#SEC250">68.4 Definiciones para distribuciones especiales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+stirling
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_69.html#SEC252">69.1 Definiciones para stirling</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+stringproc
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_70.html#SEC254">70.1 Introducci&oacute;n al procesamiento de cadenas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_70.html#SEC255">70.2 Definiciones para entrada y salida</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_70.html#SEC256">70.3 Definiciones para caracteres</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_70.html#SEC257">70.4 Definiciones para cadenas</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+unit
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_71.html#SEC259">71.1 Introducci&oacute;n a Units</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_71.html#SEC260">71.2 Definiciones para Units</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+zeilberger
+
+</pre></th></tr><tr><td align="left" valign="top"><a href="maxima_72.html#SEC262">72.1 Introducci&oacute;n a zeilberger</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="maxima_72.html#SEC266">72.2 Definiciones para zeilberger</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><th colspan="3" align="left" valign="top"><pre class="menu-comment">
+</pre></th></tr></table>
+
+
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

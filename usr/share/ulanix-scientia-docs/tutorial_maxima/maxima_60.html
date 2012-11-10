@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 60. numericalio</title>
+
+<meta name="description" content="Manual de Maxima: 60. numericalio">
+<meta name="keywords" content="Manual de Maxima: 60. numericalio">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="numericalio"></a>
+<a name="SEC211"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_59.html#SEC210" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC212" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_59.html#SEC209" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_61.html#SEC214" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 60. numericalio </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC212">60.1 Introducci&oacute;n a numericalio</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC213">60.2 Definiciones para numericalio</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Introducci_00f3n-a-numericalio"></a>
+<a name="SEC212"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC211" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC213" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC211" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC211" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_61.html#SEC214" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 60.1 Introducci&oacute;n a numericalio </h2>
+
+<p>El paquete <code>numericalio</code> define funciones para leer y escribir ficheros de datos.
+Se lee el fichero completo a fin de construir un objeto, por lo que el paquete no
+soporta lecturas parciales de archivos.
+</p>
+<p>Cada elemento a leer o escribir en un fichero debe ser necesariamente un &aacute;tomo:
+un n&uacute;mero entero, decimal, decimal grande, una cadena o un s&iacute;mbolo;
+no se admiten fracciones, n&uacute;meros complejos o cualquier otra expresi&oacute;n no
+at&oacute;mica. Estas funciones pueden llegar a realizar operaciones v&aacute;lidas con
+expresiones no at&oacute;micas, pero estos resultados no se documentan y est&aacute;n sujetos
+a cambios ulteriores.
+</p>
+<p>Los &aacute;tomos, tanto en los ficheros de entrada como en los de salida, tienen el 
+mismo formato que en los ficheros por lotes de Maxima o en la consola
+interactiva. En particular, las cadenas deben encerrarse entre comillas
+dobles, la barra invertida <code>\</code> evita cualquier interpretaci&oacute;n
+especial del car&aacute;cter siguiente, y el s&iacute;mbolo de
+interrogaci&oacute;n <code>?</code> se reconoce como el comienzo de un 
+s&iacute;mbolo de Lisp. No se reconoce ning&uacute;n car&aacute;cter de
+continuaci&oacute;n de l&iacute;nea interrumpida.
+</p>
+<p>El argumento opcional <var>separator_flag</var>, com&uacute;n a todas las funciones de
+lectura y escritura, indica qu&eacute; car&aacute;cter ser&aacute; el utilizado para
+separar elementos.
+</p>
+<p>Para la lectura de ficheros se reconocen los siguientes valores de la
+variable <var>separator_flag</var>: <code>comma</code> para los valores separados por
+comas, <code>pipe</code> para los valores separados por el car&aacute;cter de la barra
+vertical <code>|</code>, <code>semicolon</code> para los valores separados por punto y
+coma <code>;</code>, y <code>space</code> para cuando los valores se separan por espacios
+o tabulaciones. Si el nombre del fichero tiene extensi&oacute;n <code>.csv</code> y no se
+especifica el argumento <var>separator_flag</var>, se tomar&aacute; por defecto <code>comma</code>.
+Si el fichero tiene cualquier otra extensi&oacute;n diferente de <code>.csv</code> y no se
+especifica <code>separator_flag</code>, se usar&aacute; por defecto <code>space</code>.
+</p>
+<p>Para los ficheros de salida se utilizan los mismos formatos de separaci&oacute;n
+que para los de entrada; a los que se le a&ntilde;ade <code>tab</code> para separar 
+valores con tabulaciones.
+</p>
+<p>En la entrada, varios espacios y tabulaciones sucesivos cuentan como un
+&uacute;nico separador. Sin embargo, varias comas, barras verticales o punto y comas 
+sucesivos se interpretan que tienen el s&iacute;mbolo <code>false</code> entre
+ellos; por ejemplo, <code>1234,,Foo</code> se interpreta lo mismo que si fuese
+<code>1234,false,Foo</code>. En la salida, los &aacute;tomos <code>false</code> deben
+escribirse expl&iacute;citamente, por lo que la lista 
+<code>[1234, false, Foo]</code> debe escribirse <code>1234,false,Foo</code>.
+</p>
+
+
+<hr size="6">
+<a name="Definiciones-para-numericalio"></a>
+<a name="SEC213"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC212" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_61.html#SEC214" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC211" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC211" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_61.html#SEC214" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 60.2 Definiciones para numericalio </h2>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>read_matrix</b><i> (<var>file_name</var>)</i>
+<a name="IDX1852"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>read_matrix</b><i> (<var>file_name</var>, <var>separator_flag</var>)</i>
+<a name="IDX1853"></a>
+</dt>
+<dd><p>Lee el fichero <var>file_name</var> y devuelve su contenido completo en forma
+de matriz. Si no se especifica <var>separator_flag</var>, se entiende que los 
+valores est&aacute;n separados por espacios.
+</p>
+<p>La funci&oacute;n <code>read_matrix</code> obtiene el tama&ntilde;o de la matriz a partir
+de los datos de entrada. Cada l&iacute;nea del fichero forma una fila de
+la matriz. Si hay filas con diferente n&uacute;mero de elementos, <code>read_matrix</code>
+emite un mensaje de error.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>read_lisp_array</b><i> (<var>file_name</var>, <var>A</var>)</i>
+<a name="IDX1854"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>read_lisp_array</b><i> (<var>file_name</var>, <var>A</var>, <var>separator_flag</var>)</i>
+<a name="IDX1855"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>read_lisp_array</code> requiere que el arreglo sea declarado
+por <code>make_array</code> antes de solicitar la lectura del fichero, lo cual evita la
+necesidad de calcular las dimensiones del arreglo, especialmente en el caso
+de arreglos multidimensionales.
+</p>
+<p>La funci&oacute;n <code>read_lisp_array</code> no comprueba si el fichero de
+entrada es compatible con las dimensiones del arreglo; la entrada
+se lee como una lista para a continuaci&oacute;n completar el arreglo con
+<code>fillarray</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>read_maxima_array</b><i> (<var>file_name</var>, <var>A</var>)</i>
+<a name="IDX1856"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>read_maxima_array</b><i> (<var>file_name</var>, <var>A</var>, <var>separator_flag</var>)</i>
+<a name="IDX1857"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>read_maxima_array</code> requiere que el arreglo sea declarado
+por <code>array</code> antes de solicitar la lectura del fichero, lo cual evita la
+necesidad de calcular las dimensiones del arreglo, especialmente en el caso
+de arreglos multidimensionales.
+</p>
+<p>La funci&oacute;n <code>read_maxima_array</code> no comprueba si el fichero de
+entrada es compatible con las dimensiones del arreglo; la entrada
+se lee como una lista para a continuaci&oacute;n completar el arreglo con
+<code>fillarray</code>.
+</p></dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>read_hashed_array</b><i> (<var>file_name</var>, <var>A</var>)</i>
+<a name="IDX1858"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>read_hashed_array</b><i> (<var>file_name</var>, <var>A</var>, <var>separator_flag</var>)</i>
+<a name="IDX1859"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>read_hashed_array</code> considera el primer t&eacute;rmino
+de la l&iacute;nea como un &iacute;ndice, asociando a &eacute;ste el
+resto de la l&iacute;nea. Por ejemplo, una fila con el contenido 
+<code>567 12 17 32 55</code> equivale a  <code>A[567]: [12, 17, 32, 55]$</code>.
+Las filas no necesitan tener el mismo n&uacute;mero de elementos.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>read_nested_list</b><i> (<var>file_name</var>)</i>
+<a name="IDX1860"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>read_nested_list</b><i> (<var>file_name</var>, <var>separator_flag</var>)</i>
+<a name="IDX1861"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>read_nested_list</code> devuelve una lista con una sublista
+por cada fila de entrada. Las filas no necesitan tener el mismo n&uacute;mero de elementos.
+Las filas vac&iacute;as <i>no</i> se ignoran, dando lugar a sublistas 
+vac&iacute;as.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>read_list</b><i> (<var>file_name</var>)</i>
+<a name="IDX1862"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>read_list</b><i> (<var>file_name</var>, <var>separator_flag</var>)</i>
+<a name="IDX1863"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>read_list</code> lee todo el fichero de entrada como
+una lista simple, ignorando los caracteres de fin de l&iacute;nea.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>write_data</b><i> (<var>X</var>, <var>file_name</var>)</i>
+<a name="IDX1864"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>write_data</b><i> (<var>object</var>, <var>file_name</var>, <var>separator_flag</var>)</i>
+<a name="IDX1865"></a>
+</dt>
+<dd><p>La funci&oacute;n <code>write_data</code> escribe el objeto <var>X</var> en el fichero
+<var>file_name</var>.
+</p>
+<p><code>write_data</code> escribe las matrices fila a fila.
+</p>
+<p><code>write_data</code> escribe arreglos de Maxima y Lisp fila
+a fila, con un salto de l&iacute;nea al final de
+cada tabla. Las tablas multidimensionales se separan con
+saltos de l&iacute;nea adicionales.
+</p>
+<p><code>write_data</code> escribe arreglos codificados con un &iacute;ndice
+seguido de una lista asociativa en cada  l&iacute;nea.
+</p>
+<p><code>write_data</code> escribe una lista anidada con una sublista por
+l&iacute;nea.
+</p>
+<p><code>write_data</code> escribe una lista simple en una &uacute;nica l&iacute;nea.
+</p>
+<p><code>write_data</code> a&ntilde;adir&aacute; o inicializar&aacute; el fichero de salida
+seg&uacute;n le indique la variable global <code>file_output_append</code>.
+</p>
+</dd></dl>
+
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC211" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_61.html#SEC214" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

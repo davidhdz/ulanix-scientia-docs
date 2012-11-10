@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 3. Ayuda</title>
+
+<meta name="description" content="Manual de Maxima: 3. Ayuda">
+<meta name="keywords" content="Manual de Maxima: 3. Ayuda">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Ayuda"></a>
+<a name="SEC4"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_2.html#SEC3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_2.html#SEC2" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 3. Ayuda </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC5">3.1 Lisp y Maxima</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">            
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC6">3.2 Recolector de Basura</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">          
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC7">3.3 Documentaci&oacute;n</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">               
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC8">3.4 Definiciones para la Ayuda</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">        
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Lisp-y-Maxima"></a>
+<a name="SEC5"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 3.1 Lisp y Maxima </h2>
+
+<p>Maxima fue escrito en Lisp, y es muy f&aacute;cil tener acceso a funciones y variables Lisp desde Maxima y viceversa. 
+Los s&iacute;mbolos Lisp y los s&iacute;mblos Maxima est&aacute;n claramente diferenciados por medio de una convenci&oacute;n de nombres. 
+Un s&iacute;mblo Lisp el cual comienza con un signo pesos <code>$</code> corresponde a un s&iacute;mbolo Maxima sin el signo pesos. 
+Un s&iacute;mbolo Maxima el cual comienza con un signo de cierre de interrogaci&oacute;n <code>?</code> corresponde a un s&iacute;mbolo Lisp sin dicho signo.
+Por ejemplo, el s&iacute;mbolo Maxima <code>foo</code> corresponde a el s&iacute;mbolo Lisp <code>$foo</code>, 
+mientras que el s&iacute;mbolo Maxima <code>?foo</code> corresponde a el s&iacute;mbolo Lisp <code>foo</code>, 
+tenga en cuenta que <code>?foo</code> esta escrito sin espacio entre <code>?</code> y <code>foo</code>; 
+de otra manera se estar&iacute;a invocando a <code>describe (&quot;foo&quot;)</code>. 
+</p>
+<p>El gui&oacute;n <code>-</code>, asterisco <code>*</code>, u otros car&aacute;cteres especiales en s&iacute;mbolos Lisp deben ser escritos mediante un backslash <code>\</code> si aparecen en c&oacute;digo Maxima. 
+Por ejemplo, el identificador Lisp <code>*foo-bar*</code> se debe escribir <code>?\*foo\-bar\*</code> en Maxima. 
+</p>
+<p>Se puede ejecutar c&oacute;digo Lisp desde una sesi&oacute;n de Maxima. 
+Una l&iacute;nea Lisp (que contenga una o m&aacute;s formas) puede ser ejecutada
+por medio de un comando especial <code>:lisp</code>. Por ejemplo, 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) :lisp (foo $x $y)
+</pre></td></tr></table>
+
+<p>se llama a la funci&oacute;n Lisp <code>foo</code> con variables Maxima <code>x</code> y
+<code>y</code> como argumentos. 
+La instrucci&oacute;n <code>:lisp</code> puede aparecer en el prompt interactivo
+o en un archivo que sea procesado por <code>batch</code> o <code>demo</code>, pero no
+en un archivo que sea procesado por <code>load</code>, <code>batchload</code>, <code>translate_file</code> o <code>compile_file</code>. 
+</p>
+<p>La funci&oacute;n <code>to_lisp()</code> abre una sesi&oacute;n interactiva con el interprete Lisp. 
+Escribiendo <code>(to-maxima)</code> se cierra la sesi&oacute;n con Lisp y se retorna a Maxima. 
+</p>
+
+<p>Las funciones y variables Lisp las cuales esten para ser visibles en Maxima como funciones y variables con nombres oridinarios (sin una puntuaci&oacute;n especial), deben tener nombres tipo Lisp que comiencen con el signo pesos 
+<code>$</code>. 
+</p>
+<p>Maxima es case-sensitive, distingue entre letras min&uacute;sculas y may&uacute;sculas en identificadores, mientras que Lisp no. 
+Existen algunas reglas que gobiernan la traducci&oacute;n de nombres entre Lisp y Maxima. 
+</p>
+<ol>
+<li>
+Un identificador Lisp que no se encuentra encerrado en barras verticales
+corresponde a un identificador Maxima en min&uacute;scula. 
+Que el idenficador Lisp est&eacute; en may&uacute;scula, min&uacute;scula o una combinaci&oacute;n
+de ambas, no afecta en nada. 
+Por ejemplo, los identificadores Lisp <code>$foo</code>, <code>$FOO</code>, y <code>$Foo</code>,
+todos corresponden al identificador Maxima <code>foo</code>. 
+</li><li>
+Un identificador Lisp el cual se encuentre todo en may&uacute;scula o todo en min&uacute;scula y encerrado entre barras verticales corresponde a un identicador Maxima con el caso contrario. 
+Esto es, de may&uacute;sculas cambia a min&uacute;sculas y de min&uacute;sculas cambia a may&uacute;sculas. 
+E.g., el identificador Lisp <code>|$FOO|</code> y <code>|$foo|</code>
+corresponden los identificadores Maxima <code>foo</code> y <code>FOO</code>, respectivamente. 
+</li><li>
+Un identificador Lisp el cual esta escrito mezclando letras may&uacute;sculas y min&uacute;sculas y se encuentra entre barras verticales corresponde a un identificador Maxima con la misma escritura. 
+E.g., el identificador Lisp <code>|$Foo|</code> corresponde a el identificador Maxima <code>Foo</code>. 
+</li></ol>
+
+<p>La macro Lisp <code>#$</code> permite el uso de expresiones Maxima dentro de c&oacute;digo Lisp. <code>#$<var>expr</var>$</code> extiende a una expresi&oacute;n Lisp equivalente a la expresi&oacute;n Maxima <var>expr</var>.   
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(msetq $foo #$[x, y]$)
+</pre></td></tr></table>
+
+<p>Esto tiene el mismo efecto que: 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) foo: [x, y];
+</pre></td></tr></table>
+
+<p>La funci&oacute;n Lisp <code>displa</code> imprime una expresi&oacute;n en formato Maxima.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) :lisp #$[x, y, z]$ 
+((MLIST SIMP) $X $Y $Z)
+(%i1) :lisp (displa '((MLIST SIMP) $X $Y $Z))
+[x, y, z]
+NIL
+</pre></td></tr></table>
+<p>Las funciones definidas en Maxima no son funciones Lisp ordinarias. 
+La funci&oacute;n Lisp <code>mfuncall</code> llama a una funci&oacute;n Maxima. 
+Por ejemplo: 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) foo(x,y) := x*y$
+(%i2) :lisp (mfuncall '$foo 'a 'b)
+((MTIMES SIMP) A B)
+</pre></td></tr></table>
+<p>Algunas funciones Lisp son compartidas en el paquete Maxima, las cuales se listan a continuaci&oacute;n: 
+</p>
+<p><code>complement</code>,
+<code>continue</code>,
+<code>//</code>,
+<code>float</code>,
+<code>functionp</code>,
+<code>array</code>,
+<code>exp</code>,
+<code>listen</code>,
+<code>signum</code>,
+<code>atan</code>,
+<code>asin</code>,
+<code>acos</code>,
+<code>asinh</code>,
+<code>acosh</code>,
+<code>atanh</code>,
+<code>tanh</code>,
+<code>cosh</code>,
+<code>sinh</code>,
+<code>tan</code>,
+<code>break</code>,
+y <code>gcd</code>.
+</p>
+<hr size="6">
+<a name="Recolector-de-Basura"></a>
+<a name="SEC6"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC5" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC7" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 3.2 Recolector de Basura </h2>
+
+<p>La computaci&oacute;n simb&oacute;lica tiende a crear una buena cantidad de basura, y un manejo efectivo de esto puede ser crucial para el t&eacute;rmino exitoso de algunos programas. 
+</p>
+<p>Bajo GCL (GNU Common Lisp), en los sistemas UNIX donde la llamada al  sistema mprotect esta disponible (incluyendo SUN OS 4.0 y algunas variantes de BSD) un recolector de basura estratificado est&aacute; disponible. Estos l&iacute;mites de colecci&oacute;n para memoria virtual, han sido escritos recientemente. Mire la documentaci&oacute;n de GCL bajo ALLOCATE y GBC.  En el nivel lisp haga (setq si::*notify-gbc* t) eso le ayudar&aacute; a determinar cuales &aacute;reas necesitan m&aacute;s espacio.
+</p>
+
+<hr size="6">
+<a name="Documentaci_00f3n"></a>
+<a name="SEC7"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC6" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC8" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 3.3 Documentaci&oacute;n </h2>
+
+<p>El manual en l&iacute;nea del usuario de Maxima puede ser visto en diferentes formas. 
+Desde el prompt interactivo de Maxima, el manual de usuario
+es visto como texto plano por medio del comando  <code>?</code> (i.e., la funci&oacute;n <code>describe</code>). 
+El manual de usuario tambi&eacute;n puede ser visto como hipertexto tipo <code>info</code> por medio del programa <code>info</code> y como una p&aacute;gina web a trav&eacute;s de cualquier navegador. 
+</p>
+<p>El comando <code>example</code> muestra ejemplos para muchas funciones Maxima. 
+Por ejemplo: 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) example (integrate);
+</pre></td></tr></table>
+<p>produce: 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i2) test(f):=block([u],u:integrate(f,x),ratsimp(f-diff(u,x)))
+(%o2) test(f) := block([u], u : integrate(f, x), 
+
+                                         ratsimp(f - diff(u, x)))
+(%i3) test(sin(x))
+(%o3)                           0
+(%i4) test(1/(x+1))
+(%o4)                           0
+(%i5) test(1/(x^2+1))
+(%o5)                           0
+</pre></td></tr></table>
+<p>y salidas adicionales. 
+</p>
+
+<hr size="6">
+<a name="Definiciones-para-la-Ayuda"></a>
+<a name="SEC8"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC7" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC4" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 3.4 Definiciones para la Ayuda </h2>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>demo</b><i> (<var>archivo</var>)</i>
+<a name="IDX8"></a>
+</dt>
+<dd><p>Evalua las expresiones Maxima contenidas en <var>archivo</var> y muestra los resultados. 
+<code>demo</code> hace pausas despu&eacute;s de evaluar  cada expresi&oacute;n
+y continua despu&eacute;s de que el usuario ingrese un retorno de carro. 
+(Si se ejecuta en Xmaxima, <code>demo</code> puede que necesite un punto y coma
+<code>;</code> a continuaci&oacute;n del retorno de carro.)
+</p>
+<p><code>demo</code> busca la lista de directorios 
+<code>file_search_demo</code> para encontrar <code>archivo</code>.
+Si el archivo tiene el sufijo <code>dem</code>, 
+el sufijo puede ser omitido. 
+Ver tambi&eacute;n <code>file_search</code>.
+</p>
+<p><code>demo</code> evalua su argumento. 
+<code>demo</code> retorna el nombre del archivo demostraci&oacute;n. 
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) demo (&quot;disol&quot;);
+
+batching /home/wfs/maxima/share/simplification/disol.dem
+ At the _ prompt, type ';' followed by enter to get next demo
+(%i2)                      load(disol)
+
+_
+(%i3)           exp1 : a (e (g + f) + b (d + c))
+(%o3)               a (e (g + f) + b (d + c))
+
+_
+(%i4)                disolate(exp1, a, b, e)
+(%t4)                         d + c
+
+(%t5)                         g + f
+
+(%o5)                   a (%t5 e + %t4 b)
+
+_
+(%i5) demo (&quot;rncomb&quot;);
+
+batching /home/wfs/maxima/share/simplification/rncomb.dem
+ At the _ prompt, type ';' followed by enter to get next demo
+(%i6)                     load(rncomb)
+
+_
+                             z         x
+(%i7)               exp1 : ----- + ---------
+                           y + x   2 (y + x)
+                          z         x
+(%o7)                   ----- + ---------
+                        y + x   2 (y + x)
+
+_
+(%i8)                     combine(exp1)
+                          z         x
+(%o8)                   ----- + ---------
+                        y + x   2 (y + x)
+
+_
+(%i9)                     rncombine(%)
+                             2 z + x
+(%o9)                       ---------
+                            2 (y + x)
+
+_
+                             d   c   b   a
+(%i10)                exp2 : - + - + - + -
+                             3   3   2   2
+                          d   c   b   a
+(%o10)                    - + - + - + -
+                          3   3   2   2
+
+_
+(%i11)                    combine(exp2)
+                      2 d + 2 c + 3 (b + a)
+(%o11)                ---------------------
+                                6
+
+_
+(%i12)                   rncombine(exp2)
+                      2 d + 2 c + 3 b + 3 a
+(%o12)                ---------------------
+                                6
+
+_
+(%i13) 
+</pre></td></tr></table></dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>describe</b><i> (<var>string</var>)</i>
+<a name="IDX9"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>describe</b><i> (<var>string</var>, exact)</i>
+<a name="IDX10"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>describe</b><i> (<var>string</var>, inexact)</i>
+<a name="IDX11"></a>
+</dt>
+<dd><p>La sentencia <code>describe(<var>string</var>)</code> equivale a <code>describe(<var>string</var>, exact)</code>.
+</p>
+<p>La sentencia <code>describe(<var>string</var>, exact)</code> encuentra el elemento, si
+existe, cuyo t&iacute;tulo coincide exactamente con <var>string</var>
+(ignorando la diferencia entre may&uacute;sculas y min&uacute;sculas).
+</p>
+<p>La sentencia <code>describe(<var>string</var>, inexact)</code> encuentra todos los elementos
+documentados que contengan <var>string</var> en sus t&iacute;tulos.
+</p>
+<p>Si hay m&aacute;s de una opci&oacute;n, Maxima preguntar&aacute; al usuario para que
+seleccione las opciones que desee consultar.
+</p>
+<p>La sentencia <code>? foo</code> (con espacio entre <code>?</code> y <code>foo</code>)
+equivale a  <code>describe(&quot;foo&quot;, exact)</code>, mientras que <code>?? foo</code>
+equivale a <code>describe(&quot;foo&quot;, inexact)</code>.
+</p>
+<p><code>describe (&quot;&quot;, inexact)</code> produce una lista de todos los temas documentados en
+el manual en l&iacute;nea. 
+</p>
+<p><code>describe</code> no eval&uacute;a su argumento. La funci&oacute;n <code>describe</code> devuelve
+<code>true</code> si encuentra la documentaci&oacute;n solicitada y <code>false</code> en caso
+contrario.
+</p>
+<p>V&eacute;ase tambi&eacute;n <a href="#SEC7">Documentaci&oacute;n</a>.
+</p>
+<p>Ejemplo:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) ?? integ
+ 0: (maxima.info)Introduction to Elliptic Functions and Integrals.
+ 1: Definitions for Elliptic Integrals.
+ 2: Integration.
+ 3: Introduction to Integration.
+ 4: Definitions for Integration.
+ 5: askinteger :Definitions for Simplification.
+ 6: integerp :Definitions for Miscellaneous Options.
+ 7: integrate :Definitions for Integration.
+ 8: integrate_use_rootsof :Definitions for Integration.
+ 9: integration_constant_counter :Definitions for Integration.
+Enter space-separated numbers, `all' or `none': 7 8
+
+Info from file /use/local/maxima/doc/info/maxima.info:
+ - Function: integrate (expr, var)
+ - Function: integrate (expr, var, a, b)
+     Attempts to symbolically compute the integral of `expr' with
+     respect to `var'.  `integrate (expr, var)' is an indefinite
+     integral, while `integrate (expr, var, a, b)' is a definite
+     integral, [...]
+</pre></td></tr></table>
+<p>En este ejemplo fueron seleccionadas las opciones 7 y 8 . 
+Todas o ninguna de las opciones pueden ser seleccionadas escribiendo
+<code>all</code> o <code>none</code>, las cuales pueden ser abreviadas por
+<code>a</code> o <code>n</code>, respectivamente. 
+</p>
+
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>example</b><i> (<var>tema</var>)</i>
+<a name="IDX12"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>example</b><i> ()</i>
+<a name="IDX13"></a>
+</dt>
+<dd><p><code>example (<var>tema</var>)</code> mostrar&aacute; algunos ejemplos de <var>tema</var>, 
+el cual es un s&iacute;mbolo (no una cadena). 
+La mayor&iacute;a de los temas son nombres de funciones. 
+<code>example ()</code> retorna la lista de todos los temas conocidos. 
+</p>
+<p>El nombre del archivo que contiene los ejemplos esta dado por la 
+variable global <code>manual_demo</code>, cuyo valor por defecto es
+<code>&quot;manual.demo&quot;</code>. 
+</p>
+<p><code>example</code> no evalua su argumento.
+<code>example</code> retorna <code>done</code>
+a menos que haya un error o que no haya argumento, en cuyo caso <code>example</code>
+devolver&aacute; la lista de todos los temas conocidos. 
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) example (append);
+(%i2) append([x+y,0,-3.2],[2.5E+20,x])
+(%o2)             [y + x, 0, - 3.2, 2.5E+20, x]
+(%o2)                         done
+(%i3) example (coeff);
+(%i4) coeff(b+tan(x)+2*a*tan(x) = 3+5*tan(x),tan(x))
+(%o4)                      2 a + 1 = 5
+(%i5) coeff(1+x*%e^x+y,x,0)
+(%o5)                         y + 1
+(%o5)                         done
+</pre></td></tr></table>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC4" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_4.html#SEC9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

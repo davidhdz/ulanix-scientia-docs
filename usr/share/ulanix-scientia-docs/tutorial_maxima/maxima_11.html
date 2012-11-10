@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 11. Contextos</title>
+
+<meta name="description" content="Manual de Maxima: 11. Contextos">
+<meta name="keywords" content="Manual de Maxima: 11. Contextos">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Contextos"></a>
+<a name="SEC40"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_10.html#SEC39" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC41" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_10.html#SEC38" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_12.html#SEC42" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 11. Contextos </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC41">11.1 Definiciones para Contextos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">    
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Definiciones-para-Contextos"></a>
+<a name="SEC41"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC40" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_12.html#SEC42" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC40" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC40" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_12.html#SEC42" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 11.1 Definiciones para Contextos </h2>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>activate</b><i> (<var>context_1</var>, ..., <var>context_n</var>)</i>
+<a name="IDX364"></a>
+</dt>
+<dd><p>Activa los contextos <var>context_1</var>, ..., <var>context_n</var>.
+Los hechos en estos contextos est&aacute;n disponibles para hacer deducciones y extraer informaci&oacute;n.
+Los hechos en estos contextos no se listan al invocar <code>facts ()</code>.
+</p>
+<p>La variable <code>activecontexts</code> es la lista de contextos que se han activado por medio de la funci&oacute;n <code>activate</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable del sistema:</u> <b>activecontexts</b>
+<a name="IDX365"></a>
+</dt>
+<dd><p>Valor por defecto: <code>[]</code>
+</p>
+<p>La variable <code>activecontexts</code> es la lista de contextos que se han activado por medio de la funci&oacute;n <code>activate</code>, pero que no se han activado por ser subcontextos del contexto actual.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>assume</b><i> (<var>pred_1</var>, ..., <var>pred_n</var>)</i>
+<a name="IDX366"></a>
+</dt>
+<dd><p>A&ntilde;ade los predicados <var>pred_1</var>, ..., <var>pred_n</var> al contexto actual.
+Si un predicado es inconsistente o redundante con los otros predicados
+del contexto actual, entonces no es a&ntilde;adido al contexto. 
+El contexto va acumulando predicados con cada llamada a <code>assume</code>.
+</p>
+<p>La funci&oacute;n <code>assume</code> devuelve una lista cuyos miembros son los 
+predicados que han sido a&ntilde;adidos al contexto, o los &aacute;tomos 
+<code>redundant</code> o <code>inconsistent</code> si fuere necesario.
+</p>
+<p>Los predicados <var>pred_1</var>, ..., <var>pred_n</var> tan solo pueden ser
+expresiones formadas con los operadores relacionales <code>&lt; &lt;= equal notequal &gt;=</code>
+y <code>&gt;</code>. Los predicados no pueden estar formados por expresiones que sean del
+tipo igualdad <code>=</code> ni del tipo desigualdad <code>#</code>, ni tampoco pueden ser
+funciones de predicado como <code>integerp</code>.
+</p>
+<p>En cambio, s&iacute; se reconocen predicados compuestos de la forma 
+<code><var>pred_1</var> and ... and <var>pred_n</var></code>, pero no 
+<code><var>pred_1</var> or ... or <var>pred_n</var></code>.
+Tambi&eacute;n se reconoce <code>not <var>pred_k</var></code> si <var>pred_k</var> es un
+predicado relacional. Expresiones de la forma <code>not (<var>pred_1</var> and <var>pred_2</var>)</code>
+y <code>not (<var>pred_1</var> or <var>pred_2</var>)</code> no son reconocidas.
+</p>
+<p>El mecanismo deductivo de Maxima no es muy potente; existen muchas 
+consecuencias que, siendo obvias, no pueden ser obtenidas por <code>is</code>.
+Se trata de una debilidad reconocida.
+</p>
+<p>La funci&oacute;n <code>assume</code> eval&uacute;a sus argumentos.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>is</code>, <code>facts</code>, <code>forget</code>, <code>context</code> y <code>declare</code>.
+</p>
+<p>Ejemplos:
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) assume (xx &gt; 0, yy &lt; -1, zz &gt;= 0);
+(%o1)              [xx &gt; 0, yy &lt; - 1, zz &gt;= 0]
+(%i2) assume (aa &lt; bb and bb &lt; cc);
+(%o2)                  [bb &gt; aa, cc &gt; bb]
+(%i3) facts ();
+(%o3)     [xx &gt; 0, - 1 &gt; yy, zz &gt;= 0, bb &gt; aa, cc &gt; bb]
+(%i4) is (xx &gt; yy);
+(%o4)                         true
+(%i5) is (yy &lt; -yy);
+(%o5)                         true
+(%i6) is (sinh (bb - aa) &gt; 0);
+(%o6)                         true
+(%i7) forget (bb &gt; aa);
+(%o7)                       [bb &gt; aa]
+(%i8) prederror : false;
+(%o8)                         false
+(%i9) is (sinh (bb - aa) &gt; 0);
+(%o9)                        unknown
+(%i10) is (bb^2 &lt; cc^2);
+(%o10)                       unknown
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>assumescalar</b>
+<a name="IDX367"></a>
+</dt>
+<dd><p>Valor por defecto: <code>true</code>
+</p>
+<p>La variable <code>assumescalar</code> ayuda a controlar si una expresi&oacute;n <code>expr</code> para la cual <code>nonscalarp (expr)</code> es <code>false</code> va a tener un comportamiento similar a un escalar bajo ciertas transformaciones.
+</p>
+<p>Sea <code>expr</code> cualquier expresi&oacute;n distinta de una lista o matriz, y sea tambi&eacute;n <code>[1, 2, 3]</code> una lista o una matriz. Entonces, <code>expr . [1, 2, 3]</code> dar&aacute; como resultado <code>[expr, 2 expr, 3 expr]</code> si <code>assumescalar</code> es <code>true</code>, o si <code>scalarp (expr)</code> es <code>true</code>, o si <code>constantp (expr)</code> es <code>true</code>.
+</p>
+<p>Si <code>assumescalar</code> vale <code>true</code>, la expresi&oacute;n se comportar&aacute; como un escalar s&oacute;lo en operaciones conmutativas, pero no en el caso de la multiplicaci&oacute;n no conmutativa o producto matricial <code>.</code>.
+</p>
+<p>Si <code>assumescalar</code> vale <code>false</code>, la expresi&oacute;n se comportar&aacute; como un no escalar.
+</p>
+<p>Si <code>assumescalar</code> vale <code>all</code>, la expresi&oacute;n se comportar&aacute; como un escalar para todas las operaciones.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>assume_pos</b>
+<a name="IDX368"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Si <code>assume_pos</code> vale <code>true</code> y el signo de un par&aacute;metro <var>x</var> no puede ser determinado a partir del contexto actual o de otras consideraciones, <code>sign</code> y <code>asksign (<var>x</var>)</code> devolver&aacute;n <code>true</code>. Con esto se pueden evitar algunas preguntas al usuario que se generan autom&aacute;ticamente, como las que hacen <code>integrate</code> y otras funciones.
+</p>
+<p>By default, a parameter is <var>x</var> such that <code>symbolp (<var>x</var>)</code>
+or <code>subvarp (<var>x</var>)</code>.
+</p>
+<p>Por defecto, un par&aacute;metro <var>x</var> es aquel para el que <code>symbolp (<var>x</var>)</code> o <code>subvarp (<var>x</var>)</code> devuelven <code>true</code>.
+La clase de expresiones que se consideran par&aacute;metros se puede extender mediante la utilizaci&oacute;n de la variable <code>assume_pos_pred</code>.
+</p>
+<p>Las funciones <code>sign</code> y <code>asksign</code> intentan deducir el signo de una expresi&oacute;n a partir de los signos de los operandos que contiene. Por ejemplo, si <code>a</code> y <code>b</code> son ambos positivos, entonces <code>a + b</code> tambi&eacute;n es positivo.
+</p>
+<p>Sin embargo, no es posible obviar todas las preguntas que hace <code>asksign</code>. En particular, cuando el argumento de <code>asksign</code> es una diferencia <code><var>x</var> - <var>y</var></code> o un logaritmo <code>log(<var>x</var>)</code>, <code>asksign</code> siempre solicita una respuesta por parte del usuario, incluso cuando <code>assume_pos</code> vale <code>true</code> y <code>assume_pos_pred</code> es una funci&oacute;n que devuelve <code>true</code> para todos los argumentos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>assume_pos_pred</b>
+<a name="IDX369"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Cuando a <code>assume_pos_pred</code> se le asigna el nombre de una funci&oacute;n o una expresi&oacute;n lambda de un &uacute;nico argumento <var>x</var>, &eacute;sta ser&aacute; invocada para determinar si <var>x</var> se considera un par&aacute;metro por <code>assume_pos</code>. La variable 
+<code>assume_pos_pred</code> se ignora cuando <code>assume_pos</code> vale <code>false</code>.
+</p>
+<p>La funci&oacute;n <code>assume_pos_pred</code> es invocada por  <code>sign</code> y por <code>asksign</code> con un argumento <var>x</var>, el cual puede ser un &aacute;tomo, una variable subindicada o una expresi&oacute;n de llamada a una funci&oacute;n. Si la funci&oacute;n <code>assume_pos_pred</code> devuelve <code>true</code>, <var>x</var> ser&aacute; considerada como un par&aacute;metro por <code>assume_pos</code>.
+</p>
+<p>Por defecto, un par&aacute;metro <var>x</var> es aquel para el que <code>symbolp (<var>x</var>)</code> o <code>subvarp (<var>x</var>)</code> devuelven <code>true</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>assume</code> y <code>assume_pos</code>.
+</p>
+<p>Ejemplos:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) assume_pos: true$
+(%i2) assume_pos_pred: symbolp$
+(%i3) sign (a);
+(%o3)                          pos
+(%i4) sign (a[1]);
+(%o4)                          pnz
+(%i5) assume_pos_pred: lambda ([x], display (x), true)$
+(%i6) asksign (a);
+                              x = a
+
+(%o6)                          pos
+(%i7) asksign (a[1]);
+                             x = a
+                                  1
+
+(%o7)                          pos
+(%i8) asksign (foo (a));
+                           x = foo(a)
+
+(%o8)                          pos
+(%i9) asksign (foo (a) + bar (b));
+                           x = foo(a)
+
+                           x = bar(b)
+
+(%o9)                          pos
+(%i10) asksign (log (a));
+                              x = a
+
+Is  a - 1  positive, negative, or zero?
+
+p;
+(%o10)                         pos
+(%i11) asksign (a - b);
+                              x = a
+
+                              x = b
+
+                              x = a
+
+                              x = b
+
+Is  b - a  positive, negative, or zero?
+
+p;
+(%o11)                         neg
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>context</b>
+<a name="IDX370"></a>
+</dt>
+<dd><p>Valor por defecto: <code>initial</code>
+</p>
+<p>La variable <code>context</code> da nombre al conjunto de hechos establecidos desde <code>assume</code> y <code>forget</code>. La funci&oacute;n <code>assume</code> a&ntilde;ade nuevos hechos al conjunto nombrado por <code>context</code>, mientras que <code>forget</code> los va eliminando.
+Asignando a <code>context</code> un nuevo nombre <var>foo</var> cambia el contexto actual a <var>foo</var>. Si el contexto <var>foo</var> no existe todav&iacute;a, se crea autom&aacute;ticamente mediante una llamada a <code>newcontext</code>.
+</p>
+<p>V&eacute;ase <code>contexts</code> para una descripci&oacute;n general del mecanismo que siguen los contextos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>contexts</b>
+<a name="IDX371"></a>
+</dt>
+<dd><p>Valor por defecto: <code>[initial, global]</code>
+</p>
+<p>La variable <code>contexts</code> es una lista que contiene los contextos existentes, incluyendo el actualmente activo.
+</p>
+<p>El mecanismo que siguen los contextos permiten al usuario agrupar y nombrar un conjunto de hechos, que recibe el nombre de contexto. Una vez hecho esto, el usuario puede hacer que Maxima tenga en cuenta o que olvide cualquier n&uacute;mero de hechos sin m&aacute;s que activar o desactivar su contexto.
+</p>
+<p>Cualquier &aacute;tomo simb&oacute;lico puede ser el nombre de un contexto, y los hechos contenidos en tal contexto pueden ser almacenados hasta que se destruyan uno a uno mediante llamadas a la funci&oacute;n <code>forget</code>, o que se destruyan conjuntamente invocando a <code>kill</code> para eliminar el contexto al que pertenecen.
+</p>
+<p>Los contextos tienen estructura jer&aacute;rquica, siendo su ra&iacute;z el contexto <code>global</code>, el cual contiene informaci&oacute;n sobre Maxima que necesitan algunas funciones. Cuando en un contexto todos los hechos est&aacute;n activos (lo que significa que est&aacute;n siendo utilizados en deducciones) lo estar&aacute;n tambi&eacute;n en cualquier subcontexto del contexto actual.
+</p>
+<p>Cuando se comienza una sesi&oacute;n de Maxima, el usuario estar&aacute; trabajando en un contexto llamado <code>initial</code>, el cual tiene un subcontexto de nombre <code>global</code>.
+</p>
+<p>V&eacute;anse tambi&eacute;n <code>facts</code>, <code>newcontext</code>, <code>supcontext</code>, <code>killcontext</code>, <code>activate</code>, <code>deactivate</code>, <code>assume</code> y <code>forget</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>deactivate</b><i> (<var>contexto_1</var>, ..., <var>contexto_n</var>)</i>
+<a name="IDX372"></a>
+</dt>
+<dd><p>Desactiva los contextos especificados <var>contexto_1</var>, ..., <var>contexto_n</var>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>facts</b><i> (<var>item</var>)</i>
+<a name="IDX373"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>facts</b><i> ()</i>
+<a name="IDX374"></a>
+</dt>
+<dd><p>Si <var>item</var> es el nombre de un contexto,
+<code>facts (<var>item</var>)</code> devuelve una lista
+con los hechos asociados al contexto especificado.
+</p>
+<p>Si <var>item</var> no es el nombre de un contexto,
+<code>facts (<var>item</var>)</code> devuelve una lista con los hechos conocidos acerca de <var>item</var> en el contexto actual. Los hechos que est&eacute;n activos en contextos diferentes no aparecen en la lista.
+</p>
+<p>La lamada <code>facts ()</code>, sin argumentos, muestra el contexto actual.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Declaraci&oacute;n:</u> <b>features</b>
+<a name="IDX375"></a>
+</dt>
+<dd><p>Maxima reconoce ciertas propiedades matem&aacute;ticas sobre funciones y variables.
+</p>
+<p>La llamada <code>declare (<var>x</var>, <var>foo</var>)</code> asocia la propiedad <var>foo</var> a la funci&oacute;n o variable <var>x</var>.
+</p>
+<p>La llamada <code>declare (<var>foo</var>, feature)</code> declara una nueva propiedad <var>foo</var>. Por ejemplo, <code>declare ([rojo, verde, azul], feature)</code> declara tres nuevas propiedades, <code>rojo</code>, <code>verde</code> y <code>azul</code>.
+</p>
+<p>El predicado <code>featurep (<var>x</var>, <var>foo</var>)</code>
+devuelve <code>true</code> si <var>x</var> goza de la propiedad <var>foo</var>, y <code>false</code> en caso contrario.
+</p>
+<p>La lista <code>features</code> contiene las propiedades que reconoce Maxima; a saber,
+<code>integer</code>, <code>noninteger</code>, <code>even</code>, <code>odd</code>, <code>rational</code>,
+<code>irrational</code>, <code>real</code>, <code>imaginary</code>, <code>complex</code>,
+<code>analytic</code>, <code>increasing</code>, <code>decreasing</code>, <code>oddfun</code>,
+<code>evenfun</code>, <code>posfun</code>, <code>commutative</code>, <code>lassociative</code>,
+<code>rassociative</code>, <code>symmetric</code>, and <code>antisymmetric</code>, junto con las definidas por el usuario.
+</p>
+<p>La lista <code>features</code> s&oacute;lo contiene propiedades matem&aacute;ticas. Hay otra lista con propiedades no matem&aacute;ticas; V&eacute;ase <code>status</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>forget</b><i> (<var>pred_1</var>, ..., <var>pred_n</var>)</i>
+<a name="IDX376"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>forget</b><i> (<var>L</var>)</i>
+<a name="IDX377"></a>
+</dt>
+<dd><p>Borra los predicados establecidos por <code>assume</code>. Los predicados pueden ser expresiones equivalentes, pero no necesariamente id&eacute;nticas, a las establecidas por <code>assume</code>.
+The predicates may be expressions equivalent to (but not necessarily identical to)
+those previously assumed.
+</p>
+<p>La llamada <code>forget (<var>L</var>)</code>, siendo <var>L</var> una lista de predicados, borra todos los predicados contenidos en ella.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>killcontext</b><i> (<var>contexto_1</var>, ..., <var>contexto_n</var>)</i>
+<a name="IDX378"></a>
+</dt>
+<dd><p>Elimina los contextos <var>contexto_1</var>, ..., <var>contexto_n</var>.
+</p>
+<p>Si alguno de estos contextos es el actual, el nuevo contexto activo ser&aacute; el primer subcontexto disponible del actual que no haya sido eliminado. Si el primer contexto no eliminado disponible es <code>global</code> entonces <code>initial</code> ser&aacute; usado en su lugar.  Si el contexto <code>initial</code> es eliminado, se crear&aacute; un nuevo contexto <code>initial</code> completamente vac&iacute;o.
+</p>
+<p>La funci&oacute;n <code>killcontext</code> no elimina un contexto actualmente activo si es un subcontexto del contexto actual, o si se hace uso de la funci&oacute;n <code>activate</code>.
+</p>
+<p>La funci&oacute;n <code>killcontext</code> eval&uacute;a sus argumentos y devuelve <code>done</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>newcontext</b><i> (<var>nombre</var>)</i>
+<a name="IDX379"></a>
+</dt>
+<dd><p>Crea un nuevo contexto vac&iacute;o <var>nombre</var>, el cual tiene a <code>global</code> como su &uacute;nico subcontexto. El reci&eacute;n creado contexto pasa a ser el contexto actualmente activo.
+</p>
+<p>La funci&oacute;n <code>newcontext</code> eval&uacute;a sus argumentos y devuelve <var>nombre</var>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>supcontext</b><i> (<var>nombre</var>, <var>contexto</var>)</i>
+<a name="IDX380"></a>
+</dt>
+<dt><u>Funci&oacute;n:</u> <b>supcontext</b><i> (<var>nombre</var>)</i>
+<a name="IDX381"></a>
+</dt>
+<dd><p>Crea un nuevo contexto <var>nombre</var>, que tiene a <var>contexto</var> como subcontexto. El argumento
+<var>contexto</var> debe existir ya.
+</p>
+<p>Si no se especifica <var>context</var>, se tomar&aacute; como tal el actual.
+</p>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC40" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_12.html#SEC42" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

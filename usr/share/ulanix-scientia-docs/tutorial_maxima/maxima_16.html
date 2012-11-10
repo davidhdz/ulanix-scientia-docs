@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on mayo, 2 2007 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>Manual de Maxima: 16. Funciones Especiales</title>
+
+<meta name="description" content="Manual de Maxima: 16. Funciones Especiales">
+<meta name="keywords" content="Manual de Maxima: 16. Funciones Especiales">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+body
+{
+    color: black;
+    background: white; 
+    margin-left: 8%;
+    margin-right: 13%;
+}
+
+h1
+{
+    margin-left: +8%;
+    font-size: 150%;
+    font-family: sans-serif
+}
+
+h2
+{
+    font-size: 125%;
+    font-family: sans-serif
+}
+
+h3
+{
+    font-size: 100%;
+    font-family: sans-serif
+}
+
+h2,h3,h4,h5,h6 { margin-left: +4%; }
+
+div.textbox
+{
+    border: solid;
+    border-width: thin;
+    /* width: 100%; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+div.titlebox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: rgb(200,255,255);
+    font-family: sans-serif
+}
+
+div.synopsisbox
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+     background: rgb(255,220,255);
+    /*background: rgb(200,255,255); */
+    /* font-family: fixed */
+}
+
+pre.example
+{
+    border: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: rgb(247,242,180); /* kind of sandy */
+    /* background: rgb(200,255,255); */ /* sky blue */
+    font-family: "Lucida Console", monospace
+}
+
+div.spacerbox
+{
+    border: none;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+div.image
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+-->
+</style>
+
+<link rel="icon" href="http://maxima.sourceforge.net/favicon.ico"/>
+</head>
+
+<body lang="es" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Funciones-Especiales"></a>
+<a name="SEC52"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="maxima_15.html#SEC51" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC53" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima_15.html#SEC49" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_17.html#SEC55" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="chapter"> 16. Funciones Especiales </h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#SEC53">16.1 Introducci&oacute;n a las Funciones Especiales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#SEC54">16.2 Definiciones para las Funciones Especiales</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Introducci_00f3n-a-las-Funciones-Especiales"></a>
+<a name="SEC53"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC52" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC54" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC52" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC52" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_17.html#SEC55" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 16.1 Introducci&oacute;n a las Funciones Especiales </h2>
+
+<p>A continuaci&oacute;n se especifican las notaciones correspondientes a las funciones especiales:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">bessel_j (index, expr)    Funci&oacute;n de Bessel de primera especie
+bessel_y (index, expr)    Funci&oacute;n de Bessel de segunda especie
+bessel_i (index, expr)    Funci&oacute;n de Bessel modificada de primera especie
+bessel_k (index, expr)    Funci&oacute;n de Bessel modificada de segunda especie
+%he[n] (z)                Polinomio de Hermite (Ojo: <code>he</code>, no <code>h</code>. Ver A&amp;S 22.5.18)
+%p[u,v] (z)               Funci&oacute;n de Legendre de primera especie
+%q[u,v] (z)               Funci&oacute;n de Legendre de segunda especie
+hstruve[n] (z)            Funci&oacute;n H de Struve
+lstruve[n] (z)            Funci&oacute;n L de Struve
+%f[p,q] ([], [], expr)    Funci&oacute;n hipergeom&eacute;trica generalizada
+gamma()                   Funci&oacute;n Gamma
+gammagreek(a,z)           Funci&oacute;n Gamma incompleta
+gammaincomplete(a,z)      Extremo de la funci&oacute;n Gamma incompleta
+slommel
+%m[u,k] (z)               Funci&oacute;n de Whittaker de primera especie
+%w[u,k] (z)               Funci&oacute;n de Whittaker de segunda especie
+erfc (z)                  Complemento de la funci&oacute;n de error, erf
+ei (z)                    Integral exponencial (?)
+kelliptic (z)             Integral el&iacute;ptica completa de primera especie (K)
+%d [n] (z)                Funci&oacute;n cil&iacute;ndrica parab&oacute;lica
+</pre></td></tr></table>
+
+
+
+<hr size="6">
+<a name="Definiciones-para-las-Funciones-Especiales"></a>
+<a name="SEC54"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC53" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_17.html#SEC55" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#SEC52" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEC52" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_17.html#SEC55" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h2 class="section"> 16.2 Definiciones para las Funciones Especiales </h2>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>airy_ai</b><i> (<var>x</var>)</i>
+<a name="IDX512"></a>
+</dt>
+<dd><p>Funci&oacute;n Ai de Airy, tal como la definen Abramowitz y Stegun,
+<i>Handbook of Mathematical Functions</i>, Secci&oacute;n 10.4. 
+</p>
+<p>La ecuaci&oacute;n de Airy <code>diff (y(x), x, 2) - x y(x) = 0</code> tiene dos soluciones linealmente independientes, <code>y = Ai(x)</code> y <code>y = Bi(x)</code>. La derivada <code>diff (airy_ai(x), x)</code> es <code>airy_dai(x)</code>.
+</p>
+<p>Si el argumento <code>x</code> es un n&uacute;mero decimal real o complejo, se devolver&aacute; el valor num&eacute;rico de <code>airy_ai</code> siempre que sea posible.
+</p>
+<p>V&eacute;anse <code>airy_bi</code>, <code>airy_dai</code> y <code>airy_dbi</code>.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>airy_dai</b><i> (<var>x</var>)</i>
+<a name="IDX513"></a>
+</dt>
+<dd><p>Es la derivada de la funci&oacute;n Ai de Airy, <code>airy_ai(x)</code>. 
+</p>
+<p>V&eacute;ase <code>airy_ai</code>.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>airy_bi</b><i> (<var>x</var>)</i>
+<a name="IDX514"></a>
+</dt>
+<dd><p>Es la funci&oacute;n Bi de Airy, tal como la definen Abramowitz y Stegun,
+<i>Handbook of Mathematical Functions</i>, Secci&oacute;n 10.4. Se trata de la segunda soluci&oacute;n de la ecuaci&oacute;n de Airy <code>diff (y(x), x, 2) - x y(x) = 0</code>.
+</p>
+<p>Si el argumento <code>x</code> es un n&uacute;mero decimal real o complejo, se devolver&aacute; el valor num&eacute;rico de <code>airy_bi</code> siempre que sea posible. En los otros casos, se devuelve la expresi&oacute;n sin evaluar.
+</p>
+<p>La derivada <code>diff (airy_bi(x), x)</code> es <code>airy_dbi(x)</code>.
+</p>
+<p>V&eacute;anse <code>airy_ai</code> y <code>airy_dbi</code>.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>airy_dbi</b><i> (<var>x</var>)</i>
+<a name="IDX515"></a>
+</dt>
+<dd><p>Es la derivada de la funci&oacute;n Bi de Airy, <code>airy_bi(x)</code>.
+</p>
+<p>V&eacute;anse <code>airy_ai</code> y <code>airy_bi</code>.
+</p></dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>asympa</b>
+<a name="IDX516"></a>
+</dt>
+<dd><p>El paquete <code>asympa</code> contiene funciones de simplificaci&oacute;n para realizar an&aacute;lisis asint&oacute;tico, incluyendo las funciones  &quot;big O&quot; y  &quot;little o&quot;, de uso frecuente en el an&aacute;lisis complejo y num&eacute;rico.
+</p>
+<p>La instrucci&oacute;n <code>load (&quot;asympa&quot;)</code> carga este paquete.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>bessel</b><i> (<var>z</var>, <var>a</var>) </i>
+<a name="IDX517"></a>
+</dt>
+<dd><p>Funci&oacute;n de Bessel de primera especie.
+</p>
+<p>Ya no se recomienda su uso.  Util&iacute;cese <code>bessel_j (<var>z</var>, <var>a</var>)</code> en su lugar.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>bessel_j</b><i> (<var>v</var>, <var>z</var>)</i>
+<a name="IDX518"></a>
+</dt>
+<dd><p>Funci&oacute;n de Bessel de primera especie de orden <em>v</em> y argumento <em>z</em>.
+</p>
+<p>La funci&oacute;n <code>bessel_j</code> calcula el arreglo <code>besselarray</code> tal que <code>besselarray [i] = bessel_j [i + v - int(v)] (z)</code> para <code>i</code> desde cero hasta <code>int(v)</code>.
+</p>
+<p>La funci&oacute;n <code>bessel_j</code> se define como
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">                inf
+                ====       k  - v - 2 k  v + 2 k
+                \     (- 1)  2          z
+                 &gt;    --------------------------
+                /        k! gamma(v + k + 1)
+                ====
+                k = 0
+</pre></td></tr></table>
+
+<p>aunque la serie infinita no se utiliza en los c&aacute;lculos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>bessel_y</b><i> (<var>v</var>, <var>z</var>)</i>
+<a name="IDX519"></a>
+</dt>
+<dd><p>Funci&oacute;n de Bessel de segunda especie de orden <em>v</em> y argumento <em>z</em>.
+</p>
+<p>La funci&oacute;n <code>bessel_y</code> calcula el arreglo <code>besselarray</code> tal que
+<code>besselarray [i] = bessel_y [i + v - int(v)] (z)</code> para <code>i</code> desde cero hasta <code>int(v)</code>.
+</p>
+<p>La funci&oacute;n <code>bessel_y</code> se define como
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">              cos(%pi v) bessel_j(v, z) - bessel_j(-v, z)
+              -------------------------------------------
+                             sin(%pi v)
+</pre></td></tr></table>
+
+<p>si <em>v</em> no es un entero.  En caso de que  <em>v</em> sea un entero <em>n</em>, se calcula el l&iacute;mite cuando <em>v</em> se aproxima a <em>n</em>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>bessel_i</b><i> (<var>v</var>, <var>z</var>)</i>
+<a name="IDX520"></a>
+</dt>
+<dd><p>Funci&oacute;n modificada de Bessel de primera especie de orden <em>v</em> y argumento <em>z</em>.
+</p>
+<p>La funci&oacute;n <code>bessel_i</code> calcula el arreglo <code>besselarray</code> tal que
+<code>besselarray [i] = bessel_i [i + v - int(v)] (z)</code> para <code>i</code> desde cero hasta <code>int(v)</code>.
+</p>
+<p>La funci&oacute;n <code>bessel_i</code> se define como
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">                    inf
+                    ====   - v - 2 k  v + 2 k
+                    \     2          z
+                     &gt;    -------------------
+                    /     k! gamma(v + k + 1)
+                    ====
+                    k = 0
+</pre></td></tr></table>
+
+<p>aunque la serie infinita no se utiliza en los c&aacute;lculos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>bessel_k</b><i> (<var>v</var>, <var>z</var>)</i>
+<a name="IDX521"></a>
+</dt>
+<dd><p>Funci&oacute;n modificada de Bessel de segunda especie de orden <em>v</em> y argumento <em>z</em>.
+</p>
+<p>La funci&oacute;n <code>bessel_k</code> calcula el arreglo <code>besselarray</code> tal que
+<code>besselarray [i] = bessel_k [i + v - int(v)] (z)</code> para <code>i</code> desde cero hasta <code>int(v)</code>.
+</p>
+<p>La funci&oacute;n <code>bessel_k</code> se define como
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">           %pi csc(%pi v) (bessel_i(-v, z) - bessel_i(v, z))
+           -------------------------------------------------
+                                  2
+</pre></td></tr></table>
+
+<p>si <em>v</em> no es un entero.  Si <em>v</em> es igual al entero <em>n</em>, entonces se calcula el l&iacute;mite cuando <em>v</em> tiende a <em>n</em>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable optativa:</u> <b>besselexpand</b>
+<a name="IDX522"></a>
+</dt>
+<dd><p>Valor por defecto: <code>false</code>
+</p>
+<p>Controla la expansi&oacute;n de las funciones de Bessel cuando el orden es la mitad de un entero impar. En tal caso, las funciones de Bessel se pueden expandir en t&eacute;rminos de otras funciones elementales.  Si <code>besselexpand</code> vale <code>true</code>, se expande la funci&oacute;n de Bessel.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) besselexpand: false$
+(%i2) bessel_j (3/2, z);
+                                    3
+(%o2)                      bessel_j(-, z)
+                                    2
+(%i3) besselexpand: true$
+(%i4) bessel_j (3/2, z);
+                          2 z   sin(z)   cos(z)
+(%o4)                sqrt(---) (------ - ------)
+                          %pi      2       z
+                                  z
+</pre></td></tr></table></dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>scaled_bessel_i</b><i> (<var>v</var>, <var>z</var>)</i>
+<a name="IDX523"></a>
+</dt>
+<dd><p>Es la funci&oacute;n de Bessel modificada de primera especie de
+orden <em>v</em> y argumento <em>z</em>, es decir
+<em>scaled_bessel_i(v,z) = exp(-abs(z))*bessel_i(v, z)</em>.
+Esta funci&oacute;n es especialmente &uacute;til para calcular <em>bessel_i</em>
+cuando <em>z</em> es grande. Sin embargo, Maxima no sabe mucho m&aacute;s 
+sobre esta funci&oacute;n. En c&aacute;lculos simb&oacute;licos, quiz&aacute;s sea
+preferible trabajar directamente con la expresi&oacute;n 
+<code>exp(-abs(z))*bessel_i(v, z)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>scaled_bessel_i0</b><i> (<var>z</var>)</i>
+<a name="IDX524"></a>
+</dt>
+<dd><p>Id&eacute;ntica a <code>scaled_bessel_i(0,z)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>scaled_bessel_i1</b><i> (<var>z</var>)</i>
+<a name="IDX525"></a>
+</dt>
+<dd><p>Id&eacute;ntica a <code>scaled_bessel_i(1,z)</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>beta</b><i> (<var>x</var>, <var>y</var>)</i>
+<a name="IDX526"></a>
+</dt>
+<dd><p>Funci&oacute;n beta, definida como <code>gamma(x) gamma(y)/gamma(x + y)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>gamma</b><i> (<var>x</var>)</i>
+<a name="IDX527"></a>
+</dt>
+<dd><p>Funci&oacute;n gamma.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>makegamma</code>.
+</p>
+<p>La variable <code>gammalim</code> controla la simplificaci&oacute;n de la funci&oacute;n gamma.
+</p>
+<p>La constante de Euler-Mascheroni es <code>%gamma</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable optativa:</u> <b>gammalim</b>
+<a name="IDX528"></a>
+</dt>
+<dd><p>Valor por defecto: 1000000
+</p>
+<p>La variable <code>gammalim</code> controla la simplificaci&oacute;n de la funci&oacute;n gamma con argumentos enteros o racionales. Si el valor absoluto del argumento no es mayor que <code>gammalim</code>, entonces se realizar&aacute; la simplificaci&oacute;n. N&oacute;tese que la variable <code>factlim</code> tambi&eacute;n controla la simplificaci&oacute;n del resultado de <code>gamma</code> con argumento entero.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>intopois</b><i> (<var>a</var>)</i>
+<a name="IDX529"></a>
+</dt>
+<dd><p>Convierte <var>a</var> en un codificado Poisson.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>makefact</b><i> (<var>expr</var>)</i>
+<a name="IDX530"></a>
+</dt>
+<dd><p>Transforma las funciones <code>binomial</code>, <code>gamma</code> y <code>beta</code> que aparecen en <var>expr</var> en su notaci&oacute;n factorial.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>makegamma</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>makegamma</b><i> (<var>expr</var>)</i>
+<a name="IDX531"></a>
+</dt>
+<dd><p>Transforma las funciones <code>binomial</code>, <code>factorial</code> y <code>beta</code> que aparecen en <var>expr</var> en funciones <code>gamma</code>.
+</p>
+<p>V&eacute;ase tambi&eacute;n <code>makefact</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>numfactor</b><i> (<var>expr</var>)</i>
+<a name="IDX532"></a>
+</dt>
+<dd><p>Devuelve el factor num&eacute;rico que multiplica a la expresi&oacute;n <var>expr</var>, la cual debe tener un &uacute;nico t&eacute;rmino. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(%i1) gamma (7/2);
+                          15 sqrt(%pi)
+(%o1)                     ------------
+                               8
+(%i2) numfactor (%);
+                               15
+(%o2)                          --
+                               8
+</pre></td></tr></table>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>outofpois</b><i> (<var>a</var>)</i>
+<a name="IDX533"></a>
+</dt>
+<dd><p>Convierte <var>a</var> desde codificado de Poisson a una representaci&oacute;n general.  Si <var>a</var> no est&aacute; en forma de Poisson, <code>outofpois</code> hace la conversi&oacute;n, siendo entonces el valor retornado <code>outofpois (intopois (<var>a</var>))</code>. Esta funci&oacute;n es un simplificador can&oacute;nico para sumas de potencias de senos y cosenos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>poisdiff</b><i> (<var>a</var>, <var>b</var>)</i>
+<a name="IDX534"></a>
+</dt>
+<dd><p>Deriva <var>a</var> con respecto a <var>b</var>. El argumento <var>b</var> debe aparecer s&oacute;lo en los argumentos trigonom&eacute;tricos o s&oacute;lo en los coeficientes.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>poisexpt</b><i> (<var>a</var>, <var>b</var>)</i>
+<a name="IDX535"></a>
+</dt>
+<dd><p>Id&eacute;ntico a <code>intopois (<var>a</var>^<var>b</var>)</code>. El argumento <var>b</var> debe ser un entero positivo.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Variable optativa:</u> <b>poislim</b>
+<a name="IDX536"></a>
+</dt>
+<dd><p>Valor por defecto: 5
+</p>
+<p>La variable <code>poislim</code> determina el dominio de los coeficientes en los argumentos de las funciones trigonom&eacute;tricas.  El valor por defecto 5 corresponde al intervalo [-2^(5-1)+1,2^(5-1)], o [-15,16], pero puede reasignarse para  [-2^(n-1)+1, 2^(n-1)].
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>poisplus</b><i> (<var>a</var>, <var>b</var>)</i>
+<a name="IDX537"></a>
+</dt>
+<dd><p>Id&eacute;ntico a <code>intopois (a + b)</code>.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>poissimp</b><i> (<var>a</var>)</i>
+<a name="IDX538"></a>
+</dt>
+<dd><p>Convierte <var>a</var> en una serie de Poisson para <var>a</var> en su representaci&oacute;n general.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>S&iacute;mbolo especial:</u> <b>poisson</b>
+<a name="IDX539"></a>
+</dt>
+<dd><p>El s&iacute;mbolo <code>/P/</code> sigue a la etiqueta de las l&iacute;neas que contienen expresiones que son series de Poisson.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>poissubst</b><i> (<var>a</var>, <var>b</var>, <var>c</var>)</i>
+<a name="IDX540"></a>
+</dt>
+<dd><p>Sustituye <var>b</var> por <var>a</var> en <var>c</var>, donde  <var>c</var> es una serie de Poisson.
+</p>
+<p>(1) Si <var>b</var> es una de las variables <var>u</var>, <var>v</var>, <var>w</var>, <var>x</var>, <var>y</var> o <var>z</var>, entonces <var>a</var> debe ser una expresi&oacute;n lineal en esas variables (por ejemplo, <code>6*u + 4*v</code>).
+</p>
+<p>(2) Si <var>b</var> no es ninguna de esas variables, entonces <var>a</var> no puede contener tampoco a ninguna de ellas, ni senos, ni cosenos.
+</p>
+
+</dd></dl>
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>poistimes</b><i> (<var>a</var>, <var>b</var>)</i>
+<a name="IDX541"></a>
+</dt>
+<dd><p>Id&eacute;ntico a <code>intopois (<var>a</var>*<var>b</var>)</code>.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>printpois</b><i> (<var>a</var>)</i>
+<a name="IDX542"></a>
+</dt>
+<dd><p>Presenta una serie de Poisson en un formato legible.  Conjuntamente con <code>outofpois</code>, si es necesario convertir&aacute; <var>a</var> primero en una codificaci&oacute;n de Poisson.
+</p>
+</dd></dl>
+
+
+<dl>
+<dt><u>Funci&oacute;n:</u> <b>psi</b><i> [<var>n</var>](<var>x</var>)</i>
+<a name="IDX543"></a>
+</dt>
+<dd><p>Es la derivada de <code>log (gamma (<var>x</var>))</code> de orden <code><var>n</var>+1</code>,
+de tal manera que <code>psi[0](<var>x</var>)</code> es la primera derivada, 
+<code>psi[1](<var>x</var>)</code> la segunda derivada y as&iacute; 
+sucesivamente.
+</p>
+<p>En general, Maxima no sabe c&oacute;mo calcular valores num&eacute;ricos de 
+<code>psi</code>, pero s&iacute; conoce el valor exacto para
+algunos argumentos racionales.
+Existen algunas variables globales para controlar en qu&eacute; rangos
+racionales debe devolver <code>psi</code> resultados exactos, si ello es posible.
+V&eacute;anse las descripciones de <code>maxpsiposint</code>, <code>maxpsinegint</code>,
+<code>maxpsifracnum</code> y <code>maxpsifracnum</code>.
+En resumen, <var>x</var> debe alcanzar un valor entre <code>maxpsinegint</code> y
+<code>maxpsiposint</code>. Si el valor absoluto de la parte fraccional de
+<var>x</var> es racional y tiene un numerador menor que <code>maxpsifracnum</code>
+y un denominador menor que <code>maxpsifracdenom</code>, la funci&oacute;n <code>psi</code>
+devolver&aacute; un valor exacto.
+</p>
+<p>La funci&oacute;n <code>bfpsi</code> del paquete <code>bffac</code> puede calcular
+valores num&eacute;ricos.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxpsiposint</b>
+<a name="IDX544"></a>
+</dt>
+<dd><p>Valor por defecto: 20
+</p>
+<p>La variable <code>maxpsiposint</code> guarda el mayor valor positivo para el 
+que <code>psi[n](x)</code> intentar&aacute; calcular un valor exacto.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxpsinegint</b>
+<a name="IDX545"></a>
+</dt>
+<dd><p>Valor por defecto: -10
+</p>
+<p>La variable <code>maxpsinegint</code> guarda el menor valor negativo para el
+que <code>psi[n](x)</code> intentar&aacute; calcular un valor exacto. Si
+<var>x</var> es menor que <code>maxnegint</code>, <code>psi[n](<var>x</var>)</code> no devolver&aacute;
+una respuesta simplificada, aunque supiese c&oacute;mo hacerlo.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxpsifracnum</b>
+<a name="IDX546"></a>
+</dt>
+<dd><p>Valor por defecto: 4
+</p>
+<p>Sea <var>x</var> un n&uacute;mero racional menor que la unidad de la forma <code>p/q</code>.
+Si <code>p</code> es mayor que <code>maxpsifracnum</code>, entonces
+<code>psi[<var>n</var>](<var>x</var>)</code> no devolver&aacute; una respuesta simplificada.
+</p>
+</dd></dl>
+
+<dl>
+<dt><u>Variable opcional:</u> <b>maxpsifracdenom</b>
+<a name="IDX547"></a>
+</dt>
+<dd><p>Valor por defecto: 4
+</p>
+<p>Sea <var>x</var> un n&uacute;mero racional menor que la unidad de la forma <code>p/q</code>.
+Si <code>q</code> es mayor que <code>maxpsifracnum</code>, entonces
+<code>psi[<var>n</var>](<var>x</var>)</code> no devolver&aacute; una respuesta simplificada.
+</p>
+</dd></dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#SEC52" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="maxima_17.html#SEC55" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="maxima.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_74.html#SEC268" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="maxima_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>Robert Dodier</em> on <em>mayo, 2 2007</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>
