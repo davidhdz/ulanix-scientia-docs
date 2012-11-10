@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Documentación ULAnix-Scientia
 =============================
 
@@ -19,4 +18,3 @@ ulanix-scientia-docs
 ====================
 
 Documentación de los programas instalados por el paquete ulanix-scientia
->>>>>>> 5c91bb63b5bef0c196d12b984dc33901ace44fc2
