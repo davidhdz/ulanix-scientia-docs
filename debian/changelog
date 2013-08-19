@@ -1,3 +1,9 @@
+ulanix-scientia-docs (1.0.0ubuntu1) raring; urgency=low
+
+  * Raring release
+
+ -- David Hernández <david.vzla@gmail.com>  Mon, 19 Aug 2013 18:31:56 -0430
+
 ulanix-scientia-docs (1.0.0) quantal; urgency=low
 
   * Initial release.
