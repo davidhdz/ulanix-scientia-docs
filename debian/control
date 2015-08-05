@@ -1,14 +1,16 @@
 Source: ulanix-scientia-docs
-Section: misc
+Section: doc
 Priority: optional
-Maintainer: David Hernandez <david.vzla@gmail.com>
+Maintainer: David Hernández <david.vzla@gmail.com>
 Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 3.9.4
+Standards-Version: 3.9.6
 Homepage: http://nux.ula.ve
 
 Package: ulanix-scientia-docs
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends}
 Recommends: ulanix-scientia
 Description: Documentacion ULAnix
- Colección de documentos sobre los programas instalados por el paquete ulanix-scientia
+ Colección de documentos sobre los programas instalados por el paquete 
+ ulanix-scientia
+

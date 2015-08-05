@@ -1,0 +1,12 @@
+Package: ulanix-scientia-docs
+Version: 1.0.2
+Architecture: all
+Maintainer: David Hernández <david.vzla@gmail.com>
+Installed-Size: 19249
+Recommends: ulanix-scientia
+Section: doc
+Priority: optional
+Homepage: http://nux.ula.ve
+Description: Documentacion ULAnix
+ Colección de documentos sobre los programas instalados por el paquete
+ ulanix-scientia
